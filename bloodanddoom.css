@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400,500,700,800|Merriweather:400,700,900&display=swap");
+:root {
+  --primary-color: #484637;
+  --secondary-color: #2ecc71;
+  --tertiary-color: #b2af9b;
+  --background-color: #d9d8cf;
+  --text-color: #484637;
+  --font-family: "Arial", sans-serif;
+}
+
+.ui-dialog .charsheet {
+  color: var(--text-color);
+  /* SPECIFIC */
+}
+.ui-dialog .charsheet h1, .ui-dialog .charsheet h2, .ui-dialog .charsheet h3, .ui-dialog .charsheet h4, .ui-dialog .charsheet h5, .ui-dialog .charsheet h6 {
+  text-transform: capitalize;
+}
+.ui-dialog .charsheet .card {
+  background-color: var(--background-color);
+  border-radius: 5px;
+  padding: 10px;
+}
+.ui-dialog .charsheet .labelled--left label {
+  display: flex;
+}
+.ui-dialog .charsheet .labelled--left label .translation {
+  width: fit-content;
+}
+.ui-dialog .charsheet .labelled--bottom label {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.ui-dialog .charsheet .labelled--bottom-center label {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.ui-dialog .charsheet .labelled--bottom-center label span {
+  align-self: center;
+}
+.ui-dialog .charsheet .rangebar__steps {
+  display: inline-flex;
+  gap: 5px;
+  flex-direction: row-reverse;
+}
+.ui-dialog .charsheet .rangebar__steps input {
+  appearance: none;
+  background-color: transparent;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--tertiary-color);
+}
+.ui-dialog .charsheet .rangebar__steps input:focus {
+  outline: none;
+}
+.ui-dialog .charsheet .rangebar__steps input:checked,
+.ui-dialog .charsheet .rangebar__steps input:checked ~ input {
+  border-color: var(--primary-color);
+}
+.ui-dialog .charsheet .table {
+  display: grid;
+}
+.ui-dialog .charsheet .table__header {
+  display: contents;
+}
+.ui-dialog .charsheet .table__body {
+  display: contents;
+}
+.ui-dialog .charsheet .table__row {
+  display: contents;
+}
+.ui-dialog .charsheet .text-input input,
+.ui-dialog .charsheet .number-input input {
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 0;
+  font-weight: bold;
+}
+.ui-dialog .charsheet .text-input input:focus,
+.ui-dialog .charsheet .number-input input:focus {
+  outline: none;
+}
+.ui-dialog .charsheet .text-input--simple input,
+.ui-dialog .charsheet .number-input--simple input {
+  border-bottom: 1px solid var(--tertiary-color);
+}
+.ui-dialog .charsheet .text-input--simple input::-webkit-outer-spin-button, .ui-dialog .charsheet .text-input--simple input::-webkit-inner-spin-button,
+.ui-dialog .charsheet .number-input--simple input::-webkit-outer-spin-button,
+.ui-dialog .charsheet .number-input--simple input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.ui-dialog .charsheet .text-input--simple input[type=number],
+.ui-dialog .charsheet .number-input--simple input[type=number] {
+  -moz-appearance: textfield;
+}
+.ui-dialog .charsheet .text-input--align-center input,
+.ui-dialog .charsheet .number-input--align-center input {
+  text-align: center;
+}
+.ui-dialog .charsheet .text-input--align-right input,
+.ui-dialog .charsheet .number-input--align-right input {
+  text-align: right;
+}
+.ui-dialog .charsheet .card--health-conditions {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+}
+.ui-dialog .charsheet .table--conditions {
+  grid-template-columns: 1fr 100px;
+  gap: 10px;
+}
+.ui-dialog .charsheet .section--evasion .group--evasion {
+  display: grid;
+  grid-template-columns: 1fr min-content 1fr;
+}
+.ui-dialog .charsheet .section--resolve .number-input label {
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  gap: 10px;
+}

@@ -1,0 +1,147 @@
+:root {
+  --primary-color: #484637;
+  --secondary-color: #2ecc71;
+  --tertiary-color: #b2af9b;
+  --background-color: #d9d8cf;
+  --text-color: #484637;
+  --font-family: 'Arial', sans-serif;  
+}
+
+.ui-dialog .charsheet {
+  color: var(--text-color);
+
+  h1,h2,h3,h4,h5,h6 {
+    text-transform: capitalize;
+  }
+
+  .card {
+    background-color: var(--background-color);
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .labelled {
+    &--left {
+      label {
+        display: flex;
+        .translation {
+          width: fit-content;
+        };
+      }
+    }
+    &--bottom {
+      label {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+      &-center {
+        label {
+          display: flex;
+          flex-direction: column-reverse;
+          span {
+            align-self: center;
+          }
+        }
+      }
+    }
+  }
+
+  .rangebar {
+    &__steps {
+      display: inline-flex;
+      gap: 5px;
+      flex-direction: row-reverse;
+      input {
+        appearance: none;
+        background-color: transparent;
+        box-sizing: border-box;
+        width: 20px;
+        height: 20px;
+        border: 2px solid var(--tertiary-color);
+        &:focus {
+          outline: none;
+        }
+      }
+      input:checked,
+      input:checked ~ input {
+        border-color: var(--primary-color);
+      }
+    }
+  }
+
+  .table {
+    display: grid;
+    &__header {
+      display: contents;
+    }
+    &__body {
+      display: contents;
+    }
+    &__row {
+      display: contents;
+    }
+  }
+
+  .text-input,
+  .number-input {
+    input {
+      background-color: transparent;
+      width: 100%;
+      box-sizing: border-box;
+      border: 0;
+      border-radius: 0;
+      font-weight: bold;
+      &:focus {
+        outline: none;
+      }
+
+    }
+    &--simple {
+      input {
+        border-bottom: 1px solid var(--tertiary-color);
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        &[type=number] {
+          -moz-appearance: textfield;
+        }
+      }
+    }
+    &--align-center {
+      input {
+        text-align: center;
+      }
+    }
+    &--align-right {
+      input {
+        text-align: right;
+      }
+    }
+  }
+
+  /* SPECIFIC */
+
+  .card--health-conditions {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+  }
+  .table--conditions {
+    grid-template-columns: 1fr 100px;
+    gap: 10px;
+  }
+  .section--evasion {
+    .group--evasion {
+      display: grid;
+      grid-template-columns: 1fr min-content 1fr;
+    }
+  }
+  .section--resolve {
+    .number-input label {
+      display: grid;
+      grid-template-columns: 1fr 50px;
+      gap: 10px;
+    }
+  }
+}

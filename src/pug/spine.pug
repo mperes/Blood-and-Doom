@@ -1,0 +1,18 @@
+-
+  const spine = {
+    conditions: {
+      numberOfConditions: 5,
+    },
+    health: {
+      bars: [
+        { name: 'bruises', steps: 3, values: ['1-3'] },
+        { name: 'scrapes', steps: 3, values: ['4-6'] },
+        { name: 'wounds', steps: 3, values: ['7-9'] },
+        { name: 'injuries', steps: 3, values: ['10-12','13+'] },
+        { name: 'madness', steps: 10 },
+      ]
+    },
+    resolve: {
+      attributes: ['toughness', 'reflexes', 'focus', 'composure', 'willpower'],
+    }
+  };

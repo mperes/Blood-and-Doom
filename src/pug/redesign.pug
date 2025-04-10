@@ -1,0 +1,90 @@
+mixin translate(options)
+  - options.html = options.html || {};
+  span.translation&attributes(options.html)
+    if options.prepend
+      span(class="translation__prepend")=options.prepend
+    if options.key
+      span(class="translation__key" data-i18n=options.key)
+    if options.append
+      span(class="translation__append")=options.append
+
+mixin rangebar(options)
+  - options.html = options.html || {};
+  .rangebar&attributes(options.html)
+    label
+      if options.label 
+        +translate(options.label)
+      if options.steps && options.name
+        .rangebar__steps
+            each _, i in Array(options.steps)
+              - const step = options.steps - i;
+              input(type='checkbox' name=`attr_${options.name}` value=step)
+
+mixin text-input(options)
+  - options.html = options.html || {};
+  .text-input.labelled&attributes(options.html)
+    - delete options.html;
+    label
+      if options.label 
+        +translate(options.label)
+      if options.name
+        input(type='text' name=`attr_${options.name}`)
+
+mixin number-input(options)
+  - options.html = options.html || {};
+  .number-input.labelled&attributes(options.html)
+    - delete options.html;
+    label
+      if options.label 
+        +translate(options.label)
+      if options.name
+        input(type='number' name=`attr_${options.name}`)
+
+.sheet__container
+  .card.card--header
+  .card.card--health-conditions
+    .section.section--health
+      h2
+        +translate({key:'health'})
+      each bar in spine.health.bars
+        -
+          const barProperties = {
+            name: bar.name,
+            steps: bar.steps,
+            label: { key: bar.name },
+          };
+          if(Array.isArray(bar.values)) barProperties.label.append = ` (${bar.values.join('/')})`;
+        +rangebar(barProperties)
+    .section.section--conditions
+      .table.table--conditions
+        .table__header
+          h3
+            +translate({key:'conditions'})
+          h3
+            +translate({key:'treatment'})
+        .table__body
+          each _, i in Array(spine.conditions.numberOfConditions)
+            - row = i + 1;
+            .table__row
+              +text-input({name:`condition-${row}`, html:{class:'text-input--simple'}})
+              +text-input({name:`treatment-${row}`, html:{class:'text-input--simple'}})
+  .card.card--resolve
+    .section.section--resolve
+      h3
+        +translate({key:'resolve'})
+      each attribute in spine.resolve.attributes
+        +number-input({name:attribute, label:{key:attribute}, html:{class:'number-input--simple'}})
+  .card.card--evasion-armor
+    .section.section--evasion
+      h3
+        +translate({key:'evasion'})
+      .group.group--evasion
+        +number-input({name:'evasion-score', label:{key:'score'}, html:{class:'number-input--simple number-input--align-center labelled--bottom-center'}})
+        .group__separator /
+        +number-input({name:'evasion-average', label:{key:'average'}, html:{class:'number-input--simple number-input--align-center labelled--bottom-center'}})
+  .card.card--abilities-skills
+  .card.card--knowledge
+  .card.card--magic
+  .card.card--weapons-armor-ammunition
+  .card.card--traits-powers-spells
+  
