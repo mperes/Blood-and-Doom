@@ -3,7 +3,9 @@ mixin translate(options)
   span.translation&attributes(options.html)
     if options.prepend
       span(class="translation__prepend")=options.prepend
-    if options.key
+    if options.image
+      img(class="translation__image" src=`${imgServer}${options.image}` alt=options.key)
+    else if options.key
       span(class="translation__key" data-i18n=options.key)
     if options.append
       span(class="translation__append")=options.append
@@ -82,9 +84,37 @@ mixin number-input(options)
         +number-input({name:'evasion-score', label:{key:'score'}, html:{class:'number-input--simple number-input--align-center labelled--bottom-center'}})
         .group__separator /
         +number-input({name:'evasion-average', label:{key:'average'}, html:{class:'number-input--simple number-input--align-center labelled--bottom-center'}})
+    .section.section--armor
+      h3
+        +translate({key:'armor'})
+      +number-input({name:'armor', label:{image:'/kXrkprDN/shield.png', key:'armor'}, html:{class:'number-input--simple number-input--align-center'}})
+      +number-input({name:'armor-empty', label:{image:'/fbhyzqHY/shield-empty.png', key:'armor-empty'}, html:{class:'number-input--simple number-input--align-center'}})
   .card.card--abilities-skills
+    .section.section--abilities-skills
+      h3
+        +translate({key:'abilities-and-skills'})
+      .group.group--abilities-skills
+        each attributes, group in spine.abilitiesAndSkills
+          .group(class=`group--${group}`)
+            h2
+              +translate({key:group})
+            each skills, attribute in attributes
+              .group(class=`group--${attribute}`)
+                +number-input({name:attribute, label:{key:attribute}, html:{class:'number-input--boxed'}})
+                each skill in skills
+                  +number-input({name:skill, label:{key:skill}, html:{class:'number-input--simple  number-input--align-center'}})
   .card.card--knowledge
+    .section.section--knowledge
+      .group.group--title
+        h3
+          +translate({key:'abilities-and-skills'})
+        each skills, attribute in spine.knowledge
+          +number-input({name:attribute, label:{key:attribute}, html:{class:'number-input--boxed'}})
+      each skills, attribute in spine.knowledge
+        .group(class=`group--${attribute}`)
+          each skill in skills
+            +number-input({name:skill, label:{key:skill}, html:{class:'number-input--simple number-input--align-center'}})
   .card.card--magic
-  .card.card--weapons-armor-ammunition
+  .card.card--weapons-armor-ammunition-unarmed
   .card.card--traits-powers-spells
   

@@ -21,6 +21,7 @@
   }
   
   .labelled {
+    text-transform: capitalize;
     &--left {
       label {
         display: flex;
@@ -96,7 +97,8 @@
       }
 
     }
-    &--simple {
+    &--simple,
+    &--boxed {
       input {
         border-bottom: 1px solid var(--tertiary-color);
         &::-webkit-outer-spin-button,
@@ -106,6 +108,28 @@
         }
         &[type=number] {
           -moz-appearance: textfield;
+        }
+      }
+    }
+    &--boxed {
+      label {
+        display: grid;
+        grid-template-columns: 1fr 50px;
+        align-items: center;
+        .translation {
+          text-transform: uppercase;
+          color: var(--background-color);
+          background-color: var(--primary-color);
+          display: flex;
+          align-items: center;
+          padding: 5px 10px;
+          box-sizing: border-box;
+          clip-path: polygon(5px 0, 100% 0, 100% 100%, 5px 100%, 0 calc(100% - 5px), 0 5px);
+        }
+        input {
+          height: 50px;
+          box-sizing: border-box;
+          border: 3px solid var(--primary-color);
         }
       }
     }
@@ -122,7 +146,33 @@
   }
 
   /* SPECIFIC */
-
+  .card.card--header {
+    grid-area: header;
+  }
+  .card.card--health-conditions {
+    grid-area: health-conditions;
+  }
+  .card.card--resolve {
+    grid-area: resolve;
+  }
+  .card.card--evasion-armor {
+    grid-area: evasion-armor;
+  }
+  .card.card--abilities-skills {
+    grid-area: abilities-skills;
+  }
+  .card.card--knowledge {
+    grid-area: knowledge;
+  }
+  .card.card--magic {
+    grid-area: magic;
+  }
+  .card.card--weapons-armor-ammunition-unarmed {
+    grid-area: weapons-armor-ammunition-unarmed;
+  }
+  .card.card--traits-powers-spells {
+    grid-area: traits-powers-spells;
+  }
   .card--health-conditions {
     display: grid;
     grid-template-columns: min-content 1fr;
@@ -131,10 +181,32 @@
     grid-template-columns: 1fr 100px;
     gap: 10px;
   }
+  .section--abilities-skills {
+    .group--abilities-skills {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    label {
+      display: grid;
+      grid-template-columns: 1fr 50px;
+    }
+  }
   .section--evasion {
     .group--evasion {
       display: grid;
       grid-template-columns: 1fr min-content 1fr;
+    }
+  }
+  .section--knowledge {
+    .group--title {
+      display: grid;
+      grid-template-columns: 1fr max-content;
+      gap: 10px;
+    }
+    label {
+      display: grid;
+      grid-template-columns: 1fr 50px;
     }
   }
   .section--resolve {
@@ -143,5 +215,25 @@
       grid-template-columns: 1fr 50px;
       gap: 10px;
     }
+  }
+  .section--armor {
+    .number-input label {
+      display: grid;
+      grid-template-columns: 50px 1fr;
+      gap: 10px;
+    }
+  }
+  .sheet__container {
+    display: grid;
+    grid-template-areas: 
+      "header header header header header"
+      "navigation navigation navigation navigation navigation"
+      "health-conditions health-conditions health-conditions resolve evasion-armor"
+      "abilities-skills abilities-skills abilities-skills knowledge knowledge"
+      "abilities-skills abilities-skills abilities-skills magic magic"
+      "weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed"
+      "traits-powers-spells traits-powers-spells traits-powers-spells traits-powers-spells traits-powers-spells";
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
   }
 }

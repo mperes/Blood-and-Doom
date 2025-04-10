@@ -1,5 +1,23 @@
 -
+  const imgServer = 'https://i.postimg.cc';
   const spine = {
+    abilitiesAndSkills: {
+      body: {
+        strength: ['athletics', 'heavy-attack', 'unarmed-attack'],
+        dexterity: ['locks-and-traps', 'ranged-attack', 'sleight-of-hand'],
+        agility: ['acrobatics', 'finesse-attack', 'stealth'],
+      },
+      mind: {
+        awareness: ['navigation', 'perception', 'tracking'],
+        intellect: ['investigation', 'reason-and-logic', 'study-and-write'],
+        wisdom: ['animal-ken', 'healing', 'survival'],
+      },
+      soul: {
+        heart: ['empathy', 'insight', 'persuasion'],
+        mystique: ['charm', 'deception', 'performance'],
+        presence: ['connect', 'intimidation', 'leadership'],
+      },
+    },
     conditions: {
       numberOfConditions: 5,
     },
@@ -11,6 +29,9 @@
         { name: 'injuries', steps: 3, values: ['10-12','13+'] },
         { name: 'madness', steps: 10 },
       ]
+    },
+    knowledge: {
+      mind: ['history-and-culture', 'strategy-and-warfare', 'sailing-and-ships', 'occult-and-paranormal', 'monsters-and-myths'],
     },
     resolve: {
       attributes: ['toughness', 'reflexes', 'focus', 'composure', 'willpower'],
