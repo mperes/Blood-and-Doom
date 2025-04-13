@@ -28,7 +28,10 @@ mixin rangebar(options)
           input(type='checkbox' name=`attr_${options.name}` value=step)
 
 mixin text-input(options)
-  - options.html = options.html || {};
+  - 
+    options.html = options.html || {};
+    const inputOptions = {};
+    if(options.placeholder) inputOptions['data-i18n-placeholder'] = options.placeholder;
   .text-input.labelled&attributes(options.html)
     - delete options.html;
     if options.label 
@@ -36,26 +39,29 @@ mixin text-input(options)
         +translate(options.label)
         if options.name
           if options.list
-            input(type='text' name=`attr_${options.name}` list=options.list)
+            input(type='text' name=`attr_${options.name}` list=options.list)&attributes(inputOptions)
           else
-            input(type='text' name=`attr_${options.name}`)
+            input(type='text' name=`attr_${options.name}`)&attributes(inputOptions)
     else if options.name
       if options.list
-        input(type='text' name=`attr_${options.name}` list=options.list)
+        input(type='text' name=`attr_${options.name}` list=options.list)&attributes(inputOptions)
       else
-        input(type='text' name=`attr_${options.name}`)
+        input(type='text' name=`attr_${options.name}`)&attributes(inputOptions)
 
-mixin number-input(options)
-  - options.html = options.html || {};
+mixin number-input(options) 
+  - 
+    options.html = options.html || {};
+    const inputOptions = {};
+    if(options.placeholder) inputOptions['data-i18n-placeholder'] = options.placeholder;
   .number-input.labelled&attributes(options.html)
     - delete options.html;
     if options.label 
       label
         +translate(options.label)
         if options.name
-          input(type='number' name=`attr_${options.name}`)
+          input(type='number' name=`attr_${options.name}`)&attributes(inputOptions)
     else if options.name
-      input(type='number' name=`attr_${options.name}`)
+      input(type='number' name=`attr_${options.name}`)&attributes(inputOptions)
 
 mixin display(options)
   - options.html = options.html || {};
@@ -124,8 +130,8 @@ each options, list in spine.lists
               +display({name:'condition'})
               +display({name:'treatment'})
             mixin repeating-edit
-              +text-input({name:'condition', list:'knowledge-list', html:{class:'text-input--simple'}})
-              +text-input({name:'treatment', list:'knowledge-list', html:{class:'text-input--simple'}})
+              +text-input({name:'condition', placeholder:'condition', list:'knowledge-list', html:{class:'text-input--simple'}})
+              +text-input({name:'treatment', placeholder:'treatment', list:'knowledge-list', html:{class:'text-input--simple'}})
   .card.card--resolve
     .section.section--resolve
       h2
