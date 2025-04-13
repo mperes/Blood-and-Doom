@@ -1,5 +1,12 @@
 
 <div class="character">
+    <datalist id="knowledge-list">
+      <option data-i18n="history-and-culture"></option>
+      <option data-i18n="strategy-and-warfare"></option>
+      <option data-i18n="sailing-and-ships"></option>
+      <option data-i18n="occult-and-paranormal"></option>
+      <option data-i18n="monsters-and-myths"></option>
+    </datalist>
   <div class="sheet__container">
     <div class="card card--header"></div>
     <div class="card card--health-conditions">
@@ -70,62 +77,42 @@
           <div class="table__body">
             <div class="table__row">
                 <div class="text-input labelled text-input--simple">
-                  <label>
-                    <input type="text" name="attr_condition-1"/>
-                  </label>
+                  <input type="text" name="attr_condition-1"/>
                 </div>
                 <div class="text-input labelled text-input--simple">
-                  <label>
-                    <input type="text" name="attr_treatment-1"/>
-                  </label>
+                  <input type="text" name="attr_treatment-1"/>
                 </div>
             </div>
             <div class="table__row">
                 <div class="text-input labelled text-input--simple">
-                  <label>
-                    <input type="text" name="attr_condition-2"/>
-                  </label>
+                  <input type="text" name="attr_condition-2"/>
                 </div>
                 <div class="text-input labelled text-input--simple">
-                  <label>
-                    <input type="text" name="attr_treatment-2"/>
-                  </label>
+                  <input type="text" name="attr_treatment-2"/>
                 </div>
             </div>
             <div class="table__row">
                 <div class="text-input labelled text-input--simple">
-                  <label>
-                    <input type="text" name="attr_condition-3"/>
-                  </label>
+                  <input type="text" name="attr_condition-3"/>
                 </div>
                 <div class="text-input labelled text-input--simple">
-                  <label>
-                    <input type="text" name="attr_treatment-3"/>
-                  </label>
+                  <input type="text" name="attr_treatment-3"/>
                 </div>
             </div>
             <div class="table__row">
                 <div class="text-input labelled text-input--simple">
-                  <label>
-                    <input type="text" name="attr_condition-4"/>
-                  </label>
+                  <input type="text" name="attr_condition-4"/>
                 </div>
                 <div class="text-input labelled text-input--simple">
-                  <label>
-                    <input type="text" name="attr_treatment-4"/>
-                  </label>
+                  <input type="text" name="attr_treatment-4"/>
                 </div>
             </div>
             <div class="table__row">
                 <div class="text-input labelled text-input--simple">
-                  <label>
-                    <input type="text" name="attr_condition-5"/>
-                  </label>
+                  <input type="text" name="attr_condition-5"/>
                 </div>
                 <div class="text-input labelled text-input--simple">
-                  <label>
-                    <input type="text" name="attr_treatment-5"/>
-                  </label>
+                  <input type="text" name="attr_treatment-5"/>
                 </div>
             </div>
           </div>
@@ -134,8 +121,8 @@
     </div>
     <div class="card card--resolve">
       <div class="section section--resolve">
-        <h3><span class="translation"><span class="translation__key" data-i18n="resolve"></span></span>
-        </h3>
+        <h2><span class="translation"><span class="translation__key" data-i18n="resolve"></span></span>
+        </h2>
           <div class="number-input labelled number-input--simple">
             <label><span class="translation"><span class="translation__key" data-i18n="toughness"></span></span>
               <input type="number" name="attr_toughness"/>
@@ -165,8 +152,8 @@
     </div>
     <div class="card card--evasion-armor">
       <div class="section section--evasion">
-        <h3><span class="translation"><span class="translation__key" data-i18n="evasion"></span></span>
-        </h3>
+        <h2><span class="translation"><span class="translation__key" data-i18n="evasion"></span></span>
+        </h2>
         <div class="group group--evasion">
             <div class="number-input labelled number-input--simple number-input--align-center labelled--bottom-center">
               <label><span class="translation"><span class="translation__key" data-i18n="score"></span></span>
@@ -182,8 +169,8 @@
         </div>
       </div>
       <div class="section section--armor">
-        <h3><span class="translation"><span class="translation__key" data-i18n="armor"></span></span>
-        </h3>
+        <h2><span class="translation"><span class="translation__key" data-i18n="armor"></span></span>
+        </h2>
           <div class="number-input labelled number-input--simple number-input--align-center">
             <label><span class="translation"><img class="translation__image" src="https://i.postimg.cc/kXrkprDN/shield.png" alt="armor"/></span>
               <input type="number" name="attr_armor"/>
@@ -198,8 +185,8 @@
     </div>
     <div class="card card--abilities-skills">
       <div class="section section--abilities-skills">
-        <h3><span class="translation"><span class="translation__key" data-i18n="abilities-and-skills"></span></span>
-        </h3>
+        <h2><span class="translation"><span class="translation__key" data-i18n="abilities-and-skills"></span></span>
+        </h2>
         <div class="group group--abilities-skills">
           <div class="group group--body">
             <h2><span class="translation"><span class="translation__key" data-i18n="body"></span></span>
@@ -417,44 +404,45 @@
     <div class="card card--knowledge">
       <div class="section section--knowledge">
         <div class="group group--title">
-          <h3><span class="translation"><span class="translation__key" data-i18n="abilities-and-skills"></span></span>
-          </h3>
+          <h2><span class="translation"><span class="translation__key" data-i18n="abilities-and-skills"></span></span>
+          </h2>
             <div class="number-input labelled number-input--boxed">
               <label><span class="translation"><span class="translation__key" data-i18n="mind"></span></span>
                 <input type="number" name="attr_mind"/>
               </label>
             </div>
         </div>
-        <div class="group group--mind">
-            <div class="number-input labelled number-input--simple number-input--align-center">
-              <label><span class="translation"><span class="translation__key" data-i18n="history-and-culture"></span></span>
-                <input type="number" name="attr_history-and-culture"/>
-              </label>
+          <fieldset class="repeating_knowledge">
+            <div class="repeating-section">
+              <div class="repeating-section__toggle">
+                <label><img src="https://i.postimg.cc/cHrTTyZb/edit.png" data-i18n-alt="toggle-edit-mode"/>
+                  <input type="checkbox" name="attr_repeating-toggle"/>
+                </label>
+              </div>
+              <div class="repeating-section__view">
+                  <div class="display"><span name="attr_name"></span>
+                  </div>
+                  <div class="display"><span name="attr_score"></span>
+                  </div>
+              </div>
+              <div class="repeating-section__edit">
+                  <div class="text-input labelled text-input--simple">
+                    <input type="text" name="attr_name" list="knowledge-list"/>
+                  </div>
+                  <div class="number-input labelled number-input--simple">
+                    <input type="number" name="attr_score"/>
+                  </div>
+              </div>
             </div>
-            <div class="number-input labelled number-input--simple number-input--align-center">
-              <label><span class="translation"><span class="translation__key" data-i18n="strategy-and-warfare"></span></span>
-                <input type="number" name="attr_strategy-and-warfare"/>
-              </label>
-            </div>
-            <div class="number-input labelled number-input--simple number-input--align-center">
-              <label><span class="translation"><span class="translation__key" data-i18n="sailing-and-ships"></span></span>
-                <input type="number" name="attr_sailing-and-ships"/>
-              </label>
-            </div>
-            <div class="number-input labelled number-input--simple number-input--align-center">
-              <label><span class="translation"><span class="translation__key" data-i18n="occult-and-paranormal"></span></span>
-                <input type="number" name="attr_occult-and-paranormal"/>
-              </label>
-            </div>
-            <div class="number-input labelled number-input--simple number-input--align-center">
-              <label><span class="translation"><span class="translation__key" data-i18n="monsters-and-myths"></span></span>
-                <input type="number" name="attr_monsters-and-myths"/>
-              </label>
-            </div>
-        </div>
+          </fieldset>
       </div>
     </div>
-    <div class="card card--magic"></div>
+    <div class="card card--magic">
+      <section class="section--magic">
+        <h2><span class="translation"><span class="translation__key" data-i18n="magic"></span></span>
+        </h2>
+      </section>
+    </div>
     <div class="card card--weapons-armor-ammunition-unarmed"></div>
     <div class="card card--traits-powers-spells"></div>
   </div>

@@ -13,35 +13,86 @@ mixin translate(options)
 mixin rangebar(options)
   - options.html = options.html || {};
   .rangebar&attributes(options.html)
-    label
-      if options.label 
+    if options.label 
+      label
         +translate(options.label)
-      if options.steps && options.name
-        .rangebar__steps
-            each _, i in Array(options.steps)
-              - const step = options.steps - i;
-              input(type='checkbox' name=`attr_${options.name}` value=step)
+        if options.steps && options.name
+          .rangebar__steps
+              each _, i in Array(options.steps)
+                - const step = options.steps - i;
+                input(type='checkbox' name=`attr_${options.name}` value=step)
+    else if options.steps && options.name
+      .rangebar__steps
+        each _, i in Array(options.steps)
+          - const step = options.steps - i;
+          input(type='checkbox' name=`attr_${options.name}` value=step)
 
 mixin text-input(options)
   - options.html = options.html || {};
   .text-input.labelled&attributes(options.html)
     - delete options.html;
-    label
-      if options.label 
+    if options.label 
+      label
         +translate(options.label)
-      if options.name
+        if options.name
+          if options.list
+            input(type='text' name=`attr_${options.name}` list=options.list)
+          else
+            input(type='text' name=`attr_${options.name}`)
+    else if options.name
+      if options.list
+        input(type='text' name=`attr_${options.name}` list=options.list)
+      else
         input(type='text' name=`attr_${options.name}`)
 
 mixin number-input(options)
   - options.html = options.html || {};
   .number-input.labelled&attributes(options.html)
     - delete options.html;
-    label
-      if options.label 
+    if options.label 
+      label
         +translate(options.label)
-      if options.name
-        input(type='number' name=`attr_${options.name}`)
+        if options.name
+          input(type='number' name=`attr_${options.name}`)
+    else if options.name
+      input(type='number' name=`attr_${options.name}`)
 
+mixin display(options)
+  - options.html = options.html || {};
+  .display&attributes(options.html)
+    - delete options.html;
+    if options.label 
+      label
+        +translate(options.label)
+        if options.name
+          span(name=`attr_${options.name}`)
+    else if options.name
+      span(name=`attr_${options.name}`)
+
+mixin repeating-section(options)
+  - options.html = options.html || {};
+  block
+  fieldset(class=`repeating_${options.name}`)
+    .repeating-section&attributes(options.html)
+      - delete options.html;
+        .repeating-section__toggle
+          label
+            img(src=`${imgServer}/cHrTTyZb/edit.png` data-i18n-alt='toggle-edit-mode')
+            input(type='checkbox' name='attr_repeating-toggle')
+        .repeating-section__view
+          +repeating-view
+        .repeating-section__edit
+          +repeating-edit
+
+mixin data-list(options)
+  - options.html = options.html || {};
+  datalist(id=options.id)&attributes(options.html)
+    - delete options.html;
+    if options.list
+      each option in options.list
+        option(value=item data-i18n=option)
+
++data-list({id:'knowledge-list', list:spine.knowledge.mind})       
 .sheet__container
   .card.card--header
   .card.card--health-conditions
@@ -72,26 +123,26 @@ mixin number-input(options)
               +text-input({name:`treatment-${row}`, html:{class:'text-input--simple'}})
   .card.card--resolve
     .section.section--resolve
-      h3
+      h2
         +translate({key:'resolve'})
       each attribute in spine.resolve.attributes
         +number-input({name:attribute, label:{key:attribute}, html:{class:'number-input--simple'}})
   .card.card--evasion-armor
     .section.section--evasion
-      h3
+      h2
         +translate({key:'evasion'})
       .group.group--evasion
         +number-input({name:'evasion-score', label:{key:'score'}, html:{class:'number-input--simple number-input--align-center labelled--bottom-center'}})
         .group__separator /
         +number-input({name:'evasion-average', label:{key:'average'}, html:{class:'number-input--simple number-input--align-center labelled--bottom-center'}})
     .section.section--armor
-      h3
+      h2
         +translate({key:'armor'})
       +number-input({name:'armor', label:{image:'/kXrkprDN/shield.png', key:'armor'}, html:{class:'number-input--simple number-input--align-center'}})
       +number-input({name:'armor-empty', label:{image:'/fbhyzqHY/shield-empty.png', key:'armor-empty'}, html:{class:'number-input--simple number-input--align-center'}})
   .card.card--abilities-skills
     .section.section--abilities-skills
-      h3
+      h2
         +translate({key:'abilities-and-skills'})
       .group.group--abilities-skills
         each attributes, group in spine.abilitiesAndSkills
@@ -106,15 +157,20 @@ mixin number-input(options)
   .card.card--knowledge
     .section.section--knowledge
       .group.group--title
-        h3
+        h2
           +translate({key:'abilities-and-skills'})
-        each skills, attribute in spine.knowledge
-          +number-input({name:attribute, label:{key:attribute}, html:{class:'number-input--boxed'}})
-      each skills, attribute in spine.knowledge
-        .group(class=`group--${attribute}`)
-          each skill in skills
-            +number-input({name:skill, label:{key:skill}, html:{class:'number-input--simple number-input--align-center'}})
+        +number-input({name:'mind', label:{key:'mind'}, html:{class:'number-input--boxed'}})
+      +repeating-section({name:'knowledge'})
+        mixin repeating-view
+          +display({name:'name'})
+          +display({name:'score'})
+        mixin repeating-edit
+          +text-input({name:'name', list:'knowledge-list', html:{class:'text-input--simple'}})
+          +number-input({name:'score', html:{class:'number-input--simple'}})
   .card.card--magic
+    section.section--magic
+      h2
+        +translate({key:'magic'})
   .card.card--weapons-armor-ammunition-unarmed
   .card.card--traits-powers-spells
   
