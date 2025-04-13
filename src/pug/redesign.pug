@@ -93,7 +93,9 @@ mixin data-list(options)
       each option in options.list
         option(value=item data-i18n=option)
 
-+data-list({id:'knowledge-list', list:spine.knowledge.mind})       
+each options, list in spine.lists
+  +data-list({id:`${list}-list`, list:options})    
+   
 .sheet__container
   .card.card--header
   .card.card--health-conditions
