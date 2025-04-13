@@ -45,6 +45,21 @@
         }
       }
     }
+    &--top {
+      label {
+        display: flex;
+        flex-direction: column;
+      }
+      &-center {
+        label {
+          display: flex;
+          flex-direction: column;
+          span {
+            align-self: center;
+          }
+        }
+      }
+    }
   }
 
   .rangebar {
@@ -90,7 +105,7 @@
             display: none;
           }
         }
-        &:hover, &:focus-within {
+        &:hover {
           padding-left: 25px;
           .repeating-section__toggle {
             opacity: 1;
@@ -126,6 +141,7 @@
     display: grid;
     &__header {
       display: contents;
+      white-space: nowrap;
     }
     &__body {
       display: contents;
@@ -229,6 +245,8 @@
   }
   .card.card--weapons-armor-ammunition-unarmed {
     grid-area: weapons-armor-ammunition-unarmed;
+    display: grid;
+    grid-template-columns: 3fr 2fr; 
   }
   .card.card--traits-powers-spells {
     grid-area: traits-powers-spells;
@@ -239,6 +257,10 @@
   }
   .table--conditions {
     grid-template-columns: 1fr 100px;
+    gap: 10px;
+  }
+  .table--weapons {
+    grid-template-columns: 1fr min-content min-content 100px min-content;
     gap: 10px;
   }
   .section--abilities-skills {
@@ -284,6 +306,21 @@
       display: grid;
       grid-template-columns: 50px 1fr;
       gap: 10px;
+    }
+    .group--armor {
+      display: grid;
+      grid-template-columns: 1fr max-content;
+      gap: 10px;
+    }
+  }
+  .section--magic {
+    .group { 
+      display: flex;
+      gap: 10px;
+      align-items: end;
+      h3 {
+        white-space: nowrap;
+      }
     }
   }
   .sheet__container {

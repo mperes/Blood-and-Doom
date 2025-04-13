@@ -89,10 +89,6 @@
             </h3>
           </div>
           <div class="table__body">
-              <!--mixin repeating-view
-              +display({name:'condition'})
-              +display({name:'treatment'})
-              -->
               <div class="repeating-section repeating-section--edit-only">
                 <fieldset class="repeating_condition">
                   <div class="repeating-section__toggle"><img src="https://i.postimg.cc/cHrTTyZb/edit.png" data-i18n-alt="toggle-edit-mode"/>
@@ -182,8 +178,8 @@
         </h2>
         <div class="group group--abilities-skills">
           <div class="group group--body">
-            <h2><span class="translation"><span class="translation__key" data-i18n="body"></span></span>
-            </h2>
+            <h3><span class="translation"><span class="translation__key" data-i18n="body"></span></span>
+            </h3>
             <div class="group group--strength">
                 <div class="number-input labelled number-input--boxed">
                   <label><span class="translation"><span class="translation__key" data-i18n="strength"></span></span>
@@ -252,8 +248,8 @@
             </div>
           </div>
           <div class="group group--mind">
-            <h2><span class="translation"><span class="translation__key" data-i18n="mind"></span></span>
-            </h2>
+            <h3><span class="translation"><span class="translation__key" data-i18n="mind"></span></span>
+            </h3>
             <div class="group group--awareness">
                 <div class="number-input labelled number-input--boxed">
                   <label><span class="translation"><span class="translation__key" data-i18n="awareness"></span></span>
@@ -322,8 +318,8 @@
             </div>
           </div>
           <div class="group group--soul">
-            <h2><span class="translation"><span class="translation__key" data-i18n="soul"></span></span>
-            </h2>
+            <h3><span class="translation"><span class="translation__key" data-i18n="soul"></span></span>
+            </h3>
             <div class="group group--heart">
                 <div class="number-input labelled number-input--boxed">
                   <label><span class="translation"><span class="translation__key" data-i18n="heart"></span></span>
@@ -429,12 +425,129 @@
       </div>
     </div>
     <div class="card card--magic">
-      <section class="section--magic">
+      <div class="section section--magic">
         <h2><span class="translation"><span class="translation__key" data-i18n="magic"></span></span>
         </h2>
-      </section>
+        <div class="group group--spellcasting">
+          <h3><span class="translation"><span class="translation__key" data-i18n="spellcasting"></span></span>
+          </h3>
+            <div class="number-input labelled text-input--simple number-input--align-center labelled--top-center">
+              <label><span class="translation"><span class="translation__key" data-i18n="ability"></span></span>
+                <input type="number" name="attr_spellcasting-ability"/>
+              </label>
+            </div>
+            <div class="number-input labelled text-input--simple number-input--align-center labelled--top-center">
+              <label><span class="translation"><span class="translation__key" data-i18n="skill"></span></span>
+                <input type="number" name="attr_spellcasting-skill"/>
+              </label>
+            </div>
+            <div class="number-input labelled text-input--simple number-input--align-center labelled--top-center">
+              <label><span class="translation"><span class="translation__key" data-i18n="total"></span></span>
+                <input type="number" name="attr_spellcasting-total"/>
+              </label>
+            </div>
+        </div>
+        <div class="group group--magic-points">
+          <h3><span class="translation"><span class="translation__key" data-i18n="magic-points"></span></span>
+          </h3>
+            <div class="number-input labelled text-input--simple number-input--align-center labelled--top-center">
+              <label><span class="translation"><span class="translation__key" data-i18n="current"></span></span>
+                <input type="number" name="attr_spellcasting-current"/>
+              </label>
+            </div>
+            <div class="number-input labelled text-input--simple number-input--align-center labelled--top-center">
+              <label><span class="translation"><span class="translation__key" data-i18n="max"></span></span>
+                <input type="number" name="attr_spellcasting-max"/>
+              </label>
+            </div>
+        </div>
+      </div>
     </div>
-    <div class="card card--weapons-armor-ammunition-unarmed"></div>
+    <div class="card card--weapons-armor-ammunition-unarmed">
+      <div class="group group--weapons-armor">
+        <h2><span class="translation"><span class="translation__key" data-i18n="weapons-and-armor"></span></span>
+        </h2>
+        <div class="section section--weapons">
+          <h2><span class="translation"><span class="translation__key" data-i18n="weapons-and-armor"></span></span>
+          </h2>
+          <div class="table table--weapons">
+            <div class="table__header"><span class="translation"><span class="translation__key" data-i18n="name"></span></span><span class="translation"><span class="translation__key" data-i18n="ability-plus-skill"></span></span><span class="translation"><span class="translation__key" data-i18n="attributes"></span></span><span class="translation"><span class="translation__key" data-i18n="damage"></span></span><span class="translation"><span class="translation__key" data-i18n="heart"></span></span>
+            </div>
+            <div class="table__body">
+                <div class="repeating-section">
+                  <fieldset class="repeating_condition">
+                    <div class="repeating-section__toggle"><img src="https://i.postimg.cc/cHrTTyZb/edit.png" data-i18n-alt="toggle-edit-mode"/>
+                      <input type="checkbox" name="attr_repeating-toggle"/>
+                    </div>
+                    <div class="repeating-section__view">
+                        <div class="display text-input--simple"><span name="attr_name"></span>
+                        </div>
+                        <div class="display text-input--simple"><span name="attr_ability-skill"></span>
+                        </div>
+                        <div class="display text-input--simple"><span name="attr_attributes"></span>
+                        </div>
+                      <div class="group group--damage">
+                          <div class="display text-input--simple"><span name="attr_damage"></span>
+                          </div>
+                          <div class="display text-input--simple"><span name="attr_damage-type"></span>
+                          </div>
+                      </div>
+                        <div class="display text-input--simple"><span name="attr_heart"></span>
+                        </div>
+                    </div>
+                    <div class="repeating-section__edit">
+                        <div class="text-input labelled text-input--simple">
+                          <input type="text" name="attr_name"/>
+                        </div>
+                        <div class="text-input labelled text-input--simple">
+                          <input type="text" name="attr_ability-skill"/>
+                        </div>
+                        <div class="text-input labelled text-input--simple">
+                          <input type="text" name="attr_attributes"/>
+                        </div>
+                      <div class="group group--damage">
+                          <div class="text-input labelled text-input--simple">
+                            <input type="text" name="attr_damage"/>
+                          </div>
+                          <div class="text-input labelled text-input--simple">
+                            <input type="text" name="attr_damage-type"/>
+                          </div>
+                      </div>
+                        <div class="text-input labelled text-input--simple">
+                          <input type="text" name="attr_heart"/>
+                        </div>
+                    </div>
+                  </fieldset>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="section section--armor">
+          <h2><span class="translation"><span class="translation__key" data-i18n="armor"></span></span>
+          </h2>
+          <div class="group group--armor">
+              <div class="text-input labelled text-input--simple labelled--left">
+                <label><span class="translation"><span class="translation__key" data-i18n="armor-name-and-info"></span></span>
+                  <input type="text" name="attr_armor-name"/>
+                </label>
+              </div>
+              <div class="rangebar">
+                <div class="rangebar__steps">
+                  <input type="checkbox" name="attr_armor-score" value="5"/>
+                  <input type="checkbox" name="attr_armor-score" value="4"/>
+                  <input type="checkbox" name="attr_armor-score" value="3"/>
+                  <input type="checkbox" name="attr_armor-score" value="2"/>
+                  <input type="checkbox" name="attr_armor-score" value="1"/>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="section section--ammunition">
+        <h2><span class="translation"><span class="translation__key" data-i18n="ammunition"></span></span>
+        </h2>
+      </div>
+    </div>
     <div class="card card--traits-powers-spells"></div>
   </div>
 </div>

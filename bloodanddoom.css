@@ -40,6 +40,17 @@
 .ui-dialog .charsheet .labelled--bottom-center label span {
   align-self: center;
 }
+.ui-dialog .charsheet .labelled--top label {
+  display: flex;
+  flex-direction: column;
+}
+.ui-dialog .charsheet .labelled--top-center label {
+  display: flex;
+  flex-direction: column;
+}
+.ui-dialog .charsheet .labelled--top-center label span {
+  align-self: center;
+}
 .ui-dialog .charsheet .rangebar__steps {
   display: inline-flex;
   gap: 5px;
@@ -75,10 +86,10 @@
 .ui-dialog .charsheet .repeating-section:not(.repeating-section--edit-only) .repitem:has(.repeating-section__toggle input:checked) .repeating-section__edit {
   display: none;
 }
-.ui-dialog .charsheet .repeating-section:not(.repeating-section--edit-only) .repitem:hover, .ui-dialog .charsheet .repeating-section:not(.repeating-section--edit-only) .repitem:focus-within {
+.ui-dialog .charsheet .repeating-section:not(.repeating-section--edit-only) .repitem:hover {
   padding-left: 25px;
 }
-.ui-dialog .charsheet .repeating-section:not(.repeating-section--edit-only) .repitem:hover .repeating-section__toggle, .ui-dialog .charsheet .repeating-section:not(.repeating-section--edit-only) .repitem:focus-within .repeating-section__toggle {
+.ui-dialog .charsheet .repeating-section:not(.repeating-section--edit-only) .repitem:hover .repeating-section__toggle {
   opacity: 1;
 }
 .ui-dialog .charsheet .repeating-section:not(.repeating-section--edit-only) .repeating-section__toggle {
@@ -108,6 +119,7 @@
 }
 .ui-dialog .charsheet .table__header {
   display: contents;
+  white-space: nowrap;
 }
 .ui-dialog .charsheet .table__body {
   display: contents;
@@ -208,6 +220,8 @@
 }
 .ui-dialog .charsheet .card.card--weapons-armor-ammunition-unarmed {
   grid-area: weapons-armor-ammunition-unarmed;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
 }
 .ui-dialog .charsheet .card.card--traits-powers-spells {
   grid-area: traits-powers-spells;
@@ -218,6 +232,10 @@
 }
 .ui-dialog .charsheet .table--conditions {
   grid-template-columns: 1fr 100px;
+  gap: 10px;
+}
+.ui-dialog .charsheet .table--weapons {
+  grid-template-columns: 1fr min-content min-content 100px min-content;
   gap: 10px;
 }
 .ui-dialog .charsheet .section--abilities-skills .group--abilities-skills {
@@ -251,6 +269,19 @@
   display: grid;
   grid-template-columns: 50px 1fr;
   gap: 10px;
+}
+.ui-dialog .charsheet .section--armor .group--armor {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  gap: 10px;
+}
+.ui-dialog .charsheet .section--magic .group {
+  display: flex;
+  gap: 10px;
+  align-items: end;
+}
+.ui-dialog .charsheet .section--magic .group h3 {
+  white-space: nowrap;
 }
 .ui-dialog .charsheet .sheet__container {
   display: grid;

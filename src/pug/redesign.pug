@@ -126,9 +126,6 @@ each options, list in spine.lists
             +translate({key:'treatment'})
         .table__body
           +repeating-section({name:'condition', html:{class:'repeating-section--edit-only'}})
-            //mixin repeating-view
-              +display({name:'condition'})
-              +display({name:'treatment'})
             mixin repeating-edit
               +text-input({name:'condition', placeholder:'condition', list:'knowledge-list', html:{class:'text-input--simple'}})
               +text-input({name:'treatment', placeholder:'treatment', list:'knowledge-list', html:{class:'text-input--simple'}})
@@ -158,7 +155,7 @@ each options, list in spine.lists
       .group.group--abilities-skills
         each attributes, group in spine.abilitiesAndSkills
           .group(class=`group--${group}`)
-            h2
+            h3
               +translate({key:group})
             each skills, attribute in attributes
               .group(class=`group--${attribute}`)
@@ -179,9 +176,59 @@ each options, list in spine.lists
           +text-input({name:'name', list:'knowledge-list', html:{class:'text-input--simple'}})
           +number-input({name:'score', html:{class:'number-input--simple'}})
   .card.card--magic
-    section.section--magic
+    .section.section--magic
       h2
         +translate({key:'magic'})
+      .group.group--spellcasting
+        h3
+          +translate({key:'spellcasting'})
+        each attribute in ['ability', 'skill', 'total']
+          +number-input({name:`spellcasting-${attribute}`, label:{key:attribute}, html:{class:'text-input--simple number-input--align-center labelled--top-center'}})
+      .group.group--magic-points
+        h3
+          +translate({key:'magic-points'})
+        each attribute in ['current', 'max']
+          +number-input({name:`spellcasting-${attribute}`, label:{key:attribute}, html:{class:'text-input--simple number-input--align-center labelled--top-center'}})
   .card.card--weapons-armor-ammunition-unarmed
+    .group.group--weapons-armor
+      h2
+        +translate({key:'weapons-and-armor'})
+      .section.section--weapons
+        h2
+          +translate({key:'weapons-and-armor'})
+        .table.table--weapons
+          .table__header
+            +translate({key:'name'})  
+            +translate({key:'ability-plus-skill'})
+            +translate({key:'attributes'})
+            +translate({key:'damage'})
+            +translate({key:'heart'})
+          .table__body
+            +repeating-section({name:'condition'})
+              mixin repeating-view
+                +display({name:'name', html:{class:'text-input--simple'}})
+                +display({name:'ability-skill', html:{class:'text-input--simple'}})
+                +display({name:'attributes', html:{class:'text-input--simple'}})
+                .group.group--damage
+                  +display({name:'damage', html:{class:'text-input--simple'}})
+                  +display({name:'damage-type', html:{class:'text-input--simple'}})
+                +display({name:'heart', html:{class:'text-input--simple'}})
+              mixin repeating-edit
+                +text-input({name:'name', html:{class:'text-input--simple'}})
+                +text-input({name:'ability-skill', html:{class:'text-input--simple'}})
+                +text-input({name:'attributes', html:{class:'text-input--simple'}})
+                .group.group--damage
+                  +text-input({name:'damage', html:{class:'text-input--simple'}})
+                  +text-input({name:'damage-type', html:{class:'text-input--simple'}})
+                +text-input({name:'heart', html:{class:'text-input--simple'}})
+      .section.section--armor
+        h2
+          +translate({key:'armor'})
+        .group.group--armor
+          +text-input({name:'armor-name', label:{key:'armor-name-and-info'}, html:{class:'text-input--simple labelled--left'}})
+          +rangebar({name:'armor-score', steps: 5})
+    .section.section--ammunition
+      h2
+        +translate({key:'ammunition'})
   .card.card--traits-powers-spells
   
