@@ -61,16 +61,38 @@
   border-color: var(--primary-color);
 }
 .ui-dialog .charsheet .repeating-section__toggle {
+  display: none;
+}
+.ui-dialog .charsheet .repeating-section:not(.repeating-section--edit-only) .repitem {
+  position: relative;
+}
+.ui-dialog .charsheet .repeating-section:not(.repeating-section--edit-only) .repitem:not(:has(.repeating-section__toggle input:checked)) .repeating-section__view {
+  display: none;
+}
+.ui-dialog .charsheet .repeating-section:not(.repeating-section--edit-only) .repitem:not(:has(.repeating-section__toggle input:checked)) .repeating-section__toggle {
+  opacity: 1;
+}
+.ui-dialog .charsheet .repeating-section:not(.repeating-section--edit-only) .repitem:has(.repeating-section__toggle input:checked) .repeating-section__edit {
+  display: none;
+}
+.ui-dialog .charsheet .repeating-section:not(.repeating-section--edit-only) .repitem:hover, .ui-dialog .charsheet .repeating-section:not(.repeating-section--edit-only) .repitem:focus-within {
+  padding-left: 25px;
+}
+.ui-dialog .charsheet .repeating-section:not(.repeating-section--edit-only) .repitem:hover .repeating-section__toggle, .ui-dialog .charsheet .repeating-section:not(.repeating-section--edit-only) .repitem:focus-within .repeating-section__toggle {
+  opacity: 1;
+}
+.ui-dialog .charsheet .repeating-section:not(.repeating-section--edit-only) .repeating-section__toggle {
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
 }
-.ui-dialog .charsheet .repeating-section__toggle img {
+.ui-dialog .charsheet .repeating-section:not(.repeating-section--edit-only) .repeating-section__toggle img {
   width: 20px;
   height: 20px;
 }
-.ui-dialog .charsheet .repeating-section__toggle input {
+.ui-dialog .charsheet .repeating-section:not(.repeating-section--edit-only) .repeating-section__toggle input {
   position: absolute;
   border: 0;
   padding: 0;
@@ -81,18 +103,6 @@
   top: 0;
   left: 0;
 }
-.ui-dialog .charsheet .repeating-section:not(:has(.repeating-section__toggle input:checked)) .repeating-section__view {
-  display: none;
-}
-.ui-dialog .charsheet .repeating-section:has(.repeating-section__toggle input:checked) .repeating-section__edit {
-  display: none;
-}
-.ui-dialog .charsheet .repeating-section:hover, .ui-dialog .charsheet .repeating-section:focus-within {
-  padding-left: 25px;
-}
-.ui-dialog .charsheet .repeating-section:hover .repeating-section__toggle, .ui-dialog .charsheet .repeating-section:focus-within .repeating-section__toggle {
-  opacity: 1;
-}
 .ui-dialog .charsheet .table {
   display: grid;
 }
@@ -101,6 +111,14 @@
 }
 .ui-dialog .charsheet .table__body {
   display: contents;
+}
+.ui-dialog .charsheet .table__body .repeating-section, .ui-dialog .charsheet .table__body .repcontainer, .ui-dialog .charsheet .table__body .repitem, .ui-dialog .charsheet .table__body .repeating-section__view, .ui-dialog .charsheet .table__body .repeating-section__edit {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: subgrid;
+}
+.ui-dialog .charsheet .table__body .repcontrol {
+  grid-column: 1/-1;
 }
 .ui-dialog .charsheet .table__row {
   display: contents;

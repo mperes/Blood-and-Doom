@@ -72,17 +72,18 @@ mixin display(options)
 mixin repeating-section(options)
   - options.html = options.html || {};
   block
-  fieldset(class=`repeating_${options.name}`)
-    .repeating-section&attributes(options.html)
-      - delete options.html;
-        .repeating-section__toggle
-          label
-            img(src=`${imgServer}/cHrTTyZb/edit.png` data-i18n-alt='toggle-edit-mode')
-            input(type='checkbox' name='attr_repeating-toggle')
+  .repeating-section&attributes(options.html)
+    - const editOnly = options.html && options.html.class && options.html.class.includes('repeating-section--edit-only');
+    - delete options.html;
+    fieldset(class=`repeating_${options.name}`)
+      .repeating-section__toggle
+        img(src=`${imgServer}/cHrTTyZb/edit.png` data-i18n-alt='toggle-edit-mode')
+        input(type='checkbox' name='attr_repeating-toggle')
+      if !editOnly
         .repeating-section__view
           +repeating-view
-        .repeating-section__edit
-          +repeating-edit
+      .repeating-section__edit
+        +repeating-edit
 
 mixin data-list(options)
   - options.html = options.html || {};
@@ -116,11 +117,13 @@ mixin data-list(options)
           h3
             +translate({key:'treatment'})
         .table__body
-          each _, i in Array(spine.conditions.numberOfConditions)
-            - row = i + 1;
-            .table__row
-              +text-input({name:`condition-${row}`, html:{class:'text-input--simple'}})
-              +text-input({name:`treatment-${row}`, html:{class:'text-input--simple'}})
+          +repeating-section({name:'condition', html:{class:'repeating-section--edit-only'}})
+            //mixin repeating-view
+              +display({name:'condition'})
+              +display({name:'treatment'})
+            mixin repeating-edit
+              +text-input({name:'condition', list:'knowledge-list', html:{class:'text-input--simple'}})
+              +text-input({name:'treatment', list:'knowledge-list', html:{class:'text-input--simple'}})
   .card.card--resolve
     .section.section--resolve
       h2

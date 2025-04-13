@@ -72,40 +72,52 @@
 
   .repeating-section {
     &__toggle {
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      img {
-        width: 20px;
-        height: 20px;
+      display: none;
+    }
+    &:not(.repeating-section--edit-only) {
+      .repitem {
+        position: relative;
+        &:not(:has(.repeating-section__toggle input:checked)) {
+          .repeating-section__view {
+            display: none;
+          }
+          .repeating-section__toggle {
+            opacity: 1;
+          }
+        }
+        &:has(.repeating-section__toggle input:checked) {
+          .repeating-section__edit {
+            display: none;
+          }
+        }
+        &:hover, &:focus-within {
+          padding-left: 25px;
+          .repeating-section__toggle {
+            opacity: 1;
+          }
+        }
       }
-      input {
+      .repeating-section__toggle {
+        display: block;
         position: absolute;
-        border: 0;
-        padding: 0;
-        margin: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
         top: 0;
         left: 0;
-      }
-    }
-    &:not(:has(.repeating-section__toggle input:checked)) {
-      .repeating-section__view {
-        display: none;
-      }
-    }
-    &:has(.repeating-section__toggle input:checked) {
-      .repeating-section__edit {
-        display: none;
-      }
-    }
-    &:hover, &:focus-within {
-      padding-left: 25px;
-      .repeating-section__toggle {
-        opacity: 1;
+        opacity: 0;
+        img {
+          width: 20px;
+          height: 20px;
+        }
+        input {
+          position: absolute;
+          border: 0;
+          padding: 0;
+          margin: 0;
+          width: 100%;
+          height: 100%;
+          opacity: 0;
+          top: 0;
+          left: 0;
+        }
       }
     }
   }
@@ -117,6 +129,14 @@
     }
     &__body {
       display: contents;
+      .repeating-section, .repcontainer, .repitem, .repeating-section__view, .repeating-section__edit {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: subgrid;
+      }
+      .repcontrol {
+        grid-column: 1 / -1;
+      }
     }
     &__row {
       display: contents;

@@ -75,46 +75,25 @@
             </h3>
           </div>
           <div class="table__body">
-            <div class="table__row">
-                <div class="text-input labelled text-input--simple">
-                  <input type="text" name="attr_condition-1"/>
-                </div>
-                <div class="text-input labelled text-input--simple">
-                  <input type="text" name="attr_treatment-1"/>
-                </div>
-            </div>
-            <div class="table__row">
-                <div class="text-input labelled text-input--simple">
-                  <input type="text" name="attr_condition-2"/>
-                </div>
-                <div class="text-input labelled text-input--simple">
-                  <input type="text" name="attr_treatment-2"/>
-                </div>
-            </div>
-            <div class="table__row">
-                <div class="text-input labelled text-input--simple">
-                  <input type="text" name="attr_condition-3"/>
-                </div>
-                <div class="text-input labelled text-input--simple">
-                  <input type="text" name="attr_treatment-3"/>
-                </div>
-            </div>
-            <div class="table__row">
-                <div class="text-input labelled text-input--simple">
-                  <input type="text" name="attr_condition-4"/>
-                </div>
-                <div class="text-input labelled text-input--simple">
-                  <input type="text" name="attr_treatment-4"/>
-                </div>
-            </div>
-            <div class="table__row">
-                <div class="text-input labelled text-input--simple">
-                  <input type="text" name="attr_condition-5"/>
-                </div>
-                <div class="text-input labelled text-input--simple">
-                  <input type="text" name="attr_treatment-5"/>
-                </div>
-            </div>
+              <!--mixin repeating-view
+              +display({name:'condition'})
+              +display({name:'treatment'})
+              -->
+              <div class="repeating-section repeating-section--edit-only">
+                <fieldset class="repeating_condition">
+                  <div class="repeating-section__toggle"><img src="https://i.postimg.cc/cHrTTyZb/edit.png" data-i18n-alt="toggle-edit-mode"/>
+                    <input type="checkbox" name="attr_repeating-toggle"/>
+                  </div>
+                  <div class="repeating-section__edit">
+                      <div class="text-input labelled text-input--simple">
+                        <input type="text" name="attr_condition" list="knowledge-list"/>
+                      </div>
+                      <div class="text-input labelled text-input--simple">
+                        <input type="text" name="attr_treatment" list="knowledge-list"/>
+                      </div>
+                  </div>
+                </fieldset>
+              </div>
           </div>
         </div>
       </div>
@@ -412,12 +391,10 @@
               </label>
             </div>
         </div>
-          <fieldset class="repeating_knowledge">
-            <div class="repeating-section">
-              <div class="repeating-section__toggle">
-                <label><img src="https://i.postimg.cc/cHrTTyZb/edit.png" data-i18n-alt="toggle-edit-mode"/>
-                  <input type="checkbox" name="attr_repeating-toggle"/>
-                </label>
+          <div class="repeating-section">
+            <fieldset class="repeating_knowledge">
+              <div class="repeating-section__toggle"><img src="https://i.postimg.cc/cHrTTyZb/edit.png" data-i18n-alt="toggle-edit-mode"/>
+                <input type="checkbox" name="attr_repeating-toggle"/>
               </div>
               <div class="repeating-section__view">
                   <div class="display"><span name="attr_name"></span>
@@ -433,8 +410,8 @@
                     <input type="number" name="attr_score"/>
                   </div>
               </div>
-            </div>
-          </fieldset>
+            </fieldset>
+          </div>
       </div>
     </div>
     <div class="card card--magic">
