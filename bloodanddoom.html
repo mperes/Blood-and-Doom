@@ -537,9 +537,59 @@
             </div>
         </div>
       </div>
-      <div class="section section--ammunition">
-        <h2><span class="translation"><span class="translation__key" data-i18n="ammunition"></span></span>
-        </h2>
+      <div class="group group--ammunition-unarmed">
+        <div class="section section--ammunition">
+          <h2><span class="translation"><span class="translation__key" data-i18n="ammunition"></span></span>
+          </h2>
+          <div class="table table--ammunition">
+            <div class="table__header"><span class="translation"><span class="translation__key" data-i18n="name"></span></span><span class="translation"><span class="translation__key" data-i18n="quantity"></span></span>
+            </div>
+            <div class="table__body">
+                <div class="repeating-section repeating-section--edit-only">
+                  <fieldset class="repeating_ammunition">
+                    <div class="repeating-section__toggle"><img src="https://i.postimg.cc/cHrTTyZb/edit.png" data-i18n-alt="toggle-edit-mode"/>
+                      <input type="checkbox" name="attr_repeating-toggle"/>
+                    </div>
+                    <div class="repeating-section__edit">
+                        <div class="text-input labelled text-input--simple">
+                          <input type="text" name="attr_name"/>
+                        </div>
+                      <div class="group group--quantity">
+                          <div class="number-input labelled number-input--simple">
+                            <input type="number" name="attr_quantity-current"/>
+                          </div>
+                        <div class="group__separator">/</div>
+                          <div class="text-input labelled text-input--simple">
+                            <input type="text" name="attr_quantity-max"/>
+                          </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="section section--unarmed-attacks">
+          <h2><span class="translation"><span class="translation__key" data-i18n="unarmed-attacks"></span></span>
+          </h2>
+            <div class="text-input labelled text-input--simple labelled--left labelled--nowrap">
+              <label><span class="translation"><span class="translation__key" data-i18n="ability-plus-skill"></span></span>
+                <input type="text" name="attr_unarmed-attack-ability-skill"/>
+              </label>
+            </div>
+            <div class="text-input labelled text-input--simple labelled--left labelled--nowrap">
+              <label><span class="translation"><span class="translation__key" data-i18n="damage"></span></span>
+                <input type="text" name="attr_unarmed-attack-damage"/>
+              </label>
+            </div>
+        </div>
+        <div class="section section--combat-resolve-difficulty">
+            <div class="number-input labelled number-input--simple labelled--left labelled--nowrap">
+              <label><span class="translation"><span class="translation__key" data-i18n="combat-resolve-difficulty"></span></span>
+                <input type="number" name="attr_combat-resolve-difficulty"/>
+              </label>
+            </div>
+        </div>
       </div>
     </div>
     <div class="card card--traits-powers-spells"></div>

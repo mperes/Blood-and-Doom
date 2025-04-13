@@ -17,7 +17,7 @@
   .card {
     background-color: var(--background-color);
     border-radius: 5px;
-    padding: 10px;
+    padding: 15px;
   }
   
   .labelled {
@@ -252,7 +252,14 @@
   .card.card--weapons-armor-ammunition-unarmed {
     grid-area: weapons-armor-ammunition-unarmed;
     display: grid;
-    grid-template-columns: 3fr 2fr; 
+    grid-template-columns: 3fr 2fr;
+    .group.group--weapons-armor {
+      padding-right: 15px;
+    }
+    .group.group--ammunition-unarmed {
+      padding-left: 15px;
+      border-left: 1px solid var(--tertiary-color);
+    }
   }
   .card.card--traits-powers-spells {
     grid-area: traits-powers-spells;
@@ -268,6 +275,14 @@
   .table--weapons {
     grid-template-columns: 1fr min-content min-content 100px min-content;
     gap: 10px;
+  }
+  .table--ammunition {
+    grid-template-columns: 1fr 50px;
+    gap: 10px;
+    .group {
+      display: grid;
+      grid-template-columns: 1fr min-content 1fr;
+    }
   }
   .section--abilities-skills {
     .group--abilities-skills {

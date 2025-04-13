@@ -18,7 +18,7 @@
 .ui-dialog .charsheet .card {
   background-color: var(--background-color);
   border-radius: 5px;
-  padding: 10px;
+  padding: 15px;
 }
 .ui-dialog .charsheet .labelled {
   text-transform: capitalize;
@@ -226,6 +226,13 @@
   display: grid;
   grid-template-columns: 3fr 2fr;
 }
+.ui-dialog .charsheet .card.card--weapons-armor-ammunition-unarmed .group.group--weapons-armor {
+  padding-right: 15px;
+}
+.ui-dialog .charsheet .card.card--weapons-armor-ammunition-unarmed .group.group--ammunition-unarmed {
+  padding-left: 15px;
+  border-left: 1px solid var(--tertiary-color);
+}
 .ui-dialog .charsheet .card.card--traits-powers-spells {
   grid-area: traits-powers-spells;
 }
@@ -240,6 +247,14 @@
 .ui-dialog .charsheet .table--weapons {
   grid-template-columns: 1fr min-content min-content 100px min-content;
   gap: 10px;
+}
+.ui-dialog .charsheet .table--ammunition {
+  grid-template-columns: 1fr 50px;
+  gap: 10px;
+}
+.ui-dialog .charsheet .table--ammunition .group {
+  display: grid;
+  grid-template-columns: 1fr min-content 1fr;
 }
 .ui-dialog .charsheet .section--abilities-skills .group--abilities-skills {
   display: grid;

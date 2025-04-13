@@ -222,8 +222,28 @@ each options, list in spine.lists
       .section.section--armor-info
         +text-input({name:'armor-name', label:{key:'armor-name-and-info'}, html:{class:'text-input--simple labelled--left labelled--nowrap'}})
         +rangebar({name:'armor-score', steps: 5})
-    .section.section--ammunition
-      h2
-        +translate({key:'ammunition'})
+    .group.group--ammunition-unarmed
+      .section.section--ammunition
+        h2
+          +translate({key:'ammunition'})
+        .table.table--ammunition
+          .table__header
+            +translate({key:'name'})  
+            +translate({key:'quantity'})
+          .table__body
+            +repeating-section({name:'ammunition', html:{class:'repeating-section--edit-only'}})
+              mixin repeating-edit
+                +text-input({name:'name', html:{class:'text-input--simple'}})
+                .group.group--quantity
+                  +number-input({name:'quantity-current', html:{class:'number-input--simple'}})
+                  .group__separator /
+                  +text-input({name:'quantity-max', html:{class:'text-input--simple'}})
+      .section.section--unarmed-attacks
+        h2
+          +translate({key:'unarmed-attacks'})
+        +text-input({name:'unarmed-attack-ability-skill', label:{key:'ability-plus-skill'}, html:{class:'text-input--simple labelled--left labelled--nowrap'}})
+        +text-input({name:'unarmed-attack-damage', label:{key:'damage'}, html:{class:'text-input--simple labelled--left labelled--nowrap'}})
+      .section.section--combat-resolve-difficulty
+        +number-input({name:'combat-resolve-difficulty', label:{key:'combat-resolve-difficulty'}, html:{class:'number-input--simple labelled--left labelled--nowrap'}})
   .card.card--traits-powers-spells
   
