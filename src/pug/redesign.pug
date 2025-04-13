@@ -194,8 +194,6 @@ each options, list in spine.lists
       h2
         +translate({key:'weapons-and-armor'})
       .section.section--weapons
-        h2
-          +translate({key:'weapons-and-armor'})
         .table.table--weapons
           .table__header
             +translate({key:'name'})  
@@ -221,12 +219,9 @@ each options, list in spine.lists
                   +text-input({name:'damage', html:{class:'text-input--simple'}})
                   +text-input({name:'damage-type', html:{class:'text-input--simple'}})
                 +text-input({name:'heart', html:{class:'text-input--simple'}})
-      .section.section--armor
-        h2
-          +translate({key:'armor'})
-        .group.group--armor
-          +text-input({name:'armor-name', label:{key:'armor-name-and-info'}, html:{class:'text-input--simple labelled--left'}})
-          +rangebar({name:'armor-score', steps: 5})
+      .section.section--armor-info
+        +text-input({name:'armor-name', label:{key:'armor-name-and-info'}, html:{class:'text-input--simple labelled--left labelled--nowrap'}})
+        +rangebar({name:'armor-score', steps: 5})
     .section.section--ammunition
       h2
         +translate({key:'ammunition'})

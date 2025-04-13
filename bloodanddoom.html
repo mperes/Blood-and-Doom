@@ -468,8 +468,6 @@
         <h2><span class="translation"><span class="translation__key" data-i18n="weapons-and-armor"></span></span>
         </h2>
         <div class="section section--weapons">
-          <h2><span class="translation"><span class="translation__key" data-i18n="weapons-and-armor"></span></span>
-          </h2>
           <div class="table table--weapons">
             <div class="table__header"><span class="translation"><span class="translation__key" data-i18n="name"></span></span><span class="translation"><span class="translation__key" data-i18n="ability-plus-skill"></span></span><span class="translation"><span class="translation__key" data-i18n="attributes"></span></span><span class="translation"><span class="translation__key" data-i18n="damage"></span></span><span class="translation"><span class="translation__key" data-i18n="heart"></span></span>
             </div>
@@ -522,25 +520,21 @@
             </div>
           </div>
         </div>
-        <div class="section section--armor">
-          <h2><span class="translation"><span class="translation__key" data-i18n="armor"></span></span>
-          </h2>
-          <div class="group group--armor">
-              <div class="text-input labelled text-input--simple labelled--left">
-                <label><span class="translation"><span class="translation__key" data-i18n="armor-name-and-info"></span></span>
-                  <input type="text" name="attr_armor-name"/>
-                </label>
+        <div class="section section--armor-info">
+            <div class="text-input labelled text-input--simple labelled--left labelled--nowrap">
+              <label><span class="translation"><span class="translation__key" data-i18n="armor-name-and-info"></span></span>
+                <input type="text" name="attr_armor-name"/>
+              </label>
+            </div>
+            <div class="rangebar">
+              <div class="rangebar__steps">
+                <input type="checkbox" name="attr_armor-score" value="5"/>
+                <input type="checkbox" name="attr_armor-score" value="4"/>
+                <input type="checkbox" name="attr_armor-score" value="3"/>
+                <input type="checkbox" name="attr_armor-score" value="2"/>
+                <input type="checkbox" name="attr_armor-score" value="1"/>
               </div>
-              <div class="rangebar">
-                <div class="rangebar__steps">
-                  <input type="checkbox" name="attr_armor-score" value="5"/>
-                  <input type="checkbox" name="attr_armor-score" value="4"/>
-                  <input type="checkbox" name="attr_armor-score" value="3"/>
-                  <input type="checkbox" name="attr_armor-score" value="2"/>
-                  <input type="checkbox" name="attr_armor-score" value="1"/>
-                </div>
-              </div>
-          </div>
+            </div>
         </div>
       </div>
       <div class="section section--ammunition">

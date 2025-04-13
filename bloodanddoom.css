@@ -51,6 +51,9 @@
 .ui-dialog .charsheet .labelled--top-center label span {
   align-self: center;
 }
+.ui-dialog .charsheet .labelled--nowrap label .translation {
+  white-space: nowrap;
+}
 .ui-dialog .charsheet .rangebar__steps {
   display: inline-flex;
   gap: 5px;
@@ -271,6 +274,11 @@
   gap: 10px;
 }
 .ui-dialog .charsheet .section--armor .group--armor {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  gap: 10px;
+}
+.ui-dialog .charsheet .section--armor-info {
   display: grid;
   grid-template-columns: 1fr max-content;
   gap: 10px;

@@ -60,6 +60,12 @@
         }
       }
     }
+    &--nowrap
+    label {
+      .translation {
+        white-space: nowrap;
+      }
+    }
   }
 
   .rangebar {
@@ -312,6 +318,11 @@
       grid-template-columns: 1fr max-content;
       gap: 10px;
     }
+  }
+  .section--armor-info {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    gap: 10px;
   }
   .section--magic {
     .group { 
