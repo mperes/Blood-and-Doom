@@ -118,7 +118,7 @@
   left: 0;
 }
 .ui-dialog .charsheet .repeating-section--fixed .repcontrol_add {
-  display: none;
+  display: none !important;
 }
 .ui-dialog .charsheet .table {
   display: grid;
@@ -259,6 +259,11 @@
   display: grid;
   grid-template-columns: 1fr min-content 1fr;
 }
+.ui-dialog .charsheet .section--header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
 .ui-dialog .charsheet .section--abilities-skills .group--abilities-skills {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -321,7 +326,70 @@
 }
 .ui-dialog .charsheet .sheet__container {
   display: grid;
-  grid-template-areas: "header header header header header" "navigation navigation navigation navigation navigation" "health-conditions health-conditions health-conditions resolve evasion-armor" "abilities-skills abilities-skills abilities-skills knowledge knowledge" "abilities-skills abilities-skills abilities-skills magic magic" "weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed" "traits-powers-spells traits-powers-spells traits-powers-spells traits-powers-spells traits-powers-spells";
+  grid-template-areas: "header header header header header" "navigation navigation navigation navigation navigation" "pages pages pages pages pages";
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+.ui-dialog .charsheet .navigation {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  grid-area: navigation;
+}
+.ui-dialog .charsheet .navigation .tab {
+  position: relative;
+  background: var(--primary-color);
+}
+.ui-dialog .charsheet .navigation .tab label {
+  color: var(--background-color);
+}
+.ui-dialog .charsheet .navigation .tab input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.ui-dialog .charsheet .navigation .tab:has(input:checked) label {
+  color: red;
+}
+.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(1) input:checked)) + .tabbed .tab-content:nth-of-type(1) {
+  display: none;
+}
+.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(2) input:checked)) + .tabbed .tab-content:nth-of-type(2) {
+  display: none;
+}
+.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(3) input:checked)) + .tabbed .tab-content:nth-of-type(3) {
+  display: none;
+}
+.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(4) input:checked)) + .tabbed .tab-content:nth-of-type(4) {
+  display: none;
+}
+.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(5) input:checked)) + .tabbed .tab-content:nth-of-type(5) {
+  display: none;
+}
+.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(6) input:checked)) + .tabbed .tab-content:nth-of-type(6) {
+  display: none;
+}
+.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(7) input:checked)) + .tabbed .tab-content:nth-of-type(7) {
+  display: none;
+}
+.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(8) input:checked)) + .tabbed .tab-content:nth-of-type(8) {
+  display: none;
+}
+.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(9) input:checked)) + .tabbed .tab-content:nth-of-type(9) {
+  display: none;
+}
+.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(10) input:checked)) + .tabbed .tab-content:nth-of-type(10) {
+  display: none;
+}
+.ui-dialog .charsheet .pages {
+  grid-area: pages;
+}
+.ui-dialog .charsheet .page--1 {
+  display: grid;
+  grid-template-areas: "health-conditions health-conditions health-conditions resolve evasion-armor" "abilities-skills abilities-skills abilities-skills knowledge knowledge" "abilities-skills abilities-skills abilities-skills magic magic" "weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed" "traits-powers-spells traits-powers-spells traits-powers-spells traits-powers-spells traits-powers-spells";
   grid-template-columns: repeat(5, 1fr);
   gap: 10px;
 }
