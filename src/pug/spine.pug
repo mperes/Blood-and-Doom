@@ -18,6 +18,18 @@
         presence: ['connect', 'intimidation', 'leadership'],
       },
     },
+    fixedRepeatingSections: [
+      { 
+        name: 'ammunition',
+        fields: ['name', 'quantity'],
+        fixed: 2,
+      },
+      { 
+        name: 'weapon',
+        fields: ['name', 'ability-skill', 'attributes', 'damage', 'damage-type', 'heart'],
+        fixed: 4,
+      },
+    ],
     health: {
       bars: [
         { name: 'bruises', steps: 3, values: ['1-3'] },
@@ -34,5 +46,10 @@
     },
     resolve: {
       attributes: ['toughness', 'reflexes', 'focus', 'composure', 'willpower'],
+    },
+    traditions: {
+      a: '1-4',
+      b: '5-8',
+      c: '9-12',
     }
   };

@@ -117,6 +117,9 @@
   top: 0;
   left: 0;
 }
+.ui-dialog .charsheet .repeating-section--fixed .repcontrol_add {
+  display: none;
+}
 .ui-dialog .charsheet .table {
   display: grid;
 }
@@ -305,6 +308,16 @@
 }
 .ui-dialog .charsheet .section--magic .group h3 {
   white-space: nowrap;
+}
+.ui-dialog .charsheet .section--traits-powers-spells .group--title {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  gap: 10px;
+}
+.ui-dialog .charsheet .section--traits-powers-spells .group--traditions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
 .ui-dialog .charsheet .sheet__container {
   display: grid;

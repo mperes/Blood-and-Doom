@@ -1,0 +1,53 @@
+const spine = {
+  abilitiesAndSkills: {
+    body: {
+      strength: ['athletics', 'heavy-attack', 'unarmed-attack'],
+      dexterity: ['locks-and-traps', 'ranged-attack', 'sleight-of-hand'],
+      agility: ['acrobatics', 'finesse-attack', 'stealth'],
+    },
+    mind: {
+      awareness: ['navigation', 'perception', 'tracking'],
+      intellect: ['investigation', 'reason-and-logic', 'study-and-write'],
+      wisdom: ['animal-ken', 'healing', 'survival'],
+    },
+    soul: {
+      heart: ['empathy', 'insight', 'persuasion'],
+      mystique: ['charm', 'deception', 'performance'],
+      presence: ['connect', 'intimidation', 'leadership'],
+    },
+  },
+  fixedRepeatingSections: [
+    { 
+      name: 'ammunition',
+      fields: ['name', 'quantity'],
+      fixed: 2,
+    },
+    { 
+      name: 'weapon',
+      fields: ['name', 'ability-skill', 'attributes', 'damage', 'damage-type', 'heart'],
+      fixed: 4,
+    },
+  ],
+  health: {
+    bars: [
+      { name: 'bruises', steps: 3, values: ['1-3'] },
+      { name: 'scrapes', steps: 3, values: ['4-6'] },
+      { name: 'wounds', steps: 3, values: ['7-9'] },
+      { name: 'injuries', steps: 3, values: ['10-12','13+'] },
+      { name: 'madness', steps: 10 },
+    ]
+  },
+  lists: {
+    knowledge: ['history-and-culture', 'strategy-and-warfare', 'sailing-and-ships', 'occult-and-paranormal', 'monsters-and-myths'],
+    condition: ['history-and-culture', 'strategy-and-warfare', 'sailing-and-ships', 'occult-and-paranormal', 'monsters-and-myths'],
+    treatment: ['history-and-culture', 'strategy-and-warfare', 'sailing-and-ships', 'occult-and-paranormal', 'monsters-and-myths'],
+  },
+  resolve: {
+    attributes: ['toughness', 'reflexes', 'focus', 'composure', 'willpower'],
+  },
+  traditions: {
+    a: '1-4',
+    b: '5-8',
+    c: '9-12',
+  }
+};

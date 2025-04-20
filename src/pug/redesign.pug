@@ -202,7 +202,7 @@ each options, list in spine.lists
             +translate({key:'damage'})
             +translate({key:'heart'})
           .table__body
-            +repeating-section({name:'condition'})
+            +repeating-section({name:'weapon', html:{class:'repeating-section--fixed'}})
               mixin repeating-view
                 +display({name:'name', html:{class:'text-input--simple'}})
                 +display({name:'ability-skill', html:{class:'text-input--simple'}})
@@ -231,7 +231,7 @@ each options, list in spine.lists
             +translate({key:'name'})  
             +translate({key:'quantity'})
           .table__body
-            +repeating-section({name:'ammunition', html:{class:'repeating-section--edit-only'}})
+            +repeating-section({name:'ammunition', html:{class:'repeating-section--edit-only repeating-section--fixed'}})
               mixin repeating-edit
                 +text-input({name:'name', html:{class:'text-input--simple'}})
                 .group.group--quantity
@@ -246,4 +246,19 @@ each options, list in spine.lists
       .section.section--combat-resolve-difficulty
         +number-input({name:'combat-resolve-difficulty', label:{key:'combat-resolve-difficulty'}, html:{class:'number-input--simple labelled--left labelled--nowrap'}})
   .card.card--traits-powers-spells
-  
+    .section.section--traits-powers-spells
+      .group.group--title
+        h2
+          +translate({key:'traits-powers-spells'})
+        +number-input({name:'class-resolve-difficulty', label:{key:'class-resolve-difficulty'}, html:{class:'number-input--simple labelled--left labelled--nowrap'}})
+      .group.group--traditions
+        each levels, tradition in spine.traditions
+          .tradition(class=`tradition--${tradition}`)
+            h2
+              +translate({key:`tradition ${tradition}`})
+            span(data-i18n=`level-${levels}`)
+            +repeating-section({name:`tradition-${tradition}`, html:{class:'repeating-section--edit-only'}})
+              mixin repeating-edit
+                +text-input({name:'name', html:{class:'text-input--simple'}})
+                +number-input({name:'score', html:{class:'number-input--simple'}})
+                +text-input({name:'active', html:{class:'text-input--simple'}})

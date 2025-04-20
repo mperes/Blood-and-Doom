@@ -12,8 +12,11 @@
       "dom"
     ]
   },
+  "files": [
+    "src/Roll20.d.ts",
+    "src/ts/spine.ts"
+  ],
   "include": [
-    "src/ts/**/*",
-    "src/Roll20.d.ts"
+    "src/ts/**/*"
   ]
 }

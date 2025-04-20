@@ -119,3 +119,33 @@ on('sheet:opened', (e) => {
         )
     );
 });
+
+
+const addFixedRow = (name:string, rows:number) => {
+    if(!spine.fixedRepeatingSections.some((s) => s.name === name)) return;
+    const section = spine.fixedRepeatingSections.find((s) => s.name === name);
+    const newIDs = Array.from({ length: rows }, (_, i) => generateRowID());
+    const newAttrs: Record<string, string> = {};
+    newIDs.forEach((id) => {
+        section?.fields.forEach((field) => {
+            newAttrs[`repeating_${section.name}_${id}_${field}`] = '';
+        });
+    });
+    setAttrs(newAttrs, { silent: true });
+};
+on('sheet:opened', () => {
+    spine.fixedRepeatingSections.forEach((section) => {
+        getSectionIDs(section.name, (ids) => {
+            const total = ids.length;
+            const toAdd = section.fixed - total;
+            if (toAdd <= 0) return;
+            addFixedRow(section.name, toAdd);
+        });
+    });
+});
+
+spine.fixedRepeatingSections.forEach((section) => {
+    on(`remove:repeating_${section.name}`, function(eventInfo) {
+        addFixedRow(section.name, 1); 
+    });
+});

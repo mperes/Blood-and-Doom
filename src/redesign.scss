@@ -141,6 +141,11 @@
         }
       }
     }
+    &--fixed {
+      .repcontrol_add {
+        display: none;
+      }
+    }
   }
 
   .table {
@@ -347,6 +352,18 @@
       h3 {
         white-space: nowrap;
       }
+    }
+  }
+  .section--traits-powers-spells {
+    .group--title {
+      display: grid;
+      grid-template-columns: 1fr max-content;
+      gap: 10px;
+    }
+    .group--traditions {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
     }
   }
   .sheet__container {
