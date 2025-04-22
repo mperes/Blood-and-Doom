@@ -27,6 +27,20 @@ mixin rangebar(options)
           - const step = options.steps - i;
           input(type='checkbox' name=`attr_${options.name}` value=step)
 
+mixin textarea(options)
+  - 
+    options.html = options.html || {};
+    const inputOptions = {};
+    if(options.placeholder) inputOptions['data-i18n-placeholder'] = options.placeholder;
+  .textarea.labelled&attributes(options.html)
+    - delete options.html;
+    if options.label 
+      label
+        +translate(options.label)
+        textarea(name=`attr_${options.name}`)&attributes(inputOptions)
+    else
+      textarea(name=`attr_${options.name}`)&attributes(inputOptions)
+      
 mixin text-input(options)
   - 
     options.html = options.html || {};

@@ -1,6 +1,58 @@
 .card.card--avatar-corruption
   .section.section--avatar
+    img(name='attr_character_avatar')
   .section.section--corruption
-
+    +rangebar({name:'corruption', steps: 6, label:{key:'corruption'}, html:{class:'labelled--top-center'}})
 .card.card--roleplay
   .section.section--roleplay
+    .tabs
+      each tab in spine.roleplay
+        +tab({name:tab, key:tab, group:'current-roleplay', html:{class:'tab--roleplay'}})
+    .tabbed
+      each tab in spine.roleplay
+        +textarea({name:`attr_${tab}`, html:{class:'tab-content textarea--simple'}})
+.card.card--proficiencies-languages-feats-spells
+  each section in ['proficiencies', 'languages', 'feats', 'discovered-spells']
+    .section(class=`section--${section}`)
+      h2
+        +translate({key:section})
+      +repeating-section({name:section, html:{class:'repeating-section--edit-only'}})
+        mixin repeating-edit
+          +text-input({name:'name', html:{class:'text-input--simple'}})
+.card.card--wealth
+  .section.section--coinage
+    .group.group--coinage
+      +number-input({name:'silver', label:{key:'silver'}, html:{class:'number-input--simple'}})
+      +number-input({name:'gold', label:{key:'gold'}, html:{class:'number-input--simple'}})
+    +text-input({name:'assets', label:{key:'assets'}, html:{class:'text-input--simple'}})
+  .section.section--treasure
+    h2
+      +translate({key:'misc-items-and-treasure'})
+    +repeating-section({name:'treasure'})
+      mixin repeating-view
+        +display({name:'name'})
+        +display({name:'description'})
+      mixin repeating-edit
+        +text-input({name:'name', list:'knowledge-list', html:{class:'text-input--simple'}})
+        +textarea({name:'description', html:{class:'textarea--simple'}})
+.card.card--equipment
+  .section.section--equipment
+    h2
+      +translate({key:'equipment'})
+    .table.table--weapons
+      .table__header
+        +translate({key:'name'})  
+        +translate({key:'info'})
+        +translate({key:'heart'})
+        +translate({key:'quantity'})
+      .table__body
+        +repeating-section({name:'equipment', html:{class:'repeating-section--edit-only'}})
+          mixin repeating-edit
+            +text-input({name:'name', html:{class:'text-input--simple'}})
+            +text-input({name:'info', html:{class:'text-input--simple'}})
+            +text-input({name:'dented', html:{class:'text-input--simple'}})
+            .group.group--quantity
+              +number-input({name:'quantity-current', html:{class:'number-input--simple'}})
+              .group__separator /
+              +text-input({name:'quantity-max', html:{class:'text-input--simple'}})
+
