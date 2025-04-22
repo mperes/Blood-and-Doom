@@ -27,6 +27,26 @@ const spine = {
       fields: ['name', 'ability-skill', 'attributes', 'damage', 'damage-type', 'heart'],
       fixed: 4,
     },
+    { 
+      name: 'proficiencies',
+      fields: ['name'],
+      fixed: 6,
+    },
+    { 
+      name: 'languages',
+      fields: ['name'],
+      fixed: 6,
+    },
+    { 
+      name: 'feats',
+      fields: ['name'],
+      fixed: 6,
+    },
+    { 
+      name: 'discovered-spells',
+      fields: ['name'],
+      fixed: 6,
+    }
   ],
   health: {
     bars: [
@@ -42,9 +62,11 @@ const spine = {
     condition: ['history-and-culture', 'strategy-and-warfare', 'sailing-and-ships', 'occult-and-paranormal', 'monsters-and-myths'],
     treatment: ['history-and-culture', 'strategy-and-warfare', 'sailing-and-ships', 'occult-and-paranormal', 'monsters-and-myths'],
   },
+  pages: ['page-1', 'page-2', 'page-3'],
   resolve: {
     attributes: ['toughness', 'reflexes', 'focus', 'composure', 'willpower'],
   },
+  roleplay: ['appearance', 'personality', 'origin', 'bonds', 'drives', 'belief', 'background'],
   traditions: {
     a: '1-4',
     b: '5-8',
