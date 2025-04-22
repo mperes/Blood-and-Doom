@@ -6,6 +6,7 @@
 .card.card--roleplay
   .section.section--roleplay
     .tabs
+      input(type='hidden' name='attr_current-roleplay')
       each tab in spine.roleplay
         +tab({name:tab, key:tab, group:'current-roleplay', html:{class:'tab--roleplay'}})
     .tabbed

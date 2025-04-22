@@ -337,13 +337,18 @@
   grid-area: navigation;
 }
 .ui-dialog .charsheet .navigation .tab {
-  position: relative;
   background: var(--primary-color);
 }
 .ui-dialog .charsheet .navigation .tab label {
   color: var(--background-color);
 }
-.ui-dialog .charsheet .navigation .tab input {
+.ui-dialog .charsheet .navigation .tab:has(input:checked) label {
+  color: red;
+}
+.ui-dialog .charsheet .tabs .tab {
+  position: relative;
+}
+.ui-dialog .charsheet .tabs .tab input {
   position: absolute;
   top: 0;
   left: 0;
@@ -351,37 +356,34 @@
   height: 100%;
   opacity: 0;
 }
-.ui-dialog .charsheet .navigation .tab:has(input:checked) label {
-  color: red;
-}
-.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(1) input:checked)) + .tabbed .tab-content:nth-of-type(1) {
+.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(1) input:checked)) + .tabbed > .tab-content:nth-of-type(1) {
   display: none;
 }
-.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(2) input:checked)) + .tabbed .tab-content:nth-of-type(2) {
+.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(2) input:checked)) + .tabbed > .tab-content:nth-of-type(2) {
   display: none;
 }
-.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(3) input:checked)) + .tabbed .tab-content:nth-of-type(3) {
+.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(3) input:checked)) + .tabbed > .tab-content:nth-of-type(3) {
   display: none;
 }
-.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(4) input:checked)) + .tabbed .tab-content:nth-of-type(4) {
+.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(4) input:checked)) + .tabbed > .tab-content:nth-of-type(4) {
   display: none;
 }
-.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(5) input:checked)) + .tabbed .tab-content:nth-of-type(5) {
+.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(5) input:checked)) + .tabbed > .tab-content:nth-of-type(5) {
   display: none;
 }
-.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(6) input:checked)) + .tabbed .tab-content:nth-of-type(6) {
+.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(6) input:checked)) + .tabbed > .tab-content:nth-of-type(6) {
   display: none;
 }
-.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(7) input:checked)) + .tabbed .tab-content:nth-of-type(7) {
+.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(7) input:checked)) + .tabbed > .tab-content:nth-of-type(7) {
   display: none;
 }
-.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(8) input:checked)) + .tabbed .tab-content:nth-of-type(8) {
+.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(8) input:checked)) + .tabbed > .tab-content:nth-of-type(8) {
   display: none;
 }
-.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(9) input:checked)) + .tabbed .tab-content:nth-of-type(9) {
+.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(9) input:checked)) + .tabbed > .tab-content:nth-of-type(9) {
   display: none;
 }
-.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(10) input:checked)) + .tabbed .tab-content:nth-of-type(10) {
+.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(10) input:checked)) + .tabbed > .tab-content:nth-of-type(10) {
   display: none;
 }
 .ui-dialog .charsheet .pages {
