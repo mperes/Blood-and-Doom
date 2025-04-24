@@ -1,6 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400,500,700,800|Merriweather:400,700,900&display=swap");
 :root {
+  --base-size: 10px;
+  --font-size-small: calc(var(--base-size) * 1.1);
+  --font-size-medium: calc(var(--base-size) * 1.3);
+  --font-size-large: calc(var(--base-size) * 1.6);
+  --font-size-xlarge: calc(var(--base-size) * 1.9);
   --primary-color: #484637;
+  --highlight-color: #484637;
   --secondary-color: #2ecc71;
   --tertiary-color: #b2af9b;
   --background-color: #d9d8cf;
@@ -8,58 +14,66 @@
   --font-family: "Arial", sans-serif;
 }
 
-.ui-dialog .charsheet {
+.ui-dialog .characterviewer .charsheet {
   color: var(--text-color);
-  /* SPECIFIC */
+  font-size: var(--font-size-medium);
+  font-weight: 500;
 }
-.ui-dialog .charsheet h1, .ui-dialog .charsheet h2, .ui-dialog .charsheet h3, .ui-dialog .charsheet h4, .ui-dialog .charsheet h5, .ui-dialog .charsheet h6 {
-  text-transform: capitalize;
+.ui-dialog .characterviewer .charsheet label {
+  padding-right: 0;
+  margin-bottom: 0;
 }
-.ui-dialog .charsheet .card {
+.ui-dialog .characterviewer .charsheet .card {
   background-color: var(--background-color);
   border-radius: 5px;
   padding: 15px;
 }
-.ui-dialog .charsheet .labelled {
+.ui-dialog .characterviewer .charsheet .labelled {
   text-transform: capitalize;
 }
-.ui-dialog .charsheet .labelled--left label {
+.ui-dialog .characterviewer .charsheet .labelled--left label {
   display: flex;
 }
-.ui-dialog .charsheet .labelled--left label .translation {
+.ui-dialog .characterviewer .charsheet .labelled--left label .translation {
   width: fit-content;
 }
-.ui-dialog .charsheet .labelled--bottom label {
+.ui-dialog .characterviewer .charsheet .labelled--bottom label {
   display: flex;
   flex-direction: column-reverse;
 }
-.ui-dialog .charsheet .labelled--bottom-center label {
+.ui-dialog .characterviewer .charsheet .labelled--bottom-center label {
   display: flex;
   flex-direction: column-reverse;
 }
-.ui-dialog .charsheet .labelled--bottom-center label span {
+.ui-dialog .characterviewer .charsheet .labelled--bottom-center label span {
   align-self: center;
 }
-.ui-dialog .charsheet .labelled--top label {
+.ui-dialog .characterviewer .charsheet .labelled--top label {
   display: flex;
   flex-direction: column;
+  align-items: start;
 }
-.ui-dialog .charsheet .labelled--top-center label {
+.ui-dialog .characterviewer .charsheet .labelled--top-center label {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
-.ui-dialog .charsheet .labelled--top-center label span {
+.ui-dialog .characterviewer .charsheet .labelled--top-center label span {
   align-self: center;
 }
-.ui-dialog .charsheet .labelled--nowrap label .translation {
+.ui-dialog .characterviewer .charsheet .labelled--nowrap label .translation {
   white-space: nowrap;
 }
-.ui-dialog .charsheet .rangebar__steps {
+.ui-dialog .characterviewer .charsheet .labelled label {
+  font-size: var(--font-size-medium);
+  font-weight: 500;
+}
+.ui-dialog .characterviewer .charsheet .rangebar__steps {
   display: inline-flex;
   gap: 5px;
   flex-direction: row-reverse;
 }
-.ui-dialog .charsheet .rangebar__steps input {
+.ui-dialog .characterviewer .charsheet .rangebar__steps input {
   appearance: none;
   background-color: transparent;
   box-sizing: border-box;
@@ -67,46 +81,46 @@
   height: 20px;
   border: 2px solid var(--tertiary-color);
 }
-.ui-dialog .charsheet .rangebar__steps input:focus {
+.ui-dialog .characterviewer .charsheet .rangebar__steps input:focus {
   outline: none;
 }
-.ui-dialog .charsheet .rangebar__steps input:checked,
-.ui-dialog .charsheet .rangebar__steps input:checked ~ input {
+.ui-dialog .characterviewer .charsheet .rangebar__steps input:checked,
+.ui-dialog .characterviewer .charsheet .rangebar__steps input:checked ~ input {
   border-color: var(--primary-color);
 }
-.ui-dialog .charsheet .repeating-section__toggle {
+.ui-dialog .characterviewer .charsheet .repeating-section__toggle {
   display: none;
 }
-.ui-dialog .charsheet .repeating-section:not(.repeating-section--edit-only) .repitem {
+.ui-dialog .characterviewer .charsheet .repeating-section:not(.repeating-section--edit-only) .repitem {
   position: relative;
 }
-.ui-dialog .charsheet .repeating-section:not(.repeating-section--edit-only) .repitem:not(:has(.repeating-section__toggle input:checked)) .repeating-section__view {
+.ui-dialog .characterviewer .charsheet .repeating-section:not(.repeating-section--edit-only) .repitem:not(:has(.repeating-section__toggle input:checked)) .repeating-section__view {
   display: none;
 }
-.ui-dialog .charsheet .repeating-section:not(.repeating-section--edit-only) .repitem:not(:has(.repeating-section__toggle input:checked)) .repeating-section__toggle {
+.ui-dialog .characterviewer .charsheet .repeating-section:not(.repeating-section--edit-only) .repitem:not(:has(.repeating-section__toggle input:checked)) .repeating-section__toggle {
   opacity: 1;
 }
-.ui-dialog .charsheet .repeating-section:not(.repeating-section--edit-only) .repitem:has(.repeating-section__toggle input:checked) .repeating-section__edit {
+.ui-dialog .characterviewer .charsheet .repeating-section:not(.repeating-section--edit-only) .repitem:has(.repeating-section__toggle input:checked) .repeating-section__edit {
   display: none;
 }
-.ui-dialog .charsheet .repeating-section:not(.repeating-section--edit-only) .repitem:hover {
+.ui-dialog .characterviewer .charsheet .repeating-section:not(.repeating-section--edit-only) .repitem:hover {
   padding-left: 25px;
 }
-.ui-dialog .charsheet .repeating-section:not(.repeating-section--edit-only) .repitem:hover .repeating-section__toggle {
+.ui-dialog .characterviewer .charsheet .repeating-section:not(.repeating-section--edit-only) .repitem:hover .repeating-section__toggle {
   opacity: 1;
 }
-.ui-dialog .charsheet .repeating-section:not(.repeating-section--edit-only) .repeating-section__toggle {
+.ui-dialog .characterviewer .charsheet .repeating-section:not(.repeating-section--edit-only) .repeating-section__toggle {
   display: block;
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
 }
-.ui-dialog .charsheet .repeating-section:not(.repeating-section--edit-only) .repeating-section__toggle img {
+.ui-dialog .characterviewer .charsheet .repeating-section:not(.repeating-section--edit-only) .repeating-section__toggle img {
   width: 20px;
   height: 20px;
 }
-.ui-dialog .charsheet .repeating-section:not(.repeating-section--edit-only) .repeating-section__toggle input {
+.ui-dialog .characterviewer .charsheet .repeating-section:not(.repeating-section--edit-only) .repeating-section__toggle input {
   position: absolute;
   border: 0;
   padding: 0;
@@ -117,32 +131,42 @@
   top: 0;
   left: 0;
 }
-.ui-dialog .charsheet .repeating-section--fixed .repcontrol_add {
+.ui-dialog .characterviewer .charsheet .repeating-section--fixed .repcontrol_add {
   display: none !important;
 }
-.ui-dialog .charsheet .table {
+.ui-dialog .characterviewer .charsheet .table {
   display: grid;
 }
-.ui-dialog .charsheet .table__header {
-  display: contents;
+.ui-dialog .characterviewer .charsheet .table__header {
   white-space: nowrap;
-}
-.ui-dialog .charsheet .table__body {
-  display: contents;
-}
-.ui-dialog .charsheet .table__body .repeating-section, .ui-dialog .charsheet .table__body .repcontainer, .ui-dialog .charsheet .table__body .repitem, .ui-dialog .charsheet .table__body .repeating-section__view, .ui-dialog .charsheet .table__body .repeating-section__edit {
   grid-column: 1/-1;
   display: grid;
   grid-template-columns: subgrid;
 }
-.ui-dialog .charsheet .table__body .repcontrol {
-  grid-column: 1/-1;
-}
-.ui-dialog .charsheet .table__row {
+.ui-dialog .characterviewer .charsheet .table__body {
   display: contents;
 }
-.ui-dialog .charsheet .text-input input,
-.ui-dialog .charsheet .number-input input {
+.ui-dialog .characterviewer .charsheet .table__body .repeating-section, .ui-dialog .characterviewer .charsheet .table__body .repcontainer, .ui-dialog .characterviewer .charsheet .table__body .repitem, .ui-dialog .characterviewer .charsheet .table__body .repeating-section__view, .ui-dialog .characterviewer .charsheet .table__body .repeating-section__edit {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: subgrid;
+}
+.ui-dialog .characterviewer .charsheet .table__body .repcontrol {
+  grid-column: 1/-1;
+}
+.ui-dialog .characterviewer .charsheet .table__row {
+  display: contents;
+}
+.ui-dialog .characterviewer .charsheet .table--highlighted .table__header {
+  background-color: var(--highlight-color);
+  color: var(--background-color);
+  border-radius: 5px 5px 0 0;
+}
+.ui-dialog .characterviewer .charsheet .table--highlighted .table__header .translation {
+  padding: 5px 10px;
+}
+.ui-dialog .characterviewer .charsheet .text-input input,
+.ui-dialog .characterviewer .charsheet .number-input input {
   background-color: transparent;
   width: 100%;
   box-sizing: border-box;
@@ -150,36 +174,36 @@
   border-radius: 0;
   font-weight: bold;
 }
-.ui-dialog .charsheet .text-input input:focus,
-.ui-dialog .charsheet .number-input input:focus {
+.ui-dialog .characterviewer .charsheet .text-input input:focus,
+.ui-dialog .characterviewer .charsheet .number-input input:focus {
   outline: none;
 }
-.ui-dialog .charsheet .text-input--simple input, .ui-dialog .charsheet .text-input--boxed input,
-.ui-dialog .charsheet .number-input--simple input,
-.ui-dialog .charsheet .number-input--boxed input {
+.ui-dialog .characterviewer .charsheet .text-input--simple input, .ui-dialog .characterviewer .charsheet .text-input--boxed input,
+.ui-dialog .characterviewer .charsheet .number-input--simple input,
+.ui-dialog .characterviewer .charsheet .number-input--boxed input {
   border-bottom: 1px solid var(--tertiary-color);
 }
-.ui-dialog .charsheet .text-input--simple input::-webkit-outer-spin-button, .ui-dialog .charsheet .text-input--simple input::-webkit-inner-spin-button, .ui-dialog .charsheet .text-input--boxed input::-webkit-outer-spin-button, .ui-dialog .charsheet .text-input--boxed input::-webkit-inner-spin-button,
-.ui-dialog .charsheet .number-input--simple input::-webkit-outer-spin-button,
-.ui-dialog .charsheet .number-input--simple input::-webkit-inner-spin-button,
-.ui-dialog .charsheet .number-input--boxed input::-webkit-outer-spin-button,
-.ui-dialog .charsheet .number-input--boxed input::-webkit-inner-spin-button {
+.ui-dialog .characterviewer .charsheet .text-input--simple input::-webkit-outer-spin-button, .ui-dialog .characterviewer .charsheet .text-input--simple input::-webkit-inner-spin-button, .ui-dialog .characterviewer .charsheet .text-input--boxed input::-webkit-outer-spin-button, .ui-dialog .characterviewer .charsheet .text-input--boxed input::-webkit-inner-spin-button,
+.ui-dialog .characterviewer .charsheet .number-input--simple input::-webkit-outer-spin-button,
+.ui-dialog .characterviewer .charsheet .number-input--simple input::-webkit-inner-spin-button,
+.ui-dialog .characterviewer .charsheet .number-input--boxed input::-webkit-outer-spin-button,
+.ui-dialog .characterviewer .charsheet .number-input--boxed input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-.ui-dialog .charsheet .text-input--simple input[type=number], .ui-dialog .charsheet .text-input--boxed input[type=number],
-.ui-dialog .charsheet .number-input--simple input[type=number],
-.ui-dialog .charsheet .number-input--boxed input[type=number] {
+.ui-dialog .characterviewer .charsheet .text-input--simple input[type=number], .ui-dialog .characterviewer .charsheet .text-input--boxed input[type=number],
+.ui-dialog .characterviewer .charsheet .number-input--simple input[type=number],
+.ui-dialog .characterviewer .charsheet .number-input--boxed input[type=number] {
   -moz-appearance: textfield;
 }
-.ui-dialog .charsheet .text-input--boxed label,
-.ui-dialog .charsheet .number-input--boxed label {
+.ui-dialog .characterviewer .charsheet .text-input--boxed label,
+.ui-dialog .characterviewer .charsheet .number-input--boxed label {
   display: grid;
   grid-template-columns: 1fr 50px;
   align-items: center;
 }
-.ui-dialog .charsheet .text-input--boxed label .translation,
-.ui-dialog .charsheet .number-input--boxed label .translation {
+.ui-dialog .characterviewer .charsheet .text-input--boxed label .translation,
+.ui-dialog .characterviewer .charsheet .number-input--boxed label .translation {
   text-transform: uppercase;
   color: var(--background-color);
   background-color: var(--primary-color);
@@ -189,166 +213,26 @@
   box-sizing: border-box;
   clip-path: polygon(5px 0, 100% 0, 100% 100%, 5px 100%, 0 calc(100% - 5px), 0 5px);
 }
-.ui-dialog .charsheet .text-input--boxed label input,
-.ui-dialog .charsheet .number-input--boxed label input {
+.ui-dialog .characterviewer .charsheet .text-input--boxed label input,
+.ui-dialog .characterviewer .charsheet .number-input--boxed label input {
   height: 50px;
   box-sizing: border-box;
   border: 3px solid var(--primary-color);
 }
-.ui-dialog .charsheet .text-input--align-center input,
-.ui-dialog .charsheet .number-input--align-center input {
+.ui-dialog .characterviewer .charsheet .text-input--align-center input,
+.ui-dialog .characterviewer .charsheet .number-input--align-center input {
   text-align: center;
 }
-.ui-dialog .charsheet .text-input--align-right input,
-.ui-dialog .charsheet .number-input--align-right input {
+.ui-dialog .characterviewer .charsheet .text-input--align-right input,
+.ui-dialog .characterviewer .charsheet .number-input--align-right input {
   text-align: right;
 }
-.ui-dialog .charsheet .card.card--header {
-  grid-area: header;
-}
-.ui-dialog .charsheet .card.card--health-conditions {
-  grid-area: health-conditions;
-}
-.ui-dialog .charsheet .card.card--resolve {
-  grid-area: resolve;
-}
-.ui-dialog .charsheet .card.card--evasion-armor {
-  grid-area: evasion-armor;
-}
-.ui-dialog .charsheet .card.card--abilities-skills {
-  grid-area: abilities-skills;
-}
-.ui-dialog .charsheet .card.card--knowledge {
-  grid-area: knowledge;
-}
-.ui-dialog .charsheet .card.card--magic {
-  grid-area: magic;
-}
-.ui-dialog .charsheet .card.card--weapons-armor-ammunition-unarmed {
-  grid-area: weapons-armor-ammunition-unarmed;
-  display: grid;
-  grid-template-columns: 3fr 2fr;
-}
-.ui-dialog .charsheet .card.card--weapons-armor-ammunition-unarmed .group.group--weapons-armor {
-  padding-right: 15px;
-}
-.ui-dialog .charsheet .card.card--weapons-armor-ammunition-unarmed .group.group--ammunition-unarmed {
-  padding-left: 15px;
-  border-left: 1px solid var(--tertiary-color);
-}
-.ui-dialog .charsheet .card.card--traits-powers-spells {
-  grid-area: traits-powers-spells;
-}
-.ui-dialog .charsheet .card--health-conditions {
-  display: grid;
-  grid-template-columns: min-content 1fr;
-}
-.ui-dialog .charsheet .table--conditions {
-  grid-template-columns: 1fr 100px;
-  gap: 10px;
-}
-.ui-dialog .charsheet .table--weapons {
-  grid-template-columns: 1fr min-content min-content 100px min-content;
-  gap: 10px;
-}
-.ui-dialog .charsheet .table--ammunition {
-  grid-template-columns: 1fr 50px;
-  gap: 10px;
-}
-.ui-dialog .charsheet .table--ammunition .group {
-  display: grid;
-  grid-template-columns: 1fr min-content 1fr;
-}
-.ui-dialog .charsheet .section--header {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-.ui-dialog .charsheet .section--abilities-skills .group--abilities-skills {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-.ui-dialog .charsheet .section--abilities-skills label {
-  display: grid;
-  grid-template-columns: 1fr 50px;
-}
-.ui-dialog .charsheet .section--evasion .group--evasion {
-  display: grid;
-  grid-template-columns: 1fr min-content 1fr;
-}
-.ui-dialog .charsheet .section--knowledge .group--title {
-  display: grid;
-  grid-template-columns: 1fr max-content;
-  gap: 10px;
-}
-.ui-dialog .charsheet .section--knowledge .repeating-section__view, .ui-dialog .charsheet .section--knowledge .repeating-section__edit {
-  display: grid;
-  grid-template-columns: 1fr 50px;
-}
-.ui-dialog .charsheet .section--resolve .number-input label {
-  display: grid;
-  grid-template-columns: 1fr 50px;
-  gap: 10px;
-}
-.ui-dialog .charsheet .section--armor .number-input label {
-  display: grid;
-  grid-template-columns: 50px 1fr;
-  gap: 10px;
-}
-.ui-dialog .charsheet .section--armor .group--armor {
-  display: grid;
-  grid-template-columns: 1fr max-content;
-  gap: 10px;
-}
-.ui-dialog .charsheet .section--armor-info {
-  display: grid;
-  grid-template-columns: 1fr max-content;
-  gap: 10px;
-}
-.ui-dialog .charsheet .section--magic .group {
-  display: flex;
-  gap: 10px;
-  align-items: end;
-}
-.ui-dialog .charsheet .section--magic .group h3 {
-  white-space: nowrap;
-}
-.ui-dialog .charsheet .section--traits-powers-spells .group--title {
-  display: grid;
-  grid-template-columns: 1fr max-content;
-  gap: 10px;
-}
-.ui-dialog .charsheet .section--traits-powers-spells .group--traditions {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-.ui-dialog .charsheet .sheet__container {
-  display: grid;
-  grid-template-areas: "header header header header header" "navigation navigation navigation navigation navigation" "pages pages pages pages pages";
-  grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
-}
-.ui-dialog .charsheet .navigation {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  grid-area: navigation;
-}
-.ui-dialog .charsheet .navigation .tab {
-  background: var(--primary-color);
-}
-.ui-dialog .charsheet .navigation .tab label {
-  color: var(--background-color);
-}
-.ui-dialog .charsheet .navigation .tab:has(input:checked) label {
-  color: red;
-}
-.ui-dialog .charsheet .tabs .tab {
+.ui-dialog .characterviewer .charsheet .tabs .tab {
   position: relative;
+  padding: 5px 10px;
+  border-radius: 5px 5px 0 0;
 }
-.ui-dialog .charsheet .tabs .tab input {
+.ui-dialog .characterviewer .charsheet .tabs .tab input {
   position: absolute;
   top: 0;
   left: 0;
@@ -356,42 +240,291 @@
   height: 100%;
   opacity: 0;
 }
-.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(1) input:checked)) + .tabbed > .tab-content:nth-of-type(1) {
+.ui-dialog .characterviewer .charsheet .tabs .tab label {
+  text-align: center;
+}
+.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(1) input:checked)) + .tabbed > .tab-content:nth-of-type(1) {
   display: none;
 }
-.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(2) input:checked)) + .tabbed > .tab-content:nth-of-type(2) {
+.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(2) input:checked)) + .tabbed > .tab-content:nth-of-type(2) {
   display: none;
 }
-.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(3) input:checked)) + .tabbed > .tab-content:nth-of-type(3) {
+.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(3) input:checked)) + .tabbed > .tab-content:nth-of-type(3) {
   display: none;
 }
-.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(4) input:checked)) + .tabbed > .tab-content:nth-of-type(4) {
+.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(4) input:checked)) + .tabbed > .tab-content:nth-of-type(4) {
   display: none;
 }
-.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(5) input:checked)) + .tabbed > .tab-content:nth-of-type(5) {
+.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(5) input:checked)) + .tabbed > .tab-content:nth-of-type(5) {
   display: none;
 }
-.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(6) input:checked)) + .tabbed > .tab-content:nth-of-type(6) {
+.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(6) input:checked)) + .tabbed > .tab-content:nth-of-type(6) {
   display: none;
 }
-.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(7) input:checked)) + .tabbed > .tab-content:nth-of-type(7) {
+.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(7) input:checked)) + .tabbed > .tab-content:nth-of-type(7) {
   display: none;
 }
-.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(8) input:checked)) + .tabbed > .tab-content:nth-of-type(8) {
+.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(8) input:checked)) + .tabbed > .tab-content:nth-of-type(8) {
   display: none;
 }
-.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(9) input:checked)) + .tabbed > .tab-content:nth-of-type(9) {
+.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(9) input:checked)) + .tabbed > .tab-content:nth-of-type(9) {
   display: none;
 }
-.ui-dialog .charsheet .tabs:not(:has(.tab:nth-of-type(10) input:checked)) + .tabbed > .tab-content:nth-of-type(10) {
+.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(10) input:checked)) + .tabbed > .tab-content:nth-of-type(10) {
   display: none;
 }
-.ui-dialog .charsheet .pages {
-  grid-area: pages;
+.ui-dialog .characterviewer .charsheet .card--header {
+  grid-area: header;
 }
-.ui-dialog .charsheet .page--1 {
+.ui-dialog .characterviewer .charsheet .card--health-conditions {
+  grid-area: health-conditions;
+}
+.ui-dialog .characterviewer .charsheet .card--resolve {
+  grid-area: resolve;
+}
+.ui-dialog .characterviewer .charsheet .card--evasion-armor {
+  grid-area: evasion-armor;
+}
+.ui-dialog .characterviewer .charsheet .card--abilities-skills {
+  grid-area: abilities-skills;
+}
+.ui-dialog .characterviewer .charsheet .card--knowledge {
+  grid-area: knowledge;
+}
+.ui-dialog .characterviewer .charsheet .card--magic {
+  grid-area: magic;
+}
+.ui-dialog .characterviewer .charsheet .card--weapons-armor-ammunition-unarmed {
+  grid-area: weapons-armor-ammunition-unarmed;
+}
+.ui-dialog .characterviewer .charsheet .card--traits-powers-spells {
+  grid-area: traits-powers-spells;
+}
+.ui-dialog .characterviewer .charsheet .card--avatar-corruption {
+  grid-area: avatar-corruption;
+}
+.ui-dialog .characterviewer .charsheet .card--roleplay {
+  grid-area: roleplay;
+}
+.ui-dialog .characterviewer .charsheet .card--proficiencies-languages-feats-spells {
+  grid-area: proficiencies-languages-feats-spells;
+}
+.ui-dialog .characterviewer .charsheet .card--wealth {
+  grid-area: wealth;
+}
+.ui-dialog .characterviewer .charsheet .card--equipment {
+  grid-area: equipment;
+}
+.ui-dialog .characterviewer .charsheet .navigation {
+  grid-area: navigation;
+}
+.ui-dialog .characterviewer .charsheet .page--1 {
   display: grid;
   grid-template-areas: "health-conditions health-conditions health-conditions resolve evasion-armor" "abilities-skills abilities-skills abilities-skills knowledge knowledge" "abilities-skills abilities-skills abilities-skills magic magic" "weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed" "traits-powers-spells traits-powers-spells traits-powers-spells traits-powers-spells traits-powers-spells";
   grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+.ui-dialog .characterviewer .charsheet .page--2 {
+  display: grid;
+  grid-template-areas: "avatar-corruption roleplay roleplay roleplay roleplay" "proficiencies-languages-feats-spells proficiencies-languages-feats-spells proficiencies-languages-feats-spells proficiencies-languages-feats-spells proficiencies-languages-feats-spells" "wealth equipment equipment equipment equipment";
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+.ui-dialog .characterviewer .charsheet .page--3 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.ui-dialog .characterviewer .charsheet .page--3 > .group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ui-dialog .characterviewer .charsheet .page--3 .group--checks {
+  text-align: end;
+}
+.ui-dialog .characterviewer .charsheet .page--3 .check-list {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  margin: 0;
+}
+.ui-dialog .characterviewer .charsheet .page--3 .check-list li {
+  display: contents;
+}
+.ui-dialog .characterviewer .charsheet .pages {
+  grid-area: pages;
+}
+.ui-dialog .characterviewer .charsheet .sheet__container {
+  display: grid;
+  grid-template-areas: "header header header header header" "navigation navigation navigation navigation navigation" "pages pages pages pages pages";
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+.ui-dialog .characterviewer .charsheet h1, .ui-dialog .characterviewer .charsheet h2, .ui-dialog .characterviewer .charsheet h3, .ui-dialog .characterviewer .charsheet h4, .ui-dialog .characterviewer .charsheet h5, .ui-dialog .characterviewer .charsheet h6 {
+  text-transform: capitalize;
+}
+.ui-dialog .characterviewer .charsheet h2 {
+  font-size: var(--font-size-xlarge);
+  font-weight: 900;
+}
+.ui-dialog .characterviewer .charsheet h3 {
+  font-size: var(--font-size-small);
+  font-weight: 600;
+}
+.ui-dialog .characterviewer .charsheet .navigation {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.ui-dialog .characterviewer .charsheet .navigation .tab {
+  border-radius: 5px;
+  background: var(--primary-color);
+}
+.ui-dialog .characterviewer .charsheet .navigation .tab label {
+  color: var(--background-color);
+  font-weight: 600;
+}
+.ui-dialog .characterviewer .charsheet .navigation .tab:has(input:checked) label {
+  color: red;
+}
+.ui-dialog .characterviewer .charsheet .card.card--weapons-armor-ammunition-unarmed {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+.ui-dialog .characterviewer .charsheet .card.card--weapons-armor-ammunition-unarmed .group.group--weapons-armor {
+  padding-right: 15px;
+}
+.ui-dialog .characterviewer .charsheet .card.card--weapons-armor-ammunition-unarmed .group.group--ammunition-unarmed {
+  padding-left: 15px;
+  border-left: 1px solid var(--tertiary-color);
+}
+.ui-dialog .characterviewer .charsheet .card--proficiencies-languages-feats-spells {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.ui-dialog .characterviewer .charsheet .card--roleplay {
+  padding: 0;
+  background-color: transparent;
+}
+.ui-dialog .characterviewer .charsheet .card--health-conditions {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+}
+.ui-dialog .characterviewer .charsheet .table--ammunition {
+  grid-template-columns: 1fr min-content;
+  gap: 10px;
+}
+.ui-dialog .characterviewer .charsheet .table--ammunition .group {
+  display: grid;
+  grid-template-columns: 1fr min-content 1fr;
+}
+.ui-dialog .characterviewer .charsheet .table--conditions {
+  grid-template-columns: 1fr 100px;
+  gap: 10px;
+}
+.ui-dialog .characterviewer .charsheet .table--weapons {
+  grid-template-columns: 1fr min-content min-content 100px min-content;
+  gap: 10px;
+}
+.ui-dialog .characterviewer .charsheet .section--abilities-skills .group--abilities-skills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.ui-dialog .characterviewer .charsheet .section--abilities-skills label {
+  display: grid;
+  grid-template-columns: 1fr 50px;
+}
+.ui-dialog .characterviewer .charsheet .section--armor .number-input label {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  gap: 10px;
+}
+.ui-dialog .characterviewer .charsheet .section--armor .group--armor {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  gap: 10px;
+}
+.ui-dialog .characterviewer .charsheet .section--armor-info {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  gap: 10px;
+}
+.ui-dialog .characterviewer .charsheet .section--coinage .group--coinage {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.ui-dialog .characterviewer .charsheet .section--evasion .group--evasion {
+  display: grid;
+  grid-template-columns: 1fr min-content 1fr;
+}
+.ui-dialog .characterviewer .charsheet .section--header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.ui-dialog .characterviewer .charsheet .section--health .group--bars {
+  display: grid;
+  grid-template-columns: repeat(2, min-content);
+  gap: 10px;
+}
+.ui-dialog .characterviewer .charsheet .section--health .group--bars .rangebar {
+  width: 10px;
+  width: min-content;
+}
+.ui-dialog .characterviewer .charsheet .section--health .group--bars .rangebar--madness {
+  grid-column: 1/-1;
+}
+.ui-dialog .characterviewer .charsheet .section--knowledge .group--title {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  gap: 10px;
+}
+.ui-dialog .characterviewer .charsheet .section--knowledge .repeating-section__view, .ui-dialog .characterviewer .charsheet .section--knowledge .repeating-section__edit {
+  display: grid;
+  grid-template-columns: 1fr 50px;
+}
+.ui-dialog .characterviewer .charsheet .section--magic .group {
+  display: flex;
+  gap: 10px;
+  align-items: end;
+}
+.ui-dialog .characterviewer .charsheet .section--magic .group h3 {
+  white-space: nowrap;
+}
+.ui-dialog .characterviewer .charsheet .section--resolve .number-input label {
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  gap: 10px;
+}
+.ui-dialog .characterviewer .charsheet .section--roleplay .tabs {
+  display: flex;
+  gap: 5px;
+}
+.ui-dialog .characterviewer .charsheet .section--roleplay .tabbed {
+  padding: 20px;
+  border-radius: 0 5px 5px 5px;
+  background-color: var(--background-color);
+}
+.ui-dialog .characterviewer .charsheet .section--roleplay .tab {
+  background: var(--background-color);
+}
+.ui-dialog .characterviewer .charsheet .section--roleplay .tab label {
+  color: var(--primary-color);
+  opacity: 0.75;
+}
+.ui-dialog .characterviewer .charsheet .section--roleplay .tab:has(input:checked) label {
+  opacity: 1;
+}
+.ui-dialog .characterviewer .charsheet .section--traits-powers-spells .group--title {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  gap: 10px;
+}
+.ui-dialog .characterviewer .charsheet .section--traits-powers-spells .group--traditions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }

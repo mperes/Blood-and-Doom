@@ -2,15 +2,17 @@
   .section.section--health
     h2
       +translate({key:'health'})
-    each bar in spine.health.bars
-      -
-        const barProperties = {
-          name: bar.name,
-          steps: bar.steps,
-          label: { key: bar.name },
-        };
-        if(Array.isArray(bar.values)) barProperties.label.append = ` (${bar.values.join('/')})`;
-      +rangebar(barProperties)
+    .group.group--bars
+      each bar in spine.health.bars
+        -
+          const barProperties = {
+            name: bar.name,
+            steps: bar.steps,
+            label: { key: bar.name },
+            html: { class: `labelled--top rangebar--${bar.name} labelled--nowrap` },
+          };
+          if(Array.isArray(bar.values)) barProperties.label.append = ` (${bar.values.join('/')})`;
+        +rangebar(barProperties)
   .section.section--conditions
     .table.table--conditions
       .table__header
@@ -88,7 +90,7 @@
     h2
       +translate({key:'weapons-and-armor'})
     .section.section--weapons
-      .table.table--weapons
+      .table.table--weapons.table--highlighted
         .table__header
           +translate({key:'name'})  
           +translate({key:'ability-plus-skill'})
@@ -120,7 +122,7 @@
     .section.section--ammunition
       h2
         +translate({key:'ammunition'})
-      .table.table--ammunition
+      .table.table--ammunition.table--highlighted
         .table__header
           +translate({key:'name'})  
           +translate({key:'quantity'})

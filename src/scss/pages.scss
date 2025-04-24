@@ -1,0 +1,68 @@
+$cards: (header, health-conditions, resolve, evasion-armor, abilities-skills, knowledge, magic, weapons-armor-ammunition-unarmed, traits-powers-spells, avatar-corruption, roleplay, proficiencies-languages-feats-spells, wealth, equipment);
+@each $card in $cards {
+  .card--#{$card} {
+    grid-area: #{$card};
+  }
+}
+
+.navigation {
+  grid-area: navigation;
+}
+
+.page {
+  &--1 {
+    display: grid;
+    grid-template-areas: 
+      "health-conditions health-conditions health-conditions resolve evasion-armor"
+      "abilities-skills abilities-skills abilities-skills knowledge knowledge"
+      "abilities-skills abilities-skills abilities-skills magic magic"
+      "weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed"
+      "traits-powers-spells traits-powers-spells traits-powers-spells traits-powers-spells traits-powers-spells";
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+  &--2 {
+    display: grid;
+    grid-template-areas: 
+      "avatar-corruption roleplay roleplay roleplay roleplay"
+      "proficiencies-languages-feats-spells proficiencies-languages-feats-spells proficiencies-languages-feats-spells proficiencies-languages-feats-spells proficiencies-languages-feats-spells"
+      "wealth equipment equipment equipment equipment";
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+  &--3 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    > .group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .group--checks {
+      text-align: end;
+    }
+    .check-list {
+      display: grid;
+      grid-template-columns: 1fr max-content;
+      margin: 0;
+      li {
+        display: contents;
+      }
+    }
+  }
+}
+
+.pages {
+  grid-area: pages;
+}
+
+.sheet__container {
+  display: grid;
+  grid-template-areas: 
+    "header header header header header"
+    "navigation navigation navigation navigation navigation"
+    "pages pages pages pages pages";
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}

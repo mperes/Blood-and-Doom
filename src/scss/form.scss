@@ -1,0 +1,61 @@
+.text-input,
+.number-input {
+  input {
+    background-color: transparent;
+    width: 100%;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 0;
+    font-weight: bold;
+    &:focus {
+      outline: none;
+    }
+
+  }
+  &--simple,
+  &--boxed {
+    input {
+      border-bottom: 1px solid var(--tertiary-color);
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      &[type=number] {
+        -moz-appearance: textfield;
+      }
+    }
+  }
+  &--boxed {
+    label {
+      display: grid;
+      grid-template-columns: 1fr 50px;
+      align-items: center;
+      .translation {
+        text-transform: uppercase;
+        color: var(--background-color);
+        background-color: var(--primary-color);
+        display: flex;
+        align-items: center;
+        padding: 5px 10px;
+        box-sizing: border-box;
+        clip-path: polygon(5px 0, 100% 0, 100% 100%, 5px 100%, 0 calc(100% - 5px), 0 5px);
+      }
+      input {
+        height: 50px;
+        box-sizing: border-box;
+        border: 3px solid var(--primary-color);
+      }
+    }
+  }
+  &--align-center {
+    input {
+      text-align: center;
+    }
+  }
+  &--align-right {
+    input {
+      text-align: right;
+    }
+  }
+}

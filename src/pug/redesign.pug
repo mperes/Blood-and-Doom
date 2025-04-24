@@ -12,7 +12,7 @@ mixin translate(options)
 
 mixin rangebar(options)
   - options.html = options.html || {};
-  .rangebar&attributes(options.html)
+  .rangebar.labelled&attributes(options.html)
     if options.label 
       label
         +translate(options.label)

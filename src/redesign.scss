@@ -1,261 +1,56 @@
-:root {
-  --primary-color: #484637;
-  --secondary-color: #2ecc71;
-  --tertiary-color: #b2af9b;
-  --background-color: #d9d8cf;
-  --text-color: #484637;
-  --font-family: 'Arial', sans-serif;  
-}
+@import  "./scss/variables.scss";
 
-.ui-dialog .charsheet {
+.ui-dialog .characterviewer .charsheet {
+  @import "./scss/reset.scss";
+  @import "./scss/card.scss";
+  @import "./scss/labelled.scss";
+  @import "./scss/rangebar.scss";
+  @import "./scss/repeating-section.scss";
+  @import "./scss/table.scss";
+  @import "./scss/form.scss";
+  @import "./scss/tabs.scss";
+  @import "./scss/pages.scss";
+
   color: var(--text-color);
+  font-size: var(--font-size-medium);
+  font-weight: 500;
 
+  //TAGS STYLES
   h1,h2,h3,h4,h5,h6 {
     text-transform: capitalize;
   }
-
-  .card {
-    background-color: var(--background-color);
-    border-radius: 5px;
-    padding: 15px;
+  h2 {
+    font-size: var(--font-size-xlarge);
+    font-weight: 900;
   }
-  
-  .labelled {
-    text-transform: capitalize;
-    &--left {
-      label {
-        display: flex;
-        .translation {
-          width: fit-content;
-        };
-      }
-    }
-    &--bottom {
-      label {
-        display: flex;
-        flex-direction: column-reverse;
-      }
-      &-center {
-        label {
-          display: flex;
-          flex-direction: column-reverse;
-          span {
-            align-self: center;
-          }
-        }
-      }
-    }
-    &--top {
-      label {
-        display: flex;
-        flex-direction: column;
-      }
-      &-center {
-        label {
-          display: flex;
-          flex-direction: column;
-          span {
-            align-self: center;
-          }
-        }
-      }
-    }
-    &--nowrap
-    label {
-      .translation {
-        white-space: nowrap;
-      }
-    }
+  h3 {
+    font-size: var(--font-size-small);
+    font-weight: 600;
   }
 
-  .rangebar {
-    &__steps {
-      display: inline-flex;
-      gap: 5px;
-      flex-direction: row-reverse;
-      input {
-        appearance: none;
-        background-color: transparent;
-        box-sizing: border-box;
-        width: 20px;
-        height: 20px;
-        border: 2px solid var(--tertiary-color);
-        &:focus {
-          outline: none;
-        }
-      }
-      input:checked,
-      input:checked ~ input {
-        border-color: var(--primary-color);
-      }
-    }
-  }
-
-  .repeating-section {
-    &__toggle {
-      display: none;
-    }
-    &:not(.repeating-section--edit-only) {
-      .repitem {
-        position: relative;
-        &:not(:has(.repeating-section__toggle input:checked)) {
-          .repeating-section__view {
-            display: none;
-          }
-          .repeating-section__toggle {
-            opacity: 1;
-          }
-        }
-        &:has(.repeating-section__toggle input:checked) {
-          .repeating-section__edit {
-            display: none;
-          }
-        }
-        &:hover {
-          padding-left: 25px;
-          .repeating-section__toggle {
-            opacity: 1;
-          }
-        }
-      }
-      .repeating-section__toggle {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-        img {
-          width: 20px;
-          height: 20px;
-        }
-        input {
-          position: absolute;
-          border: 0;
-          padding: 0;
-          margin: 0;
-          width: 100%;
-          height: 100%;
-          opacity: 0;
-          top: 0;
-          left: 0;
-        }
-      }
-    }
-    &--fixed {
-      .repcontrol_add {
-        display: none!important;
-      }
-    }
-  }
-
-  .table {
+  //MISCELLANEOUS STYLES
+  .navigation {
     display: grid;
-    &__header {
-      display: contents;
-      white-space: nowrap;
-    }
-    &__body {
-      display: contents;
-      .repeating-section, .repcontainer, .repitem, .repeating-section__view, .repeating-section__edit {
-        grid-column: 1 / -1;
-        display: grid;
-        grid-template-columns: subgrid;
-      }
-      .repcontrol {
-        grid-column: 1 / -1;
-      }
-    }
-    &__row {
-      display: contents;
-    }
-  }
-
-  .text-input,
-  .number-input {
-    input {
-      background-color: transparent;
-      width: 100%;
-      box-sizing: border-box;
-      border: 0;
-      border-radius: 0;
-      font-weight: bold;
-      &:focus {
-        outline: none;
-      }
-
-    }
-    &--simple,
-    &--boxed {
-      input {
-        border-bottom: 1px solid var(--tertiary-color);
-        &::-webkit-outer-spin-button,
-        &::-webkit-inner-spin-button {
-          -webkit-appearance: none;
-          margin: 0;
-        }
-        &[type=number] {
-          -moz-appearance: textfield;
-        }
-      }
-    }
-    &--boxed {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    .tab {
+      border-radius: 5px;
+      background: var(--primary-color);
       label {
-        display: grid;
-        grid-template-columns: 1fr 50px;
-        align-items: center;
-        .translation {
-          text-transform: uppercase;
-          color: var(--background-color);
-          background-color: var(--primary-color);
-          display: flex;
-          align-items: center;
-          padding: 5px 10px;
-          box-sizing: border-box;
-          clip-path: polygon(5px 0, 100% 0, 100% 100%, 5px 100%, 0 calc(100% - 5px), 0 5px);
-        }
-        input {
-          height: 50px;
-          box-sizing: border-box;
-          border: 3px solid var(--primary-color);
-        }
+        color: var(--background-color);
+        font-weight: 600;
       }
-    }
-    &--align-center {
-      input {
-        text-align: center;
-      }
-    }
-    &--align-right {
-      input {
-        text-align: right;
+      &:has(input:checked) {
+        label {
+          color: red;
+        }
       }
     }
   }
 
-  /* SPECIFIC */
-  .card.card--header {
-    grid-area: header;
-  }
-  .card.card--health-conditions {
-    grid-area: health-conditions;
-  }
-  .card.card--resolve {
-    grid-area: resolve;
-  }
-  .card.card--evasion-armor {
-    grid-area: evasion-armor;
-  }
-  .card.card--abilities-skills {
-    grid-area: abilities-skills;
-  }
-  .card.card--knowledge {
-    grid-area: knowledge;
-  }
-  .card.card--magic {
-    grid-area: magic;
-  }
+
+  //CARD STYLES
   .card.card--weapons-armor-ammunition-unarmed {
-    grid-area: weapons-armor-ammunition-unarmed;
     display: grid;
     grid-template-columns: 3fr 2fr;
     .group.group--weapons-armor {
@@ -266,12 +61,28 @@
       border-left: 1px solid var(--tertiary-color);
     }
   }
-  .card.card--traits-powers-spells {
-    grid-area: traits-powers-spells;
+  .card--proficiencies-languages-feats-spells {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .card--roleplay {
+    padding: 0;
+    background-color: transparent;
   }
   .card--health-conditions {
     display: grid;
-    grid-template-columns: min-content 1fr;
+    grid-template-columns: max-content 1fr;
+  }
+
+  //TABLE STYLES
+  .table--ammunition {
+    grid-template-columns: 1fr min-content;
+    gap: 10px;
+    .group {
+      display: grid;
+      grid-template-columns: 1fr min-content 1fr;
+    }
   }
   .table--conditions {
     grid-template-columns: 1fr 100px;
@@ -281,19 +92,8 @@
     grid-template-columns: 1fr min-content min-content 100px min-content;
     gap: 10px;
   }
-  .table--ammunition {
-    grid-template-columns: 1fr 50px;
-    gap: 10px;
-    .group {
-      display: grid;
-      grid-template-columns: 1fr min-content 1fr;
-    }
-  }
-  .section--header {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
+
+  //SECTION STYLES
   .section--abilities-skills {
     .group--abilities-skills {
       display: grid;
@@ -303,33 +103,6 @@
     label {
       display: grid;
       grid-template-columns: 1fr 50px;
-    }
-  }
-  .section--evasion {
-    .group--evasion {
-      display: grid;
-      grid-template-columns: 1fr min-content 1fr;
-    }
-  }
-  .section--knowledge {
-    .group--title {
-      display: grid;
-      grid-template-columns: 1fr max-content;
-      gap: 10px;
-    }
-    .repeating-section {
-      &__view, 
-      &__edit {
-        display: grid;
-        grid-template-columns: 1fr 50px;
-      }
-    }
-  }
-  .section--resolve {
-    .number-input label {
-      display: grid;
-      grid-template-columns: 1fr 50px;
-      gap: 10px;
     }
   }
   .section--armor {
@@ -349,6 +122,52 @@
     grid-template-columns: 1fr max-content;
     gap: 10px;
   }
+  .section--coinage {
+    .group--coinage {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+  }
+  .section--evasion {
+    .group--evasion {
+      display: grid;
+      grid-template-columns: 1fr min-content 1fr;
+    }
+  }
+  .section--header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .section--health {
+    .group--bars {
+      display: grid;
+      grid-template-columns: repeat(2, min-content);
+      gap: 10px;
+      .rangebar {
+        width: 10px;
+        width: min-content;
+      }
+      .rangebar--madness {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+  .section--knowledge {
+    .group--title {
+      display: grid;
+      grid-template-columns: 1fr max-content;
+      gap: 10px;
+    }
+    .repeating-section {
+      &__view, 
+      &__edit {
+        display: grid;
+        grid-template-columns: 1fr 50px;
+      }
+    }
+  }
   .section--magic {
     .group { 
       display: flex;
@@ -356,6 +175,36 @@
       align-items: end;
       h3 {
         white-space: nowrap;
+      }
+    }
+  }
+  .section--resolve {
+    .number-input label {
+      display: grid;
+      grid-template-columns: 1fr 50px;
+      gap: 10px;
+    }
+  }
+  .section--roleplay {
+    .tabs {
+      display: flex;
+      gap: 5px;
+    }
+    .tabbed {
+      padding: 20px;
+      border-radius: 0 5px 5px 5px;
+      background-color: var(--background-color);
+    }
+    .tab {
+      background: var(--background-color);
+      label {
+        color: var(--primary-color);
+        opacity: 0.75;
+      }
+      &:has(input:checked) {
+        label {
+          opacity: 1;
+        }
       }
     }
   }
@@ -371,64 +220,4 @@
       gap: 10px;
     }
   }
-  .sheet__container {
-    display: grid;
-    grid-template-areas: 
-      "header header header header header"
-      "navigation navigation navigation navigation navigation"
-      "pages pages pages pages pages";
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-  }
-  .navigation {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    grid-area: navigation;
-    .tab {
-      background: var(--primary-color);
-      label {
-        color: var(--background-color);
-      }
-      &:has(input:checked) {
-        label {
-          color: red;
-        }
-      }
-    }
-  }
-  .tabs {
-    .tab {
-      position: relative;
-      input {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-      }
-    }
-    @for $i from 1 through 10 {
-      &:not(:has(.tab:nth-of-type(#{$i}) input:checked)) + .tabbed > .tab-content:nth-of-type(#{$i}) {
-        display: none;
-      }
-    }
-  }
-  .pages {
-    grid-area: pages;
-  }
-  .page {
-    &--1 {
-      display: grid;
-      grid-template-areas: 
-        "health-conditions health-conditions health-conditions resolve evasion-armor"
-        "abilities-skills abilities-skills abilities-skills knowledge knowledge"
-        "abilities-skills abilities-skills abilities-skills magic magic"
-        "weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed"
-        "traits-powers-spells traits-powers-spells traits-powers-spells traits-powers-spells traits-powers-spells";
-      grid-template-columns: repeat(5, 1fr);
-      gap: 10px;
-    }
-  }
-}
+}  

@@ -1,0 +1,36 @@
+.table {
+  display: grid;
+  &__header {
+    white-space: nowrap;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+  }
+  &__body {
+    display: contents;
+    .repeating-section, .repcontainer, .repitem, .repeating-section__view, .repeating-section__edit {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: subgrid;
+    }
+    .repcontrol {
+      grid-column: 1 / -1;
+    }
+  }
+  &__row {
+    display: contents;
+  }
+  &--highlighted {
+    .table__header {
+      background-color: var(--highlight-color);
+      color: var(--background-color);
+      border-radius: 5px 5px 0 0;
+      .translation {
+        padding: 5px 10px;
+      }
+      img {
+
+      }
+    }
+  }
+}

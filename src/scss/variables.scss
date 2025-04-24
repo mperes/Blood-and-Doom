@@ -1,0 +1,14 @@
+:root {
+  --base-size: 10px;
+  --font-size-small: calc(var(--base-size) * 1.1);
+  --font-size-medium: calc(var(--base-size) * 1.3);
+  --font-size-large: calc(var(--base-size) * 1.6);
+  --font-size-xlarge: calc(var(--base-size) * 1.9);
+  --primary-color: #484637;
+  --highlight-color: #484637;
+  --secondary-color: #2ecc71;
+  --tertiary-color: #b2af9b;
+  --background-color: #d9d8cf;
+  --text-color: #484637;
+  --font-family: 'Arial', sans-serif;  
+}

@@ -1,0 +1,106 @@
+-
+  const levelUpLogList = {
+    "list-2-4": {
+      "gain-1-trait-power-or-spell": 2,
+      "improve-1-trait-or-1-power-1-spell": 2,
+      "increase-skill-ranks": 2,
+      "gain-damage-boxes": 1,
+      "gain-madness-boxes": 1,
+      "gain-1-class-feat-or-1-common-feat": 1,
+      "learn-2-common-or-1-ancient-language": 1,
+      "learn-2-knowledge-skills-at-rank-1": 1,
+      "gain-proficiencies": 1
+    },
+    "list-5-8": {
+      "gain-1-trait-power-or-spell": 2,
+      "improve-1-trait-or-1-power-1-spell": 2,
+      "increase-skill-ranks": 2,
+      "gain-damage-boxes": 1,
+      "gain-madness-boxes": 1,
+      "gain-1-class-feat-or-1-common-feat": 1,
+      "increase-evasion-score-by-1": 1,
+      "increase-2-resolve-scores-by-1": 1,
+      "increase-combat-resolve-difficulty-by-1": 1,
+      "learn-2-common-or-1-ancient-language": 1,
+      "learn-2-knowledge-skills-at-rank-1": 1,
+      "gain-proficiencies": 1,
+      "increase-ability-scores": 1
+    },
+    "list-9-12": {
+      "gain-1-trait-power-or-spell": 2,
+      "improve-1-trait-or-1-power-1-spell": 2,
+      "increase-skill-ranks": 2,
+      "gain-damage-boxes": 1,
+      "gain-madness-boxes": 1,
+      "gain-1-class-feat-or-1-common-feat": 1,
+      "increase-evasion-score-by-1": 1,
+      "increase-2-resolve-scores-by-1": 1,
+      "increase-combat-resolve-difficulty-by-1": 1,
+      "learn-2-common-or-1-ancient-language": 1,
+      "learn-2-knowledge-skills-at-rank-1": 1,
+      "gain-proficiencies": 1,
+      "increase-ability-scores": 1
+    },
+  };
+mixin check-list(section)
+  ul.check-list
+    - let i = 0;
+      each checks, key in levelUpLogList[section]
+        li
+          +translate({key:key})
+          .group.group--checks
+            each _, j in Array(checks)
+              input(type='checkbox' name=`attr_level-2-4-advancement-${i}-${j}`)
+              - i++;
+
+.group.group--col-left
+  each advancement in ['2-4', '5-8', '9-12']
+    .card(class=`card--level-${advancement}-advancement`)
+      .section(class=`section--level-${advancement}-advancement`)
+        h2
+          +translate({key:`level-${advancement}-advancement`})
+        p
+          +translate({key:`level-${advancement}-advancement-desc`})
+        +check-list(`list-${advancement}`)
+.group.group--col-right
+  each section in ['gaining-traits-powers-and-spells', 'improving-traits-powers-and-spells', 'increasing-skill-ranks']
+    .card(class=`card--${section}`)
+      .section(class=`section--${section}`)
+        h2
+          +translate({key:section})
+        p
+          +translate({key:`${section}-desc`})
+  .card.card--gaining-damage-boxes
+    .section.section--gaining-damage-boxes
+      h2
+        +translate({key:`gaining-damage-boxes`})
+      p
+        +translate({key:`gaining-damage-boxes-desc-introduction`})
+        ul
+          each _, i in Array(3)
+            li
+              +translate({key:`gaining-damage-boxes-desc-bullet-${i}`})
+        +translate({key:`gaining-damage-boxes-desc-conclusion`})
+  .card.card--gaining-madness-boxes
+    .section.section--gaining-madness-boxes
+      h2
+        +translate({key:`gaining-madness-boxes`})
+      p
+        +translate({key:`gaining-madness-boxes-desc`})
+  .card.card--gaining-proficiencies
+    .section.section--gaining-proficiencies
+      h2
+        +translate({key:`gaining-proficiencies`})
+      p
+        +translate({key:`gaining-proficiencies-desc-introduction`})
+        ul
+          each _, i in Array(4)
+            li
+              +translate({key:`gaining-proficiencies-desc-bullet-${i}`})
+  each section in ['increasing-ability-scores', 'choosing-traditions']
+    .card(class=`card--${section}`)
+      .section(class=`section--${section}`)
+        h2
+          +translate({key:section})
+        p
+          +translate({key:`${section}-desc`})
