@@ -61,30 +61,31 @@
                 .group.group--skill-list
                   each skill in skills
                     +number-input({name:skill, label:{key:skill}, html:{class:'number-input--simple  number-input--align-center'}})
-.card.card--knowledge
-  .section.section--knowledge
-    .group.group--title
+.group.group--knowledge-magic
+  .card.card--knowledge
+    .section.section--knowledge
+      .group.group--title
+        h2
+          +translate({key:'knowledge'})
+        +number-input({name:'mind', label:{key:'mind'}, html:{class:'number-input--boxed'}})
+      +repeating-section({name:'knowledge', html:{class:'repeating-section--edit-only'}})
+        mixin repeating-edit
+          +text-input({name:'name', list:'knowledge-list', html:{class:'text-input--simple'}})
+          +number-input({name:'score', html:{class:'number-input--simple'}})
+  .card.card--magic
+    .section.section--magic
       h2
-        +translate({key:'knowledge'})
-      +number-input({name:'mind', label:{key:'mind'}, html:{class:'number-input--boxed'}})
-    +repeating-section({name:'knowledge', html:{class:'repeating-section--edit-only'}})
-      mixin repeating-edit
-        +text-input({name:'name', list:'knowledge-list', html:{class:'text-input--simple'}})
-        +number-input({name:'score', html:{class:'number-input--simple'}})
-.card.card--magic
-  .section.section--magic
-    h2
-      +translate({key:'magic'})
-    .group.group--spellcasting
-      h3
-        +translate({key:'spellcasting'})
-      each attribute in ['ability', 'skill', 'total']
-        +number-input({name:`spellcasting-${attribute}`, label:{key:attribute}, html:{class:'text-input--simple number-input--align-center labelled--top-center'}})
-    .group.group--magic-points
-      h3
-        +translate({key:'magic-points'})
-      each attribute in ['current', 'max']
-        +number-input({name:`spellcasting-${attribute}`, label:{key:attribute}, html:{class:'text-input--simple number-input--align-center labelled--top-center'}})
+        +translate({key:'magic'})
+      .group.group--spellcasting
+        h3
+          +translate({key:'spellcasting'})
+        each attribute in ['ability', 'skill', 'total']
+          +number-input({name:`spellcasting-${attribute}`, label:{key:attribute}, html:{class:'text-input--simple number-input--align-center labelled--top-center'}})
+      .group.group--magic-points
+        h3
+          +translate({key:'magic-points'})
+        each attribute in ['current', 'max']
+          +number-input({name:`spellcasting-${attribute}`, label:{key:attribute}, html:{class:'text-input--simple number-input--align-center labelled--top-center'}})
 .card.card--weapons-armor-ammunition-unarmed
   .group.group--weapons-armor
     h2

@@ -1,8 +1,15 @@
-$cards: (header, health-conditions, resolve, evasion-armor, abilities-skills, knowledge, magic, weapons-armor-ammunition-unarmed, traits-powers-spells, avatar-corruption, roleplay, proficiencies-languages-feats-spells, wealth, equipment);
+$cards: (header, health-conditions, resolve, evasion-armor, abilities-skills, weapons-armor-ammunition-unarmed, traits-powers-spells, avatar-corruption, roleplay, proficiencies-languages-feats-spells, wealth, equipment);
 @each $card in $cards {
   .card--#{$card} {
     grid-area: #{$card};
   }
+}
+
+.group--knowledge-magic {
+  grid-area: knowledge-magic;
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  gap: 10px;
 }
 
 .navigation {
@@ -14,8 +21,7 @@ $cards: (header, health-conditions, resolve, evasion-armor, abilities-skills, kn
     display: grid;
     grid-template-areas: 
       "health-conditions health-conditions health-conditions resolve evasion-armor"
-      "abilities-skills abilities-skills abilities-skills knowledge knowledge"
-      "abilities-skills abilities-skills abilities-skills magic magic"
+      "abilities-skills abilities-skills abilities-skills knowledge-magic knowledge-magic"
       "weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed"
       "traits-powers-spells traits-powers-spells traits-powers-spells traits-powers-spells traits-powers-spells";
     grid-template-columns: repeat(5, 1fr);

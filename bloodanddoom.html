@@ -490,70 +490,72 @@
             </div>
           </div>
         </div>
-        <div class="card card--knowledge">
-          <div class="section section--knowledge">
-            <div class="group group--title">
-              <h2><span class="translation"><span class="translation__key" data-i18n="knowledge"></span></span>
-              </h2>
-                <div class="number-input labelled number-input--boxed">
-                  <label><span class="translation"><span class="translation__key" data-i18n="mind"></span></span>
-                    <input type="number" name="attr_mind"/>
-                  </label>
-                </div>
-            </div>
-              <div class="repeating-section repeating-section--edit-only">
-                <fieldset class="repeating_knowledge">
-                  <div class="repeating-section__toggle"><img src="https://i.postimg.cc/cHrTTyZb/edit.png" data-i18n-alt="toggle-edit-mode"/>
-                    <input type="checkbox" name="attr_repeating-toggle"/>
+        <div class="group group--knowledge-magic">
+          <div class="card card--knowledge">
+            <div class="section section--knowledge">
+              <div class="group group--title">
+                <h2><span class="translation"><span class="translation__key" data-i18n="knowledge"></span></span>
+                </h2>
+                  <div class="number-input labelled number-input--boxed">
+                    <label><span class="translation"><span class="translation__key" data-i18n="mind"></span></span>
+                      <input type="number" name="attr_mind"/>
+                    </label>
                   </div>
-                  <div class="repeating-section__edit">
-                      <div class="text-input labelled text-input--simple">
-                        <input type="text" name="attr_name" list="knowledge-list"/>
-                      </div>
-                      <div class="number-input labelled number-input--simple">
-                        <input type="number" name="attr_score"/>
-                      </div>
-                  </div>
-                </fieldset>
               </div>
-          </div>
-        </div>
-        <div class="card card--magic">
-          <div class="section section--magic">
-            <h2><span class="translation"><span class="translation__key" data-i18n="magic"></span></span>
-            </h2>
-            <div class="group group--spellcasting">
-              <h3><span class="translation"><span class="translation__key" data-i18n="spellcasting"></span></span>
-              </h3>
-                <div class="number-input labelled text-input--simple number-input--align-center labelled--top-center">
-                  <label><span class="translation"><span class="translation__key" data-i18n="ability"></span></span>
-                    <input type="number" name="attr_spellcasting-ability"/>
-                  </label>
-                </div>
-                <div class="number-input labelled text-input--simple number-input--align-center labelled--top-center">
-                  <label><span class="translation"><span class="translation__key" data-i18n="skill"></span></span>
-                    <input type="number" name="attr_spellcasting-skill"/>
-                  </label>
-                </div>
-                <div class="number-input labelled text-input--simple number-input--align-center labelled--top-center">
-                  <label><span class="translation"><span class="translation__key" data-i18n="total"></span></span>
-                    <input type="number" name="attr_spellcasting-total"/>
-                  </label>
+                <div class="repeating-section repeating-section--edit-only">
+                  <fieldset class="repeating_knowledge">
+                    <div class="repeating-section__toggle"><img src="https://i.postimg.cc/cHrTTyZb/edit.png" data-i18n-alt="toggle-edit-mode"/>
+                      <input type="checkbox" name="attr_repeating-toggle"/>
+                    </div>
+                    <div class="repeating-section__edit">
+                        <div class="text-input labelled text-input--simple">
+                          <input type="text" name="attr_name" list="knowledge-list"/>
+                        </div>
+                        <div class="number-input labelled number-input--simple">
+                          <input type="number" name="attr_score"/>
+                        </div>
+                    </div>
+                  </fieldset>
                 </div>
             </div>
-            <div class="group group--magic-points">
-              <h3><span class="translation"><span class="translation__key" data-i18n="magic-points"></span></span>
-              </h3>
-                <div class="number-input labelled text-input--simple number-input--align-center labelled--top-center">
-                  <label><span class="translation"><span class="translation__key" data-i18n="current"></span></span>
-                    <input type="number" name="attr_spellcasting-current"/>
-                  </label>
-                </div>
-                <div class="number-input labelled text-input--simple number-input--align-center labelled--top-center">
-                  <label><span class="translation"><span class="translation__key" data-i18n="max"></span></span>
-                    <input type="number" name="attr_spellcasting-max"/>
-                  </label>
-                </div>
+          </div>
+          <div class="card card--magic">
+            <div class="section section--magic">
+              <h2><span class="translation"><span class="translation__key" data-i18n="magic"></span></span>
+              </h2>
+              <div class="group group--spellcasting">
+                <h3><span class="translation"><span class="translation__key" data-i18n="spellcasting"></span></span>
+                </h3>
+                  <div class="number-input labelled text-input--simple number-input--align-center labelled--top-center">
+                    <label><span class="translation"><span class="translation__key" data-i18n="ability"></span></span>
+                      <input type="number" name="attr_spellcasting-ability"/>
+                    </label>
+                  </div>
+                  <div class="number-input labelled text-input--simple number-input--align-center labelled--top-center">
+                    <label><span class="translation"><span class="translation__key" data-i18n="skill"></span></span>
+                      <input type="number" name="attr_spellcasting-skill"/>
+                    </label>
+                  </div>
+                  <div class="number-input labelled text-input--simple number-input--align-center labelled--top-center">
+                    <label><span class="translation"><span class="translation__key" data-i18n="total"></span></span>
+                      <input type="number" name="attr_spellcasting-total"/>
+                    </label>
+                  </div>
+              </div>
+              <div class="group group--magic-points">
+                <h3><span class="translation"><span class="translation__key" data-i18n="magic-points"></span></span>
+                </h3>
+                  <div class="number-input labelled text-input--simple number-input--align-center labelled--top-center">
+                    <label><span class="translation"><span class="translation__key" data-i18n="current"></span></span>
+                      <input type="number" name="attr_spellcasting-current"/>
+                    </label>
+                  </div>
+                  <div class="number-input labelled text-input--simple number-input--align-center labelled--top-center">
+                    <label><span class="translation"><span class="translation__key" data-i18n="max"></span></span>
+                      <input type="number" name="attr_spellcasting-max"/>
+                    </label>
+                  </div>
+              </div>
             </div>
           </div>
         </div>

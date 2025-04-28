@@ -303,12 +303,6 @@
 .ui-dialog .characterviewer .charsheet .card--abilities-skills {
   grid-area: abilities-skills;
 }
-.ui-dialog .characterviewer .charsheet .card--knowledge {
-  grid-area: knowledge;
-}
-.ui-dialog .characterviewer .charsheet .card--magic {
-  grid-area: magic;
-}
 .ui-dialog .characterviewer .charsheet .card--weapons-armor-ammunition-unarmed {
   grid-area: weapons-armor-ammunition-unarmed;
 }
@@ -330,12 +324,18 @@
 .ui-dialog .characterviewer .charsheet .card--equipment {
   grid-area: equipment;
 }
+.ui-dialog .characterviewer .charsheet .group--knowledge-magic {
+  grid-area: knowledge-magic;
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  gap: 10px;
+}
 .ui-dialog .characterviewer .charsheet .navigation {
   grid-area: navigation;
 }
 .ui-dialog .characterviewer .charsheet .page--1 {
   display: grid;
-  grid-template-areas: "health-conditions health-conditions health-conditions resolve evasion-armor" "abilities-skills abilities-skills abilities-skills knowledge knowledge" "abilities-skills abilities-skills abilities-skills magic magic" "weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed" "traits-powers-spells traits-powers-spells traits-powers-spells traits-powers-spells traits-powers-spells";
+  grid-template-areas: "health-conditions health-conditions health-conditions resolve evasion-armor" "abilities-skills abilities-skills abilities-skills knowledge-magic knowledge-magic" "weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed" "traits-powers-spells traits-powers-spells traits-powers-spells traits-powers-spells traits-powers-spells";
   grid-template-columns: repeat(5, 1fr);
   gap: 10px;
 }
@@ -432,9 +432,6 @@
   display: grid;
   grid-template-columns: max-content 1fr;
   gap: 30px;
-}
-.ui-dialog .characterviewer .charsheet .card--knowledge {
-  min-height: 280px;
 }
 .ui-dialog .characterviewer .charsheet .table--ammunition {
   grid-template-columns: 1fr min-content;
