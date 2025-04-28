@@ -23,6 +23,11 @@ const spine = {
       fixed: 2,
     },
     { 
+      name: 'condition',
+      fields: ['name', 'treatment'],
+      fixed: 6,
+    },
+    { 
       name: 'weapon',
       fields: ['name', 'ability-skill', 'attributes', 'damage', 'damage-type', 'heart'],
       fixed: 4,

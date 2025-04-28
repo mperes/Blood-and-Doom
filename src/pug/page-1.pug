@@ -21,29 +21,30 @@
         h3
           +translate({key:'treatment'})
       .table__body
-        +repeating-section({name:'condition', html:{class:'repeating-section--edit-only'}})
+        +repeating-section({name:'condition', html:{class:'repeating-section--edit-only repeating-section--fixed repeating-section--locked'}})
           mixin repeating-edit
-            +text-input({name:'condition', placeholder:'condition', list:'knowledge-list', html:{class:'text-input--simple'}})
-            +text-input({name:'treatment', placeholder:'treatment', list:'knowledge-list', html:{class:'text-input--simple'}})
+            +text-input({name:'name', list:'condition-list', html:{class:'text-input--simple'}})
+            +text-input({name:'treatment', list:'treatment-list', html:{class:'text-input--simple'}})
 .card.card--resolve
-  .section.section--resolve
+  .section.section--resolve.spread-items
     h2
       +translate({key:'resolve'})
     each attribute in spine.resolve.attributes
       +number-input({name:attribute, label:{key:attribute}, html:{class:'number-input--simple'}})
 .card.card--evasion-armor
-  .section.section--evasion
-    h2
-      +translate({key:'evasion'})
-    .group.group--evasion
-      +number-input({name:'evasion-score', label:{key:'score'}, html:{class:'number-input--simple number-input--align-center labelled--bottom-center'}})
-      .group__separator /
-      +number-input({name:'evasion-average', label:{key:'average'}, html:{class:'number-input--simple number-input--align-center labelled--bottom-center'}})
-  .section.section--armor
-    h2
-      +translate({key:'armor'})
-    +number-input({name:'armor', label:{image:'/kXrkprDN/shield.png', key:'armor'}, html:{class:'number-input--simple number-input--align-center'}})
-    +number-input({name:'armor-empty', label:{image:'/fbhyzqHY/shield-empty.png', key:'armor-empty'}, html:{class:'number-input--simple number-input--align-center'}})
+  .spread-items
+    .section.section--evasion
+      h2
+        +translate({key:'evasion'})
+      .group.group--evasion
+        +number-input({name:'evasion-score', label:{key:'score'}, html:{class:'number-input--simple number-input--align-center labelled--bottom-center'}})
+        .group__separator /
+        +number-input({name:'evasion-average', label:{key:'average'}, html:{class:'number-input--simple number-input--align-center labelled--bottom-center'}})
+    .section.section--armor
+      h2
+        +translate({key:'armor'})
+      +number-input({name:'armor', label:{image:'/kXrkprDN/shield.png', key:'armor'}, html:{class:'number-input--simple number-input--align-center'}})
+      +number-input({name:'armor-empty', label:{image:'/fbhyzqHY/shield-empty.png', key:'armor-empty'}, html:{class:'number-input--simple number-input--align-center'}})
 .card.card--abilities-skills
   .section.section--abilities-skills
     h2
@@ -53,21 +54,20 @@
         .group(class=`group--${group}`)
           h3
             +translate({key:group})
-          each skills, attribute in attributes
-            .group(class=`group--${attribute}`)
-              +number-input({name:attribute, label:{key:attribute}, html:{class:'number-input--boxed'}})
-              each skill in skills
-                +number-input({name:skill, label:{key:skill}, html:{class:'number-input--simple  number-input--align-center'}})
+          .group.group--attributes
+            each skills, attribute in attributes
+              .group(class=`group--${attribute}`)
+                +number-input({name:attribute, label:{key:attribute}, html:{class:'number-input--boxed'}})
+                .group.group--skill-list
+                  each skill in skills
+                    +number-input({name:skill, label:{key:skill}, html:{class:'number-input--simple  number-input--align-center'}})
 .card.card--knowledge
   .section.section--knowledge
     .group.group--title
       h2
-        +translate({key:'abilities-and-skills'})
+        +translate({key:'knowledge'})
       +number-input({name:'mind', label:{key:'mind'}, html:{class:'number-input--boxed'}})
-    +repeating-section({name:'knowledge'})
-      mixin repeating-view
-        +display({name:'name'})
-        +display({name:'score'})
+    +repeating-section({name:'knowledge', html:{class:'repeating-section--edit-only'}})
       mixin repeating-edit
         +text-input({name:'name', list:'knowledge-list', html:{class:'text-input--simple'}})
         +number-input({name:'score', html:{class:'number-input--simple'}})
@@ -98,7 +98,7 @@
           +translate({key:'damage'})
           +translate({key:'heart'})
         .table__body
-          +repeating-section({name:'weapon', html:{class:'repeating-section--fixed'}})
+          +repeating-section({name:'weapon', html:{class:'repeating-section--fixed repeating-section--locked'}})
             mixin repeating-view
               +display({name:'name', html:{class:'text-input--simple'}})
               +display({name:'ability-skill', html:{class:'text-input--simple'}})
@@ -127,7 +127,7 @@
           +translate({key:'name'})  
           +translate({key:'quantity'})
         .table__body
-          +repeating-section({name:'ammunition', html:{class:'repeating-section--edit-only repeating-section--fixed'}})
+          +repeating-section({name:'ammunition', html:{class:'repeating-section--edit-only repeating-section--fixed repeating-section--locked'}})
             mixin repeating-edit
               +text-input({name:'name', html:{class:'text-input--simple'}})
               .group.group--quantity

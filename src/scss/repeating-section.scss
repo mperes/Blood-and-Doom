@@ -53,4 +53,15 @@
       display: none!important;
     }
   }
+  &--locked {
+    .repcontrol_edit {
+      display: none!important;
+    }
+  }
+}
+
+.repeating-section--fixed.repeating-section--locked {
+  .repcontrol {
+    display: none!important;
+  }
 }

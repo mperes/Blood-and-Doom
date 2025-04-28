@@ -7,6 +7,7 @@
     border: 0;
     border-radius: 0;
     font-weight: bold;
+    padding: 0;
     &:focus {
       outline: none;
     }
@@ -39,12 +40,16 @@
         align-items: center;
         padding: 5px 10px;
         box-sizing: border-box;
-        clip-path: polygon(5px 0, 100% 0, 100% 100%, 5px 100%, 0 calc(100% - 5px), 0 5px);
+        border-radius: 5px 0 0 5px;
       }
       input {
         height: 50px;
         box-sizing: border-box;
         border: 3px solid var(--primary-color);
+        border-radius: 5px;
+        font-size: var(--font-size-xlarge);
+        text-align: center;
+        line-height: 50px;
       }
     }
   }
