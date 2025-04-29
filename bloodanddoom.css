@@ -267,15 +267,17 @@
   font-size: var(--font-size-xlarge);
   font-weight: 900;
 }
+.ui-dialog .characterviewer .charsheet .checkbox-input {
+  position: relative;
+}
 .ui-dialog .characterviewer .charsheet .checkbox-input input {
   appearance: none;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
   width: 14px;
   height: 14px;
   border: 0;
   border-radius: 3px;
-  position: relative;
 }
 .ui-dialog .characterviewer .charsheet .checkbox-input:has(input:checked) input {
   background-color: orange;
@@ -284,12 +286,15 @@
   content: "";
   display: block;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 14px;
-  height: 10px;
-  background-image: url("https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/check.svg");
+  top: 3px;
+  left: 3px;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  background-image: url(https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/check.svg);
   pointer-events: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 .ui-dialog .characterviewer .charsheet .tabs .tab {
   position: relative;
