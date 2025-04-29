@@ -1,4 +1,5 @@
 .display {
+  text-transform: capitalize;
   &__append {
     &:not(:empty) {
       &:before {

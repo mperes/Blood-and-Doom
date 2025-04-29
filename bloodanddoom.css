@@ -192,6 +192,9 @@
   border-radius: 5px 5px 0 0;
   padding: 5px 10px;
 }
+.ui-dialog .characterviewer .charsheet .table--highlighted .table__header .translation {
+  text-transform: capitalize;
+}
 .ui-dialog .characterviewer .charsheet .table--highlighted .table__body {
   padding: 0 10px;
 }
@@ -204,10 +207,16 @@
   border-radius: 0;
   font-weight: bold;
   padding: 0;
+  text-transform: capitalize;
+  color: var(--text-color);
 }
 .ui-dialog .characterviewer .charsheet .text-input input:focus,
 .ui-dialog .characterviewer .charsheet .number-input input:focus {
   outline: none;
+}
+.ui-dialog .characterviewer .charsheet .text-input label,
+.ui-dialog .characterviewer .charsheet .number-input label {
+  color: var(--text-color);
 }
 .ui-dialog .characterviewer .charsheet .text-input--simple input, .ui-dialog .characterviewer .charsheet .text-input--boxed input,
 .ui-dialog .characterviewer .charsheet .number-input--simple input,
@@ -295,6 +304,12 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
+}
+.ui-dialog .characterviewer .charsheet datalist, .ui-dialog .characterviewer .charsheet select {
+  text-transform: capitalize;
+}
+.ui-dialog .characterviewer .charsheet datalist option, .ui-dialog .characterviewer .charsheet select option {
+  text-transform: capitalize;
 }
 .ui-dialog .characterviewer .charsheet .tabs .tab {
   position: relative;
@@ -401,6 +416,9 @@
   margin-top: 10px;
   flex-direction: row-reverse;
 }
+.ui-dialog .characterviewer .charsheet .display {
+  text-transform: capitalize;
+}
 .ui-dialog .characterviewer .charsheet .display__append:not(:empty):before {
   content: " (";
 }
@@ -497,6 +515,7 @@
 .ui-dialog .characterviewer .charsheet h1, .ui-dialog .characterviewer .charsheet h2, .ui-dialog .characterviewer .charsheet h3, .ui-dialog .characterviewer .charsheet h4, .ui-dialog .characterviewer .charsheet h5, .ui-dialog .characterviewer .charsheet h6 {
   text-transform: capitalize;
   line-height: normal;
+  color: var(--text-color);
 }
 .ui-dialog .characterviewer .charsheet h2 {
   font-size: var(--font-size-xlarge);
@@ -505,6 +524,9 @@
 .ui-dialog .characterviewer .charsheet h3 {
   font-size: var(--font-size-small);
   font-weight: 600;
+}
+.ui-dialog .characterviewer .charsheet .font-awesome {
+  opacity: 0.7;
 }
 .ui-dialog .characterviewer .charsheet .navigation {
   display: grid;
@@ -560,6 +582,9 @@
   display: grid;
   grid-template-columns: 1fr min-content 1fr;
 }
+.ui-dialog .characterviewer .charsheet .table--ammunition .table__body .repcontainer {
+  gap: 5px;
+}
 .ui-dialog .characterviewer .charsheet .table--conditions {
   grid-template-columns: 1fr 100px;
   gap: 10px;
@@ -599,7 +624,7 @@
 }
 .ui-dialog .characterviewer .charsheet .section--armor .number-input label {
   display: grid;
-  grid-template-columns: 50px 1fr;
+  grid-template-columns: max-content 1fr;
   gap: 10px;
 }
 .ui-dialog .characterviewer .charsheet .section--armor .group--armor {
@@ -609,6 +634,10 @@
 }
 .ui-dialog .characterviewer .charsheet .section--armor .number-input + .number-input {
   margin-top: 5px;
+}
+.ui-dialog .characterviewer .charsheet .section--armor .font-awesome {
+  height: 1.5em;
+  width: auto;
 }
 .ui-dialog .characterviewer .charsheet .section--armor-info {
   display: grid;

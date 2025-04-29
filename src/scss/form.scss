@@ -8,10 +8,14 @@
     border-radius: 0;
     font-weight: bold;
     padding: 0;
+    text-transform: capitalize;
+    color: var(--text-color);
     &:focus {
       outline: none;
     }
-
+  }
+  label {
+    color: var(--text-color);
   }
   &--simple,
   &--boxed {
@@ -100,5 +104,12 @@
       background-repeat: no-repeat;
       background-position: center center;
     }
+  }
+}
+
+datalist, select {
+  text-transform: capitalize;
+  option {
+    text-transform: capitalize;
   }
 }

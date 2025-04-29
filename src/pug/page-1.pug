@@ -130,9 +130,9 @@
             mixin repeating-edit
               +text-input({name:'name', html:{class:'text-input--simple'}})
               .group.group--quantity
-                +number-input({name:'quantity-current', html:{class:'number-input--simple'}})
+                +number-input({name:'quantity-current', html:{class:'number-input--simple number-input--align-center'}})
                 .group__separator /
-                +text-input({name:'quantity-max', html:{class:'text-input--simple'}})
+                +number-input({name:'quantity-max', placeholder:'max', html:{class:'number-input--simple number-input--align-center'}})
     .section.section--unarmed-attacks
       h2
         +translate({key:'unarmed-attacks'})
