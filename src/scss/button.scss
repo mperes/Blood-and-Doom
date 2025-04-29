@@ -59,3 +59,11 @@
     }
   }
 }
+
+.repcontrol {
+  display: flex;
+  justify-content: start;
+  gap: 5px;
+  margin-top: 10px;
+  flex-direction: row-reverse;
+}

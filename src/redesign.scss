@@ -10,6 +10,7 @@
   @import "./scss/form.scss";
   @import "./scss/tabs.scss";
   @import "./scss/button.scss";
+  @import "./scss/display.scss";
   @import "./scss/pages.scss";
 
   color: var(--text-color);
@@ -106,6 +107,11 @@
   .table--weapons {
     grid-template-columns: 1fr min-content min-content 100px min-content;
     gap: 10px;
+    .group--damage {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5px;
+    }
   }
 
   //SECTION STYLES

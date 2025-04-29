@@ -1,0 +1,12 @@
+.display {
+  &__append {
+    &:not(:empty) {
+      &:before {
+        content: ' ('
+      }
+      &:after {
+        content: ')'
+      }
+    }
+  }
+}

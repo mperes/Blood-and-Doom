@@ -5,23 +5,26 @@
   &:not(.repeating-section--edit-only) {
     .repitem {
       position: relative;
+      padding-left: 0;
+      transition: padding-left 0.2s ease-in-out;
       &:not(:has(.repeating-section__toggle input:checked)) {
-        .repeating-section__view {
-          display: none;
+        &:hover {
+          padding-left: 19px;
+          .repeating-section__toggle {
+            opacity: 1;
+          }
         }
-        .repeating-section__toggle {
-          opacity: 1;
-        }
-      }
-      &:has(.repeating-section__toggle input:checked) {
         .repeating-section__edit {
           display: none;
         }
-      }
-      &:hover {
-        padding-left: 25px;
         .repeating-section__toggle {
-          opacity: 1;
+          opacity: 0;
+        }
+      }
+      &:has(.repeating-section__toggle input:checked) {
+        padding-left: 19px;
+        .repeating-section__view {
+          display: none;
         }
       }
     }
@@ -30,10 +33,11 @@
       position: absolute;
       top: 0;
       left: 0;
-      opacity: 0;
+      opacity: 1;
+      transition: opacity 0.2s ease-in-out;
       img {
-        width: 20px;
-        height: 20px;
+        width: 14px;
+        height: 14px;
       }
       input {
         position: absolute;
