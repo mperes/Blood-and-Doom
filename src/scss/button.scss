@@ -1,0 +1,17 @@
+.button,
+.repcontrol_edit,
+.repcontrol_add {
+  background: transparent;
+  border-radius: 5px;
+  color: var(--primary-color);
+  cursor: pointer;
+  border: 2px solid var(--primary-color);
+  overflow: hidden;
+  font-size: var(--font-size-medium);
+  font-weight: bold;
+  text-shadow: none;
+  position: relative;
+  &:hover {
+    background-color: rgba(255,255,255,0.5);
+  }
+}

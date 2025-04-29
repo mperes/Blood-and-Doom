@@ -304,6 +304,25 @@
 .ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(10) input:checked)) + .tabbed > .tab-content:nth-of-type(10) {
   display: none;
 }
+.ui-dialog .characterviewer .charsheet .button,
+.ui-dialog .characterviewer .charsheet .repcontrol_edit,
+.ui-dialog .characterviewer .charsheet .repcontrol_add {
+  background: transparent;
+  border-radius: 5px;
+  color: var(--primary-color);
+  cursor: pointer;
+  border: 2px solid var(--primary-color);
+  overflow: hidden;
+  font-size: var(--font-size-medium);
+  font-weight: bold;
+  text-shadow: none;
+  position: relative;
+}
+.ui-dialog .characterviewer .charsheet .button:hover,
+.ui-dialog .characterviewer .charsheet .repcontrol_edit:hover,
+.ui-dialog .characterviewer .charsheet .repcontrol_add:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
 .ui-dialog .characterviewer .charsheet .card--header {
   grid-area: header;
 }
