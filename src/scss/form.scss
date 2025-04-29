@@ -70,3 +70,32 @@
     }
   }
 }
+
+.checkbox-input {
+  input {
+    appearance: none;
+    background-color: transparent;
+    box-sizing: border-box;
+    width: 14px;
+    height: 14px;
+    border: 0;
+    border-radius: 3px;
+    position: relative;
+  }
+  &:has(input:checked) {
+    input {
+      background-color: orange;
+    }
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 14px;
+      height: 10px;
+      background-image: url('https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/check.svg');
+      pointer-events: none;
+    }
+  }
+}
