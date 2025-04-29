@@ -155,10 +155,14 @@
   grid-column: 1/-1;
   display: grid;
   grid-template-columns: subgrid;
+  align-items: center;
 }
 .ui-dialog .characterviewer .charsheet .table__header .font-awesome {
-  height: 1em;
+  height: 1.1em;
   width: auto;
+  max-width: none;
+  filter: invert(100%);
+  padding: 0 10px;
 }
 .ui-dialog .characterviewer .charsheet .table__body {
   display: contents;
