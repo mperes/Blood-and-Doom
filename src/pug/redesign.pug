@@ -127,14 +127,14 @@ each options, list in spine.lists
   .card.card--header
     .section.section--header
       .group
-        +text-input({name:'character_name', label:{key:'character-name'}, html:{class:'text-input--simple labelled--top-center'}})
-        +rangebar({name:'blood-points', steps: 6, label:{key:'blood-points'}, html:{class:'labelled--top-center'}})
+        +text-input({name:'character_name', label:{key:'character-name'}, html:{class:'text-input--simple labelled--top-center text-input--align-center text-input--xlarge-text'}})
+        +rangebar({name:'blood-points', steps: 6, label:{key:'blood-points'}, html:{class:'labelled--top-center rangebar--afar'}})
       .group
-        img(src='https://i.shgcdn.com/f90c7b5c-699e-403a-b060-9329ca5d3665/-/format/auto/-/preview/3000x3000/-/quality/lighter/' alt='logo')
-        +rangebar({name:'momentum-pool', steps: 3, label:{key:'momentum-pool'}, html:{class:'labelled--top-center'}})
+        img(src=`${imgServer}/65G7L1Y5/logo-1300-inline-bw.png` alt='logo')
+        +rangebar({name:'momentum-pool', steps: 3, label:{key:'momentum-pool'}, html:{class:'labelled--top-center rangebar--afar'}})
       .group
-        +text-input({name:'class', label:{key:'class'}, html:{class:'text-input--simple labelled--top-center'}})
-        +rangebar({name:'doom-points', steps: 6, label:{key:'doom-points'}, html:{class:'labelled--top-center'}})
+        +text-input({name:'class', label:{key:'class'}, html:{class:'text-input--simple labelled--top-center text-input--align-center text-input--xlarge-text'}})
+        +rangebar({name:'doom-points', steps: 6, label:{key:'doom-points'}, html:{class:'labelled--top-center rangebar--afar'}})
   .navigation.tabs
     input(class='current-page' type='hidden' name='attr_current-page')
     +tab({key:'page-1', name:'page-1', group:'current-page', checked: true, html:{class:`tab--page-1`}})

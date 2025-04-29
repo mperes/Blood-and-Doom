@@ -92,6 +92,9 @@
 .ui-dialog .characterviewer .charsheet .rangebar__steps input:checked ~ input {
   border-color: var(--primary-color);
 }
+.ui-dialog .characterviewer .charsheet .rangebar--afar .rangebar__steps {
+  gap: 15px;
+}
 .ui-dialog .characterviewer .charsheet .repeating-section__toggle {
   display: none;
 }
@@ -241,6 +244,11 @@
 .ui-dialog .characterviewer .charsheet .text-input--align-right input,
 .ui-dialog .characterviewer .charsheet .number-input--align-right input {
   text-align: right;
+}
+.ui-dialog .characterviewer .charsheet .text-input--xlarge-text input,
+.ui-dialog .characterviewer .charsheet .number-input--xlarge-text input {
+  font-size: var(--font-size-xlarge);
+  font-weight: 900;
 }
 .ui-dialog .characterviewer .charsheet .tabs .tab {
   position: relative;
@@ -504,6 +512,10 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+}
+.ui-dialog .characterviewer .charsheet .section--header > .group {
+  display: grid;
+  gap: 10px;
 }
 .ui-dialog .characterviewer .charsheet .section--health {
   display: grid;

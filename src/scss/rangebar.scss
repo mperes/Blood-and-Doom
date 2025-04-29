@@ -19,4 +19,9 @@
       border-color: var(--primary-color);
     }
   }
+  &--afar {
+    .rangebar__steps {
+      gap: 15px;
+    }
+  }
 }
