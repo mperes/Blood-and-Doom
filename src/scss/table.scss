@@ -5,6 +5,10 @@
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: subgrid;
+    .font-awesome {
+      height: 1em;
+      width: auto;
+    }
   }
   &__body {
     display: contents;
