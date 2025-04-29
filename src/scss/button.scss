@@ -6,12 +6,56 @@
   color: var(--primary-color);
   cursor: pointer;
   border: 2px solid var(--primary-color);
-  overflow: hidden;
   font-size: var(--font-size-medium);
   font-weight: bold;
   text-shadow: none;
-  position: relative;
   &:hover {
     background-color: rgba(255,255,255,0.5);
+  }
+}
+
+.repcontrol_edit,
+.repcontrol_add {
+  overflow: hidden;
+  width: 27px;
+  height: 26px;
+  position: relative;
+  box-sizing: border-box;
+  padding: 0;
+  display: block;
+  color: rgba(0,0,0,0);
+  font-size: 0;
+  &:after {
+    content: '';	
+    position: absolute;
+    top: calc(50% - 6px);
+    left: 0;
+    width: 100%;
+    height: 12px;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    font-size: 0;
+  }
+}
+
+.repcontrol_add {
+  &:after {
+    background-image: url('https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/add.svg');
+  }
+}
+
+.repcontrol_edit {
+  &:after {
+    background-image: url('https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/lock-open.svg');
+    background-position: 6px center;
+  }
+}
+
+.editmode + .repcontrol {
+  .repcontrol_edit {
+    &:after {
+      background-image: url('https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/lock.svg');
+    }
   }
 }
