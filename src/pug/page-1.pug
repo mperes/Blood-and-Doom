@@ -127,6 +127,7 @@
         .table__header
           +translate({key:'name'})  
           +translate({key:'quantity'})
+          //img.font-awesome(src=`${imgServer}/mperes/Blood-and-Doom/refs/heads/main/static/hash.svg` alt='quantity')
         .table__body
           +repeating-section({name:'ammunition', html:{class:'repeating-section--edit-only repeating-section--fixed repeating-section--locked'}})
             mixin repeating-edit
