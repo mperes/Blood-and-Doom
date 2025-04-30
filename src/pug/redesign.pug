@@ -106,6 +106,14 @@ mixin display(options)
       if options.append
         span(name=`attr_${options.append}` class="display__append")
 
+mixin action-button(options)
+  - options.html = options.html || {};
+  .action-button&attributes(options.html)
+    - delete options.html;
+    button(type='action' name=`attr_${options.name}`)
+      if options.label 
+        +translate(options.label)
+
 mixin repeating-section(options)
   - options.html = options.html || {};
   block

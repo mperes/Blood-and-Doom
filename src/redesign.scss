@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
 @import  "./scss/variables.scss";
 
 .ui-dialog .characterviewer .charsheet {
@@ -13,6 +15,9 @@
   @import "./scss/display.scss";
   @import "./scss/pages.scss";
 
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+
   color: var(--text-color);
   font-size: var(--font-size-medium);
   font-weight: 500;
@@ -26,6 +31,7 @@
   h2 {
     font-size: var(--font-size-xlarge);
     font-weight: 900;
+    margin-bottom: 5px;
   }
   h3 {
     font-size: var(--font-size-small);
@@ -105,10 +111,14 @@
     }
   }
   .table--conditions {
-    grid-template-columns: 1fr 100px;
+    grid-template-columns: 1fr min-content;
     gap: 10px;
     grid-template-rows: min-content 1fr;
     min-height: 100%;
+    .repcontainer {
+      height: calc(100% + 10px);
+      margin-top: -10px;
+    }
     .repitem {
       align-items: end;
     }
@@ -142,14 +152,22 @@
     }
     label {
       display: grid;
-      grid-template-columns: 1fr 50px;
+      grid-template-columns: 1fr 32px;
+    }
+    .number-input--boxed {
+      margin-bottom: 5px;
     }
   }
   .section--armor {
-    .number-input label {
-      display: grid;
-      grid-template-columns: max-content 1fr;
-      gap: 10px;
+    .number-input {
+      label {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        gap: 10px;
+      }
+      input {
+        max-width: 60px;
+      }
     }
     .group--armor {
       display: grid;
@@ -193,6 +211,11 @@
   }
   .section--health {
     display: grid;
+    .group--title {
+      display: grid;
+      grid-template-columns: 1fr max-content;
+      gap: 10px;
+    }
     .group--bars {
       display: grid;
       grid-template-columns: repeat(2, min-content);
@@ -205,20 +228,27 @@
         grid-column: 1 / -1;
       }
     }
+    .translation__append {
+      font-size: var(--font-size-xsmall);
+    }
   }
   .section--knowledge {
     .group--title {
       display: grid;
       grid-template-columns: 1fr max-content;
       gap: 10px;
+      margin-bottom: 5px;
     }
     .repeating-section {
       &__view, 
       &__edit {
         display: grid;
-        grid-template-columns: 1fr 50px;
+        grid-template-columns: 1fr 32px;
         gap: 10px;
       }
+    }
+    .repitem:not(:last-child ) {
+      margin-bottom: 5px;
     }
   }
   .section--magic {

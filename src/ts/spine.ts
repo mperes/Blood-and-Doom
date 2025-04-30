@@ -11,9 +11,9 @@ const spine = {
       wisdom: ['animal-ken', 'healing', 'survival'],
     },
     soul: {
-      heart: ['empathy', 'insight', 'persuasion'],
-      mystique: ['charm', 'deception', 'performance'],
-      presence: ['connect', 'intimidation', 'leadership'],
+      heart: ['connect', 'empathy', 'insight'],
+      mystique: ['charm', 'deception', 'intimidation'],
+      presence: ['influence', 'leadership', 'performance']
     },
   },
   fixedRepeatingSections: [

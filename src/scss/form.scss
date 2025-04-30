@@ -34,7 +34,7 @@
   &--boxed {
     label {
       display: grid;
-      grid-template-columns: 1fr 50px;
+      grid-template-columns: 1fr 32px;
       align-items: center;
       .translation {
         text-transform: uppercase;
@@ -42,18 +42,18 @@
         background-color: var(--primary-color);
         display: flex;
         align-items: center;
-        padding: 5px 10px;
+        padding: 3px 5px;
         box-sizing: border-box;
         border-radius: 5px 0 0 5px;
       }
       input {
-        height: 50px;
+        height: 32px;
         box-sizing: border-box;
         border: 3px solid var(--primary-color);
         border-radius: 5px;
         font-size: var(--font-size-xlarge);
         text-align: center;
-        line-height: 50px;
+        line-height: 32px;
       }
     }
   }

@@ -1,14 +1,14 @@
 .rangebar {
   &__steps {
     display: inline-flex;
-    gap: 2px;
+    gap: 4px;
     flex-direction: row-reverse;
     input {
       appearance: none;
       background-color: transparent;
       box-sizing: border-box;
-      width: 14px;
-      height: 14px;
+      width: 16px;
+      height: 16px;
       border: 2px solid var(--tertiary-color);
       border-radius: 3px;
       &:focus {

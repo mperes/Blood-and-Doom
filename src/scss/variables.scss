@@ -1,7 +1,9 @@
 :root {
   --base-size: 10px;
+  --font-size-xsmall: calc(var(--base-size) * 0.9);
   --font-size-small: calc(var(--base-size) * 1.1);
   --font-size-medium: calc(var(--base-size) * 1.2);
+  --font-size-xmedium: calc(var(--base-size) * 1.4);
   --font-size-large: calc(var(--base-size) * 1.6);
   --font-size-xlarge: calc(var(--base-size) * 1.8);
   --primary-color: #484637;

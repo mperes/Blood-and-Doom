@@ -1,7 +1,9 @@
 .card.card--health-conditions
   .section.section--health
-    h2
-      +translate({key:'health'})
+    .group.group--title
+      h2
+        +translate({key:'health'})
+      +action-button({name:'rest', label:{key:'long-rest'}})
     .group.group--bars
       each bar in spine.health.bars
         -
@@ -23,14 +25,14 @@
       .table__body
         +repeating-section({name:'condition', html:{class:'repeating-section--edit-only repeating-section--fixed repeating-section--locked'}})
           mixin repeating-edit
-            +text-input({name:'name', list:'condition-list', html:{class:'text-input--simple'}})
-            +text-input({name:'treatment', list:'treatment-list', html:{class:'text-input--simple'}})
+            +text-input({name:'name', html:{class:'text-input--simple'}})
+            +number-input({name:'treatment', html:{class:'number-input--simple'}})
 .card.card--resolve
   .section.section--resolve.spread-items
     h2
       +translate({key:'resolve'})
     each attribute in spine.resolve.attributes
-      +number-input({name:attribute, label:{key:attribute}, html:{class:'number-input--simple'}})
+      +number-input({name:attribute, label:{key:attribute}, html:{class:'number-input--simple number-input--align-center'}})
 .card.card--evasion-armor
   .spread-items
     .section.section--evasion
@@ -67,11 +69,11 @@
       .group.group--title
         h2
           +translate({key:'knowledge'})
-        +number-input({name:'mind', label:{key:'mind'}, html:{class:'number-input--boxed'}})
+        +number-input({name:'mind', label:{key:'basic-knowledge'}, html:{class:'number-input--boxed'}})
       +repeating-section({name:'knowledge', html:{class:'repeating-section--edit-only'}})
         mixin repeating-edit
           +text-input({name:'name', list:'knowledge-list', html:{class:'text-input--simple'}})
-          +number-input({name:'score', html:{class:'number-input--simple'}})
+          +number-input({name:'score', html:{class:'number-input--simple number-input--align-center'}})
   .card.card--magic
     .section.section--magic
       h2

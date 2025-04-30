@@ -1,4 +1,4 @@
-.button,
+.action-button button,
 .repcontrol_edit,
 .repcontrol_add {
   background: transparent;
@@ -9,6 +9,7 @@
   font-size: var(--font-size-medium);
   font-weight: bold;
   text-shadow: none;
+  text-transform: capitalize;
   &:hover {
     background-color: rgba(255,255,255,0.5);
   }

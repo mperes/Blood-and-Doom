@@ -160,5 +160,7 @@
   "choosing-traditions": "Choosing Traditions",
   "choosing-traditions-desc": "When choosing a Tradition to follow at level 5 and 8, you may choose any previously chosen Tradition again or choose a different one belonging to your Class. Some Traits, Powers, and Spells are only unlocked once you have chosen the Tradition they are part of more than once.",
   "knowledge": "knowledge",
-  "influence": "influence"
+  "influence": "influence",
+  "long-rest": "long rest",
+  "basic-knowledge": "basic knowledge"
 }
