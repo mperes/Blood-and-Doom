@@ -43,6 +43,7 @@
 }
 .ui-dialog .characterviewer .charsheet .labelled--left label {
   display: flex;
+  gap: 5px;
 }
 .ui-dialog .characterviewer .charsheet .labelled--left label .translation {
   width: fit-content;
@@ -417,12 +418,17 @@
 .ui-dialog .characterviewer .charsheet .editmode + .repcontrol .repcontrol_edit:after {
   background-image: url("https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/lock.svg");
 }
+.ui-dialog .characterviewer .charsheet .editmode + .repcontrol .repcontrol_add {
+  display: block !important;
+  pointer-events: none;
+  opacity: 0.35;
+  cursor: default;
+}
 .ui-dialog .characterviewer .charsheet .repcontrol {
   display: flex;
   justify-content: start;
   gap: 5px;
   margin-top: 10px;
-  flex-direction: row-reverse;
 }
 .ui-dialog .characterviewer .charsheet .display {
   font-weight: 700;
@@ -564,7 +570,7 @@
 .ui-dialog .characterviewer .charsheet .section-separator--horizontal {
   min-width: 100%;
   border-top: 1px dotted var(--separator-color);
-  margin-top: 20px;
+  margin-top: 30px;
   height: 20px;
 }
 .ui-dialog .characterviewer .charsheet .card.card--weapons-armor-ammunition-unarmed {
@@ -574,12 +580,10 @@
 .ui-dialog .characterviewer .charsheet .card.card--weapons-armor-ammunition-unarmed .group.group--weapons-armor {
   padding-right: 15px;
 }
-.ui-dialog .characterviewer .charsheet .card.card--weapons-armor-ammunition-unarmed .group.group--weapons-armor .section-separator {
-  margin-top: 30px;
-}
 .ui-dialog .characterviewer .charsheet .card.card--weapons-armor-ammunition-unarmed .group.group--ammunition-unarmed {
-  padding-left: 15px;
-  border-left: 1px solid var(--tertiary-color);
+  margin-left: 5px;
+  padding-left: 20px;
+  border-left: 1px dotted var(--separator-color);
 }
 .ui-dialog .characterviewer .charsheet .card--proficiencies-languages-feats-spells {
   display: grid;

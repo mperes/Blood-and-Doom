@@ -59,6 +59,12 @@
       background-image: url('https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/lock.svg');
     }
   }
+  .repcontrol_add {
+    display: block!important;
+    pointer-events: none;
+    opacity: 0.35;
+    cursor: default;
+  }
 }
 
 .repcontrol {
@@ -66,5 +72,5 @@
   justify-content: start;
   gap: 5px;
   margin-top: 10px;
-  flex-direction: row-reverse;
+  //flex-direction: row-reverse;
 }

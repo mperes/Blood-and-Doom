@@ -69,7 +69,7 @@
     &--horizontal {
       min-width: 100%;
       border-top: 1px dotted var(--separator-color);
-      margin-top: 20px;
+      margin-top: 30px;
       height: 20px;
     }
     &--vertical {
@@ -84,13 +84,11 @@
     grid-template-columns: 3fr 2fr;
     .group.group--weapons-armor {
       padding-right: 15px;
-      .section-separator {
-        margin-top: 30px;
-      }
     }
     .group.group--ammunition-unarmed {
-      padding-left: 15px;
-      border-left: 1px solid var(--tertiary-color);
+      margin-left: 5px;
+      padding-left: 20px;
+      border-left: 1px dotted var(--separator-color);
     }
   }
   .card--proficiencies-languages-feats-spells {
