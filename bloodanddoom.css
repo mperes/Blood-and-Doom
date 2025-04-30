@@ -13,6 +13,7 @@
   --secondary-color: #2ecc71;
   --tertiary-color: #b2af9b;
   --background-color: #d9d8cf;
+  --separator-color: rgba(0, 0, 0, 0.25);
   --text-color: #484637;
   --font-family: "Arial", sans-serif;
 }
@@ -79,15 +80,15 @@
 }
 .ui-dialog .characterviewer .charsheet .rangebar__steps {
   display: inline-flex;
-  gap: 4px;
+  gap: 5px;
   flex-direction: row-reverse;
 }
 .ui-dialog .characterviewer .charsheet .rangebar__steps input {
   appearance: none;
   background-color: transparent;
   box-sizing: border-box;
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   border: 2px solid var(--tertiary-color);
   border-radius: 3px;
 }
@@ -214,6 +215,7 @@
   padding: 0;
   text-transform: capitalize;
   color: var(--text-color);
+  font-size: var(--font-size-medium);
 }
 .ui-dialog .characterviewer .charsheet .text-input input:focus,
 .ui-dialog .characterviewer .charsheet .number-input input:focus {
@@ -423,7 +425,10 @@
   flex-direction: row-reverse;
 }
 .ui-dialog .characterviewer .charsheet .display {
+  font-weight: 700;
   text-transform: capitalize;
+  line-height: 18px;
+  min-height: 18px;
 }
 .ui-dialog .characterviewer .charsheet .display__append:not(:empty):before {
   content: " (";
@@ -556,12 +561,21 @@
   align-content: space-between;
   display: grid;
 }
+.ui-dialog .characterviewer .charsheet .section-separator--horizontal {
+  min-width: 100%;
+  border-top: 1px dotted var(--separator-color);
+  margin-top: 20px;
+  height: 20px;
+}
 .ui-dialog .characterviewer .charsheet .card.card--weapons-armor-ammunition-unarmed {
   display: grid;
   grid-template-columns: 3fr 2fr;
 }
 .ui-dialog .characterviewer .charsheet .card.card--weapons-armor-ammunition-unarmed .group.group--weapons-armor {
   padding-right: 15px;
+}
+.ui-dialog .characterviewer .charsheet .card.card--weapons-armor-ammunition-unarmed .group.group--weapons-armor .section-separator {
+  margin-top: 30px;
 }
 .ui-dialog .characterviewer .charsheet .card.card--weapons-armor-ammunition-unarmed .group.group--ammunition-unarmed {
   padding-left: 15px;
@@ -606,13 +620,22 @@
   align-items: end;
 }
 .ui-dialog .characterviewer .charsheet .table--weapons {
-  grid-template-columns: 1fr min-content min-content 100px min-content;
+  grid-template-columns: 100px min-content 1fr 100px min-content;
   gap: 10px;
 }
 .ui-dialog .characterviewer .charsheet .table--weapons .group--damage {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 5px;
+}
+.ui-dialog .characterviewer .charsheet .table--weapons .repcontainer {
+  gap: 10px;
+}
+.ui-dialog .characterviewer .charsheet .table--weapons .display {
+  border-bottom: 1px solid var(--tertiary-color);
+}
+.ui-dialog .characterviewer .charsheet .table--weapons .input-checkbox {
+  justify-self: end;
 }
 .ui-dialog .characterviewer .charsheet .section--abilities-skills .group--abilities-skills {
   display: grid;
@@ -691,6 +714,7 @@
   display: grid;
   grid-template-columns: repeat(2, min-content);
   gap: 10px;
+  margin-top: 5px;
 }
 .ui-dialog .characterviewer .charsheet .section--health .group--bars .rangebar {
   width: 10px;
@@ -698,9 +722,22 @@
 }
 .ui-dialog .characterviewer .charsheet .section--health .group--bars .rangebar--madness {
   grid-column: 1/-1;
+  height: 38px;
 }
 .ui-dialog .characterviewer .charsheet .section--health .translation__append {
   font-size: var(--font-size-xsmall);
+}
+.ui-dialog .characterviewer .charsheet .section--health .rangebar:not(.rangebar--madness) {
+  min-width: 100%;
+}
+.ui-dialog .characterviewer .charsheet .section--health .rangebar:not(.rangebar--madness) label {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  gap: 5px;
+}
+.ui-dialog .characterviewer .charsheet .section--health .rangebar:not(.rangebar--madness) .translation__append {
+  display: block;
+  line-height: normal;
 }
 .ui-dialog .characterviewer .charsheet .section--knowledge .group--title {
   display: grid;
@@ -717,12 +754,24 @@
   margin-bottom: 5px;
 }
 .ui-dialog .characterviewer .charsheet .section--magic .group {
-  display: flex;
-  gap: 10px;
-  align-items: end;
+  display: contents;
+}
+.ui-dialog .characterviewer .charsheet .section--magic .group--magic-points > * {
+  margin-top: 15px;
+}
+.ui-dialog .characterviewer .charsheet .section--magic .group--magic-points .number-input:first-of-type {
+  grid-column: span 2;
 }
 .ui-dialog .characterviewer .charsheet .section--magic .group h3 {
   white-space: nowrap;
+  font-size: var(--font-size-large);
+  min-width: 85px;
+}
+.ui-dialog .characterviewer .charsheet .section--magic .group--entries {
+  display: grid;
+  grid-template-columns: max-content repeat(3, 1fr);
+  gap: 10px;
+  align-items: end;
 }
 .ui-dialog .characterviewer .charsheet .section--resolve .number-input label {
   display: grid;

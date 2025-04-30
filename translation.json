@@ -4,7 +4,7 @@
   "treatment": "treatment",
   "abilities-and-skills": "abilities & skills",
   "ability": "ability",
-  "ability-plus-skill": "ability plus skill",
+  "ability-plus-skill": "abil + skill",
   "acrobatics": "acrobatics",
   "agility": "agility",
   "ammunition": "ammunition",
@@ -162,5 +162,10 @@
   "knowledge": "knowledge",
   "influence": "influence",
   "long-rest": "long rest",
-  "basic-knowledge": "basic knowledge"
+  "basic-knowledge": "basic knowledge",
+  "dented": "dented",
+  "logo": "logo",
+  "tags-and-attributes": "tags & attributes",
+  "damage-placeholder": "1d8+4",
+  "damage-type-placeholder": "slashing"
 }

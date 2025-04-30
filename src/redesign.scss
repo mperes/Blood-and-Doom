@@ -65,6 +65,17 @@
     align-content: space-between;
     display: grid
   }
+  .section-separator {
+    &--horizontal {
+      min-width: 100%;
+      border-top: 1px dotted var(--separator-color);
+      margin-top: 20px;
+      height: 20px;
+    }
+    &--vertical {
+
+    }
+  }
 
 
   //CARD STYLES
@@ -73,6 +84,9 @@
     grid-template-columns: 3fr 2fr;
     .group.group--weapons-armor {
       padding-right: 15px;
+      .section-separator {
+        margin-top: 30px;
+      }
     }
     .group.group--ammunition-unarmed {
       padding-left: 15px;
@@ -124,12 +138,21 @@
     }
   }
   .table--weapons {
-    grid-template-columns: 1fr min-content min-content 100px min-content;
+    grid-template-columns: 100px min-content 1fr 100px min-content;
     gap: 10px;
     .group--damage {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 5px;
+    }
+    .repcontainer {
+      gap: 10px;
+    }
+    .display {
+      border-bottom: 1px solid var(--tertiary-color);
+    };
+    .input-checkbox {
+      justify-self: end;
     }
   }
 
@@ -220,16 +243,30 @@
       display: grid;
       grid-template-columns: repeat(2, min-content);
       gap: 10px;
+      margin-top: 5px;
       .rangebar {
         width: 10px;
         width: min-content;
       }
       .rangebar--madness {
         grid-column: 1 / -1;
+        height: 38px;
       }
     }
     .translation__append {
       font-size: var(--font-size-xsmall);
+    }
+    .rangebar:not(.rangebar--madness) {
+      min-width: 100%;
+      label {
+        display: grid;
+        grid-template-columns: 1fr max-content;
+        gap: 5px;
+      }
+      .translation__append {
+        display: block;
+        line-height: normal;
+      }
     }
   }
   .section--knowledge {
@@ -253,12 +290,28 @@
   }
   .section--magic {
     .group { 
-      display: flex;
-      gap: 10px;
-      align-items: end;
+      display: contents;
+      .number-input {
+      }
+      &--magic-points {
+        > * {
+          margin-top: 15px;
+        }
+        .number-input:first-of-type {
+          grid-column: span 2
+        }
+      }
       h3 {
         white-space: nowrap;
+        font-size: var(--font-size-large);
+        min-width: 85px;
       }
+    }
+    .group--entries {
+      display: grid;
+      grid-template-columns: max-content repeat(3, 1fr);
+      gap: 10px;
+      align-items: end;
     }
   }
   .section--resolve {

@@ -43,7 +43,7 @@
               </label>
             </div>
         </div>
-        <div class="group"><img src="https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/logo.svg" alt="logo"/>
+        <div class="group"><img src="https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/logo.svg" data-i18n-alt="logo"/>
             <div class="rangebar labelled labelled--top-center rangebar--afar">
               <label><span class="translation"><span class="translation__key" data-i18n="momentum-pool"></span></span>
                 <div class="rangebar__steps">
@@ -106,7 +106,7 @@
                 </div>
             </div>
             <div class="group group--bars">
-                <div class="rangebar labelled labelled--top rangebar--bruises labelled--nowrap">
+                <div class="rangebar labelled rangebar--bruises labelled--nowrap">
                   <label><span class="translation"><span class="translation__key" data-i18n="bruises"></span><span class="translation__append"> (1-3)</span></span>
                     <div class="rangebar__steps">
                       <input type="checkbox" name="attr_bruises" value="3"/>
@@ -115,7 +115,7 @@
                     </div>
                   </label>
                 </div>
-                <div class="rangebar labelled labelled--top rangebar--scrapes labelled--nowrap">
+                <div class="rangebar labelled rangebar--scrapes labelled--nowrap">
                   <label><span class="translation"><span class="translation__key" data-i18n="scrapes"></span><span class="translation__append"> (4-6)</span></span>
                     <div class="rangebar__steps">
                       <input type="checkbox" name="attr_scrapes" value="3"/>
@@ -124,7 +124,7 @@
                     </div>
                   </label>
                 </div>
-                <div class="rangebar labelled labelled--top rangebar--wounds labelled--nowrap">
+                <div class="rangebar labelled rangebar--wounds labelled--nowrap">
                   <label><span class="translation"><span class="translation__key" data-i18n="wounds"></span><span class="translation__append"> (7-9)</span></span>
                     <div class="rangebar__steps">
                       <input type="checkbox" name="attr_wounds" value="3"/>
@@ -133,7 +133,7 @@
                     </div>
                   </label>
                 </div>
-                <div class="rangebar labelled labelled--top rangebar--injuries labelled--nowrap">
+                <div class="rangebar labelled rangebar--injuries labelled--nowrap">
                   <label><span class="translation"><span class="translation__key" data-i18n="injuries"></span><span class="translation__append"> (10-12/13+)</span></span>
                     <div class="rangebar__steps">
                       <input type="checkbox" name="attr_injuries" value="3"/>
@@ -142,7 +142,7 @@
                     </div>
                   </label>
                 </div>
-                <div class="rangebar labelled labelled--top rangebar--madness labelled--nowrap">
+                <div class="rangebar labelled rangebar--madness labelled--nowrap">
                   <label><span class="translation"><span class="translation__key" data-i18n="madness"></span></span>
                     <div class="rangebar__steps">
                       <input type="checkbox" name="attr_madness" value="10"/>
@@ -242,12 +242,12 @@
               <h2><span class="translation"><span class="translation__key" data-i18n="armor"></span></span>
               </h2>
                 <div class="number-input labelled number-input--simple number-input--align-center">
-                  <label><span class="translation"><img class="font-awesome translation__image" src="https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/shield.svg" alt="armor"/></span>
+                  <label><span class="translation"><img class="font-awesome translation__image" src="https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/shield.svg" data-i18n-title="armor" data-i18n-alt="armor"/></span>
                     <input type="number" name="attr_armor"/>
                   </label>
                 </div>
                 <div class="number-input labelled number-input--simple number-input--align-center">
-                  <label><span class="translation"><img class="font-awesome translation__image" src="https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/shield-slash.svg" alt="armor-empty"/></span>
+                  <label><span class="translation"><img class="font-awesome translation__image" src="https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/shield-slash.svg" data-i18n-title="armor-empty" data-i18n-alt="armor-empty"/></span>
                     <input type="number" name="attr_armor-empty"/>
                   </label>
                 </div>
@@ -529,38 +529,40 @@
             <div class="section section--magic">
               <h2><span class="translation"><span class="translation__key" data-i18n="magic"></span></span>
               </h2>
-              <div class="group group--spellcasting">
-                <h3><span class="translation"><span class="translation__key" data-i18n="spellcasting"></span></span>
-                </h3>
-                  <div class="number-input labelled text-input--simple number-input--align-center labelled--top-center">
-                    <label><span class="translation"><span class="translation__key" data-i18n="ability"></span></span>
-                      <input type="number" name="attr_spellcasting-ability"/>
-                    </label>
-                  </div>
-                  <div class="number-input labelled text-input--simple number-input--align-center labelled--top-center">
-                    <label><span class="translation"><span class="translation__key" data-i18n="skill"></span></span>
-                      <input type="number" name="attr_spellcasting-skill"/>
-                    </label>
-                  </div>
-                  <div class="number-input labelled text-input--simple number-input--align-center labelled--top-center">
-                    <label><span class="translation"><span class="translation__key" data-i18n="total"></span></span>
-                      <input type="number" name="attr_spellcasting-total"/>
-                    </label>
-                  </div>
-              </div>
-              <div class="group group--magic-points">
-                <h3><span class="translation"><span class="translation__key" data-i18n="magic-points"></span></span>
-                </h3>
-                  <div class="number-input labelled text-input--simple number-input--align-center labelled--top-center">
-                    <label><span class="translation"><span class="translation__key" data-i18n="current"></span></span>
-                      <input type="number" name="attr_spellcasting-current"/>
-                    </label>
-                  </div>
-                  <div class="number-input labelled text-input--simple number-input--align-center labelled--top-center">
-                    <label><span class="translation"><span class="translation__key" data-i18n="max"></span></span>
-                      <input type="number" name="attr_spellcasting-max"/>
-                    </label>
-                  </div>
+              <div class="group group--entries">
+                <div class="group group--spellcasting">
+                  <h3><span class="translation"><span class="translation__key" data-i18n="spellcasting"></span></span>
+                  </h3>
+                    <div class="number-input labelled text-input--simple number-input--align-center labelled--top-center">
+                      <label><span class="translation"><span class="translation__key" data-i18n="ability"></span></span>
+                        <input type="number" name="attr_spellcasting-ability"/>
+                      </label>
+                    </div>
+                    <div class="number-input labelled text-input--simple number-input--align-center labelled--top-center">
+                      <label><span class="translation"><span class="translation__key" data-i18n="skill"></span></span>
+                        <input type="number" name="attr_spellcasting-skill"/>
+                      </label>
+                    </div>
+                    <div class="number-input labelled text-input--simple number-input--align-center labelled--top-center">
+                      <label><span class="translation"><span class="translation__key" data-i18n="total"></span></span>
+                        <input type="number" name="attr_spellcasting-total"/>
+                      </label>
+                    </div>
+                </div>
+                <div class="group group--magic-points">
+                  <h3><span class="translation"><span class="translation__key" data-i18n="magic-points"></span></span>
+                  </h3>
+                    <div class="number-input labelled text-input--simple number-input--align-center labelled--top-center">
+                      <label><span class="translation"><span class="translation__key" data-i18n="current"></span></span>
+                        <input type="number" name="attr_spellcasting-current"/>
+                      </label>
+                    </div>
+                    <div class="number-input labelled text-input--simple number-input--align-center labelled--top-center">
+                      <label><span class="translation"><span class="translation__key" data-i18n="max"></span></span>
+                        <input type="number" name="attr_spellcasting-max"/>
+                      </label>
+                    </div>
+                </div>
               </div>
             </div>
           </div>
@@ -571,7 +573,7 @@
             </h2>
             <div class="section section--weapons">
               <div class="table table--weapons table--highlighted">
-                <div class="table__header"><span class="translation"><span class="translation__key" data-i18n="name"></span></span><span class="translation"><span class="translation__key" data-i18n="ability-plus-skill"></span></span><span class="translation"><span class="translation__key" data-i18n="attributes"></span></span><span class="translation"><span class="translation__key" data-i18n="damage"></span></span><img class="font-awesome" src="https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/dented.svg" alt="dented"/>
+                <div class="table__header"><span class="translation"><span class="translation__key" data-i18n="name"></span></span><span class="translation"><span class="translation__key" data-i18n="ability-plus-skill"></span></span><span class="translation"><span class="translation__key" data-i18n="tags-and-attributes"></span></span><span class="translation"><span class="translation__key" data-i18n="damage"></span></span><img class="font-awesome" src="https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/dented.svg" data-i18n-title="dented" data-i18n-alt="dented"/>
                 </div>
                 <div class="table__body">
                     <div class="repeating-section repeating-section--fixed repeating-section--locked">
@@ -604,10 +606,10 @@
                             </div>
                           <div class="group group--damage">
                               <div class="text-input labelled text-input--simple">
-                                <input type="text" name="attr_damage"/>
+                                <input type="text" name="attr_damage" data-i18n-placeholder="damage-placeholder"/>
                               </div>
                               <div class="text-input labelled text-input--simple">
-                                <input type="text" name="attr_damage-type"/>
+                                <input type="text" name="attr_damage-type" data-i18n-placeholder="damage-type-placeholder"/>
                               </div>
                           </div>
                             <div class="checkbox-input labelled checkbox--simple" value="1">
@@ -619,6 +621,7 @@
                 </div>
               </div>
             </div>
+            <div class="section-separator section-separator--horizontal"></div>
             <div class="section section--armor-info">
                 <div class="text-input labelled text-input--simple labelled--left labelled--nowrap">
                   <label><span class="translation"><span class="translation__key" data-i18n="armor-name-and-info"></span></span>

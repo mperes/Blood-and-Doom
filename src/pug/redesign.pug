@@ -4,7 +4,7 @@ mixin translate(options)
     if options.prepend
       span(class="translation__prepend")=options.prepend
     if options.image
-      img.font-awesome(class="translation__image" src=`${imgServer}${options.image}` alt=options.key)
+      img.font-awesome(class="translation__image" src=`${imgServer}${options.image}` data-i18n-title=options.key data-i18n-alt=options.key)
     else if options.key
       span(class="translation__key" data-i18n=options.key)
     if options.append
@@ -155,7 +155,7 @@ each options, list in spine.lists
         +text-input({name:'character_name', label:{key:'character-name'}, html:{class:'text-input--simple labelled--top-center text-input--align-center text-input--xlarge-text'}})
         +rangebar({name:'blood-points', steps: 6, label:{key:'blood-points'}, html:{class:'labelled--top-center rangebar--afar'}})
       .group
-        img(src=`${imgServer}/mperes/Blood-and-Doom/refs/heads/main/static/logo.svg` alt='logo')
+        img(src=`${imgServer}/mperes/Blood-and-Doom/refs/heads/main/static/logo.svg` data-i18n-alt='logo')
         +rangebar({name:'momentum-pool', steps: 3, label:{key:'momentum-pool'}, html:{class:'labelled--top-center rangebar--afar'}})
       .group
         +text-input({name:'class', label:{key:'class'}, html:{class:'text-input--simple labelled--top-center text-input--align-center text-input--xlarge-text'}})
