@@ -93,34 +93,34 @@
   .group.group--weapons-armor
     h2
       +translate({key:'weapons-and-armor'})
-    .section.section--weapons
-      .table.table--weapons.table--highlighted
-        .table__header
-          +translate({key:'name'})  
-          +translate({key:'ability-plus-skill'})
-          +translate({key:'tags-and-attributes'})
-          +translate({key:'damage'})
-          img.font-awesome(src=`${imgServer}/mperes/Blood-and-Doom/refs/heads/main/static/dented.svg` data-i18n-title='dented' data-i18n-alt='dented')
-        .table__body
-          +repeating-section({name:'weapon', html:{class:'repeating-section--fixed repeating-section--locked'}})
-            mixin repeating-view
-              +display({name:'name', html:{class:'text-input--simple'}})
-              +display({name:'ability-skill', html:{class:'text-input--simple'}})
-              +display({name:'attributes', html:{class:'text-input--simple'}})
-              +display({name:'damage', append:'damage-type', html:{class:'text-input--simple'}})
-              +checkbox-input({name:'dented', html:{value:'1', class:'checkbox--simple'}})
-            mixin repeating-edit
-              +text-input({name:'name', html:{class:'text-input--simple'}})
-              +text-input({name:'ability-skill', html:{class:'text-input--simple'}})
-              +text-input({name:'attributes', html:{class:'text-input--simple'}})
-              .group.group--damage
-                +text-input({name:'damage', placeholder:'damage-placeholder', html:{class:'text-input--simple'}})
-                +text-input({name:'damage-type', placeholder:'damage-type-placeholder', html:{class:'text-input--simple'}})
-              +checkbox-input({name:'dented', html:{value:'1', class:'checkbox--simple'}})
-    .section-separator.section-separator--horizontal
-    .section.section--armor-info
-      +text-input({name:'armor-name', label:{key:'armor-name-and-info'}, html:{class:'text-input--simple labelled--left labelled--nowrap'}})
-      +rangebar({name:'armor-score', steps: 5})
+    .group.group--spread
+      .section.section--weapons
+        .table.table--weapons.table--highlighted
+          .table__header
+            +translate({key:'name'})  
+            +translate({key:'ability-plus-skill'})
+            +translate({key:'tags-and-attributes'})
+            +translate({key:'damage'})
+            img.font-awesome(src=`${imgServer}/mperes/Blood-and-Doom/refs/heads/main/static/dented.svg` data-i18n-title='dented' data-i18n-alt='dented')
+          .table__body
+            +repeating-section({name:'weapon', html:{class:'repeating-section--fixed repeating-section--locked'}})
+              mixin repeating-view
+                +display({name:'name', html:{class:'text-input--simple'}})
+                +display({name:'ability-skill', html:{class:'text-input--simple'}})
+                +display({name:'attributes', html:{class:'text-input--simple'}})
+                +display({name:'damage', append:'damage-type', html:{class:'text-input--simple'}})
+                +checkbox-input({name:'dented', html:{value:'1', class:'checkbox--simple'}})
+              mixin repeating-edit
+                +text-input({name:'name', html:{class:'text-input--simple'}})
+                +text-input({name:'ability-skill', html:{class:'text-input--simple'}})
+                +text-input({name:'attributes', html:{class:'text-input--simple'}})
+                .group.group--damage
+                  +text-input({name:'damage', placeholder:'damage-placeholder', html:{class:'text-input--simple'}})
+                  +text-input({name:'damage-type', placeholder:'damage-type-placeholder', html:{class:'text-input--simple'}})
+                +checkbox-input({name:'dented', html:{value:'1', class:'checkbox--simple'}})
+      .section.section--armor-info
+        +text-input({name:'armor-name', label:{key:'armor-name-and-info'}, html:{class:'text-input--simple labelled--left labelled--nowrap'}})
+        +rangebar({name:'armor-score', steps: 5})
   .group.group--ammunition-unarmed
     .section.section--ammunition
       h2
@@ -142,8 +142,10 @@
     .section.section--unarmed-attacks
       h2
         +translate({key:'unarmed-attacks'})
-      +text-input({name:'unarmed-attack-ability-skill', label:{key:'ability-plus-skill'}, html:{class:'text-input--simple labelled--left labelled--nowrap'}})
-      +text-input({name:'unarmed-attack-damage', label:{key:'damage'}, html:{class:'text-input--simple labelled--left labelled--nowrap'}})
+      .group.group--attacks
+        +text-input({name:'unarmed-attack-ability-skill', label:{key:'ability-plus-skill'}, html:{class:'text-input--simple labelled--left labelled--nowrap'}})
+        +text-input({name:'unarmed-attack-damage', label:{key:'damage'}, html:{class:'text-input--simple labelled--left labelled--nowrap'}})
+    .section-separator.section-separator--horizontal.section-separator--narrow
     .section.section--combat-resolve-difficulty
       +number-input({name:'combat-resolve-difficulty', label:{key:'combat-resolve-difficulty'}, html:{class:'number-input--simple labelled--left labelled--nowrap'}})
 .card.card--traits-powers-spells

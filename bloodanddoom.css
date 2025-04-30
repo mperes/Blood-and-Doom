@@ -570,15 +570,41 @@
 .ui-dialog .characterviewer .charsheet .section-separator--horizontal {
   min-width: 100%;
   border-top: 1px dotted var(--separator-color);
-  margin-top: 30px;
-  height: 20px;
+  margin-top: 20px;
+  height: 10px;
+}
+.ui-dialog .characterviewer .charsheet .section-separator--horizontal.section-separator--narrow {
+  margin-top: 20px;
+  height: 10px;
 }
 .ui-dialog .characterviewer .charsheet .card.card--weapons-armor-ammunition-unarmed {
   display: grid;
   grid-template-columns: 3fr 2fr;
 }
 .ui-dialog .characterviewer .charsheet .card.card--weapons-armor-ammunition-unarmed .group.group--weapons-armor {
+  display: grid;
+  grid-template-rows: max-content 1fr;
   padding-right: 15px;
+}
+.ui-dialog .characterviewer .charsheet .card.card--weapons-armor-ammunition-unarmed .group.group--weapons-armor .group--spread {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}
+.ui-dialog .characterviewer .charsheet .card.card--weapons-armor-ammunition-unarmed .group.group--weapons-armor .group--spread .section--armor-info {
+  flex-grow: 1;
+  align-items: end;
+  position: relative;
+}
+.ui-dialog .characterviewer .charsheet .card.card--weapons-armor-ammunition-unarmed .group.group--weapons-armor .group--spread .section--armor-info:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  border-top: 1px dotted var(--separator-color);
+  position: absolute;
+  bottom: 50px;
+  left: 0;
 }
 .ui-dialog .characterviewer .charsheet .card.card--weapons-armor-ammunition-unarmed .group.group--ammunition-unarmed {
   margin-left: 5px;
@@ -633,7 +659,7 @@
   gap: 5px;
 }
 .ui-dialog .characterviewer .charsheet .table--weapons .repcontainer {
-  gap: 10px;
+  gap: 5px 10px;
 }
 .ui-dialog .characterviewer .charsheet .table--weapons .display {
   border-bottom: 1px solid var(--tertiary-color);
@@ -809,5 +835,10 @@
 .ui-dialog .characterviewer .charsheet .section--traits-powers-spells .group--traditions {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.ui-dialog .characterviewer .charsheet .section--unarmed-attacks .group--attacks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 }

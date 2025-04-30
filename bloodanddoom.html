@@ -571,72 +571,73 @@
           <div class="group group--weapons-armor">
             <h2><span class="translation"><span class="translation__key" data-i18n="weapons-and-armor"></span></span>
             </h2>
-            <div class="section section--weapons">
-              <div class="table table--weapons table--highlighted">
-                <div class="table__header"><span class="translation"><span class="translation__key" data-i18n="name"></span></span><span class="translation"><span class="translation__key" data-i18n="ability-plus-skill"></span></span><span class="translation"><span class="translation__key" data-i18n="tags-and-attributes"></span></span><span class="translation"><span class="translation__key" data-i18n="damage"></span></span><img class="font-awesome" src="https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/dented.svg" data-i18n-title="dented" data-i18n-alt="dented"/>
-                </div>
-                <div class="table__body">
-                    <div class="repeating-section repeating-section--fixed repeating-section--locked">
-                      <fieldset class="repeating_weapon">
-                        <div class="repeating-section__toggle"><img class="font-awesome" src="https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/cog.svg" data-i18n-alt="toggle-edit-mode"/>
-                          <input type="checkbox"/>
-                        </div>
-                        <div class="repeating-section__view">
-                            <div class="display text-input--simple"><span name="attr_name"></span>
-                            </div>
-                            <div class="display text-input--simple"><span name="attr_ability-skill"></span>
-                            </div>
-                            <div class="display text-input--simple"><span name="attr_attributes"></span>
-                            </div>
-                            <div class="display text-input--simple"><span name="attr_damage"></span><span class="display__append" name="attr_damage-type"></span>
-                            </div>
-                            <div class="checkbox-input labelled checkbox--simple" value="1">
-                              <input type="checkbox" name="attr_dented"/>
-                            </div>
-                        </div>
-                        <div class="repeating-section__edit">
-                            <div class="text-input labelled text-input--simple">
-                              <input type="text" name="attr_name"/>
-                            </div>
-                            <div class="text-input labelled text-input--simple">
-                              <input type="text" name="attr_ability-skill"/>
-                            </div>
-                            <div class="text-input labelled text-input--simple">
-                              <input type="text" name="attr_attributes"/>
-                            </div>
-                          <div class="group group--damage">
-                              <div class="text-input labelled text-input--simple">
-                                <input type="text" name="attr_damage" data-i18n-placeholder="damage-placeholder"/>
+            <div class="group group--spread">
+              <div class="section section--weapons">
+                <div class="table table--weapons table--highlighted">
+                  <div class="table__header"><span class="translation"><span class="translation__key" data-i18n="name"></span></span><span class="translation"><span class="translation__key" data-i18n="ability-plus-skill"></span></span><span class="translation"><span class="translation__key" data-i18n="tags-and-attributes"></span></span><span class="translation"><span class="translation__key" data-i18n="damage"></span></span><img class="font-awesome" src="https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/dented.svg" data-i18n-title="dented" data-i18n-alt="dented"/>
+                  </div>
+                  <div class="table__body">
+                      <div class="repeating-section repeating-section--fixed repeating-section--locked">
+                        <fieldset class="repeating_weapon">
+                          <div class="repeating-section__toggle"><img class="font-awesome" src="https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/cog.svg" data-i18n-alt="toggle-edit-mode"/>
+                            <input type="checkbox"/>
+                          </div>
+                          <div class="repeating-section__view">
+                              <div class="display text-input--simple"><span name="attr_name"></span>
                               </div>
-                              <div class="text-input labelled text-input--simple">
-                                <input type="text" name="attr_damage-type" data-i18n-placeholder="damage-type-placeholder"/>
+                              <div class="display text-input--simple"><span name="attr_ability-skill"></span>
+                              </div>
+                              <div class="display text-input--simple"><span name="attr_attributes"></span>
+                              </div>
+                              <div class="display text-input--simple"><span name="attr_damage"></span><span class="display__append" name="attr_damage-type"></span>
+                              </div>
+                              <div class="checkbox-input labelled checkbox--simple" value="1">
+                                <input type="checkbox" name="attr_dented"/>
                               </div>
                           </div>
-                            <div class="checkbox-input labelled checkbox--simple" value="1">
-                              <input type="checkbox" name="attr_dented"/>
+                          <div class="repeating-section__edit">
+                              <div class="text-input labelled text-input--simple">
+                                <input type="text" name="attr_name"/>
+                              </div>
+                              <div class="text-input labelled text-input--simple">
+                                <input type="text" name="attr_ability-skill"/>
+                              </div>
+                              <div class="text-input labelled text-input--simple">
+                                <input type="text" name="attr_attributes"/>
+                              </div>
+                            <div class="group group--damage">
+                                <div class="text-input labelled text-input--simple">
+                                  <input type="text" name="attr_damage" data-i18n-placeholder="damage-placeholder"/>
+                                </div>
+                                <div class="text-input labelled text-input--simple">
+                                  <input type="text" name="attr_damage-type" data-i18n-placeholder="damage-type-placeholder"/>
+                                </div>
                             </div>
-                        </div>
-                      </fieldset>
-                    </div>
-                </div>
-              </div>
-            </div>
-            <div class="section-separator section-separator--horizontal"></div>
-            <div class="section section--armor-info">
-                <div class="text-input labelled text-input--simple labelled--left labelled--nowrap">
-                  <label><span class="translation"><span class="translation__key" data-i18n="armor-name-and-info"></span></span>
-                    <input type="text" name="attr_armor-name"/>
-                  </label>
-                </div>
-                <div class="rangebar labelled">
-                  <div class="rangebar__steps">
-                    <input type="checkbox" name="attr_armor-score" value="5"/>
-                    <input type="checkbox" name="attr_armor-score" value="4"/>
-                    <input type="checkbox" name="attr_armor-score" value="3"/>
-                    <input type="checkbox" name="attr_armor-score" value="2"/>
-                    <input type="checkbox" name="attr_armor-score" value="1"/>
+                              <div class="checkbox-input labelled checkbox--simple" value="1">
+                                <input type="checkbox" name="attr_dented"/>
+                              </div>
+                          </div>
+                        </fieldset>
+                      </div>
                   </div>
                 </div>
+              </div>
+              <div class="section section--armor-info">
+                  <div class="text-input labelled text-input--simple labelled--left labelled--nowrap">
+                    <label><span class="translation"><span class="translation__key" data-i18n="armor-name-and-info"></span></span>
+                      <input type="text" name="attr_armor-name"/>
+                    </label>
+                  </div>
+                  <div class="rangebar labelled">
+                    <div class="rangebar__steps">
+                      <input type="checkbox" name="attr_armor-score" value="5"/>
+                      <input type="checkbox" name="attr_armor-score" value="4"/>
+                      <input type="checkbox" name="attr_armor-score" value="3"/>
+                      <input type="checkbox" name="attr_armor-score" value="2"/>
+                      <input type="checkbox" name="attr_armor-score" value="1"/>
+                    </div>
+                  </div>
+              </div>
             </div>
           </div>
           <div class="group group--ammunition-unarmed">
@@ -676,17 +677,20 @@
             <div class="section section--unarmed-attacks">
               <h2><span class="translation"><span class="translation__key" data-i18n="unarmed-attacks"></span></span>
               </h2>
-                <div class="text-input labelled text-input--simple labelled--left labelled--nowrap">
-                  <label><span class="translation"><span class="translation__key" data-i18n="ability-plus-skill"></span></span>
-                    <input type="text" name="attr_unarmed-attack-ability-skill"/>
-                  </label>
-                </div>
-                <div class="text-input labelled text-input--simple labelled--left labelled--nowrap">
-                  <label><span class="translation"><span class="translation__key" data-i18n="damage"></span></span>
-                    <input type="text" name="attr_unarmed-attack-damage"/>
-                  </label>
-                </div>
+              <div class="group group--attacks">
+                  <div class="text-input labelled text-input--simple labelled--left labelled--nowrap">
+                    <label><span class="translation"><span class="translation__key" data-i18n="ability-plus-skill"></span></span>
+                      <input type="text" name="attr_unarmed-attack-ability-skill"/>
+                    </label>
+                  </div>
+                  <div class="text-input labelled text-input--simple labelled--left labelled--nowrap">
+                    <label><span class="translation"><span class="translation__key" data-i18n="damage"></span></span>
+                      <input type="text" name="attr_unarmed-attack-damage"/>
+                    </label>
+                  </div>
+              </div>
             </div>
+            <div class="section-separator section-separator--horizontal section-separator--narrow"></div>
             <div class="section section--combat-resolve-difficulty">
                 <div class="number-input labelled number-input--simple labelled--left labelled--nowrap">
                   <label><span class="translation"><span class="translation__key" data-i18n="combat-resolve-difficulty"></span></span>

@@ -69,8 +69,12 @@
     &--horizontal {
       min-width: 100%;
       border-top: 1px dotted var(--separator-color);
-      margin-top: 30px;
-      height: 20px;
+      margin-top: 20px;
+      height: 10px;
+      &.section-separator--narrow {
+        margin-top: 20px;
+        height: 10px;
+      }
     }
     &--vertical {
 
@@ -83,7 +87,29 @@
     display: grid;
     grid-template-columns: 3fr 2fr;
     .group.group--weapons-armor {
+      display: grid;
+      grid-template-rows: max-content 1fr;
       padding-right: 15px;
+      .group--spread {
+        display: flex;
+        gap: 30px;
+        flex-direction: column;
+        .section--armor-info {
+          flex-grow: 1;
+          align-items: end;
+          position: relative;
+          &:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 1px;
+            border-top: 1px dotted var(--separator-color);
+            position: absolute;
+            bottom: 50px;
+            left: 0;
+          }
+        }
+      }
     }
     .group.group--ammunition-unarmed {
       margin-left: 5px;
@@ -144,7 +170,7 @@
       gap: 5px;
     }
     .repcontainer {
-      gap: 10px;
+      gap: 5px 10px;
     }
     .display {
       border-bottom: 1px solid var(--tertiary-color);
@@ -351,6 +377,13 @@
     .group--traditions {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+  }
+  .section--unarmed-attacks {
+    .group--attacks {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
       gap: 10px;
     }
   }
