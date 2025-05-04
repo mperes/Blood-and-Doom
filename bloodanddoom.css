@@ -286,16 +286,25 @@
 }
 .ui-dialog .characterviewer .charsheet .checkbox-input {
   position: relative;
+  width: 14px;
+  height: 14px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
 }
 .ui-dialog .characterviewer .charsheet .checkbox-input input {
   appearance: none;
   background-color: var(--primary-color);
   box-sizing: border-box;
-  width: 14px;
-  height: 14px;
+  width: 100%;
+  height: 100%;
   border: 0;
   border-radius: 3px;
   opacity: 0.35;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  position: absolute;
 }
 .ui-dialog .characterviewer .charsheet .checkbox-input:has(input:checked) input {
   opacity: 1;
@@ -303,17 +312,17 @@
 .ui-dialog .characterviewer .charsheet .checkbox-input:has(input:checked):after {
   content: "";
   display: block;
-  position: absolute;
-  top: 2px;
-  left: 3px;
-  width: calc(100% - 6px);
-  height: calc(100% - 6px);
+  position: relative;
+  width: 10px;
+  height: 10px;
   background-image: url(https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/check.svg);
   pointer-events: none;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
   filter: invert(1);
+  z-index: 2;
+  margin-left: 1px;
 }
 .ui-dialog .characterviewer .charsheet datalist, .ui-dialog .characterviewer .charsheet select {
   text-transform: capitalize;
@@ -744,6 +753,12 @@
   display: grid;
   gap: 10px;
 }
+.ui-dialog .characterviewer .charsheet .section--header > .group:first-of-type > *:first-child, .ui-dialog .characterviewer .charsheet .section--header > .group:last-of-type > *:first-child {
+  margin-top: -4px;
+}
+.ui-dialog .characterviewer .charsheet .section--header > .group img + .rangebar {
+  margin-top: 4px;
+}
 .ui-dialog .characterviewer .charsheet .section--health {
   display: grid;
 }
@@ -860,4 +875,12 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
+}
+.ui-dialog .characterviewer .charsheet .section--tradition .repcontainer {
+  display: grid;
+  grid-template-columns: 1fr 32px min-content;
+  gap: 5px;
+}
+.ui-dialog .characterviewer .charsheet .section--tradition .repcontainer .repitem, .ui-dialog .characterviewer .charsheet .section--tradition .repcontainer .repeating-section__edit {
+  display: contents;
 }

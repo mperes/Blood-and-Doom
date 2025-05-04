@@ -259,6 +259,15 @@
     > .group {
       display: grid;
       gap: 10px;
+      &:first-of-type,
+      &:last-of-type {
+        > *:first-child {
+          margin-top: -4px;
+        }
+      }
+      img + .rangebar {
+        margin-top: 4px;
+      }
     }
   }
   .section--health {
@@ -397,6 +406,16 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
+    }
+  }
+  .section--tradition {
+    .repcontainer {
+      display: grid;
+      grid-template-columns: 1fr 32px min-content;
+      gap: 5px;
+      .repitem, .repeating-section__edit {
+        display: contents;
+      }
     }
   }
 }  

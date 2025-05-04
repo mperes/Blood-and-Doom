@@ -160,13 +160,13 @@
         if i === 1 || i === 2
           .section-separator.section-separator--vertical
         - i++
-        .tradition(class=`tradition--${tradition}`)
+        .section.section--tradition(class=`section--tradition-${tradition}`)
           h2
             +translate({key:`tradition ${tradition}`})
           span(data-i18n=`level-${levels}`)
           +repeating-section({name:`tradition-${tradition}`, html:{class:'repeating-section--edit-only'}})
             mixin repeating-edit
               +text-input({name:'name', html:{class:'text-input--simple'}})
-              +number-input({name:'score', html:{class:'number-input--simple'}})
-              +text-input({name:'active', html:{class:'text-input--simple'}})
+              +number-input({name:'score', html:{class:'number-input--simple number-input--align-center'}})
+              +checkbox-input({name:'active', html:{class:'checkbox-input--simple'}})
   
