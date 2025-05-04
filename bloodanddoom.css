@@ -15,7 +15,42 @@
   --background-color: #d9d8cf;
   --separator-color: rgba(0, 0, 0, 0.25);
   --text-color: #484637;
+  --boxedtext-color: #d9d8cf;
   --font-family: "Arial", sans-serif;
+}
+
+.sheet-darkmode {
+  --base-size: 10px;
+  --font-size-xsmall: calc(var(--base-size) * 0.9);
+  --font-size-small: calc(var(--base-size) * 1.1);
+  --font-size-medium: calc(var(--base-size) * 1.2);
+  --font-size-xmedium: calc(var(--base-size) * 1.4);
+  --font-size-large: calc(var(--base-size) * 1.6);
+  --font-size-xlarge: calc(var(--base-size) * 1.8);
+  --primary-color: #afafaf;
+  --highlight-color: #2e2d2f;
+  --secondary-color: #2ecc71;
+  --tertiary-color: #494949;
+  --background-color: #040404;
+  --separator-color: rgba(255, 255, 255, 0.25);
+  --text-color: #afafaf;
+  --boxedtext-color: #afafaf;
+  --font-family: "Arial", sans-serif;
+}
+.sheet-darkmode .sheetform {
+  background-color: transparent;
+}
+.sheet-darkmode .font-awesome, .sheet-darkmode .logo {
+  filter: invert(1);
+}
+.sheet-darkmode .checkbox-input:after {
+  filter: invert(0) !important;
+}
+.sheet-darkmode .repcontrol_edit, .sheet-darkmode .repcontrol_add {
+  opacity: 0.85;
+}
+.sheet-darkmode .repcontrol_edit:after, .sheet-darkmode .repcontrol_add:after {
+  filter: invert(1);
 }
 
 .ui-dialog .characterviewer .charsheet {
@@ -78,6 +113,10 @@
 .ui-dialog .characterviewer .charsheet .labelled label {
   font-size: var(--font-size-medium);
   font-weight: 500;
+  color: var(--text-color);
+}
+.ui-dialog .characterviewer .charsheet .rangebar label {
+  color: var(--text-color);
 }
 .ui-dialog .characterviewer .charsheet .rangebar__steps {
   display: inline-flex;
@@ -195,7 +234,7 @@
 }
 .ui-dialog .characterviewer .charsheet .table--highlighted .table__header {
   background-color: var(--highlight-color);
-  color: var(--background-color);
+  color: var(--text-color);
   border-radius: 5px 5px 0 0;
   padding: 5px 10px;
 }
@@ -253,8 +292,8 @@
 .ui-dialog .characterviewer .charsheet .text-input--boxed label .translation,
 .ui-dialog .characterviewer .charsheet .number-input--boxed label .translation {
   text-transform: uppercase;
-  color: var(--background-color);
-  background-color: var(--primary-color);
+  color: var(--boxedtext-color);
+  background-color: var(--highlight-color);
   display: flex;
   align-items: center;
   padding: 3px 5px;
@@ -265,7 +304,7 @@
 .ui-dialog .characterviewer .charsheet .number-input--boxed label input {
   height: 32px;
   box-sizing: border-box;
-  border: 3px solid var(--primary-color);
+  border: 3px solid var(--highlight-color);
   border-radius: 5px;
   font-size: var(--font-size-xlarge);
   text-align: center;

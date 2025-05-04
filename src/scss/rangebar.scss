@@ -1,4 +1,7 @@
 .rangebar {
+  label {
+    color: var(--text-color);
+  }
   &__steps {
     display: inline-flex;
     gap: 5px;
