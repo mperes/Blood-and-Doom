@@ -17,11 +17,16 @@ mixin rangebar(options)
       label
         +translate(options.label)
         if options.steps && options.name
+          if options.max
+            input.rangebar__max(type='hidden' name=`attr_${options.name}-max` value=options.max)
           .rangebar__steps
               each _, i in Array(options.steps)
                 - const step = options.steps - i;
-                input(type='checkbox' name=`attr_${options.name}` value=step)
+                .step
+                  input(type='checkbox' name=`attr_${options.name}` value=step)
     else if options.steps && options.name
+      if options.max
+        input.rangebar__max(type='hidden' name=`attr_${options.name}-max`)
       .rangebar__steps
         each _, i in Array(options.steps)
           - const step = options.steps - i;

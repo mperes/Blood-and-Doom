@@ -10,8 +10,9 @@
           const barProperties = {
             name: bar.name,
             steps: bar.steps,
+            max: bar.max,
             label: { key: bar.name },
-            html: { class: `rangebar--${bar.name} labelled--nowrap` },
+            html: { class: `rangebar--${bar.name} labelled--nowrap` }
           };
           if(Array.isArray(bar.values)) barProperties.label.append = ` (${bar.values.join('/')})`;
         +rangebar(barProperties)

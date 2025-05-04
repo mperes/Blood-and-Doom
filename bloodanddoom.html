@@ -33,12 +33,24 @@
             <div class="rangebar labelled labelled--top-center rangebar--afar">
               <label><span class="translation"><span class="translation__key" data-i18n="blood-points"></span></span>
                 <div class="rangebar__steps">
-                  <input type="checkbox" name="attr_blood-points" value="6"/>
-                  <input type="checkbox" name="attr_blood-points" value="5"/>
-                  <input type="checkbox" name="attr_blood-points" value="4"/>
-                  <input type="checkbox" name="attr_blood-points" value="3"/>
-                  <input type="checkbox" name="attr_blood-points" value="2"/>
-                  <input type="checkbox" name="attr_blood-points" value="1"/>
+                  <div class="step">
+                    <input type="checkbox" name="attr_blood-points" value="6"/>
+                  </div>
+                  <div class="step">
+                    <input type="checkbox" name="attr_blood-points" value="5"/>
+                  </div>
+                  <div class="step">
+                    <input type="checkbox" name="attr_blood-points" value="4"/>
+                  </div>
+                  <div class="step">
+                    <input type="checkbox" name="attr_blood-points" value="3"/>
+                  </div>
+                  <div class="step">
+                    <input type="checkbox" name="attr_blood-points" value="2"/>
+                  </div>
+                  <div class="step">
+                    <input type="checkbox" name="attr_blood-points" value="1"/>
+                  </div>
                 </div>
               </label>
             </div>
@@ -47,9 +59,15 @@
             <div class="rangebar labelled labelled--top-center rangebar--afar">
               <label><span class="translation"><span class="translation__key" data-i18n="momentum-pool"></span></span>
                 <div class="rangebar__steps">
-                  <input type="checkbox" name="attr_momentum-pool" value="3"/>
-                  <input type="checkbox" name="attr_momentum-pool" value="2"/>
-                  <input type="checkbox" name="attr_momentum-pool" value="1"/>
+                  <div class="step">
+                    <input type="checkbox" name="attr_momentum-pool" value="3"/>
+                  </div>
+                  <div class="step">
+                    <input type="checkbox" name="attr_momentum-pool" value="2"/>
+                  </div>
+                  <div class="step">
+                    <input type="checkbox" name="attr_momentum-pool" value="1"/>
+                  </div>
                 </div>
               </label>
             </div>
@@ -63,12 +81,24 @@
             <div class="rangebar labelled labelled--top-center rangebar--afar">
               <label><span class="translation"><span class="translation__key" data-i18n="doom-points"></span></span>
                 <div class="rangebar__steps">
-                  <input type="checkbox" name="attr_doom-points" value="6"/>
-                  <input type="checkbox" name="attr_doom-points" value="5"/>
-                  <input type="checkbox" name="attr_doom-points" value="4"/>
-                  <input type="checkbox" name="attr_doom-points" value="3"/>
-                  <input type="checkbox" name="attr_doom-points" value="2"/>
-                  <input type="checkbox" name="attr_doom-points" value="1"/>
+                  <div class="step">
+                    <input type="checkbox" name="attr_doom-points" value="6"/>
+                  </div>
+                  <div class="step">
+                    <input type="checkbox" name="attr_doom-points" value="5"/>
+                  </div>
+                  <div class="step">
+                    <input type="checkbox" name="attr_doom-points" value="4"/>
+                  </div>
+                  <div class="step">
+                    <input type="checkbox" name="attr_doom-points" value="3"/>
+                  </div>
+                  <div class="step">
+                    <input type="checkbox" name="attr_doom-points" value="2"/>
+                  </div>
+                  <div class="step">
+                    <input type="checkbox" name="attr_doom-points" value="1"/>
+                  </div>
                 </div>
               </label>
             </div>
@@ -108,53 +138,102 @@
             <div class="group group--bars">
                 <div class="rangebar labelled rangebar--bruises labelled--nowrap">
                   <label><span class="translation"><span class="translation__key" data-i18n="bruises"></span><span class="translation__append"> (1-3)</span></span>
+                    <input class="rangebar__max" type="hidden" name="attr_bruises-max" value="2"/>
                     <div class="rangebar__steps">
-                      <input type="checkbox" name="attr_bruises" value="3"/>
-                      <input type="checkbox" name="attr_bruises" value="2"/>
-                      <input type="checkbox" name="attr_bruises" value="1"/>
+                      <div class="step">
+                        <input type="checkbox" name="attr_bruises" value="3"/>
+                      </div>
+                      <div class="step">
+                        <input type="checkbox" name="attr_bruises" value="2"/>
+                      </div>
+                      <div class="step">
+                        <input type="checkbox" name="attr_bruises" value="1"/>
+                      </div>
                     </div>
                   </label>
                 </div>
                 <div class="rangebar labelled rangebar--scrapes labelled--nowrap">
                   <label><span class="translation"><span class="translation__key" data-i18n="scrapes"></span><span class="translation__append"> (4-6)</span></span>
+                    <input class="rangebar__max" type="hidden" name="attr_scrapes-max" value="2"/>
                     <div class="rangebar__steps">
-                      <input type="checkbox" name="attr_scrapes" value="3"/>
-                      <input type="checkbox" name="attr_scrapes" value="2"/>
-                      <input type="checkbox" name="attr_scrapes" value="1"/>
+                      <div class="step">
+                        <input type="checkbox" name="attr_scrapes" value="3"/>
+                      </div>
+                      <div class="step">
+                        <input type="checkbox" name="attr_scrapes" value="2"/>
+                      </div>
+                      <div class="step">
+                        <input type="checkbox" name="attr_scrapes" value="1"/>
+                      </div>
                     </div>
                   </label>
                 </div>
                 <div class="rangebar labelled rangebar--wounds labelled--nowrap">
                   <label><span class="translation"><span class="translation__key" data-i18n="wounds"></span><span class="translation__append"> (7-9)</span></span>
+                    <input class="rangebar__max" type="hidden" name="attr_wounds-max" value="1"/>
                     <div class="rangebar__steps">
-                      <input type="checkbox" name="attr_wounds" value="3"/>
-                      <input type="checkbox" name="attr_wounds" value="2"/>
-                      <input type="checkbox" name="attr_wounds" value="1"/>
+                      <div class="step">
+                        <input type="checkbox" name="attr_wounds" value="3"/>
+                      </div>
+                      <div class="step">
+                        <input type="checkbox" name="attr_wounds" value="2"/>
+                      </div>
+                      <div class="step">
+                        <input type="checkbox" name="attr_wounds" value="1"/>
+                      </div>
                     </div>
                   </label>
                 </div>
                 <div class="rangebar labelled rangebar--injuries labelled--nowrap">
                   <label><span class="translation"><span class="translation__key" data-i18n="injuries"></span><span class="translation__append"> (10-12/13+)</span></span>
+                    <input class="rangebar__max" type="hidden" name="attr_injuries-max" value="1"/>
                     <div class="rangebar__steps">
-                      <input type="checkbox" name="attr_injuries" value="3"/>
-                      <input type="checkbox" name="attr_injuries" value="2"/>
-                      <input type="checkbox" name="attr_injuries" value="1"/>
+                      <div class="step">
+                        <input type="checkbox" name="attr_injuries" value="3"/>
+                      </div>
+                      <div class="step">
+                        <input type="checkbox" name="attr_injuries" value="2"/>
+                      </div>
+                      <div class="step">
+                        <input type="checkbox" name="attr_injuries" value="1"/>
+                      </div>
                     </div>
                   </label>
                 </div>
                 <div class="rangebar labelled rangebar--madness labelled--nowrap">
                   <label><span class="translation"><span class="translation__key" data-i18n="madness"></span></span>
+                    <input class="rangebar__max" type="hidden" name="attr_madness-max" value="6"/>
                     <div class="rangebar__steps">
-                      <input type="checkbox" name="attr_madness" value="10"/>
-                      <input type="checkbox" name="attr_madness" value="9"/>
-                      <input type="checkbox" name="attr_madness" value="8"/>
-                      <input type="checkbox" name="attr_madness" value="7"/>
-                      <input type="checkbox" name="attr_madness" value="6"/>
-                      <input type="checkbox" name="attr_madness" value="5"/>
-                      <input type="checkbox" name="attr_madness" value="4"/>
-                      <input type="checkbox" name="attr_madness" value="3"/>
-                      <input type="checkbox" name="attr_madness" value="2"/>
-                      <input type="checkbox" name="attr_madness" value="1"/>
+                      <div class="step">
+                        <input type="checkbox" name="attr_madness" value="10"/>
+                      </div>
+                      <div class="step">
+                        <input type="checkbox" name="attr_madness" value="9"/>
+                      </div>
+                      <div class="step">
+                        <input type="checkbox" name="attr_madness" value="8"/>
+                      </div>
+                      <div class="step">
+                        <input type="checkbox" name="attr_madness" value="7"/>
+                      </div>
+                      <div class="step">
+                        <input type="checkbox" name="attr_madness" value="6"/>
+                      </div>
+                      <div class="step">
+                        <input type="checkbox" name="attr_madness" value="5"/>
+                      </div>
+                      <div class="step">
+                        <input type="checkbox" name="attr_madness" value="4"/>
+                      </div>
+                      <div class="step">
+                        <input type="checkbox" name="attr_madness" value="3"/>
+                      </div>
+                      <div class="step">
+                        <input type="checkbox" name="attr_madness" value="2"/>
+                      </div>
+                      <div class="step">
+                        <input type="checkbox" name="attr_madness" value="1"/>
+                      </div>
                     </div>
                   </label>
                 </div>
@@ -800,12 +879,24 @@
               <div class="rangebar labelled labelled--top-center">
                 <label><span class="translation"><span class="translation__key" data-i18n="corruption"></span></span>
                   <div class="rangebar__steps">
-                    <input type="checkbox" name="attr_corruption" value="6"/>
-                    <input type="checkbox" name="attr_corruption" value="5"/>
-                    <input type="checkbox" name="attr_corruption" value="4"/>
-                    <input type="checkbox" name="attr_corruption" value="3"/>
-                    <input type="checkbox" name="attr_corruption" value="2"/>
-                    <input type="checkbox" name="attr_corruption" value="1"/>
+                    <div class="step">
+                      <input type="checkbox" name="attr_corruption" value="6"/>
+                    </div>
+                    <div class="step">
+                      <input type="checkbox" name="attr_corruption" value="5"/>
+                    </div>
+                    <div class="step">
+                      <input type="checkbox" name="attr_corruption" value="4"/>
+                    </div>
+                    <div class="step">
+                      <input type="checkbox" name="attr_corruption" value="3"/>
+                    </div>
+                    <div class="step">
+                      <input type="checkbox" name="attr_corruption" value="2"/>
+                    </div>
+                    <div class="step">
+                      <input type="checkbox" name="attr_corruption" value="1"/>
+                    </div>
                   </div>
                 </label>
               </div>
@@ -1492,5 +1583,5 @@ input(type="hidden" name="attr_tiles_opacity" value="1")
 
 <script type="text/worker">
      (function () {
-     "use strict";"use strict";var spine={abilitiesAndSkills:{body:{strength:["athletics","heavy-attack","unarmed-attack"],dexterity:["locks-and-traps","ranged-attack","sleight-of-hand"],agility:["acrobatics","finesse-attack","stealth"]},mind:{awareness:["navigation","perception","tracking"],intellect:["investigation","reason-and-logic","study-and-write"],wisdom:["animal-ken","healing","survival"]},soul:{heart:["connect","empathy","insight"],mystique:["charm","deception","intimidation"],presence:["influence","leadership","performance"]}},fixedRepeatingSections:[{name:"ammunition",fields:["name","quantity"],fixed:2},{name:"condition",fields:["name","treatment"],fixed:6},{name:"weapon",fields:["name","ability-skill","attributes","damage","damage-type","heart"],fixed:4},{name:"proficiencies",fields:["name"],fixed:6},{name:"languages",fields:["name"],fixed:6},{name:"feats",fields:["name"],fixed:6},{name:"discovered-spells",fields:["name"],fixed:6}],health:{bars:[{name:"bruises",steps:3,values:["1-3"]},{name:"scrapes",steps:3,values:["4-6"]},{name:"wounds",steps:3,values:["7-9"]},{name:"injuries",steps:3,values:["10-12","13+"]},{name:"madness",steps:10}]},lists:{knowledge:["history-and-culture","strategy-and-warfare","sailing-and-ships","occult-and-paranormal","monsters-and-myths"],condition:["history-and-culture","strategy-and-warfare","sailing-and-ships","occult-and-paranormal","monsters-and-myths"],treatment:["history-and-culture","strategy-and-warfare","sailing-and-ships","occult-and-paranormal","monsters-and-myths"]},pages:["page-1","page-2","page-3"],resolve:{attributes:["toughness","reflexes","focus","composure","willpower"]},roleplay:["appearance","personality","origin","bonds","drives","belief","background"],traditions:{a:"1-4",b:"5-8",c:"9-12"}};on("clicked:rest",function(){setAttrs({bruises_x1:0,bruises_x2:0,madness_x1:0,resilience:0})}),on("clicked:recover",function(){setAttrs({bruises_x1:0,bruises_x2:0,wounds_x3:0,wounds_x6:0,madness_x1:0,resilience:0})}),on("clicked:damage_dice_1",function(){setAttrs({damage_dice:1})}),on("clicked:damage_dice_2",function(){setAttrs({damage_dice:2})}),on("clicked:damage_dice_3",function(){setAttrs({damage_dice:3})}),on("clicked:close_options",function(){setAttrs({options_toggle:0})});var calculateAbilityMod=function(e){return e<4?-2:e<7?-1:e<14?0:e<18?1:2};function numberArrowIncrement(e,t){getAttrs([e,"".concat(e,"_max"),"".concat(e,"_min")],function(n){var i;setAttrs(((i={})[e]=Math.max(Math.min((parseInt(n[e])||0)+t,parseInt(n["".concat(e,"_max")])||100),parseInt(n["".concat(e,"_min")])||0),i))})}function setAdvSkillsLines(e){}$20(".decrement").on("click",function(e){numberArrowIncrement(e.htmlAttributes.class.split(" ")[0],-1)}),$20(".increment").on("click",function(e){numberArrowIncrement(e.htmlAttributes.class.split(" ")[0],1)}),$20(".decrement2").on("click",function(e){numberArrowIncrement(e.htmlAttributes.class.split(" ")[0],-2)}),$20(".increment2").on("click",function(e){numberArrowIncrement(e.htmlAttributes.class.split(" ")[0],2)}),$20(".number-input-arrows input").on("change",function(e){numberArrowIncrement(e.htmlAttributes.name.slice(5),0)}),$20(".advskills textarea").on("change",function(e){setAdvSkillsLines(e.htmlAttributes.id)}),on("sheet:opened",function(){return[0,1,2,3,4,5,6,7].forEach(function(e){return setAdvSkillsLines("advskill_".concat(e,"_name"))})}),["strength","toughness","insight"].map(function(e){return on("change:".concat(e),function(e){return showHideAbility(e.sourceAttribute,parseInt(e.newValue))})}),[0,1,2,3,4,5].map(function(e){return on("change:skill_custom_".concat(e),function(e){var t;return parseInt(e.newValue)<1&&setAttrs(((t={})["".concat(e.sourceAttribute)]=1,t))})}),[0,1,2,3,4,5].map(function(e){return on("change:skill_advskill_".concat(e,"_value"),function(e){var t;return parseInt(e.newValue)<1&&setAttrs(((t={})["".concat(e.sourceAttribute)]=1,t))})}),on("change:armor_max_dents",function(e){return showHideDents(parseInt(e.newValue))}),on("change:armor_max_resilience",function(e){return showHideResilience(parseInt(e.newValue)||0)}),on("change:tab",function(e){return toggleActiveTab(e.newValue)}),on("sheet:opened",function(e){var t=["strength","toughness","insight"];getAttrs(t,function(e){t.forEach(function(t){return showHideAbility(t,parseInt(e[t]))})}),getAttrs(["armor_max_dents","armor_max_resilience"],function(e){showHideDents(parseInt(e.armor_max_dents)),showHideResilience(parseInt(e.armor_max_resilience))}),getAttrs(["tab"],function(e){return toggleActiveTab(e.tab)}),[0,1,2,3,4,5].map(function(e){return getAttrs(["skill_custom_".concat(e)],function(t){var n;return parseInt(t["skill_custom_".concat(e)])<1&&setAttrs(((n={})["skill_custom_".concat(e)]=1,n))})}),[0,1,2,3,4,5].map(function(e){return getAttrs(["skill_advskill_".concat(e,"_value")],function(t){var n;return parseInt(t["skill_advskill_".concat(e,"_value")])<1&&setAttrs(((n={})["skill_advskill_".concat(e,"_value")]=1,n))})})});var addFixedRow=function(e,t){if(spine.fixedRepeatingSections.some(function(t){return t.name===e})){var n=spine.fixedRepeatingSections.find(function(t){return t.name===e}),i={};Array.from({length:t},function(e,t){return generateRowID()}).forEach(function(e){null===n||void 0===n||n.fields.forEach(function(t){i["repeating_".concat(n.name,"_").concat(e,"_").concat(t)]=""})}),setAttrs(i,{silent:!0})}};function startActionRoll(e,t){var n=e.ability,i=e.difficulty,s=e.title,o=e.useExtra,a=e.template,c=void 0===a?"ability":a;myStartRoll(c,{title:null!==s&&void 0!==s?s:"Action Roll",charname:"@{character_name}"},o?{difficulty:"".concat(null!==i&&void 0!==i?i:"@{ability_difficulty}"),successes:"".concat(n,"d10"),setback:"0",extra_successes:"0"}:{difficulty:"".concat(null!==i&&void 0!==i?i:"@{ability_difficulty}"),successes:"".concat(n,"d10")},t)}function processActionRoll(e){var t=e.successes.dice.map(function(e){return 10===e?2:e>7?1:0}).reduce(function(e,t){return e+t},0);return{successes:t,difficulty:e.difficulty.result,setback:e.successes.dice[0],extra_successes:t-e.difficulty.result}}function rollActionDice(e,t,n,i,s,o){void 0===n&&(n="Action Roll"),void 0===i&&(i=!0),void 0===s&&(s=!0),void 0===o&&(o="ability"),startActionRoll({ability:e,difficulty:t,title:n,useExtra:i,template:o},function(e){var t=e.rollId,n=e.results,i=processActionRoll(n);finishRoll(t,i),s&&setAttrs({last_roll:btoa(JSON.stringify(n))})})}function myStartRoll(e,t,n,i){startRoll("&{template:".concat(e,"} ").concat(Object.entries(t).map(function(e){var t=e[0],n=e[1];return"{{".concat(t,"=").concat(n,"}}")}).join(" ")," ").concat(Object.entries(n).map(function(e){var t=e[0],n=e[1];return"{{".concat(t,"=[[").concat(n,"]]}}")}).join(" ")),i)}function showHideAbility(e,t){t<4?$20(".".concat(e,"-4, .").concat(e,"-5")).addClass("hidden"):t<5?($20(".".concat(e,"-5")).addClass("hidden"),$20(".".concat(e,"-4")).removeClass("hidden")):$20(".".concat(e,"-4, .").concat(e,"-5")).removeClass("hidden")}function showHideDents(e){$20([2,3,4,5,6].filter(function(t){return t<=e}).map(function(e){return".dented-".concat(e)}).join(", ")).removeClass("hidden"),$20([2,3,4,5,6].filter(function(t){return t>e}).map(function(e){return".dented-".concat(e)}).join(", ")||"this-does-not-exist").addClass("hidden")}function showHideResilience(e){$20([2,4,6,8,10].filter(function(t){return t<=e}).map(function(e){return".resilience-".concat(e)}).join(", ")).removeClass("hidden"),$20([2,4,6,8,10].filter(function(t){return t>e}).map(function(e){return".resilience-".concat(e)}).join(", ")||"this-does-not-exist").addClass("hidden")}function toggleActiveTab(e){$20(".header .tabs label").removeClass("active"),$20(".header .tabs .tab-".concat(e)).addClass("active")}on("sheet:opened",function(){spine.fixedRepeatingSections.forEach(function(e){getSectionIDs(e.name,function(t){var n=t.length,i=e.fixed-n;i<=0||addFixedRow(e.name,i)})})}),spine.fixedRepeatingSections.forEach(function(e){on("remove:repeating_".concat(e.name),function(t){addFixedRow(e.name,1)})}),on("clicked:roll_action_dice",function(e){return rollActionDice(parseInt(e.htmlAttributes.value||"1")||1)}),on("clicked:roll_damage_h_l",function(){myStartRoll("damage",{title:"DAMAGE",dice:"H+L",charname:"@{character_name}"},{damage:"3d6"},function(e){var t=e.rollId,n=e.results;finishRoll(t,{roll:n.damage.dice.sort().filter(function(e,t){return 1!=t}).reduce(function(e,t){return e+t},0)})})}),on("clicked:roll_doom_roll5",function(){getAttrs(["doom_points"],function(e){var t=e.doom_points;(parseInt(t)||0)>0&&(setAttrs({doom_points:parseInt(t)-1}),rollActionDice(5,void 0,"ACTION ROLL 5"))})}),on("clicked:roll_doom_reroll",function(){getAttrs(["last_roll","doom_points"],function(e){if(e.last_roll)if((parseInt(e.doom_points)||0)<1)console.log("Not enough Doom Points!");else{setAttrs({doom_points:parseInt(e.doom_points)-1});var t=JSON.parse(atob(e.last_roll)),n=processActionRoll(t);startActionRoll({ability:t.successes.dice.filter(function(e){return e<8}).length,difficulty:t.difficulty.result,title:"Action Reroll",useExtra:!0},function(e){var t=e.rollId,i=e.results,s=processActionRoll(i);finishRoll(t,{successes:n.successes+s.successes,setback:n.setback>7?n.setback:s.setback,extra_successes:n.successes+s.successes-i.difficulty.result})})}else console.log("You must roll something before you can reroll it!")})}),on("clicked:doom_roll",function(){getAttrs(["doom_points"],function(e){var t=e.doom_points;rollActionDice(parseInt(t)||0,2,"Doom Roll",!1,!1,"doom")})});   })();
+     "use strict";"use strict";var spine={abilitiesAndSkills:{body:{strength:["athletics","heavy-attack","unarmed-attack"],dexterity:["locks-and-traps","ranged-attack","sleight-of-hand"],agility:["acrobatics","finesse-attack","stealth"]},mind:{awareness:["navigation","perception","tracking"],intellect:["investigation","reason-and-logic","study-and-write"],wisdom:["animal-ken","healing","survival"]},soul:{heart:["connect","empathy","insight"],mystique:["charm","deception","intimidation"],presence:["influence","leadership","performance"]}},fixedRepeatingSections:[{name:"ammunition",fields:["name","quantity"],fixed:2},{name:"condition",fields:["name","treatment"],fixed:6},{name:"weapon",fields:["name","ability-skill","attributes","damage","damage-type","heart"],fixed:4},{name:"proficiencies",fields:["name"],fixed:6},{name:"languages",fields:["name"],fixed:6},{name:"feats",fields:["name"],fixed:6},{name:"discovered-spells",fields:["name"],fixed:6}],health:{bars:[{name:"bruises",steps:3,max:2,values:["1-3"]},{name:"scrapes",steps:3,max:2,values:["4-6"]},{name:"wounds",steps:3,max:1,values:["7-9"]},{name:"injuries",steps:3,max:1,values:["10-12","13+"]},{name:"madness",max:6,steps:10}]},lists:{knowledge:["history-and-culture","strategy-and-warfare","sailing-and-ships","occult-and-paranormal","monsters-and-myths"],condition:["history-and-culture","strategy-and-warfare","sailing-and-ships","occult-and-paranormal","monsters-and-myths"],treatment:["history-and-culture","strategy-and-warfare","sailing-and-ships","occult-and-paranormal","monsters-and-myths"]},pages:["page-1","page-2","page-3"],resolve:{attributes:["toughness","reflexes","focus","composure","willpower"]},roleplay:["appearance","personality","origin","bonds","drives","belief","background"],traditions:{a:"1-4",b:"5-8",c:"9-12"}};on("clicked:rest",function(){setAttrs({bruises_x1:0,bruises_x2:0,madness_x1:0,resilience:0})}),on("clicked:recover",function(){setAttrs({bruises_x1:0,bruises_x2:0,wounds_x3:0,wounds_x6:0,madness_x1:0,resilience:0})}),on("clicked:damage_dice_1",function(){setAttrs({damage_dice:1})}),on("clicked:damage_dice_2",function(){setAttrs({damage_dice:2})}),on("clicked:damage_dice_3",function(){setAttrs({damage_dice:3})}),on("clicked:close_options",function(){setAttrs({options_toggle:0})});var calculateAbilityMod=function(e){return e<4?-2:e<7?-1:e<14?0:e<18?1:2};function numberArrowIncrement(e,t){getAttrs([e,"".concat(e,"_max"),"".concat(e,"_min")],function(n){var i;setAttrs(((i={})[e]=Math.max(Math.min((parseInt(n[e])||0)+t,parseInt(n["".concat(e,"_max")])||100),parseInt(n["".concat(e,"_min")])||0),i))})}function setAdvSkillsLines(e){}$20(".decrement").on("click",function(e){numberArrowIncrement(e.htmlAttributes.class.split(" ")[0],-1)}),$20(".increment").on("click",function(e){numberArrowIncrement(e.htmlAttributes.class.split(" ")[0],1)}),$20(".decrement2").on("click",function(e){numberArrowIncrement(e.htmlAttributes.class.split(" ")[0],-2)}),$20(".increment2").on("click",function(e){numberArrowIncrement(e.htmlAttributes.class.split(" ")[0],2)}),$20(".number-input-arrows input").on("change",function(e){numberArrowIncrement(e.htmlAttributes.name.slice(5),0)}),$20(".advskills textarea").on("change",function(e){setAdvSkillsLines(e.htmlAttributes.id)}),on("sheet:opened",function(){return[0,1,2,3,4,5,6,7].forEach(function(e){return setAdvSkillsLines("advskill_".concat(e,"_name"))})}),["strength","toughness","insight"].map(function(e){return on("change:".concat(e),function(e){return showHideAbility(e.sourceAttribute,parseInt(e.newValue))})}),[0,1,2,3,4,5].map(function(e){return on("change:skill_custom_".concat(e),function(e){var t;return parseInt(e.newValue)<1&&setAttrs(((t={})["".concat(e.sourceAttribute)]=1,t))})}),[0,1,2,3,4,5].map(function(e){return on("change:skill_advskill_".concat(e,"_value"),function(e){var t;return parseInt(e.newValue)<1&&setAttrs(((t={})["".concat(e.sourceAttribute)]=1,t))})}),on("change:armor_max_dents",function(e){return showHideDents(parseInt(e.newValue))}),on("change:armor_max_resilience",function(e){return showHideResilience(parseInt(e.newValue)||0)}),on("change:tab",function(e){return toggleActiveTab(e.newValue)}),on("sheet:opened",function(e){var t=["strength","toughness","insight"];getAttrs(t,function(e){t.forEach(function(t){return showHideAbility(t,parseInt(e[t]))})}),getAttrs(["armor_max_dents","armor_max_resilience"],function(e){showHideDents(parseInt(e.armor_max_dents)),showHideResilience(parseInt(e.armor_max_resilience))}),getAttrs(["tab"],function(e){return toggleActiveTab(e.tab)}),[0,1,2,3,4,5].map(function(e){return getAttrs(["skill_custom_".concat(e)],function(t){var n;return parseInt(t["skill_custom_".concat(e)])<1&&setAttrs(((n={})["skill_custom_".concat(e)]=1,n))})}),[0,1,2,3,4,5].map(function(e){return getAttrs(["skill_advskill_".concat(e,"_value")],function(t){var n;return parseInt(t["skill_advskill_".concat(e,"_value")])<1&&setAttrs(((n={})["skill_advskill_".concat(e,"_value")]=1,n))})})});var addFixedRow=function(e,t){if(spine.fixedRepeatingSections.some(function(t){return t.name===e})){var n=spine.fixedRepeatingSections.find(function(t){return t.name===e}),i={};Array.from({length:t},function(e,t){return generateRowID()}).forEach(function(e){null===n||void 0===n||n.fields.forEach(function(t){i["repeating_".concat(n.name,"_").concat(e,"_").concat(t)]=""})}),setAttrs(i,{silent:!0})}};function startActionRoll(e,t){var n=e.ability,i=e.difficulty,s=e.title,a=e.useExtra,o=e.template,c=void 0===o?"ability":o;myStartRoll(c,{title:null!==s&&void 0!==s?s:"Action Roll",charname:"@{character_name}"},a?{difficulty:"".concat(null!==i&&void 0!==i?i:"@{ability_difficulty}"),successes:"".concat(n,"d10"),setback:"0",extra_successes:"0"}:{difficulty:"".concat(null!==i&&void 0!==i?i:"@{ability_difficulty}"),successes:"".concat(n,"d10")},t)}function processActionRoll(e){var t=e.successes.dice.map(function(e){return 10===e?2:e>7?1:0}).reduce(function(e,t){return e+t},0);return{successes:t,difficulty:e.difficulty.result,setback:e.successes.dice[0],extra_successes:t-e.difficulty.result}}function rollActionDice(e,t,n,i,s,a){void 0===n&&(n="Action Roll"),void 0===i&&(i=!0),void 0===s&&(s=!0),void 0===a&&(a="ability"),startActionRoll({ability:e,difficulty:t,title:n,useExtra:i,template:a},function(e){var t=e.rollId,n=e.results,i=processActionRoll(n);finishRoll(t,i),s&&setAttrs({last_roll:btoa(JSON.stringify(n))})})}function myStartRoll(e,t,n,i){startRoll("&{template:".concat(e,"} ").concat(Object.entries(t).map(function(e){var t=e[0],n=e[1];return"{{".concat(t,"=").concat(n,"}}")}).join(" ")," ").concat(Object.entries(n).map(function(e){var t=e[0],n=e[1];return"{{".concat(t,"=[[").concat(n,"]]}}")}).join(" ")),i)}function showHideAbility(e,t){t<4?$20(".".concat(e,"-4, .").concat(e,"-5")).addClass("hidden"):t<5?($20(".".concat(e,"-5")).addClass("hidden"),$20(".".concat(e,"-4")).removeClass("hidden")):$20(".".concat(e,"-4, .").concat(e,"-5")).removeClass("hidden")}function showHideDents(e){$20([2,3,4,5,6].filter(function(t){return t<=e}).map(function(e){return".dented-".concat(e)}).join(", ")).removeClass("hidden"),$20([2,3,4,5,6].filter(function(t){return t>e}).map(function(e){return".dented-".concat(e)}).join(", ")||"this-does-not-exist").addClass("hidden")}function showHideResilience(e){$20([2,4,6,8,10].filter(function(t){return t<=e}).map(function(e){return".resilience-".concat(e)}).join(", ")).removeClass("hidden"),$20([2,4,6,8,10].filter(function(t){return t>e}).map(function(e){return".resilience-".concat(e)}).join(", ")||"this-does-not-exist").addClass("hidden")}function toggleActiveTab(e){$20(".header .tabs label").removeClass("active"),$20(".header .tabs .tab-".concat(e)).addClass("active")}on("sheet:opened",function(){spine.fixedRepeatingSections.forEach(function(e){getSectionIDs(e.name,function(t){var n=t.length,i=e.fixed-n;i<=0||addFixedRow(e.name,i)})})}),spine.fixedRepeatingSections.forEach(function(e){on("remove:repeating_".concat(e.name),function(t){addFixedRow(e.name,1)})}),on("clicked:roll_action_dice",function(e){return rollActionDice(parseInt(e.htmlAttributes.value||"1")||1)}),on("clicked:roll_damage_h_l",function(){myStartRoll("damage",{title:"DAMAGE",dice:"H+L",charname:"@{character_name}"},{damage:"3d6"},function(e){var t=e.rollId,n=e.results;finishRoll(t,{roll:n.damage.dice.sort().filter(function(e,t){return 1!=t}).reduce(function(e,t){return e+t},0)})})}),on("clicked:roll_doom_roll5",function(){getAttrs(["doom_points"],function(e){var t=e.doom_points;(parseInt(t)||0)>0&&(setAttrs({doom_points:parseInt(t)-1}),rollActionDice(5,void 0,"ACTION ROLL 5"))})}),on("clicked:roll_doom_reroll",function(){getAttrs(["last_roll","doom_points"],function(e){if(e.last_roll)if((parseInt(e.doom_points)||0)<1)console.log("Not enough Doom Points!");else{setAttrs({doom_points:parseInt(e.doom_points)-1});var t=JSON.parse(atob(e.last_roll)),n=processActionRoll(t);startActionRoll({ability:t.successes.dice.filter(function(e){return e<8}).length,difficulty:t.difficulty.result,title:"Action Reroll",useExtra:!0},function(e){var t=e.rollId,i=e.results,s=processActionRoll(i);finishRoll(t,{successes:n.successes+s.successes,setback:n.setback>7?n.setback:s.setback,extra_successes:n.successes+s.successes-i.difficulty.result})})}else console.log("You must roll something before you can reroll it!")})}),on("clicked:doom_roll",function(){getAttrs(["doom_points"],function(e){var t=e.doom_points;rollActionDice(parseInt(t)||0,2,"Doom Roll",!1,!1,"doom")})});   })();
 </script>
