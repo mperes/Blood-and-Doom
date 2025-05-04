@@ -1040,3 +1040,8 @@
 .ui-dialog .characterviewer .charsheet .section--discovered-spells .repitem:not(:last-child) {
   margin-bottom: 5px;
 }
+.ui-dialog .characterviewer .charsheet .group--levelup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}

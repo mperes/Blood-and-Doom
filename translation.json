@@ -168,5 +168,7 @@
   "tags-and-attributes": "tags & attributes",
   "damage-placeholder": "1d8+4",
   "damage-type-placeholder": "slashing",
-  "character-portrait": "character portrait"
+  "character-portrait": "character portrait",
+  "level":"level",
+  "xp":"XP"
 }

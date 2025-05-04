@@ -512,4 +512,9 @@
       margin-bottom: 5px;
     }
   }
+  .group--levelup {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
 }

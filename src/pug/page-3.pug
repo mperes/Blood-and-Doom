@@ -63,6 +63,13 @@ mixin check-list(section)
           +translate({key:`level-${advancement}-advancement-desc`})
         +check-list(`list-${advancement}`)
 .group.group--col-right
+  .group.group--levelup
+    .card.card--level
+      .section.section--level
+        +number-input({name:'level', label:{key:'level'}, html:{class:'number-input--simple number-input--align-center labelled--left labelled--nowrap'}})
+    .card.card--xp
+      .section.section--xp
+        +number-input({name:'xp', label:{key:'xp'}, html:{class:'number-input--simple number-input--align-center labelled--left labelled--nowrap'}})
   each section in ['gaining-traits-powers-and-spells', 'improving-traits-powers-and-spells', 'increasing-skill-ranks']
     .card(class=`card--${section}`)
       .section(class=`section--${section}`)
