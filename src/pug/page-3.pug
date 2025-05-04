@@ -50,7 +50,7 @@ mixin check-list(section)
           +translate({key:key})
           .group.group--checks
             each _, j in Array(checks)
-              input(type='checkbox' name=`attr_level-2-4-advancement-${i}-${j}`)
+              +checkbox-input({name:`attr_level-2-4-advancement-${i}-${j}`, value:'1', html:{class:'checkbox-input--simple'}})
               - i++;
 
 .group.group--col-left

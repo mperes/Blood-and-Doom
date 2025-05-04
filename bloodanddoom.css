@@ -582,11 +582,14 @@
   gap: 10px;
 }
 .ui-dialog .characterviewer .charsheet .page--3 .group--checks {
-  text-align: end;
+  display: flex;
+  gap: 5px;
+  justify-content: end;
 }
 .ui-dialog .characterviewer .charsheet .page--3 .check-list {
   display: grid;
   grid-template-columns: 1fr max-content;
+  gap: 5px;
   margin: 0;
 }
 .ui-dialog .characterviewer .charsheet .page--3 .check-list li {
@@ -614,6 +617,12 @@
 .ui-dialog .characterviewer .charsheet h3 {
   font-size: var(--font-size-small);
   font-weight: 600;
+}
+.ui-dialog .characterviewer .charsheet p {
+  font-family: "Roboto Condensed", sans-serif;
+  color: var(--text-color);
+  font-size: var(--font-size-medium);
+  font-weight: 500;
 }
 .ui-dialog .characterviewer .charsheet .font-awesome {
   opacity: 0.7;

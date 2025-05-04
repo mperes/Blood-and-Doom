@@ -37,6 +37,12 @@
     font-size: var(--font-size-small);
     font-weight: 600;
   }
+  p {
+    font-family: "Roboto Condensed", sans-serif;
+    color: var(--text-color);
+    font-size: var(--font-size-medium);
+    font-weight: 500;
+  }
 
   //MISCELLANEOUS STYLES
   .font-awesome {
