@@ -88,8 +88,8 @@
   appearance: none;
   background-color: transparent;
   box-sizing: border-box;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   border: 2px solid var(--tertiary-color);
   border-radius: 3px;
 }
@@ -490,7 +490,7 @@
 .ui-dialog .characterviewer .charsheet .page--1 {
   display: grid;
   grid-template-areas: "health-conditions health-conditions health-conditions resolve evasion-armor" "abilities-skills abilities-skills abilities-skills knowledge-magic knowledge-magic" "weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed" "traits-powers-spells traits-powers-spells traits-powers-spells traits-powers-spells traits-powers-spells";
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 1fr 1fr 1fr 150px 150px;
   gap: 10px;
 }
 .ui-dialog .characterviewer .charsheet .page--2 {
@@ -559,8 +559,12 @@
   color: var(--background-color);
   font-weight: 600;
 }
-.ui-dialog .characterviewer .charsheet .navigation .tab:has(input:checked) label {
-  color: red;
+.ui-dialog .characterviewer .charsheet .navigation .tab:not(:has(input:checked)) {
+  border: 1px solid var(--primary-color);
+  background: transparent;
+}
+.ui-dialog .characterviewer .charsheet .navigation .tab:not(:has(input:checked)) .translation {
+  color: var(--primary-color);
 }
 .ui-dialog .characterviewer .charsheet .spread-items {
   min-height: 100%;
@@ -576,6 +580,12 @@
 .ui-dialog .characterviewer .charsheet .section-separator--horizontal.section-separator--narrow {
   margin-top: 20px;
   height: 10px;
+}
+.ui-dialog .characterviewer .charsheet .section-separator--vertical {
+  min-height: 100%;
+  border-left: 1px dotted var(--separator-color);
+  margin-left: 20px;
+  width: 20px;
 }
 .ui-dialog .characterviewer .charsheet .card.card--weapons-armor-ammunition-unarmed {
   display: grid;
@@ -753,6 +763,11 @@
 .ui-dialog .characterviewer .charsheet .section--health .group--bars .rangebar--madness {
   grid-column: 1/-1;
   height: 38px;
+  min-width: 100%;
+}
+.ui-dialog .characterviewer .charsheet .section--health .group--bars .rangebar--madness .rangebar__steps {
+  min-width: 100%;
+  justify-content: space-between;
 }
 .ui-dialog .characterviewer .charsheet .section--health .translation__append {
   font-size: var(--font-size-xsmall);
@@ -832,10 +847,12 @@
   grid-template-columns: 1fr max-content;
   gap: 10px;
 }
+.ui-dialog .characterviewer .charsheet .section--traits-powers-spells .group--title input {
+  max-width: 60px;
+}
 .ui-dialog .characterviewer .charsheet .section--traits-powers-spells .group--traditions {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  grid-template-columns: 1fr min-content 1fr min-content 1fr;
 }
 .ui-dialog .characterviewer .charsheet .section--unarmed-attacks .group--attacks {
   display: grid;

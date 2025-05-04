@@ -24,7 +24,7 @@ $cards: (header, health-conditions, resolve, evasion-armor, abilities-skills, we
       "abilities-skills abilities-skills abilities-skills knowledge-magic knowledge-magic"
       "weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed weapons-armor-ammunition-unarmed"
       "traits-powers-spells traits-powers-spells traits-powers-spells traits-powers-spells traits-powers-spells";
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: 1fr 1fr 1fr 150px 150px;
     gap: 10px;
   }
   &--2 {

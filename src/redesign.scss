@@ -53,10 +53,12 @@
         color: var(--background-color);
         font-weight: 600;
       }
-      &:has(input:checked) {
-        label {
-          color: red;
+      &:not(:has(input:checked)) {
+        .translation {
+          color: var(--primary-color);
         }
+        border: 1px solid var(--primary-color);
+        background: transparent;
       }
     }
   }
@@ -77,7 +79,10 @@
       }
     }
     &--vertical {
-
+      min-height: 100%;
+      border-left: 1px dotted var(--separator-color);
+      margin-left: 20px;
+      width: 20px;
     }
   }
 
@@ -275,6 +280,11 @@
       .rangebar--madness {
         grid-column: 1 / -1;
         height: 38px;
+        min-width: 100%;
+        .rangebar__steps {
+          min-width: 100%;
+          justify-content: space-between;
+        }
       }
     }
     .translation__append {
@@ -373,11 +383,13 @@
       display: grid;
       grid-template-columns: 1fr max-content;
       gap: 10px;
+      input {
+        max-width: 60px;
+      }
     }
     .group--traditions {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
+      grid-template-columns: 1fr min-content 1fr min-content 1fr;
     }
   }
   .section--unarmed-attacks {

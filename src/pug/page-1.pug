@@ -155,7 +155,11 @@
         +translate({key:'traits-powers-spells'})
       +number-input({name:'class-resolve-difficulty', label:{key:'class-resolve-difficulty'}, html:{class:'number-input--simple labelled--left labelled--nowrap'}})
     .group.group--traditions
+      - let i = 0;
       each levels, tradition in spine.traditions
+        if i === 1 || i === 2
+          .section-separator.section-separator--vertical
+        - i++
         .tradition(class=`tradition--${tradition}`)
           h2
             +translate({key:`tradition ${tradition}`})
