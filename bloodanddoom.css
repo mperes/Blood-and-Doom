@@ -894,6 +894,11 @@
   grid-template-columns: 1fr 50px;
   gap: 10px;
 }
+.ui-dialog .characterviewer .charsheet .section--roleplay {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 .ui-dialog .characterviewer .charsheet .section--roleplay .tabs {
   display: flex;
   gap: 5px;
@@ -902,6 +907,13 @@
   padding: 15px;
   border-radius: 0 5px 5px 5px;
   background-color: var(--background-color);
+  flex-grow: 1;
+  display: flex;
+}
+.ui-dialog .characterviewer .charsheet .section--roleplay .tabbed .textarea {
+  display: flex;
+  min-height: 100%;
+  flex-grow: 1;
 }
 .ui-dialog .characterviewer .charsheet .section--roleplay .tab {
   border: 1px solid var(--background-color);
@@ -942,4 +954,19 @@
 }
 .ui-dialog .characterviewer .charsheet .section--tradition .repcontainer .repitem, .ui-dialog .characterviewer .charsheet .section--tradition .repcontainer .repeating-section__edit {
   display: contents;
+}
+.ui-dialog .characterviewer .charsheet .section--avatar .avatar {
+  margin: 0 0 10px 0 !important;
+}
+.ui-dialog .characterviewer .charsheet .section--avatar .avatar:not([src]) {
+  display: none;
+}
+.ui-dialog .characterviewer .charsheet .section--avatar .avatar:not([src]) .avatar--empty {
+  display: none;
+}
+.ui-dialog .characterviewer .charsheet .section--avatar .avatar:not([src]) + .avatar--empty {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 0.35;
 }

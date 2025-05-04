@@ -167,5 +167,6 @@
   "logo": "logo",
   "tags-and-attributes": "tags & attributes",
   "damage-placeholder": "1d8+4",
-  "damage-type-placeholder": "slashing"
+  "damage-type-placeholder": "slashing",
+  "character-portrait": "character portrait"
 }

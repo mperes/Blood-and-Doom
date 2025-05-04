@@ -365,6 +365,9 @@
     }
   }
   .section--roleplay {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
     .tabs {
       display: flex;
       gap: 5px;
@@ -373,6 +376,13 @@
       padding: 15px;
       border-radius: 0 5px 5px 5px;
       background-color: var(--background-color);
+      flex-grow: 1;
+      display: flex;
+      .textarea {
+        display: flex;
+        min-height: 100%;
+        flex-grow: 1;
+      }
     }
     .tab {
       border: 1px solid var(--background-color);
@@ -418,6 +428,23 @@
       gap: 5px;
       .repitem, .repeating-section__edit {
         display: contents;
+      }
+    }
+  }
+  .section--avatar {
+    .avatar {
+      margin: 0 0 10px 0!important;
+    }
+    .avatar:not([src]) {
+      .avatar--empty {
+        display: none;
+      }
+      display: none;
+      + .avatar--empty {
+        display: block;
+        width: 100%;
+        height: auto;
+        opacity: 0.35;
       }
     }
   }
