@@ -965,6 +965,12 @@
   display: grid;
   grid-template-columns: 1fr min-content 1fr min-content 1fr;
 }
+.ui-dialog .characterviewer .charsheet .section--traits-powers-spells .group--traditions h3 {
+  font-size: var(--font-size-large);
+}
+.ui-dialog .characterviewer .charsheet .section--traits-powers-spells .group--traditions h3 + .translation {
+  text-transform: capitalize;
+}
 .ui-dialog .characterviewer .charsheet .section--unarmed-attacks .group--attacks {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

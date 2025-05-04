@@ -437,6 +437,12 @@
     .group--traditions {
       display: grid;
       grid-template-columns: 1fr min-content 1fr min-content 1fr;
+      h3 {
+        font-size: var(--font-size-large);
+        + .translation {
+          text-transform: capitalize;
+        }
+      }
     }
   }
   .section--unarmed-attacks {

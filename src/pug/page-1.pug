@@ -161,9 +161,9 @@
           .section-separator.section-separator--vertical
         - i++
         .section.section--tradition(class=`section--tradition-${tradition}`)
-          h2
+          h3
             +translate({key:`tradition ${tradition}`})
-          span(data-i18n=`level-${levels}`)
+          +translate({key:`level-${levels}`})
           +repeating-section({name:`tradition-${tradition}`, html:{class:'repeating-section--edit-only'}})
             mixin repeating-edit
               +text-input({name:'name', html:{class:'text-input--simple'}})
