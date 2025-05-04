@@ -8,7 +8,8 @@
     .tabs
       input(type='hidden' name='attr_current-roleplay')
       each tab in spine.roleplay
-        +tab({name:tab, key:tab, group:'current-roleplay', html:{class:'tab--roleplay'}})
+        - const checked = tab === 'appearance'
+        +tab({name:tab, key:tab, group:'current-roleplay', checked: checked, html:{class:'tab--roleplay'}})
     .tabbed
       each tab in spine.roleplay
         +textarea({name:`attr_${tab}`, html:{class:'tab-content textarea--simple'}})

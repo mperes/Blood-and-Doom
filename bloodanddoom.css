@@ -68,6 +68,9 @@
   margin-bottom: 0;
   width: auto;
 }
+.ui-dialog .characterviewer .charsheet button, .ui-dialog .characterviewer .charsheet input, .ui-dialog .characterviewer .charsheet textarea {
+  outline: none !important;
+}
 .ui-dialog .characterviewer .charsheet .card {
   background-color: var(--background-color);
   border-radius: 5px;
@@ -368,6 +371,18 @@
 }
 .ui-dialog .characterviewer .charsheet datalist option, .ui-dialog .characterviewer .charsheet select option {
   text-transform: capitalize;
+}
+.ui-dialog .characterviewer .charsheet textarea {
+  box-sizing: border-box;
+  min-height: 100%;
+  resize: none;
+  margin-bottom: 0;
+  border: 1px solid var(--background-color);
+  background-color: transparent;
+  color: var(--text-color);
+}
+.ui-dialog .characterviewer .charsheet textarea:focus, .ui-dialog .characterviewer .charsheet textarea:hover {
+  border: 1px solid var(--tertiary-color);
 }
 .ui-dialog .characterviewer .charsheet .tabs .tab {
   position: relative;
@@ -884,16 +899,21 @@
   gap: 5px;
 }
 .ui-dialog .characterviewer .charsheet .section--roleplay .tabbed {
-  padding: 20px;
+  padding: 15px;
   border-radius: 0 5px 5px 5px;
   background-color: var(--background-color);
 }
 .ui-dialog .characterviewer .charsheet .section--roleplay .tab {
-  background: var(--background-color);
+  border: 1px solid var(--background-color);
+  border-bottom: 0;
 }
 .ui-dialog .characterviewer .charsheet .section--roleplay .tab label {
   color: var(--primary-color);
-  opacity: 0.75;
+  opacity: 0.65;
+  text-transform: capitalize;
+}
+.ui-dialog .characterviewer .charsheet .section--roleplay .tab:has(input:checked) {
+  background: var(--background-color);
 }
 .ui-dialog .characterviewer .charsheet .section--roleplay .tab:has(input:checked) label {
   opacity: 1;
