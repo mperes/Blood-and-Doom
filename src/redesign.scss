@@ -114,6 +114,25 @@
             bottom: 50px;
             left: 0;
           }
+          .group--armor-score {
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 5px;
+            .checkbox-input:has(input:checked) ~ .checkbox-input {
+              input {
+                opacity: 1;
+              }
+              &:after {
+                content: "";
+                width: 8px;
+                height: 8px;
+                background-image: url(https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/xmark.svg);
+                filter: none;
+                z-index: 2;
+                margin-left: 0;
+              }
+            }
+          }
         }
       }
     }

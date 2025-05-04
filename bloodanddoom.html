@@ -591,8 +591,8 @@
                               </div>
                               <div class="display text-input--simple"><span name="attr_damage"></span><span class="display__append" name="attr_damage-type"></span>
                               </div>
-                              <div class="checkbox-input labelled checkbox--simple checkbox-input--xmarked" value="1">
-                                <input type="checkbox" name="attr_dented"/>
+                              <div class="checkbox-input labelled checkbox--simple checkbox-input--xmarked">
+                                <input type="checkbox" name="attr_dented" value="1"/>
                               </div>
                           </div>
                           <div class="repeating-section__edit">
@@ -613,8 +613,8 @@
                                   <input type="text" name="attr_damage-type" data-i18n-placeholder="damage-type-placeholder"/>
                                 </div>
                             </div>
-                              <div class="checkbox-input labelled checkbox--simple checkbox-input--xmarked" value="1">
-                                <input type="checkbox" name="attr_dented"/>
+                              <div class="checkbox-input labelled checkbox--simple checkbox-input--xmarked">
+                                <input type="checkbox" name="attr_dented" value="1"/>
                               </div>
                           </div>
                         </fieldset>
@@ -628,15 +628,24 @@
                       <input type="text" name="attr_armor-name"/>
                     </label>
                   </div>
-                  <div class="rangebar labelled">
-                    <div class="rangebar__steps">
+                <div class="group group--armor-score">
+                    <div class="checkbox-input labelled checkbox--simple checkbox-input--xmarked">
                       <input type="checkbox" name="attr_armor-score" value="5"/>
+                    </div>
+                    <div class="checkbox-input labelled checkbox--simple checkbox-input--xmarked">
                       <input type="checkbox" name="attr_armor-score" value="4"/>
+                    </div>
+                    <div class="checkbox-input labelled checkbox--simple checkbox-input--xmarked">
                       <input type="checkbox" name="attr_armor-score" value="3"/>
+                    </div>
+                    <div class="checkbox-input labelled checkbox--simple checkbox-input--xmarked">
                       <input type="checkbox" name="attr_armor-score" value="2"/>
+                    </div>
+                    <div class="checkbox-input labelled checkbox--simple checkbox-input--xmarked">
                       <input type="checkbox" name="attr_armor-score" value="1"/>
                     </div>
-                  </div>
+                </div>
+                <!--+rangebar({name:'armor-score', steps: 5})-->
               </div>
             </div>
           </div>

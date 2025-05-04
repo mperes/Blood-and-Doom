@@ -43,7 +43,7 @@
 .sheet-darkmode .font-awesome, .sheet-darkmode .logo {
   filter: invert(1);
 }
-.sheet-darkmode .checkbox-input:after {
+.sheet-darkmode .checkbox-input:not(.checkbox-input--xmarked):after {
   filter: invert(0) !important;
 }
 .sheet-darkmode .repcontrol_edit, .sheet-darkmode .repcontrol_add {
@@ -368,9 +368,9 @@
 }
 .ui-dialog .characterviewer .charsheet .checkbox-input--xmarked:has(input:checked):after {
   content: "";
-  width: 12px;
-  height: 12px;
-  background-image: url(https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/xmark--red.svg);
+  width: 8px;
+  height: 8px;
+  background-image: url(https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/xmark.svg);
   filter: none;
   z-index: 2;
   margin-left: 0;
@@ -688,6 +688,23 @@
   position: absolute;
   bottom: 50px;
   left: 0;
+}
+.ui-dialog .characterviewer .charsheet .card.card--weapons-armor-ammunition-unarmed .group.group--weapons-armor .group--spread .section--armor-info .group--armor-score {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 5px;
+}
+.ui-dialog .characterviewer .charsheet .card.card--weapons-armor-ammunition-unarmed .group.group--weapons-armor .group--spread .section--armor-info .group--armor-score .checkbox-input:has(input:checked) ~ .checkbox-input input {
+  opacity: 1;
+}
+.ui-dialog .characterviewer .charsheet .card.card--weapons-armor-ammunition-unarmed .group.group--weapons-armor .group--spread .section--armor-info .group--armor-score .checkbox-input:has(input:checked) ~ .checkbox-input:after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-image: url(https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/xmark.svg);
+  filter: none;
+  z-index: 2;
+  margin-left: 0;
 }
 .ui-dialog .characterviewer .charsheet .card.card--weapons-armor-ammunition-unarmed .group.group--ammunition-unarmed {
   margin-left: 5px;

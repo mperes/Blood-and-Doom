@@ -82,6 +82,7 @@ mixin checkbox-input(options)
     options.html = options.html || {};
     const inputOptions = {};
     if(options.placeholder) inputOptions['data-i18n-placeholder'] = options.placeholder;
+    if(options.value) inputOptions['value'] = options.value;
   .checkbox-input.labelled&attributes(options.html)
     - delete options.html;
     if options.label 

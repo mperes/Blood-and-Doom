@@ -40,7 +40,7 @@
   .font-awesome, .logo {
     filter: invert(1);
   }
-  .checkbox-input:after {
+  .checkbox-input:not(.checkbox-input--xmarked):after {
     filter: invert(0)!important;
   }
   .repcontrol_edit, .repcontrol_add {
