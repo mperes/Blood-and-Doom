@@ -109,7 +109,7 @@
                 +display({name:'ability-skill', html:{class:'text-input--simple'}})
                 +display({name:'attributes', html:{class:'text-input--simple'}})
                 +display({name:'damage', append:'damage-type', html:{class:'text-input--simple'}})
-                +checkbox-input({name:'dented', html:{value:'1', class:'checkbox--simple'}})
+                +checkbox-input({name:'dented', html:{value:'1', class:'checkbox--simple checkbox-input--xmarked'}})
               mixin repeating-edit
                 +text-input({name:'name', html:{class:'text-input--simple'}})
                 +text-input({name:'ability-skill', html:{class:'text-input--simple'}})
@@ -117,7 +117,7 @@
                 .group.group--damage
                   +text-input({name:'damage', placeholder:'damage-placeholder', html:{class:'text-input--simple'}})
                   +text-input({name:'damage-type', placeholder:'damage-type-placeholder', html:{class:'text-input--simple'}})
-                +checkbox-input({name:'dented', html:{value:'1', class:'checkbox--simple'}})
+                +checkbox-input({name:'dented', html:{value:'1', class:'checkbox--simple checkbox-input--xmarked'}})
       .section.section--armor-info
         +text-input({name:'armor-name', label:{key:'armor-name-and-info'}, html:{class:'text-input--simple labelled--left labelled--nowrap'}})
         +rangebar({name:'armor-score', steps: 5})
