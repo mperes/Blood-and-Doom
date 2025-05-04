@@ -19,7 +19,7 @@
     .section(class=`section--${section}`)
       h2
         +translate({key:section})
-      +repeating-section({name:section, html:{class:'repeating-section--edit-only'}})
+      +repeating-section({name:section, html:{class:'repeating-section--edit-only repeating-section--fixed repeating-section--locked'}})
         mixin repeating-edit
           +text-input({name:'name', html:{class:'text-input--simple'}})
 .card.card--wealth
@@ -31,31 +31,27 @@
   .section.section--treasure
     h2
       +translate({key:'misc-items-and-treasure'})
-    +repeating-section({name:'treasure'})
-      mixin repeating-view
-        +display({name:'name'})
-        +display({name:'description'})
+    +repeating-section({name:'treasure', html:{class:'repeating-section--edit-only'}})
       mixin repeating-edit
-        +text-input({name:'name', list:'knowledge-list', html:{class:'text-input--simple'}})
-        +textarea({name:'description', html:{class:'textarea--simple'}})
+        +text-input({name:'name', html:{class:'text-input--simple'}})
 .card.card--equipment
   .section.section--equipment
     h2
       +translate({key:'equipment'})
-    .table.table--weapons
+    .table.table--equipment.table--highlighted
       .table__header
         +translate({key:'name'})  
         +translate({key:'info'})
-        +translate({key:'heart'})
         +translate({key:'quantity'})
+        img.font-awesome(src=`${imgServer}/mperes/Blood-and-Doom/refs/heads/main/static/dented.svg` data-i18n-title='dented' data-i18n-alt='dented')
       .table__body
         +repeating-section({name:'equipment', html:{class:'repeating-section--edit-only'}})
           mixin repeating-edit
             +text-input({name:'name', html:{class:'text-input--simple'}})
             +text-input({name:'info', html:{class:'text-input--simple'}})
-            +text-input({name:'dented', html:{class:'text-input--simple'}})
             .group.group--quantity
-              +number-input({name:'quantity-current', html:{class:'number-input--simple'}})
+              +number-input({name:'quantity-current', html:{class:'number-input--simple number-input--align-center'}})
               .group__separator /
-              +text-input({name:'quantity-max', html:{class:'text-input--simple'}})
+              +text-input({name:'quantity-max', placeholder:'max', html:{class:'text-input--simple number-input--align-center'}})
+            +checkbox-input({name:'dented', html:{value:'1', class:'checkbox--simple'}})
 

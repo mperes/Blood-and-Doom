@@ -134,7 +134,5 @@ textarea {
   border: 1px solid var(--background-color);
   background-color: transparent;
   color: var(--text-color);
-  &:focus, &:hover {
-    border: 1px solid var(--tertiary-color);
-  }
+  border: 1px solid var(--tertiary-color);
 }

@@ -380,8 +380,6 @@
   border: 1px solid var(--background-color);
   background-color: transparent;
   color: var(--text-color);
-}
-.ui-dialog .characterviewer .charsheet textarea:focus, .ui-dialog .characterviewer .charsheet textarea:hover {
   border: 1px solid var(--tertiary-color);
 }
 .ui-dialog .characterviewer .charsheet .tabs .tab {
@@ -560,7 +558,7 @@
 }
 .ui-dialog .characterviewer .charsheet .page--2 {
   display: grid;
-  grid-template-areas: "avatar-corruption roleplay roleplay roleplay roleplay" "proficiencies-languages-feats-spells proficiencies-languages-feats-spells proficiencies-languages-feats-spells proficiencies-languages-feats-spells proficiencies-languages-feats-spells" "wealth equipment equipment equipment equipment";
+  grid-template-areas: "avatar-corruption roleplay roleplay roleplay roleplay" "proficiencies-languages-feats-spells proficiencies-languages-feats-spells proficiencies-languages-feats-spells proficiencies-languages-feats-spells proficiencies-languages-feats-spells" "wealth wealth equipment equipment equipment";
   grid-template-columns: repeat(5, 1fr);
   gap: 10px;
 }
@@ -623,6 +621,7 @@
 .ui-dialog .characterviewer .charsheet .navigation .tab label {
   color: var(--background-color);
   font-weight: 600;
+  text-transform: capitalize;
 }
 .ui-dialog .characterviewer .charsheet .navigation .tab:not(:has(input:checked)) {
   border: 1px solid var(--primary-color);
@@ -742,6 +741,23 @@
 .ui-dialog .characterviewer .charsheet .table--weapons .input-checkbox {
   justify-self: end;
 }
+.ui-dialog .characterviewer .charsheet .table--equipment {
+  grid-template-columns: 1fr 100px 60px min-content;
+  gap: 10px;
+}
+.ui-dialog .characterviewer .charsheet .table--equipment .group--quantity {
+  display: grid;
+  grid-template-columns: 1fr min-content 1fr;
+}
+.ui-dialog .characterviewer .charsheet .table--equipment .repcontainer {
+  gap: 5px 10px;
+}
+.ui-dialog .characterviewer .charsheet .table--equipment .display {
+  border-bottom: 1px solid var(--tertiary-color);
+}
+.ui-dialog .characterviewer .charsheet .table--equipment .input-checkbox {
+  justify-self: end;
+}
 .ui-dialog .characterviewer .charsheet .section--abilities-skills .group--abilities-skills {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -793,6 +809,13 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
+  margin-bottom: 10px;
+}
+.ui-dialog .characterviewer .charsheet .section--treasure {
+  margin-top: 15px;
+}
+.ui-dialog .characterviewer .charsheet .section--treasure .repitem:not(:last-child) {
+  margin-bottom: 5px;
 }
 .ui-dialog .characterviewer .charsheet .section--evasion .group--evasion {
   display: grid;
@@ -969,4 +992,10 @@
   width: 100%;
   height: auto;
   opacity: 0.35;
+}
+.ui-dialog .characterviewer .charsheet .section--proficiencies .repitem:not(:last-child),
+.ui-dialog .characterviewer .charsheet .section--languages .repitem:not(:last-child),
+.ui-dialog .characterviewer .charsheet .section--feats .repitem:not(:last-child),
+.ui-dialog .characterviewer .charsheet .section--discovered-spells .repitem:not(:last-child) {
+  margin-bottom: 5px;
 }

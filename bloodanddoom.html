@@ -871,7 +871,7 @@
           <div class="section section--proficiencies">
             <h2><span class="translation"><span class="translation__key" data-i18n="proficiencies"></span></span>
             </h2>
-              <div class="repeating-section repeating-section--edit-only">
+              <div class="repeating-section repeating-section--edit-only repeating-section--fixed repeating-section--locked">
                 <fieldset class="repeating_proficiencies">
                   <div class="repeating-section__toggle"><img class="font-awesome" src="https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/cog.svg" data-i18n-alt="toggle-edit-mode"/>
                     <input type="checkbox"/>
@@ -887,7 +887,7 @@
           <div class="section section--languages">
             <h2><span class="translation"><span class="translation__key" data-i18n="languages"></span></span>
             </h2>
-              <div class="repeating-section repeating-section--edit-only">
+              <div class="repeating-section repeating-section--edit-only repeating-section--fixed repeating-section--locked">
                 <fieldset class="repeating_languages">
                   <div class="repeating-section__toggle"><img class="font-awesome" src="https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/cog.svg" data-i18n-alt="toggle-edit-mode"/>
                     <input type="checkbox"/>
@@ -903,7 +903,7 @@
           <div class="section section--feats">
             <h2><span class="translation"><span class="translation__key" data-i18n="feats"></span></span>
             </h2>
-              <div class="repeating-section repeating-section--edit-only">
+              <div class="repeating-section repeating-section--edit-only repeating-section--fixed repeating-section--locked">
                 <fieldset class="repeating_feats">
                   <div class="repeating-section__toggle"><img class="font-awesome" src="https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/cog.svg" data-i18n-alt="toggle-edit-mode"/>
                     <input type="checkbox"/>
@@ -919,7 +919,7 @@
           <div class="section section--discovered-spells">
             <h2><span class="translation"><span class="translation__key" data-i18n="discovered-spells"></span></span>
             </h2>
-              <div class="repeating-section repeating-section--edit-only">
+              <div class="repeating-section repeating-section--edit-only repeating-section--fixed repeating-section--locked">
                 <fieldset class="repeating_discovered-spells">
                   <div class="repeating-section__toggle"><img class="font-awesome" src="https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/cog.svg" data-i18n-alt="toggle-edit-mode"/>
                     <input type="checkbox"/>
@@ -956,23 +956,14 @@
           <div class="section section--treasure">
             <h2><span class="translation"><span class="translation__key" data-i18n="misc-items-and-treasure"></span></span>
             </h2>
-              <div class="repeating-section">
+              <div class="repeating-section repeating-section--edit-only">
                 <fieldset class="repeating_treasure">
                   <div class="repeating-section__toggle"><img class="font-awesome" src="https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/cog.svg" data-i18n-alt="toggle-edit-mode"/>
                     <input type="checkbox"/>
                   </div>
-                  <div class="repeating-section__view">
-                      <div class="display"><span name="attr_name"></span>
-                      </div>
-                      <div class="display"><span name="attr_description"></span>
-                      </div>
-                  </div>
                   <div class="repeating-section__edit">
                       <div class="text-input labelled text-input--simple">
-                        <input type="text" name="attr_name" list="knowledge-list"/>
-                      </div>
-                      <div class="textarea labelled textarea--simple">
-                        <textarea name="attr_description"></textarea>
+                        <input type="text" name="attr_name"/>
                       </div>
                   </div>
                 </fieldset>
@@ -983,8 +974,8 @@
           <div class="section section--equipment">
             <h2><span class="translation"><span class="translation__key" data-i18n="equipment"></span></span>
             </h2>
-            <div class="table table--weapons">
-              <div class="table__header"><span class="translation"><span class="translation__key" data-i18n="name"></span></span><span class="translation"><span class="translation__key" data-i18n="info"></span></span><span class="translation"><span class="translation__key" data-i18n="heart"></span></span><span class="translation"><span class="translation__key" data-i18n="quantity"></span></span>
+            <div class="table table--equipment table--highlighted">
+              <div class="table__header"><span class="translation"><span class="translation__key" data-i18n="name"></span></span><span class="translation"><span class="translation__key" data-i18n="info"></span></span><span class="translation"><span class="translation__key" data-i18n="quantity"></span></span><img class="font-awesome" src="https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/dented.svg" data-i18n-title="dented" data-i18n-alt="dented"/>
               </div>
               <div class="table__body">
                   <div class="repeating-section repeating-section--edit-only">
@@ -999,18 +990,18 @@
                           <div class="text-input labelled text-input--simple">
                             <input type="text" name="attr_info"/>
                           </div>
-                          <div class="text-input labelled text-input--simple">
-                            <input type="text" name="attr_dented"/>
-                          </div>
                         <div class="group group--quantity">
-                            <div class="number-input labelled number-input--simple">
+                            <div class="number-input labelled number-input--simple number-input--align-center">
                               <input type="number" name="attr_quantity-current"/>
                             </div>
                           <div class="group__separator">/</div>
-                            <div class="text-input labelled text-input--simple">
-                              <input type="text" name="attr_quantity-max"/>
+                            <div class="text-input labelled text-input--simple number-input--align-center">
+                              <input type="text" name="attr_quantity-max" data-i18n-placeholder="max"/>
                             </div>
                         </div>
+                          <div class="checkbox-input labelled checkbox--simple" value="1">
+                            <input type="checkbox" name="attr_dented"/>
+                          </div>
                       </div>
                     </fieldset>
                   </div>

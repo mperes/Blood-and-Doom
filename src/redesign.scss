@@ -52,6 +52,7 @@
       label {
         color: var(--background-color);
         font-weight: 600;
+        text-transform: capitalize;
       }
       &:not(:has(input:checked)) {
         .translation {
@@ -184,6 +185,23 @@
       justify-self: end;
     }
   }
+  .table--equipment {
+    grid-template-columns: 1fr 100px 60px min-content;
+    gap: 10px;
+    .group--quantity {
+      display: grid;
+      grid-template-columns: 1fr min-content 1fr;
+    }
+    .repcontainer {
+      gap: 5px 10px;
+    }
+    .display {
+      border-bottom: 1px solid var(--tertiary-color);
+    };
+    .input-checkbox {
+      justify-self: end;
+    }
+  }
 
   //SECTION STYLES
   .section--abilities-skills {
@@ -244,6 +262,13 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
+      margin-bottom: 10px;
+    }
+  }
+  .section--treasure {
+    margin-top: 15px;
+    .repitem:not(:last-child ) {
+      margin-bottom: 5px;
     }
   }
   .section--evasion {
@@ -446,6 +471,14 @@
         height: auto;
         opacity: 0.35;
       }
+    }
+  }
+  .section--proficiencies,
+  .section--languages,
+  .section--feats,
+  .section--discovered-spells {
+    .repitem:not(:last-child) {
+      margin-bottom: 5px;
     }
   }
 }

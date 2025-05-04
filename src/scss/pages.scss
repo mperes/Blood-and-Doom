@@ -32,7 +32,7 @@ $cards: (header, health-conditions, resolve, evasion-armor, abilities-skills, we
     grid-template-areas: 
       "avatar-corruption roleplay roleplay roleplay roleplay"
       "proficiencies-languages-feats-spells proficiencies-languages-feats-spells proficiencies-languages-feats-spells proficiencies-languages-feats-spells proficiencies-languages-feats-spells"
-      "wealth equipment equipment equipment equipment";
+      "wealth wealth equipment equipment equipment";
     grid-template-columns: repeat(5, 1fr);
     gap: 10px;
   }
