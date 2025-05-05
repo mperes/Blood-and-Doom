@@ -230,6 +230,15 @@
 .ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="1"] ~ .rangebar__steps .step:has(input[value="10"]) input {
   display: none;
 }
+.ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="1"] ~ .rangebar__steps .step:has(input[value="11"]) {
+  opacity: 0.35;
+  background: transparent;
+  border: 2px solid var(--tertiary-color);
+  pointer-events: none;
+}
+.ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="1"] ~ .rangebar__steps .step:has(input[value="11"]) input {
+  display: none;
+}
 .ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="2"] ~ .rangebar__steps .step:has(input[value="3"]) {
   opacity: 0.35;
   background: transparent;
@@ -302,6 +311,15 @@
 .ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="2"] ~ .rangebar__steps .step:has(input[value="10"]) input {
   display: none;
 }
+.ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="2"] ~ .rangebar__steps .step:has(input[value="11"]) {
+  opacity: 0.35;
+  background: transparent;
+  border: 2px solid var(--tertiary-color);
+  pointer-events: none;
+}
+.ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="2"] ~ .rangebar__steps .step:has(input[value="11"]) input {
+  display: none;
+}
 .ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="3"] ~ .rangebar__steps .step:has(input[value="4"]) {
   opacity: 0.35;
   background: transparent;
@@ -365,6 +383,15 @@
 .ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="3"] ~ .rangebar__steps .step:has(input[value="10"]) input {
   display: none;
 }
+.ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="3"] ~ .rangebar__steps .step:has(input[value="11"]) {
+  opacity: 0.35;
+  background: transparent;
+  border: 2px solid var(--tertiary-color);
+  pointer-events: none;
+}
+.ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="3"] ~ .rangebar__steps .step:has(input[value="11"]) input {
+  display: none;
+}
 .ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="4"] ~ .rangebar__steps .step:has(input[value="5"]) {
   opacity: 0.35;
   background: transparent;
@@ -419,6 +446,15 @@
 .ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="4"] ~ .rangebar__steps .step:has(input[value="10"]) input {
   display: none;
 }
+.ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="4"] ~ .rangebar__steps .step:has(input[value="11"]) {
+  opacity: 0.35;
+  background: transparent;
+  border: 2px solid var(--tertiary-color);
+  pointer-events: none;
+}
+.ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="4"] ~ .rangebar__steps .step:has(input[value="11"]) input {
+  display: none;
+}
 .ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="5"] ~ .rangebar__steps .step:has(input[value="6"]) {
   opacity: 0.35;
   background: transparent;
@@ -464,6 +500,15 @@
 .ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="5"] ~ .rangebar__steps .step:has(input[value="10"]) input {
   display: none;
 }
+.ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="5"] ~ .rangebar__steps .step:has(input[value="11"]) {
+  opacity: 0.35;
+  background: transparent;
+  border: 2px solid var(--tertiary-color);
+  pointer-events: none;
+}
+.ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="5"] ~ .rangebar__steps .step:has(input[value="11"]) input {
+  display: none;
+}
 .ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="6"] ~ .rangebar__steps .step:has(input[value="7"]) {
   opacity: 0.35;
   background: transparent;
@@ -500,6 +545,15 @@
 .ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="6"] ~ .rangebar__steps .step:has(input[value="10"]) input {
   display: none;
 }
+.ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="6"] ~ .rangebar__steps .step:has(input[value="11"]) {
+  opacity: 0.35;
+  background: transparent;
+  border: 2px solid var(--tertiary-color);
+  pointer-events: none;
+}
+.ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="6"] ~ .rangebar__steps .step:has(input[value="11"]) input {
+  display: none;
+}
 .ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="7"] ~ .rangebar__steps .step:has(input[value="8"]) {
   opacity: 0.35;
   background: transparent;
@@ -527,6 +581,15 @@
 .ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="7"] ~ .rangebar__steps .step:has(input[value="10"]) input {
   display: none;
 }
+.ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="7"] ~ .rangebar__steps .step:has(input[value="11"]) {
+  opacity: 0.35;
+  background: transparent;
+  border: 2px solid var(--tertiary-color);
+  pointer-events: none;
+}
+.ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="7"] ~ .rangebar__steps .step:has(input[value="11"]) input {
+  display: none;
+}
 .ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="8"] ~ .rangebar__steps .step:has(input[value="9"]) {
   opacity: 0.35;
   background: transparent;
@@ -545,6 +608,15 @@
 .ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="8"] ~ .rangebar__steps .step:has(input[value="10"]) input {
   display: none;
 }
+.ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="8"] ~ .rangebar__steps .step:has(input[value="11"]) {
+  opacity: 0.35;
+  background: transparent;
+  border: 2px solid var(--tertiary-color);
+  pointer-events: none;
+}
+.ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="8"] ~ .rangebar__steps .step:has(input[value="11"]) input {
+  display: none;
+}
 .ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="9"] ~ .rangebar__steps .step:has(input[value="10"]) {
   opacity: 0.35;
   background: transparent;
@@ -552,6 +624,15 @@
   pointer-events: none;
 }
 .ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="9"] ~ .rangebar__steps .step:has(input[value="10"]) input {
+  display: none;
+}
+.ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="9"] ~ .rangebar__steps .step:has(input[value="11"]) {
+  opacity: 0.35;
+  background: transparent;
+  border: 2px solid var(--tertiary-color);
+  pointer-events: none;
+}
+.ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="9"] ~ .rangebar__steps .step:has(input[value="11"]) input {
   display: none;
 }
 .ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="10"] ~ .rangebar__steps .step:has(input[value="11"]) {
@@ -563,13 +644,22 @@
 .ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="10"] ~ .rangebar__steps .step:has(input[value="11"]) input {
   display: none;
 }
-.ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="10"] ~ .rangebar__steps .step:has(input[value="10"]) {
+.ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="11"] ~ .rangebar__steps .step:has(input[value="12"]) {
   opacity: 0.35;
   background: transparent;
   border: 2px solid var(--tertiary-color);
   pointer-events: none;
 }
-.ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="10"] ~ .rangebar__steps .step:has(input[value="10"]) input {
+.ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="11"] ~ .rangebar__steps .step:has(input[value="12"]) input {
+  display: none;
+}
+.ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="11"] ~ .rangebar__steps .step:has(input[value="11"]) {
+  opacity: 0.35;
+  background: transparent;
+  border: 2px solid var(--tertiary-color);
+  pointer-events: none;
+}
+.ui-dialog .characterviewer .charsheet .rangebar .rangebar__max[value="11"] ~ .rangebar__steps .step:has(input[value="11"]) input {
   display: none;
 }
 .ui-dialog .characterviewer .charsheet .rangebar--afar .rangebar__steps {

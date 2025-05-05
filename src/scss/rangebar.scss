@@ -30,9 +30,9 @@
       background-color: var(--primary-color);
     }
   }
-  @for $i from 1 through 10 {
+  @for $i from 1 through 11 {
     .rangebar__max[value="#{$i}"] ~ .rangebar__steps {
-      @for $j from $i+1 through 10 {
+      @for $j from $i+1 through 11 {
         .step:has(input[value="#{$j}"]) {
           opacity: 0.35;
           background: transparent;
