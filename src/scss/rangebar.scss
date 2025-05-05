@@ -1,12 +1,14 @@
 .rangebar {
   label {
     color: var(--text-color);
+    pointer-events: none;
   }
   &__steps {
     display: inline-flex;
     gap: 5px;
     flex-direction: row-reverse;
     .step {
+      pointer-events: all;
       background-color: transparent;
       box-sizing: border-box;
       width: 18px;

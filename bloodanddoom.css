@@ -120,6 +120,7 @@
 }
 .ui-dialog .characterviewer .charsheet .rangebar label {
   color: var(--text-color);
+  pointer-events: none;
 }
 .ui-dialog .characterviewer .charsheet .rangebar__steps {
   display: inline-flex;
@@ -127,6 +128,7 @@
   flex-direction: row-reverse;
 }
 .ui-dialog .characterviewer .charsheet .rangebar__steps .step {
+  pointer-events: all;
   background-color: transparent;
   box-sizing: border-box;
   width: 18px;
