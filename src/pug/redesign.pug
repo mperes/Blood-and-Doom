@@ -51,6 +51,7 @@ mixin text-input(options)
     options.html = options.html || {};
     const inputOptions = {};
     if(options.placeholder) inputOptions['data-i18n-placeholder'] = options.placeholder;
+    if(options.value) inputOptions['value'] = options.value;
   .text-input.labelled&attributes(options.html)
     - delete options.html;
     if options.label 
@@ -72,6 +73,7 @@ mixin number-input(options)
     options.html = options.html || {};
     const inputOptions = {};
     if(options.placeholder) inputOptions['data-i18n-placeholder'] = options.placeholder;
+    if(options.value) inputOptions['value'] = options.value;
   .number-input.labelled&attributes(options.html)
     - delete options.html;
     if options.label 

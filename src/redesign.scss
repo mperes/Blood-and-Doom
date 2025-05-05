@@ -13,6 +13,7 @@
   @import "./scss/tabs.scss";
   @import "./scss/button.scss";
   @import "./scss/display.scss";
+  @import "./scss/section.scss";
   @import "./scss/pages.scss";
 
   font-family: "Roboto Condensed", sans-serif;
@@ -324,8 +325,11 @@
     display: grid;
     .group--title {
       display: grid;
-      grid-template-columns: 1fr max-content;
+      grid-template-columns: 1fr max-content max-content;
       gap: 10px;
+      .section__toggle {
+        margin-top: 2px;
+      }
     }
     .group--bars {
       display: grid;
@@ -359,6 +363,14 @@
       .translation__append {
         display: block;
         line-height: normal;
+      }
+    }
+    .group--maxes {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      gap: 10px 5px;
+      .number-input, label {
+        display: contents;
       }
     }
   }

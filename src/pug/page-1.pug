@@ -3,6 +3,19 @@
     .group.group--title
       h2
         +translate({key:'health'})
+      details.section__details
+        summary
+          .section__toggle
+            img.font-awesome(src=`${imgServer}/mperes/Blood-and-Doom/refs/heads/main/static/cog.svg` data-i18n-alt='toggle-edit-mode')
+          .section__blocker
+        .card
+          h2
+            +translate({key:'health'})
+          .group.group--maxes
+            each bar in spine.health.bars
+              +number-input({name:`${bar.name}-max`, value:bar.max, label:{key:`${bar.name}-max`}, html:{class:'number-input--simple number-input--align-center labelled--left labelled--nowrap'}})
+      .section__toggle
+        img.font-awesome(src=`${imgServer}/mperes/Blood-and-Doom/refs/heads/main/static/cog.svg` data-i18n-alt='toggle-edit-mode')   
       +action-button({name:'rest', label:{key:'long-rest'}})
     .group.group--bars
       each bar in spine.health.bars

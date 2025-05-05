@@ -170,5 +170,10 @@
   "damage-type-placeholder": "slashing",
   "character-portrait": "character portrait",
   "level":"level",
-  "xp":"XP"
+  "xp":"XP",
+  "bruises-max":"max bruises",
+  "scrapes-max":"max scrapes",
+  "wounds-max": "max wounds",
+  "injuries-max": "max injuries",
+  "madness-max": "max madness"
 }

@@ -1,0 +1,75 @@
+.section {
+  &__toggle {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    img {
+      width: 14px;
+      height: 14px;
+    }
+    input {
+      position: absolute;
+      border: 0;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      top: 0;
+      left: 0;
+    }
+  }
+  &:has(.section__toggle input:checked) {
+    .section__view {
+      display: none;
+    }
+  }
+  &:not(:has(.section__toggle input:checked)) {
+    .section__edit {
+      display: none;
+    }
+  }
+  &__details {
+    .section__blocker {
+      display: none;
+    }
+    + .section__toggle {
+      display: none;
+    }
+    summary {
+      align-self: center;
+    }
+    &[open] {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      justify-content: center;
+      z-index: 9999;
+      .section__toggle {
+        display: none;
+      }
+      .section__blocker {
+        display: block;
+        position:absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-color: var(--blocker-color);
+        backdrop-filter: blur(10px);
+        opacity: 0.85;
+      }
+      .card {
+        position: relative;
+        z-index: 2;
+      }
+      + .section__toggle {
+        display: block;
+      }
+    }
+  }
+}
