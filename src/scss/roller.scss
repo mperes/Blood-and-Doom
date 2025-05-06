@@ -11,11 +11,15 @@
   bottom: 20px;
   right: 20px;
   box-shadow: -5px -5px 5px rgba(0,0,0,0.20);
-  label, .translation {
+  label, .translation, input, select {
+    color: var(--boxedtext-color);
     span {
       color: var(--boxedtext-color);
     }
-  } 
+  }
+  select option {
+    color: rgba(25, 25, 25);
+  }
   &__toggle {
     position: relative;
     width: 40px;

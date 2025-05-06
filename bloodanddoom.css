@@ -1249,8 +1249,14 @@
   right: 20px;
   box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.2);
 }
-.ui-dialog .characterviewer .charsheet .roller label span, .ui-dialog .characterviewer .charsheet .roller .translation span {
+.ui-dialog .characterviewer .charsheet .roller label, .ui-dialog .characterviewer .charsheet .roller .translation, .ui-dialog .characterviewer .charsheet .roller input, .ui-dialog .characterviewer .charsheet .roller select {
   color: var(--boxedtext-color);
+}
+.ui-dialog .characterviewer .charsheet .roller label span, .ui-dialog .characterviewer .charsheet .roller .translation span, .ui-dialog .characterviewer .charsheet .roller input span, .ui-dialog .characterviewer .charsheet .roller select span {
+  color: var(--boxedtext-color);
+}
+.ui-dialog .characterviewer .charsheet .roller select option {
+  color: rgb(25, 25, 25);
 }
 .ui-dialog .characterviewer .charsheet .roller__toggle {
   position: relative;
