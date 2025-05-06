@@ -1308,7 +1308,7 @@
 .ui-dialog .characterviewer .charsheet .roller .tabs .translation {
   text-transform: capitalize;
 }
-.ui-dialog .characterviewer .charsheet .roller .tabs .tab:has(input:checked) .translation {
+.ui-dialog .characterviewer .charsheet .roller .tabs .tab:has(input:checked) .translation span {
   color: rgb(216, 0, 30);
 }
 .ui-dialog .characterviewer .charsheet .roller .roller__content {
@@ -1351,6 +1351,7 @@
 }
 .ui-dialog .characterviewer .charsheet .character {
   padding-bottom: 20px;
+  padding-top: 5px;
 }
 .ui-dialog .characterviewer .charsheet .character:has(.roller__toggle input:checked) {
   padding-bottom: 60px;

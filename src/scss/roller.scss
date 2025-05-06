@@ -76,7 +76,7 @@
       text-transform: capitalize;
     }
     .tab:has(input:checked) {
-      .translation {
+      .translation span {
         color: rgb(216,0,30);
         //text-shadow: 1px 1px 0 rgba(0,0,0,0.5);
       }
