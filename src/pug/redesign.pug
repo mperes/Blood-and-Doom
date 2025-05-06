@@ -180,4 +180,9 @@ each options, list in spine.lists
       include page-2.pug  
     .page.page--3.tab-content
       include page-3.pug
-  .card.card--roller
+  .roller
+    .roller__toggle
+      img.d10(src=`${imgServer}/mperes/Blood-and-Doom/refs/heads/main/static/d10.svg` data-i18n-alt='d10')
+      input(type='checkbox' name='attr_roller-open' value='1')
+    .roller__content
+      span something else
