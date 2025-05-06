@@ -1248,6 +1248,9 @@
   right: 20px;
   box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.2);
 }
+.ui-dialog .characterviewer .charsheet .roller label span, .ui-dialog .characterviewer .charsheet .roller .translation span {
+  color: var(--boxedtext-color);
+}
 .ui-dialog .characterviewer .charsheet .roller__toggle {
   position: relative;
   width: 40px;
@@ -1283,6 +1286,9 @@
 .ui-dialog .characterviewer .charsheet .roller .tabbed input, .ui-dialog .characterviewer .charsheet .roller .tabbed select {
   width: 50px;
   text-align: center;
+}
+.ui-dialog .characterviewer .charsheet .roller .action-button button {
+  border-color: var(--boxedtext-color);
 }
 .ui-dialog .characterviewer .charsheet .roller .action-button button:hover {
   background: rgb(216, 0, 30);

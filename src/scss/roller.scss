@@ -10,6 +10,11 @@
   bottom: 20px;
   right: 20px;
   box-shadow: -5px -5px 5px rgba(0,0,0,0.20);
+  label, .translation {
+    span {
+      color: var(--boxedtext-color);
+    }
+  } 
   &__toggle {
     position: relative;
     width: 40px;
@@ -49,6 +54,9 @@
     }
   }
   .action-button {
+    button {
+      border-color: var(--boxedtext-color);
+    }
     button:hover {
       background: rgb(216,0,30);
       .translation {
