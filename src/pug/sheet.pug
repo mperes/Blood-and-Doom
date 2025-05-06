@@ -74,6 +74,7 @@ mixin number-input(options)
     const inputOptions = {};
     if(options.placeholder) inputOptions['data-i18n-placeholder'] = options.placeholder;
     if(options.value) inputOptions['value'] = options.value;
+    if(options.min) inputOptions['min'] = options.min;
   .number-input.labelled&attributes(options.html)
     - delete options.html;
     if options.label 
@@ -145,7 +146,7 @@ mixin action-button(options)
   - options.html = options.html || {};
   .action-button&attributes(options.html)
     - delete options.html;
-    button(type='action' name=`attr_${options.name}`)
+    button(type='action' name=`act_${options.name}`)
       if options.label 
         +translate(options.label)
 

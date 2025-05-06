@@ -1,0 +1,114 @@
+.sheet-rolltemplate-standard {
+  font-family: "Roboto Condensed", sans-serif;
+  color: black; /* PLACEHOLDER */
+}
+
+.sheet-rolltemplate-ability,
+.sheet-rolltemplate-damage,
+.sheet-rolltemplate-doom {
+  .sheet-template-container {
+    background-color: black;
+    color: white;
+    padding: 5px 5px 20px 20px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    min-height: 100px;
+
+    .sheet-template-header {
+      margin-bottom: 20px;
+
+      h1,
+      h2 {
+        height: 30px;
+      }
+
+      .sheet-template-name {
+        font-weight: bold;
+        font-family: "Roboto Condensed", sans-serif;
+        font-size: 14px;
+        color: #f8c9ad;
+      }
+
+      .sheet-template-title {
+        font-family: "Roboto Condensed", sans-serif;
+        font-weight: bolder;
+        font-size: 18px;
+        text-transform: uppercase;
+      }
+    }
+
+    .sheet-template-rolls {
+      font-family: "Roboto Condensed", sans-serif;
+      font-weight: 500;
+      line-height: 1.8em;
+
+      h5 {
+        font-weight: 800;
+        font-size: 18px;
+        margin-top: 6px;
+      }
+
+      h5.sheet-good {
+        color: #56ba53;
+      }
+
+      h5.sheet-bad {
+        color: #de4d46;
+      }
+
+      h5.sheet-purple {
+        color: #885ac9;
+      }
+
+      h5.sheet-amber {
+        color: #de7a45;
+      }
+
+      .sheet-template-roll {
+        .inlinerollresult {
+          background-color: transparent;
+          border: none;
+          padding: 0;
+
+          &.fullcrit,
+          &.importantroll,
+          &.fullfail {
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.sheet-rolltemplate-ability {
+  .sheet-template-container {
+    background-image: url("https://raw.githubusercontent.com/roll20/roll20-character-sheets/master/Blood_and_Doom_by_Dicetale_Games/static/chat_action_roll.jpg");
+    border-radius: 5px;
+  }
+}
+
+.sheet-rolltemplate-damage {
+  .sheet-template-container {
+    background-image: url("https://raw.githubusercontent.com/roll20/roll20-character-sheets/master/Blood_and_Doom_by_Dicetale_Games/static/chat_damage_roll.jpg");
+    border-radius: 5px;
+  }
+  .sheet-template-rolls {
+    span.sheet-template-roll:empty {
+      display: none;
+      + br {
+        display: none;
+        + h5 {
+          margin-top: 25px;
+        }
+      }
+    }
+  }
+}
+
+.sheet-rolltemplate-doom {
+  .sheet-template-container {
+    background-image: url("https://raw.githubusercontent.com/roll20/roll20-character-sheets/master/Blood_and_Doom_by_Dicetale_Games/static/chat_doom_roll.jpg");
+    border-radius: 5px;
+  }
+}

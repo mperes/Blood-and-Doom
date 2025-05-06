@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400,500,700,800|Merriweather:400,700,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
 :root {
   --base-size: 10px;
@@ -1794,4 +1793,123 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
+}
+
+.sheet-rolltemplate-standard {
+  font-family: "Roboto Condensed", sans-serif;
+  color: black; /* PLACEHOLDER */
+}
+
+.sheet-rolltemplate-ability .sheet-template-container,
+.sheet-rolltemplate-damage .sheet-template-container,
+.sheet-rolltemplate-doom .sheet-template-container {
+  background-color: black;
+  color: white;
+  padding: 5px 5px 20px 20px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  min-height: 100px;
+}
+.sheet-rolltemplate-ability .sheet-template-container .sheet-template-header,
+.sheet-rolltemplate-damage .sheet-template-container .sheet-template-header,
+.sheet-rolltemplate-doom .sheet-template-container .sheet-template-header {
+  margin-bottom: 20px;
+}
+.sheet-rolltemplate-ability .sheet-template-container .sheet-template-header h1,
+.sheet-rolltemplate-ability .sheet-template-container .sheet-template-header h2,
+.sheet-rolltemplate-damage .sheet-template-container .sheet-template-header h1,
+.sheet-rolltemplate-damage .sheet-template-container .sheet-template-header h2,
+.sheet-rolltemplate-doom .sheet-template-container .sheet-template-header h1,
+.sheet-rolltemplate-doom .sheet-template-container .sheet-template-header h2 {
+  height: 30px;
+}
+.sheet-rolltemplate-ability .sheet-template-container .sheet-template-header .sheet-template-name,
+.sheet-rolltemplate-damage .sheet-template-container .sheet-template-header .sheet-template-name,
+.sheet-rolltemplate-doom .sheet-template-container .sheet-template-header .sheet-template-name {
+  font-weight: bold;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 14px;
+  color: #f8c9ad;
+}
+.sheet-rolltemplate-ability .sheet-template-container .sheet-template-header .sheet-template-title,
+.sheet-rolltemplate-damage .sheet-template-container .sheet-template-header .sheet-template-title,
+.sheet-rolltemplate-doom .sheet-template-container .sheet-template-header .sheet-template-title {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: bolder;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.sheet-rolltemplate-ability .sheet-template-container .sheet-template-rolls,
+.sheet-rolltemplate-damage .sheet-template-container .sheet-template-rolls,
+.sheet-rolltemplate-doom .sheet-template-container .sheet-template-rolls {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 500;
+  line-height: 1.8em;
+}
+.sheet-rolltemplate-ability .sheet-template-container .sheet-template-rolls h5,
+.sheet-rolltemplate-damage .sheet-template-container .sheet-template-rolls h5,
+.sheet-rolltemplate-doom .sheet-template-container .sheet-template-rolls h5 {
+  font-weight: 800;
+  font-size: 18px;
+  margin-top: 6px;
+}
+.sheet-rolltemplate-ability .sheet-template-container .sheet-template-rolls h5.sheet-good,
+.sheet-rolltemplate-damage .sheet-template-container .sheet-template-rolls h5.sheet-good,
+.sheet-rolltemplate-doom .sheet-template-container .sheet-template-rolls h5.sheet-good {
+  color: #56ba53;
+}
+.sheet-rolltemplate-ability .sheet-template-container .sheet-template-rolls h5.sheet-bad,
+.sheet-rolltemplate-damage .sheet-template-container .sheet-template-rolls h5.sheet-bad,
+.sheet-rolltemplate-doom .sheet-template-container .sheet-template-rolls h5.sheet-bad {
+  color: #de4d46;
+}
+.sheet-rolltemplate-ability .sheet-template-container .sheet-template-rolls h5.sheet-purple,
+.sheet-rolltemplate-damage .sheet-template-container .sheet-template-rolls h5.sheet-purple,
+.sheet-rolltemplate-doom .sheet-template-container .sheet-template-rolls h5.sheet-purple {
+  color: #885ac9;
+}
+.sheet-rolltemplate-ability .sheet-template-container .sheet-template-rolls h5.sheet-amber,
+.sheet-rolltemplate-damage .sheet-template-container .sheet-template-rolls h5.sheet-amber,
+.sheet-rolltemplate-doom .sheet-template-container .sheet-template-rolls h5.sheet-amber {
+  color: #de7a45;
+}
+.sheet-rolltemplate-ability .sheet-template-container .sheet-template-rolls .sheet-template-roll .inlinerollresult,
+.sheet-rolltemplate-damage .sheet-template-container .sheet-template-rolls .sheet-template-roll .inlinerollresult,
+.sheet-rolltemplate-doom .sheet-template-container .sheet-template-rolls .sheet-template-roll .inlinerollresult {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+.sheet-rolltemplate-ability .sheet-template-container .sheet-template-rolls .sheet-template-roll .inlinerollresult.fullcrit, .sheet-rolltemplate-ability .sheet-template-container .sheet-template-rolls .sheet-template-roll .inlinerollresult.importantroll, .sheet-rolltemplate-ability .sheet-template-container .sheet-template-rolls .sheet-template-roll .inlinerollresult.fullfail,
+.sheet-rolltemplate-damage .sheet-template-container .sheet-template-rolls .sheet-template-roll .inlinerollresult.fullcrit,
+.sheet-rolltemplate-damage .sheet-template-container .sheet-template-rolls .sheet-template-roll .inlinerollresult.importantroll,
+.sheet-rolltemplate-damage .sheet-template-container .sheet-template-rolls .sheet-template-roll .inlinerollresult.fullfail,
+.sheet-rolltemplate-doom .sheet-template-container .sheet-template-rolls .sheet-template-roll .inlinerollresult.fullcrit,
+.sheet-rolltemplate-doom .sheet-template-container .sheet-template-rolls .sheet-template-roll .inlinerollresult.importantroll,
+.sheet-rolltemplate-doom .sheet-template-container .sheet-template-rolls .sheet-template-roll .inlinerollresult.fullfail {
+  border: none;
+}
+
+.sheet-rolltemplate-ability .sheet-template-container {
+  background-image: url("https://raw.githubusercontent.com/roll20/roll20-character-sheets/master/Blood_and_Doom_by_Dicetale_Games/static/chat_action_roll.jpg");
+  border-radius: 5px;
+}
+
+.sheet-rolltemplate-damage .sheet-template-container {
+  background-image: url("https://raw.githubusercontent.com/roll20/roll20-character-sheets/master/Blood_and_Doom_by_Dicetale_Games/static/chat_damage_roll.jpg");
+  border-radius: 5px;
+}
+.sheet-rolltemplate-damage .sheet-template-rolls span.sheet-template-roll:empty {
+  display: none;
+}
+.sheet-rolltemplate-damage .sheet-template-rolls span.sheet-template-roll:empty + br {
+  display: none;
+}
+.sheet-rolltemplate-damage .sheet-template-rolls span.sheet-template-roll:empty + br + h5 {
+  margin-top: 25px;
+}
+
+.sheet-rolltemplate-doom .sheet-template-container {
+  background-image: url("https://raw.githubusercontent.com/roll20/roll20-character-sheets/master/Blood_and_Doom_by_Dicetale_Games/static/chat_doom_roll.jpg");
+  border-radius: 5px;
 }
