@@ -1,6 +1,7 @@
 .text-input,
-.number-input {
-  input {
+.number-input,
+.select-input {
+  input, select {
     background-color: transparent;
     width: 100%;
     box-sizing: border-box;
@@ -20,7 +21,7 @@
   }
   &--simple,
   &--boxed {
-    input {
+    input, select {
       border-bottom: 1px solid var(--tertiary-color);
       &::-webkit-outer-spin-button,
       &::-webkit-inner-spin-button {

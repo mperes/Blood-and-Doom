@@ -1,0 +1,26 @@
+.roller
+  -
+    difficultArray = [1,2,3,4,5,6];
+    actionDiceArray = Array.from({ length: 18 }, (_, i) => i + 1);
+    damageDiceArray = [1, '1d4', '1d6', '1d8', '1d12'];
+  .roller__content
+    .tabs
+      +tab({group:'current-roll', key:'action', name:'action', checked: true})
+      +tab({group:'current-roll', key:'damage', name:'damage'})
+      +tab({group:'current-roll', key:'doom', name:'doom'})
+    .section-separator.section-separator--vertical
+    .tabbed
+      .group.group--action.tab-content
+        +select-input({name:'roll-difficulty', default:true, options:difficultArray, label:{key:'difficulty'}, html:{class:'select-input--simple labelled--left labelled--nowrap'}})
+        +select-input({name:'roll-action-dice', options:actionDiceArray, label:{key:'action-dice'}, html:{class:'select-input--simple labelled--left labelled--nowrap'}})
+        +action-button({name:'roll-action', label:{key:'roll'}})
+      .group.group--damage.tab-content
+        +select-input({name:'roll-damage-die', options:damageDiceArray, label:{key:'die'}, html:{class:'select-input--simple labelled--left labelled--nowrap'}})
+        +number-input({name:'roll-damage-bonus', label:{key:'bonus'}, html:{class:'number-input--simple labelled--left labelled--nowrap'}})
+        +action-button({name:'roll-damage', label:{key:'roll'}})
+      .group.group--doom.tab-content
+        +select-input({name:'roll-doom-die', options:difficultArray, label:{key:'points-left'}, html:{class:'select-input--simple labelled--left labelled--nowrap'}})
+        +action-button({name:'roll-doom', label:{key:'roll'}})
+  .roller__toggle
+    img.d10(src=`${imgServer}/mperes/Blood-and-Doom/refs/heads/main/static/d10die.svg` data-i18n-alt='d10')
+    input(type='checkbox' name='attr_roller-open' value='1')

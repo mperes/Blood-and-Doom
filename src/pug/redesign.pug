@@ -84,6 +84,33 @@ mixin number-input(options)
     else if options.name
       input(type='number' name=`attr_${options.name}`)&attributes(inputOptions)
 
+mixin populate-options(options)
+  if options
+    each option in options
+      option(value=option)=option
+
+mixin select-input(options)
+  - 
+    options.html = options.html || {};
+    const inputOptions = {};
+    if(options.placeholder) inputOptions['data-i18n-placeholder'] = options.placeholder;
+    if(options.value) inputOptions['value'] = options.value;
+  .select-input.labelled&attributes(options.html)
+    - delete options.html;
+    if options.label 
+      label
+        +translate(options.label)
+        if options.name
+          select(name=`attr_${options.name}`)&attributes(inputOptions)
+            if options.default
+              option(data-i18n='choose')
+            +populate-options(options.options)
+    else if options.name
+      select(name=`attr_${options.name}`)&attributes(inputOptions)
+        if options.default
+          option(data-i18n='choose')
+        +populate-options(options.options)
+
 mixin checkbox-input(options) 
   - 
     options.html = options.html || {};
@@ -180,9 +207,4 @@ each options, list in spine.lists
       include page-2.pug  
     .page.page--3.tab-content
       include page-3.pug
-  .roller
-    .roller__toggle
-      img.d10(src=`${imgServer}/mperes/Blood-and-Doom/refs/heads/main/static/d10.svg` data-i18n-alt='d10')
-      input(type='checkbox' name='attr_roller-open' value='1')
-    .roller__content
-      span something else
+  include roller.pug

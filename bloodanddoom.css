@@ -70,8 +70,11 @@
   margin-bottom: 0;
   width: auto;
 }
-.ui-dialog .characterviewer .charsheet button, .ui-dialog .characterviewer .charsheet input, .ui-dialog .characterviewer .charsheet textarea {
+.ui-dialog .characterviewer .charsheet button, .ui-dialog .characterviewer .charsheet input, .ui-dialog .characterviewer .charsheet textarea, .ui-dialog .characterviewer .charsheet select {
   outline: none !important;
+}
+.ui-dialog .characterviewer .charsheet select {
+  margin-bottom: 0;
 }
 .ui-dialog .characterviewer .charsheet .card {
   background-color: var(--background-color);
@@ -771,8 +774,11 @@
 .ui-dialog .characterviewer .charsheet .table--highlighted .table__body {
   padding: 0 10px;
 }
-.ui-dialog .characterviewer .charsheet .text-input input,
-.ui-dialog .characterviewer .charsheet .number-input input {
+.ui-dialog .characterviewer .charsheet .text-input input, .ui-dialog .characterviewer .charsheet .text-input select,
+.ui-dialog .characterviewer .charsheet .number-input input,
+.ui-dialog .characterviewer .charsheet .number-input select,
+.ui-dialog .characterviewer .charsheet .select-input input,
+.ui-dialog .characterviewer .charsheet .select-input select {
   background-color: transparent;
   width: 100%;
   box-sizing: border-box;
@@ -784,40 +790,70 @@
   color: var(--text-color);
   font-size: var(--font-size-medium);
 }
-.ui-dialog .characterviewer .charsheet .text-input input:focus,
-.ui-dialog .characterviewer .charsheet .number-input input:focus {
+.ui-dialog .characterviewer .charsheet .text-input input:focus, .ui-dialog .characterviewer .charsheet .text-input select:focus,
+.ui-dialog .characterviewer .charsheet .number-input input:focus,
+.ui-dialog .characterviewer .charsheet .number-input select:focus,
+.ui-dialog .characterviewer .charsheet .select-input input:focus,
+.ui-dialog .characterviewer .charsheet .select-input select:focus {
   outline: none;
 }
 .ui-dialog .characterviewer .charsheet .text-input label,
-.ui-dialog .characterviewer .charsheet .number-input label {
+.ui-dialog .characterviewer .charsheet .number-input label,
+.ui-dialog .characterviewer .charsheet .select-input label {
   color: var(--text-color);
 }
-.ui-dialog .characterviewer .charsheet .text-input--simple input, .ui-dialog .characterviewer .charsheet .text-input--boxed input,
+.ui-dialog .characterviewer .charsheet .text-input--simple input, .ui-dialog .characterviewer .charsheet .text-input--simple select, .ui-dialog .characterviewer .charsheet .text-input--boxed input, .ui-dialog .characterviewer .charsheet .text-input--boxed select,
 .ui-dialog .characterviewer .charsheet .number-input--simple input,
-.ui-dialog .characterviewer .charsheet .number-input--boxed input {
+.ui-dialog .characterviewer .charsheet .number-input--simple select,
+.ui-dialog .characterviewer .charsheet .number-input--boxed input,
+.ui-dialog .characterviewer .charsheet .number-input--boxed select,
+.ui-dialog .characterviewer .charsheet .select-input--simple input,
+.ui-dialog .characterviewer .charsheet .select-input--simple select,
+.ui-dialog .characterviewer .charsheet .select-input--boxed input,
+.ui-dialog .characterviewer .charsheet .select-input--boxed select {
   border-bottom: 1px solid var(--tertiary-color);
 }
-.ui-dialog .characterviewer .charsheet .text-input--simple input::-webkit-outer-spin-button, .ui-dialog .characterviewer .charsheet .text-input--simple input::-webkit-inner-spin-button, .ui-dialog .characterviewer .charsheet .text-input--boxed input::-webkit-outer-spin-button, .ui-dialog .characterviewer .charsheet .text-input--boxed input::-webkit-inner-spin-button,
+.ui-dialog .characterviewer .charsheet .text-input--simple input::-webkit-outer-spin-button, .ui-dialog .characterviewer .charsheet .text-input--simple input::-webkit-inner-spin-button, .ui-dialog .characterviewer .charsheet .text-input--simple select::-webkit-outer-spin-button, .ui-dialog .characterviewer .charsheet .text-input--simple select::-webkit-inner-spin-button, .ui-dialog .characterviewer .charsheet .text-input--boxed input::-webkit-outer-spin-button, .ui-dialog .characterviewer .charsheet .text-input--boxed input::-webkit-inner-spin-button, .ui-dialog .characterviewer .charsheet .text-input--boxed select::-webkit-outer-spin-button, .ui-dialog .characterviewer .charsheet .text-input--boxed select::-webkit-inner-spin-button,
 .ui-dialog .characterviewer .charsheet .number-input--simple input::-webkit-outer-spin-button,
 .ui-dialog .characterviewer .charsheet .number-input--simple input::-webkit-inner-spin-button,
+.ui-dialog .characterviewer .charsheet .number-input--simple select::-webkit-outer-spin-button,
+.ui-dialog .characterviewer .charsheet .number-input--simple select::-webkit-inner-spin-button,
 .ui-dialog .characterviewer .charsheet .number-input--boxed input::-webkit-outer-spin-button,
-.ui-dialog .characterviewer .charsheet .number-input--boxed input::-webkit-inner-spin-button {
+.ui-dialog .characterviewer .charsheet .number-input--boxed input::-webkit-inner-spin-button,
+.ui-dialog .characterviewer .charsheet .number-input--boxed select::-webkit-outer-spin-button,
+.ui-dialog .characterviewer .charsheet .number-input--boxed select::-webkit-inner-spin-button,
+.ui-dialog .characterviewer .charsheet .select-input--simple input::-webkit-outer-spin-button,
+.ui-dialog .characterviewer .charsheet .select-input--simple input::-webkit-inner-spin-button,
+.ui-dialog .characterviewer .charsheet .select-input--simple select::-webkit-outer-spin-button,
+.ui-dialog .characterviewer .charsheet .select-input--simple select::-webkit-inner-spin-button,
+.ui-dialog .characterviewer .charsheet .select-input--boxed input::-webkit-outer-spin-button,
+.ui-dialog .characterviewer .charsheet .select-input--boxed input::-webkit-inner-spin-button,
+.ui-dialog .characterviewer .charsheet .select-input--boxed select::-webkit-outer-spin-button,
+.ui-dialog .characterviewer .charsheet .select-input--boxed select::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-.ui-dialog .characterviewer .charsheet .text-input--simple input[type=number], .ui-dialog .characterviewer .charsheet .text-input--boxed input[type=number],
+.ui-dialog .characterviewer .charsheet .text-input--simple input[type=number], .ui-dialog .characterviewer .charsheet .text-input--simple select[type=number], .ui-dialog .characterviewer .charsheet .text-input--boxed input[type=number], .ui-dialog .characterviewer .charsheet .text-input--boxed select[type=number],
 .ui-dialog .characterviewer .charsheet .number-input--simple input[type=number],
-.ui-dialog .characterviewer .charsheet .number-input--boxed input[type=number] {
+.ui-dialog .characterviewer .charsheet .number-input--simple select[type=number],
+.ui-dialog .characterviewer .charsheet .number-input--boxed input[type=number],
+.ui-dialog .characterviewer .charsheet .number-input--boxed select[type=number],
+.ui-dialog .characterviewer .charsheet .select-input--simple input[type=number],
+.ui-dialog .characterviewer .charsheet .select-input--simple select[type=number],
+.ui-dialog .characterviewer .charsheet .select-input--boxed input[type=number],
+.ui-dialog .characterviewer .charsheet .select-input--boxed select[type=number] {
   -moz-appearance: textfield;
 }
 .ui-dialog .characterviewer .charsheet .text-input--boxed label,
-.ui-dialog .characterviewer .charsheet .number-input--boxed label {
+.ui-dialog .characterviewer .charsheet .number-input--boxed label,
+.ui-dialog .characterviewer .charsheet .select-input--boxed label {
   display: grid;
   grid-template-columns: 1fr 32px;
   align-items: center;
 }
 .ui-dialog .characterviewer .charsheet .text-input--boxed label .translation,
-.ui-dialog .characterviewer .charsheet .number-input--boxed label .translation {
+.ui-dialog .characterviewer .charsheet .number-input--boxed label .translation,
+.ui-dialog .characterviewer .charsheet .select-input--boxed label .translation {
   text-transform: uppercase;
   color: var(--boxedtext-color);
   background-color: var(--highlight-color);
@@ -828,7 +864,8 @@
   border-radius: 5px 0 0 5px;
 }
 .ui-dialog .characterviewer .charsheet .text-input--boxed label input,
-.ui-dialog .characterviewer .charsheet .number-input--boxed label input {
+.ui-dialog .characterviewer .charsheet .number-input--boxed label input,
+.ui-dialog .characterviewer .charsheet .select-input--boxed label input {
   height: 32px;
   box-sizing: border-box;
   border: 3px solid var(--highlight-color);
@@ -838,15 +875,18 @@
   line-height: 32px;
 }
 .ui-dialog .characterviewer .charsheet .text-input--align-center input,
-.ui-dialog .characterviewer .charsheet .number-input--align-center input {
+.ui-dialog .characterviewer .charsheet .number-input--align-center input,
+.ui-dialog .characterviewer .charsheet .select-input--align-center input {
   text-align: center;
 }
 .ui-dialog .characterviewer .charsheet .text-input--align-right input,
-.ui-dialog .characterviewer .charsheet .number-input--align-right input {
+.ui-dialog .characterviewer .charsheet .number-input--align-right input,
+.ui-dialog .characterviewer .charsheet .select-input--align-right input {
   text-align: right;
 }
 .ui-dialog .characterviewer .charsheet .text-input--xlarge-text input,
-.ui-dialog .characterviewer .charsheet .number-input--xlarge-text input {
+.ui-dialog .characterviewer .charsheet .number-input--xlarge-text input,
+.ui-dialog .characterviewer .charsheet .select-input--xlarge-text input {
   font-size: var(--font-size-xlarge);
   font-weight: 900;
 }
@@ -931,34 +971,34 @@
 .ui-dialog .characterviewer .charsheet .tabs .tab label {
   text-align: center;
 }
-.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(1) input:checked)) + .tabbed > .tab-content:nth-of-type(1) {
+.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(1) input:checked)) ~ .tabbed > .tab-content:nth-of-type(1) {
   display: none;
 }
-.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(2) input:checked)) + .tabbed > .tab-content:nth-of-type(2) {
+.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(2) input:checked)) ~ .tabbed > .tab-content:nth-of-type(2) {
   display: none;
 }
-.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(3) input:checked)) + .tabbed > .tab-content:nth-of-type(3) {
+.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(3) input:checked)) ~ .tabbed > .tab-content:nth-of-type(3) {
   display: none;
 }
-.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(4) input:checked)) + .tabbed > .tab-content:nth-of-type(4) {
+.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(4) input:checked)) ~ .tabbed > .tab-content:nth-of-type(4) {
   display: none;
 }
-.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(5) input:checked)) + .tabbed > .tab-content:nth-of-type(5) {
+.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(5) input:checked)) ~ .tabbed > .tab-content:nth-of-type(5) {
   display: none;
 }
-.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(6) input:checked)) + .tabbed > .tab-content:nth-of-type(6) {
+.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(6) input:checked)) ~ .tabbed > .tab-content:nth-of-type(6) {
   display: none;
 }
-.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(7) input:checked)) + .tabbed > .tab-content:nth-of-type(7) {
+.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(7) input:checked)) ~ .tabbed > .tab-content:nth-of-type(7) {
   display: none;
 }
-.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(8) input:checked)) + .tabbed > .tab-content:nth-of-type(8) {
+.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(8) input:checked)) ~ .tabbed > .tab-content:nth-of-type(8) {
   display: none;
 }
-.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(9) input:checked)) + .tabbed > .tab-content:nth-of-type(9) {
+.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(9) input:checked)) ~ .tabbed > .tab-content:nth-of-type(9) {
   display: none;
 }
-.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(10) input:checked)) + .tabbed > .tab-content:nth-of-type(10) {
+.ui-dialog .characterviewer .charsheet .tabs:not(:has(.tab:nth-of-type(10) input:checked)) ~ .tabbed > .tab-content:nth-of-type(10) {
   display: none;
 }
 .ui-dialog .characterviewer .charsheet .action-button button,
@@ -1195,6 +1235,94 @@
   grid-template-columns: repeat(5, 1fr);
   gap: 10px;
 }
+.ui-dialog .characterviewer .charsheet .roller {
+  background-color: var(--highlight-color);
+  border-radius: 20px;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  grid-template-columns: 40px;
+  position: fixed;
+  z-index: 9998;
+  bottom: 20px;
+  right: 20px;
+  box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.2);
+}
+.ui-dialog .characterviewer .charsheet .roller__toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+.ui-dialog .characterviewer .charsheet .roller__toggle img {
+  width: 20px;
+  height: auto;
+  align-self: center;
+}
+.ui-dialog .characterviewer .charsheet .roller__toggle input {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+.ui-dialog .characterviewer .charsheet .roller label {
+  align-items: center;
+}
+.ui-dialog .characterviewer .charsheet .roller .section-separator {
+  width: 10px;
+}
+.ui-dialog .characterviewer .charsheet .roller .tabbed > .group {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+}
+.ui-dialog .characterviewer .charsheet .roller .tabbed input, .ui-dialog .characterviewer .charsheet .roller .tabbed select {
+  width: 50px;
+  text-align: center;
+}
+.ui-dialog .characterviewer .charsheet .roller .action-button button:hover {
+  background: rgb(216, 0, 30);
+}
+.ui-dialog .characterviewer .charsheet .roller .action-button button:hover .translation {
+  color: white;
+}
+.ui-dialog .characterviewer .charsheet .roller .tabs {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+}
+.ui-dialog .characterviewer .charsheet .roller .tabs .tab:nth-child(2) {
+  border-right: 1px solid var(--separator-color);
+  border-left: 1px solid var(--separator-color);
+  border-radius: 0;
+}
+.ui-dialog .characterviewer .charsheet .roller .tabs .translation {
+  text-transform: capitalize;
+}
+.ui-dialog .characterviewer .charsheet .roller .tabs .tab:has(input:checked) .translation {
+  color: rgb(216, 0, 30);
+}
+.ui-dialog .characterviewer .charsheet .roller .roller__content {
+  padding-left: 15px;
+  align-self: center;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.ui-dialog .characterviewer .charsheet .roller .group--rolls {
+  display: grid;
+  grid-template-columns: max-content min-content max-content;
+}
+.ui-dialog .characterviewer .charsheet .roller:has(.roller__toggle input:checked) {
+  border-radius: 5px;
+  width: auto;
+  grid-template-columns: 1fr 40px;
+}
+.ui-dialog .characterviewer .charsheet .roller:not(:has(.roller__toggle input:checked)) .roller__content {
+  display: none;
+}
 .ui-dialog .characterviewer .charsheet h1, .ui-dialog .characterviewer .charsheet h2, .ui-dialog .characterviewer .charsheet h3, .ui-dialog .characterviewer .charsheet h4, .ui-dialog .characterviewer .charsheet h5, .ui-dialog .characterviewer .charsheet h6 {
   text-transform: capitalize;
   line-height: normal;
@@ -1214,6 +1342,12 @@
   color: var(--text-color);
   font-size: var(--font-size-medium);
   font-weight: 500;
+}
+.ui-dialog .characterviewer .charsheet .character {
+  padding-bottom: 20px;
+}
+.ui-dialog .characterviewer .charsheet .character:has(.roller__toggle input:checked) {
+  padding-bottom: 60px;
 }
 .ui-dialog .characterviewer .charsheet .font-awesome {
   opacity: 0.7;

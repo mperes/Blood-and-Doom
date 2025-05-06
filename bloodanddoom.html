@@ -1560,10 +1560,114 @@
       </div>
     </div>
     <div class="roller">
-      <div class="roller__toggle"><img class="d10" src="https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/d10.svg" data-i18n-alt="d10"/>
+      <div class="roller__content">
+        <div class="tabs">
+            <div class="tab">
+              <label><span class="translation"><span class="translation__key" data-i18n="action"></span></span>
+                <input type="radio" name="attr_current-roll" value="action" checked="checked"/>
+              </label>
+            </div>
+            <div class="tab">
+              <label><span class="translation"><span class="translation__key" data-i18n="damage"></span></span>
+                <input type="radio" name="attr_current-roll" value="damage"/>
+              </label>
+            </div>
+            <div class="tab">
+              <label><span class="translation"><span class="translation__key" data-i18n="doom"></span></span>
+                <input type="radio" name="attr_current-roll" value="doom"/>
+              </label>
+            </div>
+        </div>
+        <div class="section-separator section-separator--vertical"></div>
+        <div class="tabbed">
+          <div class="group group--action tab-content">
+              <div class="select-input labelled select-input--simple labelled--left labelled--nowrap">
+                <label><span class="translation"><span class="translation__key" data-i18n="difficulty"></span></span>
+                  <select name="attr_roll-difficulty">
+                    <option data-i18n="choose"></option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                  </select>
+                </label>
+              </div>
+              <div class="select-input labelled select-input--simple labelled--left labelled--nowrap">
+                <label><span class="translation"><span class="translation__key" data-i18n="action-dice"></span></span>
+                  <select name="attr_roll-action-dice">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                      <option value="16">16</option>
+                      <option value="17">17</option>
+                      <option value="18">18</option>
+                  </select>
+                </label>
+              </div>
+              <div class="action-button">
+                <button type="action" name="attr_roll-action"><span class="translation"><span class="translation__key" data-i18n="roll"></span></span>
+                </button>
+              </div>
+          </div>
+          <div class="group group--damage tab-content">
+              <div class="select-input labelled select-input--simple labelled--left labelled--nowrap">
+                <label><span class="translation"><span class="translation__key" data-i18n="die"></span></span>
+                  <select name="attr_roll-damage-die">
+                      <option value="1">1</option>
+                      <option value="1d4">1d4</option>
+                      <option value="1d6">1d6</option>
+                      <option value="1d8">1d8</option>
+                      <option value="1d12">1d12</option>
+                  </select>
+                </label>
+              </div>
+              <div class="number-input labelled number-input--simple labelled--left labelled--nowrap">
+                <label><span class="translation"><span class="translation__key" data-i18n="bonus"></span></span>
+                  <input type="number" name="attr_roll-damage-bonus"/>
+                </label>
+              </div>
+              <div class="action-button">
+                <button type="action" name="attr_roll-damage"><span class="translation"><span class="translation__key" data-i18n="roll"></span></span>
+                </button>
+              </div>
+          </div>
+          <div class="group group--doom tab-content">
+              <div class="select-input labelled select-input--simple labelled--left labelled--nowrap">
+                <label><span class="translation"><span class="translation__key" data-i18n="points-left"></span></span>
+                  <select name="attr_roll-doom-die">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                  </select>
+                </label>
+              </div>
+              <div class="action-button">
+                <button type="action" name="attr_roll-doom"><span class="translation"><span class="translation__key" data-i18n="roll"></span></span>
+                </button>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="roller__toggle"><img class="d10" src="https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/d10die.svg" data-i18n-alt="d10"/>
         <input type="checkbox" name="attr_roller-open" value="1"/>
       </div>
-      <div class="roller__content"><span>something else</span></div>
     </div>
   </div>
 </div>

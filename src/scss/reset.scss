@@ -8,6 +8,9 @@ label {
   width: auto;
 }
 
-button, input, textarea {
+button, input, textarea, select {
   outline: none!important;
+}
+select {
+  margin-bottom: 0;
 }

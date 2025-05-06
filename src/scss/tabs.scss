@@ -16,7 +16,7 @@
     }
   }
   @for $i from 1 through 10 {
-    &:not(:has(.tab:nth-of-type(#{$i}) input:checked)) + .tabbed > .tab-content:nth-of-type(#{$i}) {
+    &:not(:has(.tab:nth-of-type(#{$i}) input:checked)) ~ .tabbed > .tab-content:nth-of-type(#{$i}) {
       display: none;
     }
   }
