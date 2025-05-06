@@ -532,6 +532,20 @@
       margin-bottom: 5px;
     }
   }
+
+  .table--weapons {
+    button {
+      background: transparent;
+      padding: 0;
+      margin: 0;
+      border: 0;
+      &:hover {
+        .display span {
+          color: rgb(216,0,30);
+        }
+      }
+    }
+  }
   .group--levelup {
     display: grid;
     grid-template-columns: 1fr 1fr;

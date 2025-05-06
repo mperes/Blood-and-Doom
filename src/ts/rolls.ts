@@ -185,3 +185,25 @@ on('clicked:roll-doom', () => {
     );
   });
 });
+
+on('clicked:repeating_weapon', eventinfo => {
+  if(!eventinfo.sourceAttribute) return;
+  const id = (eventinfo.sourceAttribute as string).replace('repeating_weapon_', '');
+  getAttrs([`repeating_weapon_${id}_name`, `repeating_weapon_${id}_damage`], (values: { [key: string]: string }) => {
+    const title = { title: 'DAMAGE', charname: '@{character_name}' };
+    const titleWithSub = values[`repeating_weapon_${id}_name`] ? { ...title, dice: values[`repeating_weapon_${id}_name`] } : title;
+    myStartRoll(
+      'damage',
+      titleWithSub,
+      { damage: values[`repeating_weapon_${id}_damage`] || '[[0]]'},
+      ({ rollId, results }) => {
+        finishRoll(rollId, {
+          roll: results.damage.dice
+          .sort()
+          .filter((_, i) => i != 1)
+          .reduce((a, b) => a + b, 0),
+        });
+      }
+    );
+  });
+});

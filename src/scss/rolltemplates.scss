@@ -103,6 +103,9 @@
         }
       }
     }
+    > .sheet-template-roll:first-of-type {
+      text-transform: capitalize;
+    }
   }
 }
 

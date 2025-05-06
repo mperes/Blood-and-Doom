@@ -1789,6 +1789,15 @@
 .ui-dialog .characterviewer .charsheet .section--discovered-spells .repitem:not(:last-child) {
   margin-bottom: 5px;
 }
+.ui-dialog .characterviewer .charsheet .table--weapons button {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.ui-dialog .characterviewer .charsheet .table--weapons button:hover .display span {
+  color: rgb(216, 0, 30);
+}
 .ui-dialog .characterviewer .charsheet .group--levelup {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1907,6 +1916,9 @@
 }
 .sheet-rolltemplate-damage .sheet-template-rolls span.sheet-template-roll:empty + br + h5 {
   margin-top: 25px;
+}
+.sheet-rolltemplate-damage .sheet-template-rolls > .sheet-template-roll:first-of-type {
+  text-transform: capitalize;
 }
 
 .sheet-rolltemplate-doom .sheet-template-container {

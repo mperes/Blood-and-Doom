@@ -122,7 +122,8 @@
                 +display({name:'name', html:{class:'text-input--simple'}})
                 +display({name:'ability-skill', html:{class:'text-input--simple'}})
                 +display({name:'attributes', html:{class:'text-input--simple'}})
-                +display({name:'damage', append:'damage-type', html:{class:'text-input--simple'}})
+                button.roll-damage(type='action' name='act_roll-damage')
+                  +display({name:'damage', append:'damage-type', html:{class:'text-input--simple'}})
                 +checkbox-input({name:'dented',value:'1', html:{class:'checkbox--simple checkbox-input--xmarked'}})
               mixin repeating-edit
                 +text-input({name:'name', html:{class:'text-input--simple'}})
