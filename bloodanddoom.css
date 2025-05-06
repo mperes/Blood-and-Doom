@@ -1769,18 +1769,19 @@
   display: contents;
 }
 .ui-dialog .characterviewer .charsheet .section--avatar .avatar {
+  width: 100%;
+  height: auto;
   margin: 0 0 10px 0 !important;
+  display: block;
+}
+.ui-dialog .characterviewer .charsheet .section--avatar .avatar--empty {
+  display: none;
 }
 .ui-dialog .characterviewer .charsheet .section--avatar .avatar:not([src]) {
   display: none;
 }
-.ui-dialog .characterviewer .charsheet .section--avatar .avatar:not([src]) .avatar--empty {
-  display: none;
-}
 .ui-dialog .characterviewer .charsheet .section--avatar .avatar:not([src]) + .avatar--empty {
   display: block;
-  width: 100%;
-  height: auto;
   opacity: 0.35;
 }
 .ui-dialog .characterviewer .charsheet .section--proficiencies .repitem:not(:last-child),

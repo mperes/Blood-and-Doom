@@ -94,57 +94,6 @@ function rollActionDice(
   );
 }
 
-// on('clicked:roll_doom_roll5', () => {
-//   getAttrs(['doom_points'], ({ doom_points }) => {
-//     if ((parseInt(doom_points) || 0) > 0) {
-//       setAttrs({ doom_points: parseInt(doom_points) - 1 });
-//       rollActionDice(5, undefined, 'ACTION ROLL 5');
-//     }
-//   });
-// });
-
-/*
-on('clicked:roll_doom_reroll', () => {
-getAttrs(['last_roll', 'doom_points'], (v) => {
-if (!v.last_roll) {
-console.log('You must roll something before you can reroll it!');
-return;
-}
-if ((parseInt(v.doom_points) || 0) < 1) {
-console.log('Not enough Doom Points!');
-return;
-}
-setAttrs({ doom_points: parseInt(v.doom_points) - 1 });
-const lastRoll: RollResults<ActionRoll> = JSON.parse(atob(v.last_roll));
-const computedLastRoll = processActionRoll(lastRoll);
-const failedDice = lastRoll.successes.dice.filter((d) => d < 8).length;
-startActionRoll(
-{
-ability: failedDice,
-difficulty: lastRoll.difficulty.result,
-title: 'Action Reroll',
-useExtra: true,
-},
-({ rollId, results }) => {
-const computedResults = processActionRoll(results);
-finishRoll(rollId, {
-successes:
-computedLastRoll.successes + computedResults.successes,
-setback:
-computedLastRoll.setback > 7
-? computedLastRoll.setback
-: computedResults.setback,
-extra_successes:
-computedLastRoll.successes +
-computedResults.successes -
-results.difficulty.result,
-});
-}
-);
-});
-});
-*/
-
 on('clicked:roll-action', () => {
   getAttrs(['roll-action-dice', 'roll-difficulty'], values => {
     rollActionDice(

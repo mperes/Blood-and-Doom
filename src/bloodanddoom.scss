@@ -509,17 +509,18 @@
   }
   .section--avatar {
     .avatar {
+      width: 100%;
+      height: auto;
       margin: 0 0 10px 0!important;
+      display: block;
+    }
+    .avatar--empty {
+      display: none;
     }
     .avatar:not([src]) {
-      .avatar--empty {
-        display: none;
-      }
       display: none;
       + .avatar--empty {
         display: block;
-        width: 100%;
-        height: auto;
         opacity: 0.35;
       }
     }
