@@ -1,7 +1,7 @@
 .labelled {
   text-transform: capitalize;
   &--left {
-    label {
+    label, .label {
       display: flex;
       gap: 5px;
       .translation {
@@ -10,12 +10,12 @@
     }
   }
   &--bottom {
-    label {
+    label, .label {
       display: flex;
       flex-direction: column-reverse;
     }
     &-center {
-      label {
+      label, .label {
         display: flex;
         flex-direction: column-reverse;
         span {
@@ -25,13 +25,13 @@
     }
   }
   &--top {
-    label {
+    label, .label {
       display: flex;
       flex-direction: column;
       align-items: start;
     }
     &-center {
-      label {
+      label, .label {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -42,13 +42,13 @@
     }
   }
   &--nowrap {
-    label {
+    label, .label {
       .translation {
         white-space: nowrap;
       }
     }
   }
-  label {
+  label, .label {
     font-size: var(--font-size-medium);
     font-weight: 500;
     color: var(--text-color);

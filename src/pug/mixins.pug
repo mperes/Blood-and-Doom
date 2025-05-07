@@ -1,206 +1,224 @@
-mixin text-input(name, label, extraclass)
-    //- Creates one of the standard underlined text inputs
-        Defaults to a input of type text
-        Always passes block to the label, since new keys take days/weeks to propagate through Roll20
-        Parameters
-            name: underlying attribute name (without "attr_")
-            label: i18n code for the label
-            extraclass: if present, will be the class of the input
-        Attributes
-            All attributes except class are passed on to the input. class is passed on
-            to the containing label.
-    - classes = attributes.class;
-    - delete attributes.class;
-    label(class=["text-input", classes])
-        span.small(data-i18n=label).
-        input(type="text", name=`attr_${name}`, class=extraclass)&attributes(attributes)
+mixin translate(options)
+  - options.html = options.html || {};
+  span.translation&attributes(options.html)
+    if options.prepend
+      span(class="translation__prepend")=options.prepend
+    if options.image
+      img.font-awesome(class="translation__image" src=`${imgServer}${options.image}` data-i18n-title=options.key data-i18n-alt=options.key)
+    else if options.key
+      span(class="translation__key" data-i18n=options.key)
+    if options.append
+      span(class="translation__append")=options.append
 
-mixin text-input-inline(name, extraclass)
-    //- Creates one of the standard underlined text inputs
-            Defaults to a input of type text
-            Always passes block to the label, since new keys take days/weeks to propagate through Roll20
-            Parameters
-                name: underlying attribute name (without "attr_")
-                label: i18n code for the label
-                extraclass: if present, will be the class of the input
-            Attributes
-                All attributes except class are passed on to the input. class is passed on
-                to the containing label.
-    - classes = attributes.class;
-    - delete attributes.class;
-    .text-input(class=classes)
-        input(type="text", name=`attr_${name}`, class=extraclass)&attributes(attributes)
+mixin rangebar(options)
+  - options.html = options.html || {};
+  .rangebar.labelled&attributes(options.html)
+    if options.label 
+      label
+        +translate(options.label)
+        if options.steps && options.name
+          if options.max
+            input.rangebar__max(type='hidden' name=`attr_${options.name}-max` value=options.max)
+          .rangebar__steps
+              each _, i in Array(options.steps)
+                - const step = options.steps - i;
+                .step
+                  input(type='checkbox' name=`attr_${options.name}` value=step)
+    else if options.steps && options.name
+      if options.max
+        input.rangebar__max(type='hidden' name=`attr_${options.name}-max`)
+      .rangebar__steps
+        each _, i in Array(options.steps)
+          - const step = options.steps - i;
+          input(type='checkbox' name=`attr_${options.name}` value=step)
 
-mixin text-input-duo(name1, name2, label, attributes2, prefix, infix, suffix)
-    //- Creates a pair of underlined inputs
-        Defaults to number inputs
-        Parameters
-            name1: underlying attribute name of first input (without "attr_")
-            name2: underlying attribute name of second input (without "attr_")
-            label: i18n code for the label. Block is inserted as placeholder.
-            attributes2: will be passed on as the attributes of the second input
-            infix: will be placed between the inputs, defaults to /
-            prefix: placed before inputs, if present
-            suffix: placed after inputs if present
-        Attributes
-            All attributes except class are passed on to the first input.
-            class is passed on to the containing label.
-    - classes = attributes.class;
-    - delete attributes.class;
-    .text-input.duo(class=classes)
-        if (label)
-            .label(data-i18n=label)
-                block
-        else
-            block
-        if (prefix)
-            span= prefix
-        else
-            span
-        +number-input-arrows(name1)&attributes(attributes)
-        //input(type="number", name=`attr_${name1}`)&attributes(attributes)
-        if (infix)
-            span= infix
-        else
-            span /
-        span
-            input(type="number", name=`attr_${name2}`)&attributes(attributes2)
-        if (suffix)
-            span= suffix
-        else
-            span
+mixin textarea(options)
+  - 
+    options.html = options.html || {};
+    const inputOptions = {};
+    if(options.placeholder) inputOptions['data-i18n-placeholder'] = options.placeholder;
+  .textarea.labelled&attributes(options.html)
+    - delete options.html;
+    if options.label 
+      label
+        +translate(options.label)
+        textarea(name=`attr_${options.name}`)&attributes(inputOptions)
+    else
+      textarea(name=`attr_${options.name}`)&attributes(inputOptions)
+      
+mixin text-input(options)
+  - 
+    options.html = options.html || {};
+    const inputOptions = {};
+    if(options.placeholder) inputOptions['data-i18n-placeholder'] = options.placeholder;
+    if(options.value) inputOptions['value'] = options.value;
+  .text-input.labelled&attributes(options.html)
+    - delete options.html;
+    if options.label 
+      label
+        +translate(options.label)
+        if options.name
+          if options.list
+            input(type='text' name=`attr_${options.name}` list=options.list)&attributes(inputOptions)
+          else
+            input(type='text' name=`attr_${options.name}`)&attributes(inputOptions)
+    else if options.name
+      if options.list
+        input(type='text' name=`attr_${options.name}` list=options.list)&attributes(inputOptions)
+      else
+        input(type='text' name=`attr_${options.name}`)&attributes(inputOptions)
 
+mixin number-input(options) 
+  - 
+    options.html = options.html || {};
+    const inputOptions = {};
+    if(options.placeholder) inputOptions['data-i18n-placeholder'] = options.placeholder;
+    if(options.value) inputOptions['value'] = options.value;
+    if(options.min) inputOptions['min'] = options.min;
+  .number-input.labelled&attributes(options.html)
+    - delete options.html;
+    if options.label 
+      label
+        +translate(options.label)
+        if options.name
+          input(type='number' name=`attr_${options.name}`)&attributes(inputOptions)
+    else if options.name
+      input(type='number' name=`attr_${options.name}`)&attributes(inputOptions)
 
-mixin griditem(name)
-    //- Creates a grid item with the grid area name from `name`
-        Passes block
-        Parameters
-            name: grid area name
-        Attributes
-            Passed to the containing div
-    .griditem(style=`grid-area: ${name};`)&attributes(attributes)
-        block
+mixin populate-options(options)
+  if options
+    each option in options
+      option(value=option)=option
 
-mixin biotile(name)
-    +griditem(name)(class=name).tile
-        h2(data-i18n=name.toUpperCase())
-        textarea(name=`attr_${name}`)&attributes(attributes)
+mixin select-input(options)
+  - 
+    options.html = options.html || {};
+    const inputOptions = {};
+    if(options.placeholder) inputOptions['data-i18n-placeholder'] = options.placeholder;
+    if(options.value) inputOptions['value'] = options.value;
+  .select-input.labelled&attributes(options.html)
+    - delete options.html;
+    if options.label 
+      label
+        +translate(options.label)
+        if options.name
+          select(name=`attr_${options.name}`)&attributes(inputOptions)
+            if options.default
+              option(data-i18n='choose')
+            +populate-options(options.options)
+    else if options.name
+      select(name=`attr_${options.name}`)&attributes(inputOptions)
+        if options.default
+          option(data-i18n='choose')
+        +populate-options(options.options)
 
-mixin textaction(name, label, tag)
-    button(type="action", name=`act_${name}`).inline-roll&attributes(attributes)
-        - if (tag === 'h4')
-            h4(data-i18n=`${(label || name).toUpperCase()}`).uppercase
-        - else
-            span(data-i18n=`${(label || name).toUpperCase()}`).uppercase
+mixin checkbox-input(options) 
+  - 
+    options.html = options.html || {};
+    const inputOptions = {};
+    if(options.placeholder) inputOptions['data-i18n-placeholder'] = options.placeholder;
+    if(options.value) inputOptions['value'] = options.value;
+  .checkbox-input.labelled&attributes(options.html)
+    - delete options.html;
+    if options.label 
+      label
+        +translate(options.label)
+        if options.name
+          input(type='checkbox' name=`attr_${options.name}`)&attributes(inputOptions)
+    else if options.name
+      input(type='checkbox' name=`attr_${options.name}`)&attributes(inputOptions)
 
-mixin damageroll(name, dice)
-    button(type="roll" value=`&{template:damage}
-        {{title=DAMAGE ROLL}}
-        {{dice=@{damage_dice}${name}+@{damage_mods_enable}}}
-        {{charname=@{character_name}}}
-        {{damage=[[@{damage_dice}${dice}+@{damage_mods_enable}[Mods]]]}}
-    `.replaceAll(' ', '').replaceAll('\n', ' ')).inline-roll.damage-roll
-        h4(data-i18n=`${name.toUpperCase()}`).menolarge
+mixin display(options)
+  - options.html = options.html || {};
+  .display&attributes(options.html)
+    - delete options.html;
+    if options.label 
+      label
+        +translate(options.label)
+        if options.name
+          span(name=`attr_${options.name}`)
+    else if options.name
+      span(name=`attr_${options.name}`)
+      if options.append
+        span(name=`attr_${options.append}` class="display__append")
 
-mixin extradamageroll(name, dice)
-    button(type="roll" value=`&{template:damage}
-        {{title=DAMAGE ROLL}}
-        {{charname=@{character_name}}}
-        {{damage=[[${dice}]] EXTRA }}
-    `.replaceAll('\n', '')).inline-roll.damage-roll
-        h4(data-i18n=`${name.toUpperCase()}`)
+mixin action-button(options)
+  - options.html = options.html || {};
+  .action-button&attributes(options.html)
+    - delete options.html;
+    button(type='action' name=`act_${options.name}`)
+      if options.label 
+        +translate(options.label)
 
-mixin textcheckbox(name, label, value)
-    .text-checkbox.nowrap
-        label
-            input(type="checkbox", name=`attr_${name}`, value=value)
-            - if (label)
-                span(data-i18n=label)
-            - else
-                span
-                    block
+mixin repeating-section(options)
+  - options.html = options.html || {};
+  block
+  .repeating-section&attributes(options.html)
+    - const editOnly = options.html && options.html.class && options.html.class.includes('repeating-section--edit-only');
+    - delete options.html;
+    fieldset(class=`repeating_${options.name}`)
+      .repeating-section__toggle
+        img.font-awesome(src=`${imgServer}/mperes/Blood-and-Doom/refs/heads/main/static/cog.svg` data-i18n-alt='toggle-edit-mode')
+        input(type='checkbox')
+      if !editOnly
+        .repeating-section__view
+          +repeating-view
+      .repeating-section__edit
+        +repeating-edit
 
-mixin inline-radio(name, values, defaultValue, labels, infixes)
-    .inline-radio.center.nowrap
-        - for(let i = 0; i < values.length; i++)
-            label&attributes(attributes)
-                input(type="radio", name=`attr_${name}`, value=values[i], checked=(values[i] === defaultValue) )
-                - if (labels)
-                    span(data-i18n=labels[i])
-                - else
-                    span=values[i]
-            span.infix= infixes[i]
+mixin data-list(options)
+  - options.html = options.html || {};
+  datalist(id=options.id)&attributes(options.html)
+    - delete options.html;
+    if options.list
+      each option in options.list
+        option(value=item data-i18n=option)
 
+mixin tab(options)
+  - options.html = options.html || {};
+  .tab()&attributes(options.html)
+    label
+      +translate({key:options.key})
+      input(type='radio' name=`attr_${options.group}` value=options.name checked=options.checked)
 
-mixin ability(name)
-    - classes = attributes.class;
-    - delete attributes.class;
-    .center.dice-dropdown&attributes(attributes)
-        h4(data-i18n=`${name.toUpperCase()}`).uppercase
-        span(class=classes)
-            input(name=`attr_${name}`, value="0", type="number")
-        //
-            span.selectspan
-            select(name=`attr_ability_${name}`)
-                option(value="d4") d4
-                option(value="d6") d6
-                option(value="d8") d8
-                option(value="d10") d10
+mixin picker(options)
+  - options.html = options.html || {};
+  .picker.labelled&attributes(options.html)
+    if options.label 
+      .label
+        +translate(options.label)
+        .picker__picks
+            each option in options.options
+              .pick
+                span=option
+                input(type='checkbox' name=`attr_${options.name}` value=option)
+            if options.others
+              +select-input({name:`attr_${options.name}`, options:options.others, html:{class:'select-input--simple labelled--left labelled--nowrap'}})
+    else
+      .picker__picks
+        each option in options.options
+          .pick
+            span=option
+            input(type='checkbox' name=`attr_${options.name}` value=option)
+        if options.others
+          +select-input({name:`attr_${options.name}`, options:options.others, html:{class:'select-input--simple labelled--left labelled--nowrap'}})
 
-mixin slider(name, length, attrPrefix, size, align, elementClass)
-    div&attributes({class: align ?? 'center'}).inline&attributes(attributes)
-        block
-        .slider.nowrap
-            // This first input is "checkbox", but hidden by CSS
-            // It lets you uncheck the whole slider by being "checked" at 0
-            // CSS magic requires that the empty boxes come after the checked box
-            input(type="checkbox" name=`attr_${attrPrefix ? `${attrPrefix}_` : ''}${name.toLowerCase()}` value=0 checked)&attributes({class: `checkbox-${size ?? 'normal'}`})
-            - for(let i = 0; i < length; i++)
-                input(type="checkbox" name=`attr_${attrPrefix ? `${attrPrefix}_` : ''}${name.toLowerCase()}` value=i+1)&attributes({class: `checkbox-${size ?? 'normal'} ${elementClass ? elementClass(i) : ''}`})
-
-mixin skill(name)
-    +slider(name, 5, 'skill', 'normal', 'justify')
-        div
-            h4(data-i18n=`${name.toUpperCase()}`).left.capitalize.unbold
-
-mixin custom-skill(i)
-    .justify.inline.fillable
-        +text-input-inline(`skill_custom_${i}_name`, 'skill')(placeholder=" ").noline.placeholder-line
-        +slider(`custom_${i}`, 5, 'skill', 'normal', 'justify').left
-
-mixin advSkill(i)
-    +text-input-inline(`advskill_${i}_name`, 'advskill')(placeholder=" ").noline.placeholder-line
-    //textarea(name=`attr_advskill_${i}_name`, id=`advskill_${i}_name`, placeholder='SKILL NAME').noline
-    +slider(`advskill_${i}_value`, 5, 'skill', 'normal', 'left')
-
-mixin save(name)
-    .center.dice-dropdown.inline.save
-        h4(data-i18n=`${name.toUpperCase()}`)
-            block
-        span.selectspan
-            select(name=`attr_save_${name}`)
-                option(value="" data-i18n="NONE") None
-                option(value="d4") d4
-                option(value="d6") d6
-                option(value="d8") d8
-                option(value="d10") d10
-
-mixin danger(name, stack)
-    .text-buttons
-        .inline
-            .column
-                input(type="checkbox" name=`attr_condition_${name}` id=`condition_${name}`)
-                label(for=`condition_${name}` data-i18n=name.toUpperCase())&attributes(attributes)
-            .column
-                if (stack)
-                    input(name=`condition_${name}_val`, type="number", value="0").noline&attributes(attributes)
-
-
-mixin number-input-arrows(name, increment)
-    span.number-input-arrows
-        span(style="white-space: normal")
-            button(class=`${name} number-arrow-up increment${increment || ''}`)
-            br
-            button(class=`${name} number-arrow-down decrement${increment || ''}`)
-        span
-            input(type='number' name=`attr_${name}`)&attributes(attributes)
+mixin rollpicker(options)
+  - options.html = options.html || {};
+  .rollpicker.labelled&attributes(options.html)
+    if options.label 
+      .label
+        +translate(options.label)
+        .rollpicker__picks
+            each option in options.options
+              button.pick(type='action' name=`act_${options.name}-${option}`)
+                span=option
+            if options.others
+              +select-input({name:`attr_${options.name}-others`, options:options.others, html:{class:'select-input--simple labelled--left labelled--nowrap'}})
+    else
+      .rollpicker__picks
+        each option in options.options
+          button.pick(type='action' name=`act_${options.name}-${option}`)
+            span=option
+        if options.others
+          +select-input({name:`attr_${options.name}-others`, options:options.others, html:{class:'select-input--simple labelled--left labelled--nowrap'}})

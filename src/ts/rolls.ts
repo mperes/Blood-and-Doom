@@ -98,7 +98,7 @@ on('clicked:roll-action', () => {
   getAttrs(['roll-action-dice', 'roll-difficulty'], values => {
     rollActionDice(
       parseInt(values['roll-action-dice']) || 0,
-      parseInt(values['roll-action-dice']) || 0
+      parseInt(values['roll-difficulty']) || 0
     );
   });
 });

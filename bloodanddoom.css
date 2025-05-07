@@ -83,41 +83,41 @@
 .ui-dialog .characterviewer .charsheet .labelled {
   text-transform: capitalize;
 }
-.ui-dialog .characterviewer .charsheet .labelled--left label {
+.ui-dialog .characterviewer .charsheet .labelled--left label, .ui-dialog .characterviewer .charsheet .labelled--left .label {
   display: flex;
   gap: 5px;
 }
-.ui-dialog .characterviewer .charsheet .labelled--left label .translation {
+.ui-dialog .characterviewer .charsheet .labelled--left label .translation, .ui-dialog .characterviewer .charsheet .labelled--left .label .translation {
   width: fit-content;
 }
-.ui-dialog .characterviewer .charsheet .labelled--bottom label {
+.ui-dialog .characterviewer .charsheet .labelled--bottom label, .ui-dialog .characterviewer .charsheet .labelled--bottom .label {
   display: flex;
   flex-direction: column-reverse;
 }
-.ui-dialog .characterviewer .charsheet .labelled--bottom-center label {
+.ui-dialog .characterviewer .charsheet .labelled--bottom-center label, .ui-dialog .characterviewer .charsheet .labelled--bottom-center .label {
   display: flex;
   flex-direction: column-reverse;
 }
-.ui-dialog .characterviewer .charsheet .labelled--bottom-center label span {
+.ui-dialog .characterviewer .charsheet .labelled--bottom-center label span, .ui-dialog .characterviewer .charsheet .labelled--bottom-center .label span {
   align-self: center;
 }
-.ui-dialog .characterviewer .charsheet .labelled--top label {
+.ui-dialog .characterviewer .charsheet .labelled--top label, .ui-dialog .characterviewer .charsheet .labelled--top .label {
   display: flex;
   flex-direction: column;
   align-items: start;
 }
-.ui-dialog .characterviewer .charsheet .labelled--top-center label {
+.ui-dialog .characterviewer .charsheet .labelled--top-center label, .ui-dialog .characterviewer .charsheet .labelled--top-center .label {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.ui-dialog .characterviewer .charsheet .labelled--top-center label span {
+.ui-dialog .characterviewer .charsheet .labelled--top-center label span, .ui-dialog .characterviewer .charsheet .labelled--top-center .label span {
   align-self: center;
 }
-.ui-dialog .characterviewer .charsheet .labelled--nowrap label .translation {
+.ui-dialog .characterviewer .charsheet .labelled--nowrap label .translation, .ui-dialog .characterviewer .charsheet .labelled--nowrap .label .translation {
   white-space: nowrap;
 }
-.ui-dialog .characterviewer .charsheet .labelled label {
+.ui-dialog .characterviewer .charsheet .labelled label, .ui-dialog .characterviewer .charsheet .labelled .label {
   font-size: var(--font-size-medium);
   font-weight: 500;
   color: var(--text-color);
@@ -670,6 +670,88 @@
 }
 .ui-dialog .characterviewer .charsheet .rangebar--afar .rangebar__steps {
   gap: 15px;
+}
+.ui-dialog .characterviewer .charsheet .picker .label {
+  color: var(--boxedtext-color);
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 18px;
+  padding: 0;
+}
+.ui-dialog .characterviewer .charsheet .picker__picks {
+  display: inline-flex;
+  gap: 5px;
+}
+.ui-dialog .characterviewer .charsheet .picker__picks .pick {
+  pointer-events: all;
+  background-color: transparent;
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--tertiary-color);
+  border-radius: 3px;
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+.ui-dialog .characterviewer .charsheet .picker__picks input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  appearance: none;
+  opacity: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+.ui-dialog .characterviewer .charsheet .picker__picks input:focus {
+  outline: none;
+}
+.ui-dialog .characterviewer .charsheet .picker__picks .pick:has(input:checked),
+.ui-dialog .characterviewer .charsheet .picker__picks .pick:has(input:checked) ~ .step {
+  border-color: var(--primary-color);
+  background-color: var(--primary-color);
+}
+.ui-dialog .characterviewer .charsheet .rollpicker .label {
+  color: var(--boxedtext-color);
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 18px;
+  padding: 0;
+}
+.ui-dialog .characterviewer .charsheet .rollpicker__picks {
+  display: inline-flex;
+  gap: 5px;
+  pointer-events: none;
+}
+.ui-dialog .characterviewer .charsheet .rollpicker__picks .pick {
+  background: transparent;
+  color: var(--boxedtext-color);
+  font-size: var(--font-size-medium);
+  font-weight: bold;
+  text-shadow: none;
+  text-transform: capitalize;
+  background-color: transparent;
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--tertiary-color);
+  border-radius: 3px;
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+  overflow: hidden;
+}
+.ui-dialog .characterviewer .charsheet .rollpicker__picks .pick:hover {
+  background-color: rgb(216, 0, 30);
+  color: white;
 }
 .ui-dialog .characterviewer .charsheet .repeating-section__toggle {
   display: none;
@@ -1277,9 +1359,6 @@
   top: 0;
   left: 0;
   position: absolute;
-}
-.ui-dialog .characterviewer .charsheet .roller label {
-  align-items: center;
 }
 .ui-dialog .characterviewer .charsheet .roller .section-separator {
   width: 10px;
