@@ -696,6 +696,7 @@
   display: grid;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 .ui-dialog .characterviewer .charsheet .picker__picks input {
   position: absolute;
@@ -704,8 +705,8 @@
   appearance: none;
   opacity: 0;
   box-sizing: border-box;
-  width: 100%;
-  height: 100%;
+  width: 24px;
+  height: 24px;
 }
 .ui-dialog .characterviewer .charsheet .picker__picks input:focus {
   outline: none;
@@ -715,6 +716,11 @@
   background-color: rgba(0, 0, 0, 0.35);
   color: var(--secondary-color);
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.35);
+}
+.ui-dialog .characterviewer .charsheet .picker .select-input select {
+  height: 24px;
+  pointer-events: all;
+  cursor: pointer;
 }
 .ui-dialog .characterviewer .charsheet .rollpicker .label {
   color: var(--boxedtext-color);
@@ -748,7 +754,6 @@
   align-items: center;
   justify-content: center;
   pointer-events: all;
-  overflow: hidden;
   padding: 0;
 }
 .ui-dialog .characterviewer .charsheet .rollpicker__picks .pick:hover {
@@ -758,6 +763,7 @@
 .ui-dialog .characterviewer .charsheet .rollpicker .select-input select {
   height: 24px;
   pointer-events: all;
+  cursor: pointer;
 }
 .ui-dialog .characterviewer .charsheet .repeating-section__toggle {
   display: none;
@@ -1420,6 +1426,98 @@
 }
 .ui-dialog .characterviewer .charsheet .roller:not(:has(.roller__toggle input:checked)) .roller__content {
   display: none;
+}
+.ui-dialog .characterviewer .charsheet .roller .checkbox-input input {
+  background-color: rgba(255, 255, 255, 0.4);
+  width: 14px;
+  height: 14px;
+}
+.ui-dialog .characterviewer .charsheet .roller .checkbox-input input:checked {
+  background-color: var(--secondary-color);
+}
+.ui-dialog .characterviewer .charsheet .roller .group--bonus {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  align-items: end;
+  gap: 5px;
+}
+.ui-dialog .characterviewer .charsheet .roller .group--bonus input[type=number] {
+  height: 24px;
+}
+.ui-dialog .characterviewer .charsheet .roller .other[value]:not([value=""]):not([value="0"]):not([value="1"]):not([value="2"]):not([value="3"]):not([value="4"]):not([value="5"]:not([value="6"])) + .select-input select {
+  color: var(--secondary-color);
+}
+.ui-dialog .characterviewer .charsheet .roller .group--doom .current[value="1"] + .rollpicker .rollpicker__picks .pick:nth-child(1):after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  box-sizing: border-box;
+  bottom: -5px;
+  left: 0;
+  position: absolute;
+  border-radius: 3px;
+  background: var(--secondary-color);
+}
+.ui-dialog .characterviewer .charsheet .roller .group--doom .current[value="2"] + .rollpicker .rollpicker__picks .pick:nth-child(2):after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  box-sizing: border-box;
+  bottom: -5px;
+  left: 0;
+  position: absolute;
+  border-radius: 3px;
+  background: var(--secondary-color);
+}
+.ui-dialog .characterviewer .charsheet .roller .group--doom .current[value="3"] + .rollpicker .rollpicker__picks .pick:nth-child(3):after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  box-sizing: border-box;
+  bottom: -5px;
+  left: 0;
+  position: absolute;
+  border-radius: 3px;
+  background: var(--secondary-color);
+}
+.ui-dialog .characterviewer .charsheet .roller .group--doom .current[value="4"] + .rollpicker .rollpicker__picks .pick:nth-child(4):after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  box-sizing: border-box;
+  bottom: -5px;
+  left: 0;
+  position: absolute;
+  border-radius: 3px;
+  background: var(--secondary-color);
+}
+.ui-dialog .characterviewer .charsheet .roller .group--doom .current[value="5"] + .rollpicker .rollpicker__picks .pick:nth-child(5):after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  box-sizing: border-box;
+  bottom: -5px;
+  left: 0;
+  position: absolute;
+  border-radius: 3px;
+  background: var(--secondary-color);
+}
+.ui-dialog .characterviewer .charsheet .roller .group--doom .current[value="6"] + .rollpicker .rollpicker__picks .pick:nth-child(6):after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  box-sizing: border-box;
+  bottom: -5px;
+  left: 0;
+  position: absolute;
+  border-radius: 3px;
+  background: var(--secondary-color);
 }
 .ui-dialog .characterviewer .charsheet h1, .ui-dialog .characterviewer .charsheet h2, .ui-dialog .characterviewer .charsheet h3, .ui-dialog .characterviewer .charsheet h4, .ui-dialog .characterviewer .charsheet h5, .ui-dialog .characterviewer .charsheet h6 {
   text-transform: capitalize;

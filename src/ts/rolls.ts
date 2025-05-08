@@ -127,6 +127,34 @@ on('change:roll-action-dice-others', eventinfo => {
   }
 });
 
+
+const rollDamage = (dieSize:string) => {
+  getAttrs(['roll-damage-dice', 'roll-damage-bonus', 'roll-damage-bonus-enabled'], values => {
+    const dice = values['roll-damage-dice'] ? values['roll-damage-dice'] === '0' ? '1' : values['roll-damage-dice'] : '1';
+    const bonus = values['roll-damage-bonus-enabled'] && values['roll-damage-bonus-enabled'] === '1' && values['roll-damage-bonus'] ? values['roll-damage-bonus'].trim()[0] === '-' ? values['roll-damage-bonus'] : `+${values['roll-damage-bonus']}` : '';
+    const damage = `${dice}${dieSize}${bonus}`
+    myStartRoll(
+      'damage',
+      { title: 'DAMAGE', charname: '@{character_name}' },
+      { damage: damage },
+      ({ rollId, results }) => {
+        finishRoll(rollId, {
+          roll: results.damage.dice
+          .sort()
+          .filter((_, i) => i != 1)
+          .reduce((a, b) => a + b, 0),
+        });
+      }
+    );
+  });
+};
+['1', 'd4', 'd6', 'd8', 'd12'].forEach( die => {
+  on(`clicked:roll-damage-die-size-${die}`, () => {
+    const finalDie = die === '1' ? 'd1' : die;
+    rollDamage(finalDie);
+  });
+});
+
 on('clicked:roll-damage', () => {
   getAttrs(['roll-damage-die', 'roll-damage-bonus'], values => {
     const damage = values['roll-damage-bonus'] ? `${values['roll-damage-die']}+${values['roll-damage-bonus']}` : `${values['roll-damage-die']}`;

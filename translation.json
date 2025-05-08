@@ -185,5 +185,7 @@
   "roll":"roll",
   "die":"die",
   "bonus":"bonus",
-  "points-left":"points left"
+  "points-left":"points left",
+  "die-size":"die size",
+  "damage-dice":"damage dice"
 }

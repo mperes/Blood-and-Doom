@@ -104,12 +104,12 @@ mixin select-input(options)
         if options.name
           select(name=`attr_${options.name}`)&attributes(inputOptions)
             if options.default
-              option(data-i18n='choose')
+              option(data-i18n='choose' value='')
             +populate-options(options.options)
     else if options.name
       select(name=`attr_${options.name}`)&attributes(inputOptions)
         if options.default
-          option(data-i18n='choose')
+          option(data-i18n='choose' value='')
         +populate-options(options.options)
 
 mixin checkbox-input(options) 
@@ -188,11 +188,15 @@ mixin picker(options)
       .label
         +translate(options.label)
         .picker__picks
-            each option in options.options
+            each option, i in options.options
               .pick
                 span=option
-                input(type='checkbox' name=`attr_${options.name}` value=option)
+                -
+                  const type = options.required ? 'radio' : 'checkbox';
+                  const checked = options.required && i === 0 ? true : false;
+                input(type=type name=`attr_${options.name}` value=option checked=checked)
             if options.others
+              input.other(type='hidden' name=`attr_${options.name}`)
               +select-input({name:`${options.name}`, default:true, options:options.others, html:{class:'select-input--simple labelled--left labelled--nowrap'}})
     else
       .picker__picks
@@ -201,6 +205,7 @@ mixin picker(options)
             span=option
             input(type='checkbox' name=`attr_${options.name}` value=option)
         if options.others
+          input.other(type='hidden' name=`attr_${options.name}`)
           +select-input({name:`${options.name}`, default:true, options:options.others, html:{class:'select-input--simple labelled--left labelled--nowrap'}})
 
 mixin rollpicker(options)
