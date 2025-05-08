@@ -127,7 +127,6 @@ on('change:roll-action-dice-others', eventinfo => {
   }
 });
 
-
 const rollDamage = (dieSize:string) => {
   getAttrs(['roll-damage-dice', 'roll-damage-bonus', 'roll-damage-bonus-enabled'], values => {
     const dice = values['roll-damage-dice'] ? values['roll-damage-dice'] === '0' ? '1' : values['roll-damage-dice'] : '1';
@@ -155,29 +154,10 @@ const rollDamage = (dieSize:string) => {
   });
 });
 
-on('clicked:roll-damage', () => {
-  getAttrs(['roll-damage-die', 'roll-damage-bonus'], values => {
-    const damage = values['roll-damage-bonus'] ? `${values['roll-damage-die']}+${values['roll-damage-bonus']}` : `${values['roll-damage-die']}`;
-    myStartRoll(
-      'damage',
-      { title: 'DAMAGE', charname: '@{character_name}' },
-      { damage: damage },
-      ({ rollId, results }) => {
-        finishRoll(rollId, {
-          roll: results.damage.dice
-          .sort()
-          .filter((_, i) => i != 1)
-          .reduce((a, b) => a + b, 0),
-        });
-      }
-    );
-  });
-});
-
-on('clicked:roll-doom', () => {
-  getAttrs(['roll-doom-die'], values => {
+['1', '2', '3', '4', '5', '6'].forEach( die => {
+  on(`clicked:roll-doom-die-${die}`, () => {
     rollActionDice(
-      parseInt(values['roll-doom-die']) || 0,
+      parseInt(die),
       2,
       'Doom Roll',
       false,

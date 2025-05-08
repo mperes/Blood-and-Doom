@@ -25,6 +25,9 @@
   font-size: var(--font-size-medium);
   font-weight: 500;
 
+  display: grid!important;
+  justify-content: center;
+
   //TAGS STYLES
   h1,h2,h3,h4,h5,h6 {
     text-transform: capitalize;
@@ -51,6 +54,7 @@
   .character {
     padding-bottom: 20px;
     padding-top: 5px;
+    width: 830px;
     &:has(.roller__toggle input:checked) {
       padding-bottom: 76px;
     }

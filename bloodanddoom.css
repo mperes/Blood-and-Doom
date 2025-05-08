@@ -60,6 +60,8 @@
   color: var(--text-color);
   font-size: var(--font-size-medium);
   font-weight: 500;
+  display: grid !important;
+  justify-content: center;
 }
 .ui-dialog .characterviewer .charsheet label {
   padding-right: 0;
@@ -1331,7 +1333,7 @@
 .ui-dialog .characterviewer .charsheet .roller {
   --separator-color: rgba(255, 255, 255, 0.25);
   background-color: var(--highlight-color);
-  border-radius: 20px;
+  border-radius: 5px;
   width: 56px;
   height: 56px;
   display: grid;
@@ -1339,8 +1341,8 @@
   position: fixed;
   z-index: 9998;
   bottom: 20px;
-  right: 20px;
-  box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.2);
+  right: calc(50% - 431px);
+  box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.2);
 }
 .ui-dialog .characterviewer .charsheet .roller label, .ui-dialog .characterviewer .charsheet .roller .translation, .ui-dialog .characterviewer .charsheet .roller input, .ui-dialog .characterviewer .charsheet .roller select {
   color: var(--boxedtext-color);
@@ -1373,7 +1375,7 @@
   position: absolute;
 }
 .ui-dialog .characterviewer .charsheet .roller .section-separator {
-  width: 10px;
+  width: 20px;
 }
 .ui-dialog .characterviewer .charsheet .roller .tabbed > .group {
   align-items: center;
@@ -1397,6 +1399,14 @@
   display: grid;
   grid-template-columns: repeat(3, max-content);
 }
+.ui-dialog .characterviewer .charsheet .roller .tabs .tab {
+  padding: 0px 10px;
+  display: grid;
+  align-items: center;
+}
+.ui-dialog .characterviewer .charsheet .roller .tabs .tab .translation {
+  white-space: pre-wrap;
+}
 .ui-dialog .characterviewer .charsheet .roller .tabs .tab:nth-child(2) {
   border-right: 1px solid var(--separator-color);
   border-left: 1px solid var(--separator-color);
@@ -1412,7 +1422,7 @@
   padding-left: 15px;
   align-self: center;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
 }
 .ui-dialog .characterviewer .charsheet .roller .group--rolls {
   display: grid;
@@ -1422,7 +1432,8 @@
   border-radius: 5px;
   width: calc(100% - 30px);
   max-width: 870px;
-  grid-template-columns: 1fr 40px;
+  grid-template-columns: 1fr 56px;
+  right: calc(50% - 431px);
 }
 .ui-dialog .characterviewer .charsheet .roller:not(:has(.roller__toggle input:checked)) .roller__content {
   display: none;
@@ -1542,6 +1553,7 @@
 .ui-dialog .characterviewer .charsheet .character {
   padding-bottom: 20px;
   padding-top: 5px;
+  width: 830px;
 }
 .ui-dialog .characterviewer .charsheet .character:has(.roller__toggle input:checked) {
   padding-bottom: 76px;

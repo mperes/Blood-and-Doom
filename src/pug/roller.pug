@@ -7,9 +7,9 @@
     damageDiceArray = Array.from({ length: 12 }, (_, i) => i + 7);
   .roller__content
     .tabs
-      +tab({group:'current-roll', key:'action', name:'action', checked: true})
-      +tab({group:'current-roll', key:'damage', name:'damage'})
-      +tab({group:'current-roll', key:'doom', name:'doom'})
+      +tab({group:'current-roll', key:'action-nl-dice', name:'action', checked: true})
+      +tab({group:'current-roll', key:'damage-nl-dice', name:'damage'})
+      +tab({group:'current-roll', key:'doom-nl-roll', name:'doom'})
     .section-separator.section-separator--vertical
     .tabbed
       .group.group--action.tab-content

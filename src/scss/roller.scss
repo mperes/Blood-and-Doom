@@ -1,7 +1,7 @@
 .roller {
   --separator-color: rgba(255, 255, 255, 0.25);
   background-color: var(--highlight-color);
-  border-radius: 20px;
+  border-radius: 5px;
   width: 56px;
   height: 56px;
   display: grid;
@@ -9,8 +9,8 @@
   position: fixed;
   z-index: 9998;
   bottom: 20px;
-  right: 20px;
-  box-shadow: -5px -5px 5px rgba(0,0,0,0.20);
+  right: calc(50% - 431px);
+  box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.2);
   label, .translation, input, select {
     color: var(--boxedtext-color);
     span {
@@ -45,7 +45,7 @@
     //align-items: center;
   }
   .section-separator {
-    width: 10px;
+    width: 20px;
   }
   .tabbed {
     > .group {
@@ -72,6 +72,14 @@
   .tabs {
     display: grid;
     grid-template-columns: repeat(3, max-content);
+    .tab {
+      padding: 0px 10px;
+      display: grid;
+      align-items: center;
+      .translation {
+        white-space: pre-wrap;
+      }
+    }
     .tab:nth-child(2) {
       border-right: 1px solid var(--separator-color);
       border-left: 1px solid var(--separator-color);
@@ -91,7 +99,7 @@
     padding-left: 15px;
     align-self: center;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
   }
   .group--rolls {
     display: grid;
@@ -101,7 +109,8 @@
     border-radius: 5px;
     width: calc(100% - 30px);
     max-width: 870px;
-    grid-template-columns: 1fr 40px;
+    grid-template-columns: 1fr 56px;
+    right: calc(50% - 431px);
   }
   &:not(:has(.roller__toggle input:checked)) {
     .roller__content {
