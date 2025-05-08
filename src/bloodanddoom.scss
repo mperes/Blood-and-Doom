@@ -52,7 +52,7 @@
     padding-bottom: 20px;
     padding-top: 5px;
     &:has(.roller__toggle input:checked) {
-      padding-bottom: 60px;
+      padding-bottom: 76px;
     }
   }
   .font-awesome {
@@ -543,7 +543,7 @@
       border: 0;
       &:hover {
         .display span {
-          color: rgb(216,0,30);
+          color: var(--secondary-color);
         }
       }
     }
