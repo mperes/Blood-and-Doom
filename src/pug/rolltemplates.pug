@@ -17,9 +17,7 @@ rolltemplate.sheet-rolltemplate-ability
             | {{#rollTotal() computed::extra_successes 0 }}
             h5.sheet-good.sheet-template-roll SUCCESS
             | {{/rollTotal() computed::extra_successes 0 }}
-            | {{#rollGreater() computed::extra_successes 0 }}
             h5.sheet-good.sheet-template-roll SUCCESS {{#extra_successes}}+{{computed::extra_successes}}{{/extra_successes}}
-            | {{/rollGreater() computed::extra_successes 0 }}
             | {{/^rollLess() computed::successes difficulty}}
             | {{#rollLess() computed::successes difficulty}}
             h5.sheet-bad FAILURE

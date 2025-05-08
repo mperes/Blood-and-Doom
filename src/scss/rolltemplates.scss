@@ -111,6 +111,9 @@
         .inlinerollresult {
           pointer-events: none;
         }
+        + .sheet-good {
+          display: none;
+        }
       }
     }
   }

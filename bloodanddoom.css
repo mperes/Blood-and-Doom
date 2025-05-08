@@ -2136,6 +2136,11 @@
 .sheet-rolltemplate-doom .sheet-template-container .sheet-template-rolls .sheet-good .inlinerollresult {
   pointer-events: none;
 }
+.sheet-rolltemplate-ability .sheet-template-container .sheet-template-rolls .sheet-good + .sheet-good,
+.sheet-rolltemplate-damage .sheet-template-container .sheet-template-rolls .sheet-good + .sheet-good,
+.sheet-rolltemplate-doom .sheet-template-container .sheet-template-rolls .sheet-good + .sheet-good {
+  display: none;
+}
 
 .sheet-rolltemplate-ability .sheet-template-container {
   background-image: url("https://raw.githubusercontent.com/roll20/roll20-character-sheets/master/Blood_and_Doom_by_Dicetale_Games/static/chat_action_roll.jpg");

@@ -1738,9 +1738,7 @@
     <div class="sheet-template-rolls">{{#rollTotal() computed::blind 1}}<span class="sheet-blind"></span>{{/rollTotal() computed::blind 1}}<span class="sheet-template-roll">{{computed::successes}}&nbsp;<span>Successes</span><span>&nbsp;vs Difficulty</span>&nbsp;{{difficulty}}</span><br/>{{#^rollLess() computed::successes difficulty}}
       {{#rollTotal() computed::extra_successes 0 }}
       <h5 class="sheet-good sheet-template-roll">SUCCESS</h5>{{/rollTotal() computed::extra_successes 0 }}
-      {{#rollGreater() computed::extra_successes 0 }}
-      <h5 class="sheet-good sheet-template-roll">SUCCESS {{#extra_successes}}+{{computed::extra_successes}}{{/extra_successes}}</h5>{{/rollGreater() computed::extra_successes 0 }}
-      {{/^rollLess() computed::successes difficulty}}
+      <h5 class="sheet-good sheet-template-roll">SUCCESS {{#extra_successes}}+{{computed::extra_successes}}{{/extra_successes}}</h5>{{/^rollLess() computed::successes difficulty}}
       {{#rollLess() computed::successes difficulty}}
       <h5 class="sheet-bad">FAILURE</h5>{{#rollLess() computed::setback 3}}
       {{#^rollLess() computed::successes difficulty}}
