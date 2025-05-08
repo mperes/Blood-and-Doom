@@ -80,7 +80,7 @@
             border: none;
           }
         }
-        &:first-child {
+        &:first-of-type {
           position: relative;
           .inlinerollresult:nth-child(4) {
             pointer-events: none;
@@ -101,6 +101,20 @@
       .sheet-blind {
         display: none;
         + .sheet-template-roll {
+          position: relative;
+          .inlinerollresult:nth-child(4) {
+            pointer-events: none;
+          }
+          .inlinerollresult:nth-child(1) {
+            &:after {
+              content: '';
+              height: 100%;
+              width: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+          }
           span:not(:first-child):not(:nth-child(2)) {
             display:none
           }

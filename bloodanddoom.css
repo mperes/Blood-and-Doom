@@ -2101,19 +2101,19 @@
 .sheet-rolltemplate-doom .sheet-template-container .sheet-template-rolls .sheet-template-roll .inlinerollresult.fullfail {
   border: none;
 }
-.sheet-rolltemplate-ability .sheet-template-container .sheet-template-rolls .sheet-template-roll:first-child,
-.sheet-rolltemplate-damage .sheet-template-container .sheet-template-rolls .sheet-template-roll:first-child,
-.sheet-rolltemplate-doom .sheet-template-container .sheet-template-rolls .sheet-template-roll:first-child {
+.sheet-rolltemplate-ability .sheet-template-container .sheet-template-rolls .sheet-template-roll:first-of-type,
+.sheet-rolltemplate-damage .sheet-template-container .sheet-template-rolls .sheet-template-roll:first-of-type,
+.sheet-rolltemplate-doom .sheet-template-container .sheet-template-rolls .sheet-template-roll:first-of-type {
   position: relative;
 }
-.sheet-rolltemplate-ability .sheet-template-container .sheet-template-rolls .sheet-template-roll:first-child .inlinerollresult:nth-child(4),
-.sheet-rolltemplate-damage .sheet-template-container .sheet-template-rolls .sheet-template-roll:first-child .inlinerollresult:nth-child(4),
-.sheet-rolltemplate-doom .sheet-template-container .sheet-template-rolls .sheet-template-roll:first-child .inlinerollresult:nth-child(4) {
+.sheet-rolltemplate-ability .sheet-template-container .sheet-template-rolls .sheet-template-roll:first-of-type .inlinerollresult:nth-child(4),
+.sheet-rolltemplate-damage .sheet-template-container .sheet-template-rolls .sheet-template-roll:first-of-type .inlinerollresult:nth-child(4),
+.sheet-rolltemplate-doom .sheet-template-container .sheet-template-rolls .sheet-template-roll:first-of-type .inlinerollresult:nth-child(4) {
   pointer-events: none;
 }
-.sheet-rolltemplate-ability .sheet-template-container .sheet-template-rolls .sheet-template-roll:first-child .inlinerollresult:nth-child(1):after,
-.sheet-rolltemplate-damage .sheet-template-container .sheet-template-rolls .sheet-template-roll:first-child .inlinerollresult:nth-child(1):after,
-.sheet-rolltemplate-doom .sheet-template-container .sheet-template-rolls .sheet-template-roll:first-child .inlinerollresult:nth-child(1):after {
+.sheet-rolltemplate-ability .sheet-template-container .sheet-template-rolls .sheet-template-roll:first-of-type .inlinerollresult:nth-child(1):after,
+.sheet-rolltemplate-damage .sheet-template-container .sheet-template-rolls .sheet-template-roll:first-of-type .inlinerollresult:nth-child(1):after,
+.sheet-rolltemplate-doom .sheet-template-container .sheet-template-rolls .sheet-template-roll:first-of-type .inlinerollresult:nth-child(1):after {
   content: "";
   height: 100%;
   width: 100%;
@@ -2125,6 +2125,26 @@
 .sheet-rolltemplate-damage .sheet-template-container .sheet-template-rolls .sheet-blind,
 .sheet-rolltemplate-doom .sheet-template-container .sheet-template-rolls .sheet-blind {
   display: none;
+}
+.sheet-rolltemplate-ability .sheet-template-container .sheet-template-rolls .sheet-blind + .sheet-template-roll,
+.sheet-rolltemplate-damage .sheet-template-container .sheet-template-rolls .sheet-blind + .sheet-template-roll,
+.sheet-rolltemplate-doom .sheet-template-container .sheet-template-rolls .sheet-blind + .sheet-template-roll {
+  position: relative;
+}
+.sheet-rolltemplate-ability .sheet-template-container .sheet-template-rolls .sheet-blind + .sheet-template-roll .inlinerollresult:nth-child(4),
+.sheet-rolltemplate-damage .sheet-template-container .sheet-template-rolls .sheet-blind + .sheet-template-roll .inlinerollresult:nth-child(4),
+.sheet-rolltemplate-doom .sheet-template-container .sheet-template-rolls .sheet-blind + .sheet-template-roll .inlinerollresult:nth-child(4) {
+  pointer-events: none;
+}
+.sheet-rolltemplate-ability .sheet-template-container .sheet-template-rolls .sheet-blind + .sheet-template-roll .inlinerollresult:nth-child(1):after,
+.sheet-rolltemplate-damage .sheet-template-container .sheet-template-rolls .sheet-blind + .sheet-template-roll .inlinerollresult:nth-child(1):after,
+.sheet-rolltemplate-doom .sheet-template-container .sheet-template-rolls .sheet-blind + .sheet-template-roll .inlinerollresult:nth-child(1):after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .sheet-rolltemplate-ability .sheet-template-container .sheet-template-rolls .sheet-blind + .sheet-template-roll span:not(:first-child):not(:nth-child(2)),
 .sheet-rolltemplate-damage .sheet-template-container .sheet-template-rolls .sheet-blind + .sheet-template-roll span:not(:first-child):not(:nth-child(2)),
