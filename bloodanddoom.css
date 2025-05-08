@@ -757,6 +757,7 @@
 }
 .ui-dialog .characterviewer .charsheet .rollpicker .select-input select {
   height: 24px;
+  pointer-events: all;
 }
 .ui-dialog .characterviewer .charsheet .repeating-section__toggle {
   display: none;
@@ -2018,6 +2019,11 @@
 .sheet-rolltemplate-damage .sheet-template-container .sheet-template-rolls .sheet-blind + .sheet-template-roll span:not(:first-child):not(:nth-child(2)),
 .sheet-rolltemplate-doom .sheet-template-container .sheet-template-rolls .sheet-blind + .sheet-template-roll span:not(:first-child):not(:nth-child(2)) {
   display: none;
+}
+.sheet-rolltemplate-ability .sheet-template-container .sheet-template-rolls .sheet-good .inlinerollresult,
+.sheet-rolltemplate-damage .sheet-template-container .sheet-template-rolls .sheet-good .inlinerollresult,
+.sheet-rolltemplate-doom .sheet-template-container .sheet-template-rolls .sheet-good .inlinerollresult {
+  pointer-events: none;
 }
 
 .sheet-rolltemplate-ability .sheet-template-container {

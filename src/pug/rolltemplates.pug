@@ -14,13 +14,23 @@ rolltemplate.sheet-rolltemplate-ability
                 | &nbsp;{{difficulty}}
             br
             | {{#^rollLess() computed::successes difficulty}}
+            | {{#rollTotal() computed::extra_successes 0 }}
+            h5.sheet-good.sheet-template-roll SUCCESS
+            | {{/rollTotal() computed::extra_successes 0 }}
+            | {{#rollGreater() computed::extra_successes 0 }}
             h5.sheet-good.sheet-template-roll SUCCESS {{#extra_successes}}+{{computed::extra_successes}}{{/extra_successes}}
+            | {{/rollGreater() computed::extra_successes 0 }}
             | {{/^rollLess() computed::successes difficulty}}
             | {{#rollLess() computed::successes difficulty}}
             h5.sheet-bad FAILURE
-            | {{#rollLess() computed::setback 4}}
-            h5.sheet-purple SETBACK
-            | {{/rollLess() computed::setback 4}}
+            | {{#rollLess() computed::setback 3}}
+            | {{#^rollLess() computed::successes difficulty}}
+            h5.sheet-purple MINOR SETBACK
+            | {{/^rollLess() computed::successes difficulty}}
+            | {{#rollLess() computed::successes difficulty}}
+            h5.sheet-purple MAJOR SETBACK
+            | {{/rollLess() computed::successes difficulty}}
+            | {{/rollLess() computed::setback 3}}
             | {{/rollLess() computed::successes difficulty}}
 
 rolltemplate.sheet-rolltemplate-doom

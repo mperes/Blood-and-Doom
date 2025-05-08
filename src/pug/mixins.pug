@@ -193,7 +193,7 @@ mixin picker(options)
                 span=option
                 input(type='checkbox' name=`attr_${options.name}` value=option)
             if options.others
-              +select-input({name:`${options.name}`, options:options.others, html:{class:'select-input--simple labelled--left labelled--nowrap'}})
+              +select-input({name:`${options.name}`, default:true, options:options.others, html:{class:'select-input--simple labelled--left labelled--nowrap'}})
     else
       .picker__picks
         each option in options.options
@@ -201,7 +201,7 @@ mixin picker(options)
             span=option
             input(type='checkbox' name=`attr_${options.name}` value=option)
         if options.others
-          +select-input({name:`${options.name}`, options:options.others, html:{class:'select-input--simple labelled--left labelled--nowrap'}})
+          +select-input({name:`${options.name}`, default:true, options:options.others, html:{class:'select-input--simple labelled--left labelled--nowrap'}})
 
 mixin rollpicker(options)
   - options.html = options.html || {};
@@ -214,11 +214,11 @@ mixin rollpicker(options)
               button.pick(type='action' name=`act_${options.name}-${option}`)
                 span=option
             if options.others
-              +select-input({name:`${options.name}-others`, options:options.others, html:{class:'select-input--simple labelled--left labelled--nowrap'}})
+              +select-input({name:`${options.name}-others`, default:true, options:options.others, html:{class:'select-input--simple labelled--left labelled--nowrap'}})
     else
       .rollpicker__picks
         each option in options.options
           button.pick(type='action' name=`act_${options.name}-${option}`)
             span=option
         if options.others
-          +select-input({name:`${options.name}-others`, options:options.others, html:{class:'select-input--simple labelled--left labelled--nowrap'}})
+          +select-input({name:`${options.name}-others`, default:true, options:options.others, html:{class:'select-input--simple labelled--left labelled--nowrap'}})

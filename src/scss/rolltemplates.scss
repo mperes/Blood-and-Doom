@@ -106,6 +106,12 @@
           }
         }
       }
+      
+      .sheet-good {
+        .inlinerollresult {
+          pointer-events: none;
+        }
+      }
     }
   }
 }

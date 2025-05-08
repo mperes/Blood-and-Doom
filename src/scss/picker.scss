@@ -89,6 +89,7 @@
   .select-input {
     select {
       height: 24px;
+      pointer-events: all;
     }
   }
 }

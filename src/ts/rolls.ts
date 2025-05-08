@@ -115,12 +115,17 @@ const rollAction = (actionDice:number) => {
     );
   });
 };
-
 for(let i=1; i<=10; i++) {
   on(`clicked:roll-action-dice-${i}`, () => {
     rollAction(i);
   });
 }
+on('change:roll-action-dice-others', eventinfo => {
+  if(eventinfo.sourceType && eventinfo.sourceType==='player' && eventinfo.newValue) {
+    rollAction(parseInt(eventinfo.newValue));
+    setAttrs({['roll-action-dice-others']:''}, {silent:true});
+  }
+});
 
 on('clicked:roll-damage', () => {
   getAttrs(['roll-damage-die', 'roll-damage-bonus'], values => {
