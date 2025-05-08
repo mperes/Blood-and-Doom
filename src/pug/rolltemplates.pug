@@ -4,7 +4,14 @@ rolltemplate.sheet-rolltemplate-ability
             h1.sheet-template-name {{charname}}
             h2.sheet-template-title {{title}}
         .sheet-template-rolls
-            span.sheet-template-roll {{computed::successes}} Successes vs Difficulty {{difficulty}}
+            | {{#rollTotal() computed::blind 1}}
+            span.sheet-blind
+            | {{/rollTotal() computed::blind 1}}
+            span.sheet-template-roll
+                | {{computed::successes}}&nbsp;
+                span Successes
+                span &nbsp;vs Difficulty
+                | &nbsp;{{difficulty}}
             br
             | {{#^rollLess() computed::successes difficulty}}
             h5.sheet-good.sheet-template-roll SUCCESS {{#extra_successes}}+{{computed::extra_successes}}{{/extra_successes}}
@@ -22,7 +29,12 @@ rolltemplate.sheet-rolltemplate-doom
             h1.sheet-template-name {{charname}}
             h2.sheet-template-title {{title}}
         .sheet-template-rolls
-            span.sheet-template-roll {{computed::successes}} Successes vs Difficulty {{difficulty}}
+            span.sheet-blind {{computed::blind}}
+            span.sheet-template-roll
+                | {{computed::successes}}&nbsp;
+                span Successes
+                span &nbsp;vs Difficulty
+                | &nbsp;{{difficulty}}
             br
             | {{#^rollLess() computed::successes difficulty}}
             h5.sheet-good.sheet-template-roll SUCCESS
@@ -37,6 +49,7 @@ rolltemplate.sheet-rolltemplate-damage
             h1.sheet-template-name {{charname}}
             h2.sheet-template-title {{title}}
         .sheet-template-rolls
+            span.sheet-blind {{computed::blind}}
             span.sheet-template-roll {{dice}}
             br
             h5.sheet-template-roll.sheet-amber {{computed::damage}} DAMAGE

@@ -12,31 +12,35 @@ function startActionRoll(
     title,
     useExtra,
     template = 'ability',
+    blind
   }: {
     ability: number;
     difficulty?: number;
     title?: string;
     useExtra?: boolean;
     template?: string;
+    blind?: boolean;
   },
   callback?: RollCallback<ActionRoll>
 ) {
   if (!useExtra) {
+    console.log(blind)
     myStartRoll(
       template,
       { title: title ?? 'Action Roll', charname: '@{character_name}' },
       {
-        difficulty: `${difficulty ?? '@{ability_difficulty}'}`,
+        difficulty: `${difficulty ?? '1'}`,
         successes: `${ability}d10`,
+        blind: blind ? '[[1]]' : '[[0]]'
       },
-      callback as RollCallback<'difficulty' | 'successes'>
+      callback as RollCallback<'difficulty' | 'successes' | 'blind'>
     );
   } else {
     myStartRoll(
       template,
       { title: title ?? 'Action Roll', charname: '@{character_name}' },
       {
-        difficulty: `${difficulty ?? '@{ability_difficulty}'}`,
+        difficulty: `${difficulty ?? '1'}`,
         successes: `${ability}d10`,
         setback: '0',
         extra_successes: '0',
@@ -75,14 +79,15 @@ function processActionRoll(results: RollResults<ActionRoll>): {
 */
 function rollActionDice(
   ability: number,
-  difficulty?: number,
+  difficulty?: number | undefined,
   title = 'Action Roll',
   useExtra = true,
   save = true,
-  template = 'ability'
+  template = 'ability',
+  blind = false
 ) {
   startActionRoll(
-    { ability, difficulty, title, useExtra, template },
+    { ability, difficulty, title, useExtra, template, blind },
     ({ rollId, results }) => {
       const finalResults = processActionRoll(results);
       finishRoll(rollId, finalResults);
@@ -94,14 +99,28 @@ function rollActionDice(
   );
 }
 
-on('clicked:roll-action', () => {
-  getAttrs(['roll-action-dice', 'roll-difficulty'], values => {
+const rollAction = (actionDice:number) => {
+  getAttrs(['roll-difficulty'], values => {
+    const difficulty = values['roll-difficulty'] ? parseInt(values['roll-difficulty']) || undefined : undefined;
+    const useExtra = difficulty ? true : false;
+    const blind = !useExtra;
     rollActionDice(
-      parseInt(values['roll-action-dice']) || 0,
-      parseInt(values['roll-difficulty']) || 0
+      actionDice,
+      difficulty,
+      undefined,
+      useExtra,
+      undefined,
+      undefined,
+      blind
     );
   });
-});
+};
+
+for(let i=1; i<=10; i++) {
+  on(`clicked:roll-action-dice-${i}`, () => {
+    rollAction(i);
+  });
+}
 
 on('clicked:roll-damage', () => {
   getAttrs(['roll-damage-die', 'roll-damage-bonus'], values => {
