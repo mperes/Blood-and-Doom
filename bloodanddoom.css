@@ -1376,6 +1376,7 @@
 }
 .ui-dialog .characterviewer .charsheet .roller .section-separator {
   width: 20px;
+  margin-left: 10px;
 }
 .ui-dialog .characterviewer .charsheet .roller .tabbed > .group {
   align-items: center;
