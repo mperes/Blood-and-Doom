@@ -43,21 +43,14 @@ on('change:doom-points', eventinfo => {
     });
   });
 });
-
-/*
-['action', 'damage', 'doom'].forEach(roll => {
-on(`clicked:roll-${roll}`, ()=> {
-startRoll("&{template:test} {{name=Test}} {{roll1=[[1d20]]}}", (results) => {
-const total = results.results.roll1.result
-const computed = total % 4;
-
-finishRoll(
-results.rollId,
-{
-roll1: computed
-}
-);
+['bruises', 'scrapes', 'wounds', 'injuries', 'madness', 'blood-points', 'momentum-pool', 'doom-points'].forEach(bar => {
+  on(`change:${bar}`, eventinfo => {
+    if(!eventinfo.sourceType || eventinfo.sourceType !== 'player') return;
+    if((!eventinfo.newValue || eventinfo.newValue == '0') && (eventinfo.previousValue && eventinfo.previousValue !== '0')) {
+      const previousValue = parseInt(eventinfo.previousValue);
+      if(previousValue-1 > 0) {
+        setAttrs({[bar]: String(previousValue-1)}, {silent:true});
+      }
+    }
+  });
 });
-})
-});
-*/

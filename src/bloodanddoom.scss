@@ -111,7 +111,7 @@
   //CARD STYLES
   .card.card--weapons-armor-ammunition-unarmed {
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 1fr 210px;
     .group.group--weapons-armor {
       display: grid;
       grid-template-rows: max-content 1fr;
@@ -181,7 +181,7 @@
 
   //TABLE STYLES
   .table--ammunition {
-    grid-template-columns: 1fr 60px;
+    grid-template-columns: 1fr min-content;
     gap: 10px;
     .group {
       display: grid;
@@ -224,8 +224,21 @@
       justify-self: end;
     }
   }
+  .table--traditions {
+    grid-template-columns: 1fr min-content min-content;
+    gap: 5px;
+    margin-top: 10px;
+    .checkbox-input {
+      justify-self: center;
+    }
+    .table__header {
+      .translation {
+        text-transform: capitalize;
+      }
+    }
+  }
   .table--equipment {
-    grid-template-columns: 1fr 100px 60px min-content;
+    grid-template-columns: 100px 1fr 60px min-content;
     gap: 10px;
     .group--quantity {
       display: grid;
@@ -503,14 +516,14 @@
     }
   }
   .section--tradition {
-    .repcontainer {
+    /*.repcontainer {
       display: grid;
       grid-template-columns: 1fr 32px min-content;
       gap: 5px;
       .repitem, .repeating-section__edit {
         display: contents;
       }
-    }
+    }*/
   }
   .section--avatar {
     .avatar {

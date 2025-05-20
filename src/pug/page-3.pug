@@ -42,7 +42,8 @@
       "increase-ability-scores": 1
     },
   };
-mixin check-list(section)
+mixin check-list(advancement)
+  - section = `list-${advancement}`;
   ul.check-list
     - let i = 0;
       each checks, key in levelUpLogList[section]
@@ -50,7 +51,7 @@ mixin check-list(section)
           +translate({key:key})
           .group.group--checks
             each _, j in Array(checks)
-              +checkbox-input({name:`attr_level-2-4-advancement-${i}-${j}`, value:'1', html:{class:'checkbox-input--simple'}})
+              +checkbox-input({name:`attr_level-${advancement}-advancement-${i}-${j}`, value:'1', html:{class:'checkbox-input--simple'}})
               - i++;
 
 .group.group--col-left
@@ -61,7 +62,7 @@ mixin check-list(section)
           +translate({key:`level-${advancement}-advancement`})
         p
           +translate({key:`level-${advancement}-advancement-desc`})
-        +check-list(`list-${advancement}`)
+        +check-list(advancement)
 .group.group--col-right
   .group.group--levelup
     .card.card--level

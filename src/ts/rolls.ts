@@ -188,3 +188,23 @@ on('clicked:repeating_weapon', eventinfo => {
     );
   });
 });
+
+on('clicked:roll-unarmed-damage', eventinfo => {
+  console.log('1');
+  getAttrs(['unarmed-attack-damage'], (values: { [key: string]: string }) => {
+    const title = { title: 'DAMAGE', charname: '@{character_name}', dice: 'Unnarmed Attack'};
+    myStartRoll(
+      'damage',
+      title,
+      { damage: values['unarmed-attack-damage'] || '[[0]]'},
+      ({ rollId, results }) => {
+        finishRoll(rollId, {
+          roll: results.damage.dice
+          .sort()
+          .filter((_, i) => i != 1)
+          .reduce((a, b) => a + b, 0),
+        });
+      }
+    );
+  });
+});

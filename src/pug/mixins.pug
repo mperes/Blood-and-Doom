@@ -56,7 +56,11 @@ mixin text-input(options)
     - delete options.html;
     if options.label 
       label
-        +translate(options.label)
+        if options.rollable
+          button.roll-damage(type='action' name=`act_${options.rollable}`)
+            +translate(options.label)
+        else
+          +translate(options.label)
         if options.name
           if options.list
             input(type='text' name=`attr_${options.name}` list=options.list)&attributes(inputOptions)

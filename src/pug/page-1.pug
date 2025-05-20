@@ -40,7 +40,7 @@
         +repeating-section({name:'condition', html:{class:'repeating-section--edit-only repeating-section--fixed repeating-section--locked'}})
           mixin repeating-edit
             +text-input({name:'name', html:{class:'text-input--simple'}})
-            +number-input({name:'treatment', html:{class:'number-input--simple'}})
+            +number-input({name:'treatment', html:{class:'number-input--simple number-input--align-center'}})
 .card.card--resolve
   .section.section--resolve.spread-items
     h2
@@ -120,14 +120,14 @@
             +repeating-section({name:'weapon', html:{class:'repeating-section--fixed repeating-section--locked'}})
               mixin repeating-view
                 +display({name:'name', html:{class:'text-input--simple'}})
-                +display({name:'ability-skill', html:{class:'text-input--simple'}})
+                +display({name:'ability-skill', html:{class:'text-input--simple display--align-center'}})
                 +display({name:'attributes', html:{class:'text-input--simple'}})
                 button.roll-damage(type='action' name='act_roll-damage')
                   +display({name:'damage', append:'damage-type', html:{class:'text-input--simple'}})
                 +checkbox-input({name:'dented',value:'1', html:{class:'checkbox--simple checkbox-input--xmarked'}})
               mixin repeating-edit
                 +text-input({name:'name', html:{class:'text-input--simple'}})
-                +text-input({name:'ability-skill', html:{class:'text-input--simple'}})
+                +text-input({name:'ability-skill', html:{class:'number-input--simple number-input--align-center'}})
                 +text-input({name:'attributes', html:{class:'text-input--simple'}})
                 .group.group--damage
                   +text-input({name:'damage', placeholder:'damage-placeholder', html:{class:'text-input--simple'}})
@@ -149,8 +149,7 @@
       .table.table--ammunition.table--highlighted
         .table__header
           +translate({key:'name'})  
-          +translate({key:'quantity'})
-          //img.font-awesome(src=`${imgServer}/mperes/Blood-and-Doom/refs/heads/main/static/hash.svg` alt='quantity')
+          +translate({key:'uses-supply'})
         .table__body
           +repeating-section({name:'ammunition', html:{class:'repeating-section--edit-only repeating-section--fixed repeating-section--locked'}})
             mixin repeating-edit
@@ -162,19 +161,19 @@
     .section-separator.section-separator--horizontal
     .section.section--unarmed-attacks
       h2
-        +translate({key:'unarmed-attacks'})
+        +translate({key:'unarmed-attack'})
       .group.group--attacks
-        +text-input({name:'unarmed-attack-ability-skill', label:{key:'ability-plus-skill'}, html:{class:'text-input--simple labelled--left labelled--nowrap'}})
-        +text-input({name:'unarmed-attack-damage', label:{key:'damage'}, html:{class:'text-input--simple labelled--left labelled--nowrap'}})
+        +number-input({name:'unarmed-attack-ability-skill', label:{key:'ability-plus-skill'}, html:{class:'number-input--simple number-input--align-center labelled--left labelled--nowrap'}})
+        +text-input({name:'unarmed-attack-damage', rollable:'roll-unarmed-damage', label:{key:'damage'}, html:{class:'text-input--simple text-input--align-center labelled--left labelled--nowrap'}})
     .section-separator.section-separator--horizontal.section-separator--narrow
     .section.section--combat-resolve-difficulty
-      +number-input({name:'combat-resolve-difficulty', label:{key:'combat-resolve-difficulty'}, html:{class:'number-input--simple labelled--left labelled--nowrap'}})
+      +number-input({name:'combat-resolve-difficulty', label:{key:'combat-resolve-difficulty'}, html:{class:'number-input--simple number-input--align-center labelled--left labelled--nowrap'}})
 .card.card--traits-powers-spells
   .section.section--traits-powers-spells
     .group.group--title
       h2
         +translate({key:'traits-powers-spells'})
-      +number-input({name:'class-resolve-difficulty', label:{key:'class-resolve-difficulty'}, html:{class:'number-input--simple labelled--left labelled--nowrap'}})
+      +number-input({name:'class-resolve-difficulty', label:{key:'class-resolve-difficulty'}, html:{class:'number-input--simple number-input--align-center labelled--left labelled--nowrap'}})
     .group.group--traditions
       - let i = 0;
       each levels, tradition in spine.traditions
@@ -182,12 +181,17 @@
           .section-separator.section-separator--vertical
         - i++
         .section.section--tradition(class=`section--tradition-${tradition}`)
-          h3
-            +translate({key:`tradition ${tradition}`})
+          +text-input({name:`tradition-${tradition}`, placeholder:`tradition-${tradition}`, html:{class:'text-input--simple text-input--title'}})
           +translate({key:`level-${levels}`})
-          +repeating-section({name:`tradition-${tradition}`, html:{class:'repeating-section--edit-only'}})
-            mixin repeating-edit
-              +text-input({name:'name', html:{class:'text-input--simple'}})
-              +number-input({name:'score', html:{class:'number-input--simple number-input--align-center'}})
-              +checkbox-input({name:'active', html:{class:'checkbox-input--simple'}})
+          .table.table--traditions
+            .table__header
+              +translate({key:'name'})  
+              +translate({key:'uses-mp'})
+              +translate({key:'improvement'})
+            .table__body
+              +repeating-section({name:`tradition-${tradition}`, html:{class:'repeating-section--edit-only'}})
+                mixin repeating-edit
+                  +text-input({name:'name', html:{class:'text-input--simple'}})
+                  +number-input({name:'score', html:{class:'number-input--simple number-input--align-center'}})
+                  +checkbox-input({name:'active', html:{class:'checkbox-input--simple'}})
   

@@ -1,15 +1,14 @@
-mixin condition(options=[], reverse=false)
+mixin condition(condition, parameters=[], reverse=false)
     -
-        const prefix = reverse ? '#^' : '#';
-        const suffix = reverse ? '/^' : '/';
-        const condition = `${options[0]}()`;
-        const parameters = [...options].pop(0);
-        const openingBlock = `${prefix}${[condition, ...parameters].join(' ')}`;
-        const closingBlock = `${suffix}${[condition, ...parameters].join(' ')}`;
+        const openingPrefix = reverse ? '#^' : '#';
+        const closingPrefix = reverse ? '/^' : '/';
+        const call = parameters.length > 0 ? '() ' : '()';
+        const openingBlock = `${openingPrefix}${condition}${call}${parameters.join(' ')}`;
+        const closingBlock = `${closingPrefix}${condition}${call}${parameters.join(' ')}`;
     
-    | {{#${openingBlock}}}
+    | {{#{openingBlock}}}
     block
-    | {{#${closingBlock}}}
+    | {{#{closingBlock}}}
 
 rolltemplate.sheet-rolltemplate-ability
     .sheet-template-container
@@ -17,32 +16,32 @@ rolltemplate.sheet-rolltemplate-ability
             h1.sheet-template-name {{charname}}
             h2.sheet-template-title {{title}}
         .sheet-template-rolls
-            | {{#rollTotal() computed::blind 1}}
-            span.sheet-blind
-            | {{/rollTotal() computed::blind 1}}
-            span.sheet-template-roll
-                | {{computed::successes}}&nbsp;
-                span Successes
-                span &nbsp;vs Difficulty
-                | &nbsp;{{difficulty}}
-            br
-            | {{#^rollLess() computed::successes difficulty}}
-            | {{#rollTotal() computed::extra_successes 0 }}
-            h5.sheet-good.sheet-template-roll SUCCESS
-            | {{/rollTotal() computed::extra_successes 0 }}
-            h5.sheet-good.sheet-template-roll SUCCESS {{#extra_successes}}+{{computed::extra_successes}}{{/extra_successes}}
-            | {{/^rollLess() computed::successes difficulty}}
-            | {{#rollLess() computed::successes difficulty}}
-            h5.sheet-bad FAILURE
-            | {{#rollLess() computed::setback 3}}
-            | {{#^rollLess() computed::successes difficulty}}
-            h5.sheet-purple MINOR SETBACK
-            | {{/^rollLess() computed::successes difficulty}}
-            | {{#rollLess() computed::successes difficulty}}
-            h5.sheet-purple MAJOR SETBACK
-            | {{/rollLess() computed::successes difficulty}}
-            | {{/rollLess() computed::setback 3}}
-            | {{/rollLess() computed::successes difficulty}}
+            +condition('rollTotal', ['computed::blind', 1])
+                span.sheet-blind {{computed::blind}}
+            .sheet-view-blind
+                    span.sheet-template-roll
+                        | {{computed::successes}}&nbsp;
+                        span Successes
+                    br
+                    +condition('rollLess', ['computed::setback', 3])
+                        h5.sheet-purple SETBACK
+            
+            .sheet-view-regular
+                span.sheet-template-roll
+                    | {{computed::successes}}&nbsp;
+                    span Successes
+                    span &nbsp;vs Difficulty
+                    | &nbsp;{{difficulty}}
+                br
+                +condition('rollLess', ['computed::successes', 'difficulty'], true)
+                    h5.sheet-good.sheet-template-roll SUCCESS {{#extra_successes}}+{{computed::extra_successes}}{{/extra_successes}}
+                    +condition('rollLess', ['computed::setback', 3])
+                        h5.sheet-purple MINOR SETBACK
+
+                +condition('rollLess', ['computed::successes', 'difficulty'])
+                    h5.sheet-bad FAILURE
+                    +condition('rollLess', ['computed::setback', 3])
+                        h5.sheet-purple MAJOR SETBACK
 
 rolltemplate.sheet-rolltemplate-doom
     .sheet-template-container
@@ -57,12 +56,10 @@ rolltemplate.sheet-rolltemplate-doom
                 span &nbsp;vs Difficulty
                 | &nbsp;{{difficulty}}
             br
-            | {{#^rollLess() computed::successes difficulty}}
-            h5.sheet-good.sheet-template-roll SUCCESS
-            | {{/^rollLess() computed::successes difficulty}}
-            | {{#rollLess() computed::successes difficulty}}
-            h5.sheet-bad FAILURE
-            | {{/rollLess() computed::successes difficulty}}
+            +condition('rollLess', ['computed::successes', 'difficulty'], true)
+                h5.sheet-good.sheet-template-roll SUCCESS
+            +condition('rollLess', ['computed::successes', 'difficulty'])
+                h5.sheet-bad FAILURE
 
 rolltemplate.sheet-rolltemplate-damage
     .sheet-template-container

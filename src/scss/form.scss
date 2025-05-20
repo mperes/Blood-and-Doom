@@ -75,6 +75,31 @@
       font-weight: 900;
     }
   }
+  &--title {
+    input {
+      font-size: var(--font-size-large);
+      font-weight: 600;
+      color: var(--text-color);
+    }
+    &:not(:focus-within):not(:hover) {
+      input {
+        border-color: transparent;
+      }
+    }
+  }
+  button {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background: transparent;
+    font-size: var(--font-size-medium);
+    color: var(--text-color);
+    font-weight: 500;
+    text-transform: capitalize;
+    &:hover {
+      color: var(--secondary-color);
+    }
+  }
 }
 
 .checkbox-input {
