@@ -223,6 +223,11 @@
     .input-checkbox {
       justify-self: end;
     }
+    .table__header {
+      .translation:has(span[data-i18n="damage"]) {
+        justify-self: center;
+      }
+    }
   }
   .table--traditions {
     grid-template-columns: 1fr min-content min-content;

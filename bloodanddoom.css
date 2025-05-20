@@ -1754,6 +1754,9 @@
 .ui-dialog .characterviewer .charsheet .table--weapons .input-checkbox {
   justify-self: end;
 }
+.ui-dialog .characterviewer .charsheet .table--weapons .table__header .translation:has(span[data-i18n=damage]) {
+  justify-self: center;
+}
 .ui-dialog .characterviewer .charsheet .table--traditions {
   grid-template-columns: 1fr min-content min-content;
   gap: 5px;
