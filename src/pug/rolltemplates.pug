@@ -34,7 +34,10 @@ rolltemplate.sheet-rolltemplate-ability
                     | &nbsp;{{difficulty}}
                 br
                 +condition('rollLess', ['computed::successes', 'difficulty'], true)
-                    h5.sheet-good.sheet-template-roll SUCCESS {{#extra_successes}}+{{computed::extra_successes}}{{/extra_successes}}
+                    +condition('rollLess', ['computed::setback', 3])
+                        h5.sheet-good.sheet-template-roll SUCCESS
+                    +condition('rollLess', ['computed::setback', 3], true)
+                        h5.sheet-good.sheet-template-roll SUCCESS {{#extra_successes}}+{{computed::extra_successes}}{{/extra_successes}}
                     +condition('rollLess', ['computed::setback', 3])
                         h5.sheet-purple MINOR SETBACK
 

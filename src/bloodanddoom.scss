@@ -181,7 +181,7 @@
 
   //TABLE STYLES
   .table--ammunition {
-    grid-template-columns: 1fr min-content;
+    grid-template-columns: 1fr 70px;
     gap: 10px;
     .group {
       display: grid;
@@ -238,7 +238,7 @@
     }
   }
   .table--equipment {
-    grid-template-columns: 100px 1fr 60px min-content;
+    grid-template-columns: 100px 1fr 70px min-content;
     gap: 10px;
     .group--quantity {
       display: grid;

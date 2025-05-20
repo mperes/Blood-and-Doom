@@ -23,13 +23,25 @@
   &--boxed {
     input, select {
       border-bottom: 1px solid var(--tertiary-color);
+    }
+    &:not(.has-arrows) {
+      input, select {
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        &[type=number] {
+          -moz-appearance: textfield;
+        }
+      }
+    }
+  }
+  &.has-arrows {
+    input, select {
       &::-webkit-outer-spin-button,
       &::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
-      &[type=number] {
-        -moz-appearance: textfield;
+        opacity: 1;
       }
     }
   }

@@ -908,36 +908,47 @@
 .ui-dialog .characterviewer .charsheet .select-input--boxed select {
   border-bottom: 1px solid var(--tertiary-color);
 }
-.ui-dialog .characterviewer .charsheet .text-input--simple input::-webkit-outer-spin-button, .ui-dialog .characterviewer .charsheet .text-input--simple input::-webkit-inner-spin-button, .ui-dialog .characterviewer .charsheet .text-input--simple select::-webkit-outer-spin-button, .ui-dialog .characterviewer .charsheet .text-input--simple select::-webkit-inner-spin-button, .ui-dialog .characterviewer .charsheet .text-input--boxed input::-webkit-outer-spin-button, .ui-dialog .characterviewer .charsheet .text-input--boxed input::-webkit-inner-spin-button, .ui-dialog .characterviewer .charsheet .text-input--boxed select::-webkit-outer-spin-button, .ui-dialog .characterviewer .charsheet .text-input--boxed select::-webkit-inner-spin-button,
-.ui-dialog .characterviewer .charsheet .number-input--simple input::-webkit-outer-spin-button,
-.ui-dialog .characterviewer .charsheet .number-input--simple input::-webkit-inner-spin-button,
-.ui-dialog .characterviewer .charsheet .number-input--simple select::-webkit-outer-spin-button,
-.ui-dialog .characterviewer .charsheet .number-input--simple select::-webkit-inner-spin-button,
-.ui-dialog .characterviewer .charsheet .number-input--boxed input::-webkit-outer-spin-button,
-.ui-dialog .characterviewer .charsheet .number-input--boxed input::-webkit-inner-spin-button,
-.ui-dialog .characterviewer .charsheet .number-input--boxed select::-webkit-outer-spin-button,
-.ui-dialog .characterviewer .charsheet .number-input--boxed select::-webkit-inner-spin-button,
-.ui-dialog .characterviewer .charsheet .select-input--simple input::-webkit-outer-spin-button,
-.ui-dialog .characterviewer .charsheet .select-input--simple input::-webkit-inner-spin-button,
-.ui-dialog .characterviewer .charsheet .select-input--simple select::-webkit-outer-spin-button,
-.ui-dialog .characterviewer .charsheet .select-input--simple select::-webkit-inner-spin-button,
-.ui-dialog .characterviewer .charsheet .select-input--boxed input::-webkit-outer-spin-button,
-.ui-dialog .characterviewer .charsheet .select-input--boxed input::-webkit-inner-spin-button,
-.ui-dialog .characterviewer .charsheet .select-input--boxed select::-webkit-outer-spin-button,
-.ui-dialog .characterviewer .charsheet .select-input--boxed select::-webkit-inner-spin-button {
+.ui-dialog .characterviewer .charsheet .text-input--simple:not(.has-arrows) input::-webkit-outer-spin-button, .ui-dialog .characterviewer .charsheet .text-input--simple:not(.has-arrows) input::-webkit-inner-spin-button, .ui-dialog .characterviewer .charsheet .text-input--simple:not(.has-arrows) select::-webkit-outer-spin-button, .ui-dialog .characterviewer .charsheet .text-input--simple:not(.has-arrows) select::-webkit-inner-spin-button, .ui-dialog .characterviewer .charsheet .text-input--boxed:not(.has-arrows) input::-webkit-outer-spin-button, .ui-dialog .characterviewer .charsheet .text-input--boxed:not(.has-arrows) input::-webkit-inner-spin-button, .ui-dialog .characterviewer .charsheet .text-input--boxed:not(.has-arrows) select::-webkit-outer-spin-button, .ui-dialog .characterviewer .charsheet .text-input--boxed:not(.has-arrows) select::-webkit-inner-spin-button,
+.ui-dialog .characterviewer .charsheet .number-input--simple:not(.has-arrows) input::-webkit-outer-spin-button,
+.ui-dialog .characterviewer .charsheet .number-input--simple:not(.has-arrows) input::-webkit-inner-spin-button,
+.ui-dialog .characterviewer .charsheet .number-input--simple:not(.has-arrows) select::-webkit-outer-spin-button,
+.ui-dialog .characterviewer .charsheet .number-input--simple:not(.has-arrows) select::-webkit-inner-spin-button,
+.ui-dialog .characterviewer .charsheet .number-input--boxed:not(.has-arrows) input::-webkit-outer-spin-button,
+.ui-dialog .characterviewer .charsheet .number-input--boxed:not(.has-arrows) input::-webkit-inner-spin-button,
+.ui-dialog .characterviewer .charsheet .number-input--boxed:not(.has-arrows) select::-webkit-outer-spin-button,
+.ui-dialog .characterviewer .charsheet .number-input--boxed:not(.has-arrows) select::-webkit-inner-spin-button,
+.ui-dialog .characterviewer .charsheet .select-input--simple:not(.has-arrows) input::-webkit-outer-spin-button,
+.ui-dialog .characterviewer .charsheet .select-input--simple:not(.has-arrows) input::-webkit-inner-spin-button,
+.ui-dialog .characterviewer .charsheet .select-input--simple:not(.has-arrows) select::-webkit-outer-spin-button,
+.ui-dialog .characterviewer .charsheet .select-input--simple:not(.has-arrows) select::-webkit-inner-spin-button,
+.ui-dialog .characterviewer .charsheet .select-input--boxed:not(.has-arrows) input::-webkit-outer-spin-button,
+.ui-dialog .characterviewer .charsheet .select-input--boxed:not(.has-arrows) input::-webkit-inner-spin-button,
+.ui-dialog .characterviewer .charsheet .select-input--boxed:not(.has-arrows) select::-webkit-outer-spin-button,
+.ui-dialog .characterviewer .charsheet .select-input--boxed:not(.has-arrows) select::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-.ui-dialog .characterviewer .charsheet .text-input--simple input[type=number], .ui-dialog .characterviewer .charsheet .text-input--simple select[type=number], .ui-dialog .characterviewer .charsheet .text-input--boxed input[type=number], .ui-dialog .characterviewer .charsheet .text-input--boxed select[type=number],
-.ui-dialog .characterviewer .charsheet .number-input--simple input[type=number],
-.ui-dialog .characterviewer .charsheet .number-input--simple select[type=number],
-.ui-dialog .characterviewer .charsheet .number-input--boxed input[type=number],
-.ui-dialog .characterviewer .charsheet .number-input--boxed select[type=number],
-.ui-dialog .characterviewer .charsheet .select-input--simple input[type=number],
-.ui-dialog .characterviewer .charsheet .select-input--simple select[type=number],
-.ui-dialog .characterviewer .charsheet .select-input--boxed input[type=number],
-.ui-dialog .characterviewer .charsheet .select-input--boxed select[type=number] {
+.ui-dialog .characterviewer .charsheet .text-input--simple:not(.has-arrows) input[type=number], .ui-dialog .characterviewer .charsheet .text-input--simple:not(.has-arrows) select[type=number], .ui-dialog .characterviewer .charsheet .text-input--boxed:not(.has-arrows) input[type=number], .ui-dialog .characterviewer .charsheet .text-input--boxed:not(.has-arrows) select[type=number],
+.ui-dialog .characterviewer .charsheet .number-input--simple:not(.has-arrows) input[type=number],
+.ui-dialog .characterviewer .charsheet .number-input--simple:not(.has-arrows) select[type=number],
+.ui-dialog .characterviewer .charsheet .number-input--boxed:not(.has-arrows) input[type=number],
+.ui-dialog .characterviewer .charsheet .number-input--boxed:not(.has-arrows) select[type=number],
+.ui-dialog .characterviewer .charsheet .select-input--simple:not(.has-arrows) input[type=number],
+.ui-dialog .characterviewer .charsheet .select-input--simple:not(.has-arrows) select[type=number],
+.ui-dialog .characterviewer .charsheet .select-input--boxed:not(.has-arrows) input[type=number],
+.ui-dialog .characterviewer .charsheet .select-input--boxed:not(.has-arrows) select[type=number] {
   -moz-appearance: textfield;
+}
+.ui-dialog .characterviewer .charsheet .text-input.has-arrows input::-webkit-outer-spin-button, .ui-dialog .characterviewer .charsheet .text-input.has-arrows input::-webkit-inner-spin-button, .ui-dialog .characterviewer .charsheet .text-input.has-arrows select::-webkit-outer-spin-button, .ui-dialog .characterviewer .charsheet .text-input.has-arrows select::-webkit-inner-spin-button,
+.ui-dialog .characterviewer .charsheet .number-input.has-arrows input::-webkit-outer-spin-button,
+.ui-dialog .characterviewer .charsheet .number-input.has-arrows input::-webkit-inner-spin-button,
+.ui-dialog .characterviewer .charsheet .number-input.has-arrows select::-webkit-outer-spin-button,
+.ui-dialog .characterviewer .charsheet .number-input.has-arrows select::-webkit-inner-spin-button,
+.ui-dialog .characterviewer .charsheet .select-input.has-arrows input::-webkit-outer-spin-button,
+.ui-dialog .characterviewer .charsheet .select-input.has-arrows input::-webkit-inner-spin-button,
+.ui-dialog .characterviewer .charsheet .select-input.has-arrows select::-webkit-outer-spin-button,
+.ui-dialog .characterviewer .charsheet .select-input.has-arrows select::-webkit-inner-spin-button {
+  opacity: 1;
 }
 .ui-dialog .characterviewer .charsheet .text-input--boxed label,
 .ui-dialog .characterviewer .charsheet .number-input--boxed label,
@@ -1702,7 +1713,7 @@
   gap: 30px;
 }
 .ui-dialog .characterviewer .charsheet .table--ammunition {
-  grid-template-columns: 1fr min-content;
+  grid-template-columns: 1fr 70px;
   gap: 10px;
 }
 .ui-dialog .characterviewer .charsheet .table--ammunition .group {
@@ -1755,7 +1766,7 @@
   text-transform: capitalize;
 }
 .ui-dialog .characterviewer .charsheet .table--equipment {
-  grid-template-columns: 100px 1fr 60px min-content;
+  grid-template-columns: 100px 1fr 70px min-content;
   gap: 10px;
 }
 .ui-dialog .characterviewer .charsheet .table--equipment .group--quantity {
