@@ -1,3 +1,16 @@
+mixin condition(options=[], reverse=false)
+    -
+        const prefix = reverse ? '#^' : '#';
+        const suffix = reverse ? '/^' : '/';
+        const condition = `${options[0]}()`;
+        const parameters = [...options].pop(0);
+        const openingBlock = `${prefix}${[condition, ...parameters].join(' ')}`;
+        const closingBlock = `${suffix}${[condition, ...parameters].join(' ')}`;
+    
+    | {{#${openingBlock}}}
+    block
+    | {{#${closingBlock}}}
+
 rolltemplate.sheet-rolltemplate-ability
     .sheet-template-container
         .sheet-template-header
