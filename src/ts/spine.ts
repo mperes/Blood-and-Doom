@@ -63,9 +63,7 @@ const spine = {
     ]
   },
   lists: {
-    knowledge: ['history-and-culture', 'strategy-and-warfare', 'sailing-and-ships', 'occult-and-paranormal', 'monsters-and-myths'],
-    condition: ['history-and-culture', 'strategy-and-warfare', 'sailing-and-ships', 'occult-and-paranormal', 'monsters-and-myths'],
-    treatment: ['history-and-culture', 'strategy-and-warfare', 'sailing-and-ships', 'occult-and-paranormal', 'monsters-and-myths'],
+    knowledge: ['alchemy-and-transmutation', 'archeology-and-artifacts', 'art-and-appraisal', 'artifice-and-mechanisms', 'astrology-and-cosmology', 'cartography-and-maps', 'craft-and-repair', 'diplomacy-and-politics', 'exploration-and-wilderness', 'herbalism-and-healing', 'history-and-culture', 'justice-and-law', 'language-and-translation', 'math-and-science', 'monsters-and-myth', 'nature-and-animals', 'occult-and-paranormal', 'organization-and-administration', 'poison-and-disease', 'religion-and-spiritualism', 'sailing-and-ships', 'sorcery-and-magic', 'strategy-and-warfare', 'thievery-and-crime'],
   },
   pages: ['page-1', 'page-2', 'page-3'],
   resolve: {
