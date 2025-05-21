@@ -53,6 +53,10 @@
 .sheet-darkmode .repcontrol_edit:after, .sheet-darkmode .repcontrol_add:after {
   filter: invert(1);
 }
+.sheet-darkmode .has-arrows input::-webkit-outer-spin-button, .sheet-darkmode .has-arrows input::-webkit-inner-spin-button, .sheet-darkmode .has-arrows select::-webkit-outer-spin-button, .sheet-darkmode .has-arrows select::-webkit-inner-spin-button {
+  filter: invert(1);
+  mix-blend-mode: screen !important;
+}
 
 .ui-dialog .characterviewer .charsheet {
   font-family: "Roboto Condensed", sans-serif;
@@ -949,6 +953,7 @@
 .ui-dialog .characterviewer .charsheet .select-input.has-arrows select::-webkit-outer-spin-button,
 .ui-dialog .characterviewer .charsheet .select-input.has-arrows select::-webkit-inner-spin-button {
   opacity: 1;
+  mix-blend-mode: multiply;
 }
 .ui-dialog .characterviewer .charsheet .text-input--boxed label,
 .ui-dialog .characterviewer .charsheet .number-input--boxed label,

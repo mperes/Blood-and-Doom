@@ -51,4 +51,13 @@
       filter: invert(1);
     }
   }
+  .has-arrows {
+    input, select {
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        filter: invert(1);
+        mix-blend-mode: screen!important;
+      }
+    }
+  }
 }

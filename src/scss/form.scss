@@ -42,6 +42,7 @@
       &::-webkit-outer-spin-button,
       &::-webkit-inner-spin-button {
         opacity: 1;
+        mix-blend-mode: multiply;
       }
     }
   }
