@@ -148,7 +148,7 @@ const rollDamage = (dieSize:string) => {
     );
   });
 };
-['1', 'd4', 'd6', 'd8', 'd10', 'd12'].forEach( die => {
+['d4', 'd6', 'd8', 'd10', 'd12'].forEach( die => {
   on(`clicked:roll-damage-die-size-${die}`, () => {
     const finalDie = die === '1' ? 'd1' : die;
     rollDamage(finalDie);
