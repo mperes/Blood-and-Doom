@@ -6,3 +6,9 @@ on('clicked:rest', () => {
         madness: ''
     });
 });
+
+on('clicked:momentum-pool-clear', () => {
+    setAttrs({
+        'momentum-pool': 0
+    });
+});

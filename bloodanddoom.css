@@ -677,6 +677,15 @@
 .ui-dialog .characterviewer .charsheet .rangebar--afar .rangebar__steps {
   gap: 15px;
 }
+.ui-dialog .characterviewer .charsheet .rangebar__clear {
+  border: 0;
+  padding: 0 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  pointer-events: all;
+  background-color: var(--tertiary-color);
+  color: var(--text-color);
+}
 .ui-dialog .characterviewer .charsheet .picker .label {
   color: var(--boxedtext-color);
   pointer-events: none;

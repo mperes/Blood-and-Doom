@@ -9,7 +9,7 @@ each options, list in spine.lists
         +rangebar({name:'blood-points', steps: 6, label:{key:'blood-points'}, html:{class:'labelled--top-center rangebar--afar'}})
       .group
         img.logo(src=`${imgServer}/mperes/Blood-and-Doom/refs/heads/main/static/logo.svg` data-i18n-alt='logo')
-        +rangebar({name:'momentum-pool', steps: 3, label:{key:'momentum-pool'}, html:{class:'labelled--top-center rangebar--afar'}})
+        +rangebar({name:'momentum-pool', steps: 3, label:{key:'momentum-pool'}, clear: true, html:{class:'labelled--top-center rangebar--afar'}})
       .group
         +text-input({name:'class', label:{key:'class'}, html:{class:'text-input--simple labelled--top-center text-input--align-center text-input--xlarge-text'}})
         +rangebar({name:'doom-points', steps: 6, label:{key:'doom-points'}, html:{class:'labelled--top-center rangebar--afar'}})

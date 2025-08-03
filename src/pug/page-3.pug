@@ -83,28 +83,25 @@ mixin check-list(advancement)
       h2
         +translate({key:`gaining-damage-boxes`})
       p
-        +translate({key:`gaining-damage-boxes-desc-introduction`})
-        ul
-          each _, i in Array(3)
-            li
-              +translate({key:`gaining-damage-boxes-desc-bullet-${i}`})
-        +translate({key:`gaining-damage-boxes-desc-conclusion`})
+        +translate({key:`gaining-damage-boxes-desc`})
   .card.card--gaining-madness-boxes
     .section.section--gaining-madness-boxes
       h2
         +translate({key:`gaining-madness-boxes`})
       p
         +translate({key:`gaining-madness-boxes-desc`})
+  .card.card--learning-languages
+    .section.section--learning-languages
+      h2
+        +translate({key:`learning-languages`})
+      p
+        +translate({key:`learning-languages-desc`})
   .card.card--gaining-proficiencies
     .section.section--gaining-proficiencies
       h2
         +translate({key:`gaining-proficiencies`})
       p
-        +translate({key:`gaining-proficiencies-desc-introduction`})
-        ul
-          each _, i in Array(4)
-            li
-              +translate({key:`gaining-proficiencies-desc-bullet-${i}`})
+        +translate({key:`gaining-proficiencies-desc`})
   each section in ['increasing-ability-scores', 'choosing-traditions']
     .card(class=`card--${section}`)
       .section(class=`section--${section}`)

@@ -20,6 +20,9 @@ mixin rangebar(options)
           if options.max
             input.rangebar__max(type='hidden' name=`attr_${options.name}-max` value=options.max)
           .rangebar__steps
+              if options.clear
+                button(type='action' name=`act_${options.name}-clear` class='rangebar__clear')
+                  +translate({key:'clear'})
               each _, i in Array(options.steps)
                 - const step = options.steps - i;
                 .step
@@ -28,6 +31,9 @@ mixin rangebar(options)
       if options.max
         input.rangebar__max(type='hidden' name=`attr_${options.name}-max`)
       .rangebar__steps
+        if options.clear
+          button(type='action' name=`act_${options.name}-clear`)
+            +translate({key:'clear'})
         each _, i in Array(options.steps)
           - const step = options.steps - i;
           input(type='checkbox' name=`attr_${options.name}` value=step)
