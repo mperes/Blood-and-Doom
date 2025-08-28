@@ -126,14 +126,14 @@
 
 .sheet-rolltemplate-ability {
   .sheet-template-container {
-    background-image: url("https://raw.githubusercontent.com/roll20/roll20-character-sheets/master/Blood_and_Doom_by_Dicetale_Games/static/chat_action_roll.jpg");
+    background-image: url("#{$imgServer}/chat_action_roll.jpg");
     border-radius: 5px;
   }
 }
 
 .sheet-rolltemplate-damage {
   .sheet-template-container {
-    background-image: url("https://raw.githubusercontent.com/roll20/roll20-character-sheets/master/Blood_and_Doom_by_Dicetale_Games/static/chat_damage_roll.jpg");
+    background-image: url("#{$imgServer}/chat_damage_roll.jpg");
     border-radius: 5px;
   }
   .sheet-template-rolls {
@@ -154,7 +154,7 @@
 
 .sheet-rolltemplate-doom {
   .sheet-template-container {
-    background-image: url("https://raw.githubusercontent.com/roll20/roll20-character-sheets/master/Blood_and_Doom_by_Dicetale_Games/static/chat_doom_roll.jpg");
+    background-image: url("#{$imgServer}/chat_doom_roll.jpg");
     border-radius: 5px;
   }
 }

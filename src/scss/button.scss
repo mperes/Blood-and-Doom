@@ -42,13 +42,13 @@
 
 .repcontrol_add {
   &:after {
-    background-image: url('https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/add.svg');
+    background-image: url('#{$imgServer}add.svg');
   }
 }
 
 .repcontrol_edit {
   &:after {
-    background-image: url('https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/lock-open.svg');
+    background-image: url('#{$imgServer}lock-open.svg');
     background-position: 6px center;
   }
 }
@@ -56,7 +56,7 @@
 .editmode + .repcontrol {
   .repcontrol_edit {
     &:after {
-      background-image: url('https://raw.githubusercontent.com/mperes/Blood-and-Doom/refs/heads/main/static/lock.svg');
+      background-image: url('#{$imgServer}lock.svg');
     }
   }
   .repcontrol_add {

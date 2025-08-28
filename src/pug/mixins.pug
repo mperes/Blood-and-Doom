@@ -168,7 +168,7 @@ mixin repeating-section(options)
     - delete options.html;
     fieldset(class=`repeating_${options.name}`)
       .repeating-section__toggle
-        img.font-awesome(src=`${imgServer}/mperes/Blood-and-Doom/refs/heads/main/static/cog.svg` data-i18n-alt='toggle-edit-mode')
+        img.font-awesome(src=`${imgServer}/cog.svg` data-i18n-alt='toggle-edit-mode')
         input(type='checkbox')
       if !editOnly
         .repeating-section__view

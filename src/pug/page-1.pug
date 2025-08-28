@@ -6,7 +6,7 @@
       details.section__details
         summary
           .section__toggle
-            img.font-awesome(src=`${imgServer}/mperes/Blood-and-Doom/refs/heads/main/static/cog.svg` data-i18n-alt='toggle-edit-mode')
+            img.font-awesome(src=`${imgServer}/cog.svg` data-i18n-alt='toggle-edit-mode')
           .section__blocker
         .card
           h2
@@ -15,7 +15,7 @@
             each bar in spine.health.bars
               +number-input({name:`${bar.name}-max`, value:bar.max, min:1, label:{key:`${bar.name}-max`}, html:{class:'number-input--simple number-input--align-center labelled--left labelled--nowrap'}})
       .section__toggle
-        img.font-awesome(src=`${imgServer}/mperes/Blood-and-Doom/refs/heads/main/static/cog.svg` data-i18n-alt='toggle-edit-mode')   
+        img.font-awesome(src=`${imgServer}/cog.svg` data-i18n-alt='toggle-edit-mode')   
       +action-button({name:'rest', label:{key:'long-rest'}})
     .group.group--bars
       each bar in spine.health.bars
@@ -59,8 +59,8 @@
     .section.section--armor
       h2
         +translate({key:'armor'})
-      +number-input({name:'armor', label:{image:'/mperes/Blood-and-Doom/refs/heads/main/static/shield.svg', key:'armor'}, html:{class:'number-input--simple number-input--align-center'}})
-      +number-input({name:'armor-empty', label:{image:'/mperes/Blood-and-Doom/refs/heads/main/static/shield-slash.svg', key:'armor-empty'}, html:{class:'number-input--simple number-input--align-center'}})
+      +number-input({name:'armor', label:{image:'/shield.svg', key:'armor'}, html:{class:'number-input--simple number-input--align-center'}})
+      +number-input({name:'armor-empty', label:{image:'/shield-slash.svg', key:'armor-empty'}, html:{class:'number-input--simple number-input--align-center'}})
 .card.card--abilities-skills
   .section.section--abilities-skills
     h2
@@ -115,7 +115,7 @@
             +translate({key:'ability-plus-skill'})
             +translate({key:'tags-and-attributes'})
             +translate({key:'damage'})
-            img.font-awesome(src=`${imgServer}/mperes/Blood-and-Doom/refs/heads/main/static/dented.svg` data-i18n-title='dented' data-i18n-alt='dented')
+            img.font-awesome(src=`${imgServer}/dented.svg` data-i18n-title='dented' data-i18n-alt='dented')
           .table__body
             +repeating-section({name:'weapon', html:{class:'repeating-section--fixed repeating-section--locked'}})
               mixin repeating-view
